@@ -145,8 +145,9 @@ public class TCTInducer2 {
 					stack.push(neg);
 					
 
-					//}
-				}		}
+					}
+//				}		
+					}
 			}
 			return tree;
 		

@@ -4,6 +4,7 @@ import it.uniba.di.lacam.ontologymining.tct.distances.*;
 import it.uniba.di.lacam.ontologymining.tct.parameters.Parameters;
 import it.uniba.di.lacam.ontologymining.tct.refinementoperators.RefinementOperator;
 import it.uniba.di.lacam.ontologymining.tct.utils.Couple;
+import it.uniba.di.lacam.ontologymining.tct.utils.MathUtils;
 import it.uniba.di.lacam.ontologymining.variableassociation.Apriori;
 import it.uniba.di.lacam.ontologymining.variableassociation.Correlations;
 
@@ -48,9 +49,14 @@ static it.uniba.di.lacam.ontologymining.tct.KnowledgeBaseHandler.KnowledgeBase k
 		kb = new it.uniba.di.lacam.ontologymining.tct.KnowledgeBaseHandler.KnowledgeBase(Parameters.urlOwlFile);
 		
 	//	Reasoner r=;
+		double [] resultsAxs = new double[Parameters.NFOLDS];
+		double [] resultsInc = new double[Parameters.NFOLDS];
+		
+		for (int j=1; j<Parameters.NFOLDS;j++){
 		final Individual[] individuals = kb.getIndividuals();
 		final AbstractReasonerComponent reasoner = kb.getReasoner();
 		final NamedClass[] classes = kb.getClasses();
+		
 		it.uniba.di.lacam.ontologymining.tct.distances.FeaturesDrivenDistance.preLoadPi(reasoner, classes, individuals);
 		FeaturesDrivenDistance.computeFeatureEntropies(reasoner, classes);
 		System.out.println( "************************Discovering disjointntness axioms ********** ");
@@ -84,6 +90,7 @@ static it.uniba.di.lacam.ontologymining.tct.KnowledgeBaseHandler.KnowledgeBase k
 			//System.out.println(induceDLTree);	 
 			final ArrayList<Couple<Description,Description>> extractDisjointnessAxiom = t.extractDisjointnessAxiom(induceDLTree);
 			System.out.println("Number of axioms: "+ extractDisjointnessAxiom.size());
+			resultsAxs[j-1]= extractDisjointnessAxiom.size();
 			int nInc=0;
 			for (Couple<Description,Description> c:extractDisjointnessAxiom){
 			    if (reasoner.getIndividuals(new Intersection(c.getFirstElement(),c.getSecondElement())).size()!=0){
@@ -92,12 +99,14 @@ static it.uniba.di.lacam.ontologymining.tct.KnowledgeBaseHandler.KnowledgeBase k
 			    }
 			}
 			System.out.println("Number of inconsistencies: "+ nInc);
+			resultsInc[j-1]= nInc;
 		}
 		else  if ( (args[0].equalsIgnoreCase("corr"))){
 			Correlations corr= new Correlations(reasoner, classes, individuals);
 			final ArrayList<Couple<Description,Description>> extractDisjointnessAxiom = corr.computeCorrelation();
 			System.out.println("Number of axioms: "+ extractDisjointnessAxiom.size());
 			int nInc=0;
+			resultsAxs[j-1]= extractDisjointnessAxiom.size();
 			for (Couple<Description,Description> c:extractDisjointnessAxiom){
 			    if (reasoner.getIndividuals(new Intersection(c.getFirstElement(),c.getSecondElement())).size()!=0){
 			    	nInc++;
@@ -105,6 +114,7 @@ static it.uniba.di.lacam.ontologymining.tct.KnowledgeBaseHandler.KnowledgeBase k
 			    }
 			}
 			System.out.println("Number of inconsistencies: "+ nInc);
+			resultsInc[j-1]= nInc;
 		}
 		else{
 			System.out.println("Please, insert one of the following parameters:");
@@ -112,8 +122,13 @@ static it.uniba.di.lacam.ontologymining.tct.KnowledgeBaseHandler.KnowledgeBase k
 			System.out.println("'tct- for running the terminological cluster tree induction algorithm");
 			System.out.println("corr- for running the negative correlation algorithm ");
 			
+		 break;
 		}
-		
+		}
+		System.out.println("***************************************************************");
+		System.out.println(" Overall Results");
+		System.out.println("Axioms: "+MathUtils.avg(resultsAxs)+" ("+MathUtils.stdDeviation(resultsAxs)+")");
+		System.out.println("Inconsistencies: "+MathUtils.avg(resultsInc)+" ("+MathUtils.stdDeviation(resultsInc)+")");
 		
 //	
 ////

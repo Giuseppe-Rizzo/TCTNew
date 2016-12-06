@@ -95,7 +95,7 @@ public class RefinementOperator {
 					else if (negExs.contains(index))
 						emptyIntersection = false;
 				}					
-			} while (emptyIntersection);
+			} while (emptyIntersection && newConcept.getLength()<4);
 			rConcepts.add(newConcept);
 			System.out.printf("%d ", c);
 		}
