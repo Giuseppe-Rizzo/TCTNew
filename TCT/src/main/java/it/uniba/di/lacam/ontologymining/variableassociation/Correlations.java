@@ -1,5 +1,9 @@
 package it.uniba.di.lacam.ontologymining.variableassociation;
 
+import java.util.ArrayList;
+
+import it.uniba.di.lacam.ontologymining.tct.utils.Couple;
+
 import org.dllearner.core.AbstractReasonerComponent;
 import org.dllearner.core.ReasonerComponent;
 import org.dllearner.core.owl.Description;
@@ -8,6 +12,11 @@ import org.dllearner.core.owl.Intersection;
 import org.dllearner.core.owl.Negation;
 
 
+/**
+ * Using Pearson's coefficient correlation for discovering disjointness axioms
+ * @author Utente
+ *
+ */
 public class Correlations {
 	
 	AbstractReasonerComponent r;
@@ -23,7 +32,8 @@ public class Correlations {
 	} 
 	
 	
-	public double computeCorrelation(){
+	public ArrayList<Couple<Description,Description>> computeCorrelation(){
+		ArrayList<Couple<Description,Description>> axioms= new ArrayList<Couple<Description,Description>>();
 		int a=0;
 		int co=0;
 		for (int i=0; i<concept.length-1;i++) {
@@ -45,18 +55,21 @@ public class Correlations {
 				double  num= (DANDCInds*NotDAndNotC)-(DAndNotC*NotDAndC);
 				double coeff= num/den;
 				co++;
-				if (coeff<0.5){
+				if (coeff<0.5){ // threshold to express a weak correlation between concepts
 					//System.out.println(d+"disjoint with "+ c);
-					
+					Couple<Description, Description> e = new Couple<Description, Description>();
+					e.setFirstElement(c);
+					e.setSecondElement(d);
+					axioms.add(e);
 					a++;
 				}
 			}
 		}
 		
-		System.out.println( "Number of axioms: "+a);
-		System.out.println( "Number of corrlations: "+(co));
+		//System.out.println( "Number of axioms: "+a);
+		//System.out.println( "Number of corrlations: "+(co));
 		
-		return 0.0d;
+		return axioms;
 	}
 
 }

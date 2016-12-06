@@ -20,22 +20,12 @@ public class MathUtils {
 		stddev = StatUtils.variance(population);
 		return stddev;
 	}
-//	public double[] sampling (int dimSample) {
-//		
-//		RandomDataGenerator randomData = new RandomDataGenerator(); 
-//		randomData.reSeed(2);
-//		for (int i = 0; i < dimSample; i++) {
-//		    double value = randomData.nextLong(1, 1000000);
-//		}
-//		return null;
-//	}
 
 	public static double stdDeviation(double[] population) {
 		stddev = StatUtils.variance(population);
 		return Math.sqrt(stddev);
 	}
 	
-	
-	
+		
 
 }

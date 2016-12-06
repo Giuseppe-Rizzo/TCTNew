@@ -3,6 +3,7 @@ import it.uniba.di.lacam.ontologymining.tct.*;
 import it.uniba.di.lacam.ontologymining.tct.distances.*;
 import it.uniba.di.lacam.ontologymining.tct.parameters.Parameters;
 import it.uniba.di.lacam.ontologymining.tct.refinementoperators.RefinementOperator;
+import it.uniba.di.lacam.ontologymining.tct.utils.Couple;
 import it.uniba.di.lacam.ontologymining.variableassociation.Apriori;
 import it.uniba.di.lacam.ontologymining.variableassociation.Correlations;
 
@@ -17,6 +18,7 @@ import org.dllearner.core.AbstractReasonerComponent;
 import org.dllearner.core.Reasoner;
 import org.dllearner.core.owl.Description;
 import org.dllearner.core.owl.Individual;
+import org.dllearner.core.owl.Intersection;
 import org.dllearner.core.owl.NamedClass;
 import org.dllearner.core.owl.Negation;
 
@@ -80,12 +82,29 @@ static it.uniba.di.lacam.ontologymining.tct.KnowledgeBaseHandler.KnowledgeBase k
 				list.add(i);
 			ClusterTree induceDLTree = t.induceDLTree(list, new ArrayList<Integer>(),  new ArrayList<Integer>(), 4, op);
 			//System.out.println(induceDLTree);	 
-			final ArrayList<Description> extractDisjointnessAxiom = t.extractDisjointnessAxiom(induceDLTree);
+			final ArrayList<Couple<Description,Description>> extractDisjointnessAxiom = t.extractDisjointnessAxiom(induceDLTree);
 			System.out.println("Number of axioms: "+ extractDisjointnessAxiom.size());
-	}
+			int nInc=0;
+			for (Couple<Description,Description> c:extractDisjointnessAxiom){
+			    if (reasoner.getIndividuals(new Intersection(c.getFirstElement(),c.getSecondElement())).size()!=0){
+			    	nInc++;
+			    	//System.out.println("Number of inconsistencies: "+ nInc);
+			    }
+			}
+			System.out.println("Number of inconsistencies: "+ nInc);
+		}
 		else  if ( (args[0].equalsIgnoreCase("corr"))){
 			Correlations corr= new Correlations(reasoner, classes, individuals);
-			corr.computeCorrelation();
+			final ArrayList<Couple<Description,Description>> extractDisjointnessAxiom = corr.computeCorrelation();
+			System.out.println("Number of axioms: "+ extractDisjointnessAxiom.size());
+			int nInc=0;
+			for (Couple<Description,Description> c:extractDisjointnessAxiom){
+			    if (reasoner.getIndividuals(new Intersection(c.getFirstElement(),c.getSecondElement())).size()!=0){
+			    	nInc++;
+			    	System.out.println("Number of inconsistencies: "+ nInc);
+			    }
+			}
+			System.out.println("Number of inconsistencies: "+ nInc);
 		}
 		else{
 			System.out.println("Please, insert one of the following parameters:");

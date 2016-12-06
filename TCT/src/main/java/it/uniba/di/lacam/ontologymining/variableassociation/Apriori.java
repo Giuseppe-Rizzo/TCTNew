@@ -6,6 +6,12 @@ import org.dllearner.core.owl.Intersection;
 import org.dllearner.core.owl.Negation;
 import java.util.*;
 
+
+/**
+ * Implements Apriori algorithm for discovering disjointntess axioms (according to Lawryoniwicz's approach)
+ * @author Utente
+ *
+ */
 public class Apriori {
 
 	AbstractReasonerComponent r;
