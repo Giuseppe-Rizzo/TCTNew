@@ -61,8 +61,8 @@ public class RefinementOperator {
 							else
 								newConcept = new ObjectSomeRestriction(role, newConceptBase);
 						}
-//						else					
-//							newConcept = dataFactory.getOWLObjectComplementOf(newConceptBase);
+						else					
+							newConcept = new Negation(newConceptBase);
 					}
 				} // else ext
 				

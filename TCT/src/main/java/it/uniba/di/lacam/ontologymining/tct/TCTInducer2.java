@@ -275,7 +275,7 @@ public class TCTInducer2 {
 					root;
 			Description currentDescriptionRight= //fatherDescription !=null? new Intersection( new Negation(fatherDescription),new Negation(root)): 
 					new Negation(root);
-
+			
 			ArrayList<Description> toAdd= new ArrayList<Description>();
 			ArrayList<Description> toAdd2= new ArrayList<Description>();
 			toAdd.addAll(extractDisjointnessAxiom(currentDescriptionLeft, tree.getPos()));
@@ -299,6 +299,7 @@ public class TCTInducer2 {
 			for (int j=0; j<concepts.size();j++){
 				Description  d= concepts.get(j);
 				if (!(c.equals(d))){
+					if (kb.getReasoner().getIndividuals(new Intersection(c,d)).size()<5)
 					element.setFirstElement(c);
 					element.setSecondElement(d);
 					result.add(element);
