@@ -88,20 +88,21 @@ public class TCTInducer2 {
 				if (currentTime-startingTime>10000)
 					currentTree.setRoot(null, posExs, null, null);
 				else{
-					System.out.println(currentTree.getRoot() instanceof Negation);
+					//System.out.println(currentTree.getRoot() instanceof Negation);
 
 					//System.out.println("Concept to be refined:"+currentTree.getRoot());
 					ArrayList<Description> generateNewConcepts = null;
 
 					generateNewConcepts=op.generateNewConcepts(currentTree.getRoot(),Parameters.beam, posExs, negExs); // genera i concetti sulla base degli esempi
 
+					
 					Description[] cConcepts= new Description[0];
 					//
 					cConcepts = generateNewConcepts.toArray(cConcepts);
-
+				
 					// select node concept
 					Description newRootConcept =  selectConceptWithMinOverlap(cConcepts, posExs) ; //(Parameters.CCP?(selectBestConceptCCP(cConcepts, posExs, negExs, undExs, prPos, prNeg, truePos, trueNeg)):(selectBestConcept(cConcepts, posExs, negExs, undExs, prPos, prNeg));
-					//System.out.println("Best Concept:"+newRootConcept);
+					System.out.println("Best Concept:"+newRootConcept);
 					//System.out.println();
 					ArrayList<Integer> posExsT = new ArrayList<Integer>();
 					ArrayList<Integer> negExsT = new ArrayList<Integer>();
@@ -115,6 +116,7 @@ public class TCTInducer2 {
 					Integer medoidN = getMedoid(negExsT);
 					split(newRootConcept, posExs,  posExsT, negExsT );
 
+					
 
 					// select node concept
 					currentTree.setRoot(newRootConcept, posExs, medoidP, medoidN);		
@@ -123,10 +125,13 @@ public class TCTInducer2 {
 					ClusterTree posTree= new ClusterTree();
 					ClusterTree negTree= new ClusterTree(); // recursive calls simulation
 					currentTree.setPosTree(posTree);
+					System.out.println("Instances routed to the left branch"+ posExs.size());
 					posTree.setRoot(newRootConcept, posExs, medoidP, medoidN);
 					Negation concept2 = new Negation(newRootConcept);
 					//System.out.println("Concept to be refined right branch:"+ concept2);
 					negTree.setRoot(concept2, negExs, medoidP, medoidN);
+					System.out.println("Instances routed to the right branch: "+negExs.size());
+					System.out.println();
 					currentTree.setNegTree(negTree);
 					
 

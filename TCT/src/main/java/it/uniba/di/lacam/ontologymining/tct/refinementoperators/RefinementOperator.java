@@ -14,6 +14,7 @@ import org.dllearner.core.owl.Negation;
 import org.dllearner.core.owl.ObjectAllRestriction;
 import org.dllearner.core.owl.ObjectProperty;
 import org.dllearner.core.owl.ObjectSomeRestriction;
+import org.dllearner.core.owl.Thing;
 
 import it.uniba.di.lacam.ontologymining.tct.KnowledgeBaseHandler.KnowledgeBase;
 
@@ -49,14 +50,16 @@ public class RefinementOperator {
 			
 			// case A:  ALC and more expressive ontologies
 			do {
-				newConcept = allConcepts[KnowledgeBase.generator.nextInt(allConcepts.length)];
-				if (KnowledgeBase.generator.nextDouble() < d) {
+				
+				     newConcept = allConcepts[KnowledgeBase.generator.nextInt(allConcepts.length)];
+				
+				if (KnowledgeBase.generator.nextDouble() > 0.5) {
 				   Description newConceptBase = getRandomConcept();
-					if (KnowledgeBase.generator.nextDouble() < d) {
-						if (KnowledgeBase.generator.nextDouble() <d) { // new role restriction
+					if (KnowledgeBase.generator.nextDouble() >0.5) {
+						if (KnowledgeBase.generator.nextDouble() <0.7) { // new role restriction
 							ObjectProperty role = allRoles[KnowledgeBase.generator.nextInt(allRoles.length)];
 							//					OWLDescription roleRange = (OWLDescription) role.getRange;
-							if (KnowledgeBase.generator.nextDouble() < d)
+							if (KnowledgeBase.generator.nextDouble() < 0.9)
 								newConcept = new ObjectAllRestriction(role, newConceptBase);
 							else
 								newConcept = new ObjectSomeRestriction(role, newConceptBase);
@@ -66,7 +69,7 @@ public class RefinementOperator {
 					}
 				} // else ext
 				
-			} while (!((kb.getReasoner().getIndividuals(newConcept).size())>0));
+			} while ((newConcept instanceof Thing) &&(!((kb.getReasoner().getIndividuals(newConcept).size())>0)));
 						
 //		}
 
@@ -82,7 +85,16 @@ public class RefinementOperator {
 		for (int c=0; c<dim; c++) {
 			do {
 				emptyIntersection =  true;
-				newConcept =  new Intersection(father,getRandomConcept());
+				
+				Description randomConcept =getRandomConcept();
+//				boolean contains = kb.getReasoner().getSuperClasses(randomConcept).contains(father);
+				if (!(father instanceof Thing))
+				newConcept =  randomConcept; //contains? randomConcept:
+				else {if ((kb.getReasoner().getSuperClasses(randomConcept).contains(father))) 	
+				newConcept =  randomConcept;
+				else
+					newConcept=new Intersection(father,randomConcept);
+				}
 				Set<Individual> individuals = (kb.getReasoner()).getIndividuals(newConcept);
 				Iterator<Individual> instIterator = individuals.iterator();
 				while (emptyIntersection && instIterator.hasNext()) {
@@ -95,7 +107,7 @@ public class RefinementOperator {
 					else if (negExs.contains(index))
 						emptyIntersection = false;
 				}					
-			} while (emptyIntersection && newConcept.getLength()<4);
+			} while (emptyIntersection);
 			rConcepts.add(newConcept);
 			System.out.printf("%d ", c);
 		}

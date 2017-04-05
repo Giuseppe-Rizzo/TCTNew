@@ -86,16 +86,17 @@ static it.uniba.di.lacam.ontologymining.tct.KnowledgeBaseHandler.KnowledgeBase k
 			ArrayList<Integer> list= new ArrayList<Integer>();
 			for (int i = 0; i<individuals.length;i++)
 				list.add(i);
-			ClusterTree induceDLTree = t.induceDLTree(list, new ArrayList<Integer>(),  new ArrayList<Integer>(), 4, op);
+			ClusterTree induceDLTree = t.induceDLTree(list, new ArrayList<Integer>(),  new ArrayList<Integer>(), 50, op);
 			//System.out.println(induceDLTree);	 
 			final ArrayList<Couple<Description,Description>> extractDisjointnessAxiom = t.extractDisjointnessAxiom(induceDLTree);
 			System.out.println("Number of axioms: "+ extractDisjointnessAxiom.size());
 			resultsAxs[j-1]= extractDisjointnessAxiom.size();
 			int nInc=0;
 			for (Couple<Description,Description> c:extractDisjointnessAxiom){
+				System.out.println("Axiom: "+ c.getFirstElement()+ "disjoint with"+ c.getSecondElement());
 			    if (reasoner.getIndividuals(new Intersection(c.getFirstElement(),c.getSecondElement())).size()!=0){
 			    	nInc++;
-			    	//System.out.println("Number of inconsistencies: "+ nInc);
+			    	
 			    }
 			}
 			System.out.println("Number of inconsistencies: "+ nInc);
