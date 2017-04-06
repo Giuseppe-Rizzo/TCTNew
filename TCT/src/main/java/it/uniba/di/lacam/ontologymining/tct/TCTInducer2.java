@@ -85,7 +85,7 @@ public class TCTInducer2 {
 				currentTree.setRoot(null, posExs, null, null); // set positive leaf
 			else{
 				long currentTime=System.currentTimeMillis(); // time out for making the approach more scalable
-				if (currentTime-startingTime>10000)
+				if (currentTime-startingTime>20000)
 					currentTree.setRoot(null, posExs, null, null);
 				else{
 					//System.out.println(currentTree.getRoot() instanceof Negation);
@@ -182,7 +182,7 @@ public class TCTInducer2 {
 			Integer medoidP=  trueExs.isEmpty()?getMedoid(posExs): getMedoid(trueExs); // compute the overlap between individuals 
 			Integer  medoidN= falseExs.isEmpty()? getMedoid(posExs): getMedoid(falseExs);
 
-			double simpleEntropyDistance = FeaturesDrivenDistance.simpleDistance(medoidP, medoidN);
+			double simpleEntropyDistance = FeaturesDrivenDistance.simpleDistance1(medoidP, medoidN);
 			if (simpleEntropyDistance>= maxDiff){
 				maxDiff= simpleEntropyDistance;
 				bestConcept= cConcepts[i];
@@ -215,7 +215,7 @@ public class TCTInducer2 {
 			for (Integer integer : trueExs) {
 				double sumDistance= 0.0f;
 				for (Integer integer2 : trueExs) {
-					sumDistance+=FeaturesDrivenDistance.simpleDistance(integer, integer2);
+					sumDistance+=FeaturesDrivenDistance.simpleDistance1(integer, integer2);
 
 				}
 
@@ -303,7 +303,7 @@ public class TCTInducer2 {
 
 			for (int j=0; j<concepts.size();j++){
 				Description  d= concepts.get(j);
-				if (!(c.equals(d))){
+				if (!(c.equals(d))&& !(result.contains(new Couple(c,d))&& (!(result.contains(new Couple(d,c)))))){
 					if (kb.getReasoner().getIndividuals(new Intersection(c,d)).size()<5)
 					element.setFirstElement(c);
 					element.setSecondElement(d);

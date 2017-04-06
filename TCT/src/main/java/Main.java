@@ -81,6 +81,7 @@ static it.uniba.di.lacam.ontologymining.tct.KnowledgeBaseHandler.KnowledgeBase k
  	}
 		else if (args[0].equalsIgnoreCase("tct")){	
 //			//TODO da decommentare	
+			System.out.println("Learning algorithm: Terminological Cluster Tree");
 			TCTInducer2 t = new TCTInducer2(kb);
 			RefinementOperator op = new RefinementOperator(kb);
 			ArrayList<Integer> list= new ArrayList<Integer>();
@@ -92,17 +93,24 @@ static it.uniba.di.lacam.ontologymining.tct.KnowledgeBaseHandler.KnowledgeBase k
 			System.out.println("Number of axioms: "+ extractDisjointnessAxiom.size());
 			resultsAxs[j-1]= extractDisjointnessAxiom.size();
 			int nInc=0;
+			TreeSet<String> out= new TreeSet<String>();
 			for (Couple<Description,Description> c:extractDisjointnessAxiom){
-				System.out.println("Axiom: "+ c.getFirstElement()+ "disjoint with"+ c.getSecondElement());
+				out.add("Axiom: "+ c.getFirstElement()+ "  disjoint with "+ c.getSecondElement());
 			    if (reasoner.getIndividuals(new Intersection(c.getFirstElement(),c.getSecondElement())).size()!=0){
 			    	nInc++;
 			    	
 			    }
 			}
+			for(String s: out){
+				
+				System.out.println(s);
+			}
+			
 			System.out.println("Number of inconsistencies: "+ nInc);
 			resultsInc[j-1]= nInc;
 		}
 		else  if ( (args[0].equalsIgnoreCase("corr"))){
+			System.out.println("Learning algorithm: pearson's correlation coefficient");
 			Correlations corr= new Correlations(reasoner, classes, individuals);
 			final ArrayList<Couple<Description,Description>> extractDisjointnessAxiom = corr.computeCorrelation();
 			System.out.println("Number of axioms: "+ extractDisjointnessAxiom.size());

@@ -1,5 +1,7 @@
 package it.uniba.di.lacam.ontologymining.tct.utils;
 
+import org.dllearner.core.owl.Description;
+
 public class Couple<S,T> {
 	 private S firstElement;
 	 private T secondElement;
@@ -7,6 +9,12 @@ public class Couple<S,T> {
 	public  Couple(){
 		
 		
+	}
+
+	public Couple(S c, T d) {
+		// TODO Auto-generated constructor stub
+	this.firstElement=c;
+	this.secondElement=d;
 	}
 
 	public S getFirstElement() {

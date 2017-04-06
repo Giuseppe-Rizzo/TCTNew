@@ -73,13 +73,32 @@ public class FeaturesDrivenDistance {
 
  * @return the (semi-)distance measure between the individuals
  */	
-	public static double sqrDistance(int ind1, int ind2) {
+	public static double sqrDistance2(int ind1, int ind2) {
 		double acc = 0;
 		for (int h=0; h<pi.length; h++) {	
-			acc += Math.pow(pi[h][ind1] - pi[h][ind2], 2); 
+			acc += Math.pow(1-(pi[h][ind1]* pi[h][ind2]), 2); 
 		}
 		return (double)Math.sqrt(acc)/(2*pi.length);
 	} // distance
+	
+
+	/**
+	 * 
+	 * @param ind1 first individual index
+	 * @param ind2 second individual index
+	 * @param dim dimension of the comparison
+
+	 * @return the (semi-)distance measure between the individuals
+	 */	
+		public static double sqrDistance1(int ind1, int ind2) {
+			double acc = 0;
+			for (int h=0; h<pi.length; h++) {	
+				acc += Math.pow(pi[h][ind1] - pi[h][ind2], 2); 
+			}
+			return (double)Math.sqrt(acc)/(2*pi.length);
+		} // distance
+	
+	
 	
 /**
  * 
@@ -88,7 +107,7 @@ public class FeaturesDrivenDistance {
  * @param dim no dimensions 
  * @return
  */
-	public static double simpleDistance(int ind1, int ind2) {
+	public static double simpleDistance1(int ind1, int ind2) {
 		double acc = 0;
 
 		for (int f=0; f<pi.length; f++) {	
@@ -97,6 +116,16 @@ public class FeaturesDrivenDistance {
 		return acc/(2*pi.length); // divisione per 2 perche' doppi in pi
 	} // distance
 	
+
+	public static double simpleDistance2(int ind1, int ind2) {
+		double acc = 0;
+
+		for (int f=0; f<pi.length; f++) {	
+			acc += Math.abs(1-(pi[f][ind1]* pi[f][ind2])); 
+		}
+		return acc/(2*pi.length); // divisione per 2 perche' doppi in pi
+	} // distance
+
 	
 	public static double simpleEntropyDistance(int ind1, int ind2) {
 		double acc = 0;
@@ -108,7 +137,37 @@ public class FeaturesDrivenDistance {
 	} // distance
 	
 	
+	public static double simpleEntropyDistance2(int ind1, int ind2) {
+		double acc = 0;
 
+		for (int f=0; f<pi.length; f++) {	
+			acc += featureEntropy[f] * (1-Math.abs(pi[f][ind1]* pi[f][ind2])); 
+		}
+		return acc/(2*pi.length); // divisione per 2 perche' doppi in pi 
+	} // distance
+
+	
+	public static double distance(Distances d, int ind1, int ind2){
+		if (d== Distances.simpleDistance1)
+			return simpleDistance1(ind1,ind2);
+		if (d== Distances.simpleDistance2)
+			return simpleDistance2(ind1,ind2);
+
+		if (d==Distances.entropicSimpleDistance1)
+			return simpleEntropyDistance(ind1,ind2);
+		if (d==Distances.entropicSimpleDistance2)
+			return simpleEntropyDistance2(ind1,ind2);
+		if (d==Distances.sqrtDistance1)
+			return sqrDistance1(ind1,ind2);
+		//if (d==Distances.sqrtDistance2)
+			return sqrDistance2(ind1,ind2);
+		//if (s.compareToIgnoreCase("entropicDistance1")==0)
+			//return entropicSimpleDistance;
+		//if (s.compareToIgnoreCase("entropicDistance2")==0)
+			//return entropicSimpleDistance2;
+		
+		//return null;
+	}
 	
 	
 	static void saveProjections(File oFile) {

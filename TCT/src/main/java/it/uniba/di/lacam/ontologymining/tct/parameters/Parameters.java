@@ -7,6 +7,8 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.util.Properties;
 
+import it.uniba.di.lacam.ontologymining.tct.distances.Distances;
+
 
 //import evaluation.task.Tasks;
 
@@ -25,11 +27,12 @@ public class Parameters {
 		//	originalImbalance =Double.parseDouble(props.getProperty("originalImbalance"));
 			NFOLDS = Integer.parseInt(props.getProperty("NFOLDS"));
 		//	task = Tasks.valueOf( props.getProperty("task")); //AFFILIATIONPROBLEM; //POLITICIANPREDICTION; //MUTAGENICPREDICTION; //POLITICIANPREDICTION;//
-			NUMGENCONCEPTS = Integer.parseInt(props.getProperty("NUMGENCONCEPTS"));
+			distance= Distances.value(props.getProperty("distance"));
+			//NUMGENCONCEPTS = Integer.parseInt(props.getProperty("NUMGENCONCEPTS"));
 			beam = Integer.parseInt(props.getProperty("beam"));
 			//NTREES = Integer.parseInt(props.getProperty("NTREES"));
 			SEED = Integer.parseInt(props.getProperty("SEED"));
-			PURITY_THRESHOLD = Double.parseDouble( props.getProperty("PURITY_THRESHOLD"));
+			//PURITY_THRESHOLD = Double.parseDouble( props.getProperty("PURITY_THRESHOLD"));
 		//	pruning = PruningType.valueOf(props.getProperty("pruning")); //PruningType.NOPRUNING;
 			/* Tipo di classificazione */
 			//missingValueTreatmentForTDT = Boolean.parseBoolean(props.getProperty("missingValueTreatmentForTDT"));//true;
@@ -42,6 +45,7 @@ public class Parameters {
 			refinementOperator=props.getProperty("refinementoperator");
 			//CCP = Boolean.parseBoolean(props.getProperty("CCP"));
 			//mutagenicAsDataPropertyPrediction=Boolean.parseBoolean(props.getProperty("mutagenicAsDataPropertyPrediction"));
+	
 			
 		} catch (FileNotFoundException e) {
 			// TODO Auto-generated catch block
@@ -68,6 +72,7 @@ public class Parameters {
 	//public static int NTREES;
 	public static int SEED;
 	public static double PURITY_THRESHOLD;
+	public static Distances distance;
 	 //PruningType.NOPRUNING;
 	/* Tipo di classificazione */
 	//public static boolean missingValueTreatmentForTDT;//true;
