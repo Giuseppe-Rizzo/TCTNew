@@ -182,7 +182,7 @@ public class TCTInducer2 {
 			Integer medoidP=  trueExs.isEmpty()?getMedoid(posExs): getMedoid(trueExs); // compute the overlap between individuals 
 			Integer  medoidN= falseExs.isEmpty()? getMedoid(posExs): getMedoid(falseExs);
 
-			double simpleEntropyDistance = FeaturesDrivenDistance.simpleDistance1(medoidP, medoidN);
+			double simpleEntropyDistance = FeaturesDrivenDistance.distance(Parameters.distance,medoidP, medoidN);
 			if (simpleEntropyDistance>= maxDiff){
 				maxDiff= simpleEntropyDistance;
 				bestConcept= cConcepts[i];
@@ -215,7 +215,7 @@ public class TCTInducer2 {
 			for (Integer integer : trueExs) {
 				double sumDistance= 0.0f;
 				for (Integer integer2 : trueExs) {
-					sumDistance+=FeaturesDrivenDistance.simpleDistance1(integer, integer2);
+					sumDistance+=FeaturesDrivenDistance.distance(Parameters.distance,integer, integer2);
 
 				}
 
