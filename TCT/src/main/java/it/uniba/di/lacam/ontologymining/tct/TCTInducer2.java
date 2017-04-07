@@ -18,6 +18,8 @@ import org.dllearner.core.owl.Negation;
 import org.dllearner.core.owl.Nothing;
 import org.dllearner.core.owl.Thing;
 
+import com.fasterxml.jackson.core.JsonFactory.Feature;
+
 
 
 
@@ -95,11 +97,11 @@ public class TCTInducer2 {
 
 					generateNewConcepts=op.generateNewConcepts(currentTree.getRoot(),Parameters.beam, posExs, negExs); // genera i concetti sulla base degli esempi
 
-					
+
 					Description[] cConcepts= new Description[0];
 					//
 					cConcepts = generateNewConcepts.toArray(cConcepts);
-				
+
 					// select node concept
 					Description newRootConcept =  selectConceptWithMinOverlap(cConcepts, posExs) ; //(Parameters.CCP?(selectBestConceptCCP(cConcepts, posExs, negExs, undExs, prPos, prNeg, truePos, trueNeg)):(selectBestConcept(cConcepts, posExs, negExs, undExs, prPos, prNeg));
 					System.out.println("Best Concept:"+newRootConcept);
@@ -111,29 +113,29 @@ public class TCTInducer2 {
 					ArrayList<Integer> negExsF = new ArrayList<Integer>();
 					ArrayList<Integer> undExsF = new ArrayList<Integer>();
 
-					splitInstanceCheck(newRootConcept, posExs, posExsT, negExsT, undExsT);
-					Integer medoidP = getMedoid(posExsT);
-					Integer medoidN = getMedoid(negExsT);
-					split(newRootConcept, posExs,  posExsT, negExsT );
+//					splitInstanceCheck(newRootConcept, posExs, posExsT, negExsT, undExsT);
+//					Integer medoidP = getMedoid(posExsT);
+//					Integer medoidN = getMedoid(negExsT);
+					split(newRootConcept, posExs,  posExsT, negExsT);
 
-					
+
 
 					// select node concept
-					currentTree.setRoot(newRootConcept, posExs, medoidP, medoidN);		
+					currentTree.setRoot(newRootConcept, posExs, null, null);		
 					// build subtrees
 					//		undExsT = union(undExsT,);
 					ClusterTree posTree= new ClusterTree();
 					ClusterTree negTree= new ClusterTree(); // recursive calls simulation
 					currentTree.setPosTree(posTree);
 					System.out.println("Instances routed to the left branch"+ posExs.size());
-					posTree.setRoot(newRootConcept, posExs, medoidP, medoidN);
+					posTree.setRoot(newRootConcept, posExsT, null, null);
 					Negation concept2 = new Negation(newRootConcept);
 					//System.out.println("Concept to be refined right branch:"+ concept2);
-					negTree.setRoot(concept2, negExs, medoidP, medoidN);
+					negTree.setRoot(concept2, negExsT, null, null);
 					System.out.println("Instances routed to the right branch: "+negExs.size());
 					System.out.println();
 					currentTree.setNegTree(negTree);
-					
+
 
 
 					Npla<ArrayList<Integer>, ArrayList<Integer>, ArrayList<Integer>, Integer, Double, Double> npla1 = new Npla<ArrayList<Integer>,ArrayList<Integer>,ArrayList<Integer>, Integer, Double, Double>(posExsT, posExsF, undExsT, dim, 0.0, 0.0);
@@ -148,14 +150,14 @@ public class TCTInducer2 {
 					neg.setSecondElement(npla2);
 					stack.push(pos);
 					stack.push(neg);
-					
 
-					}
-//				}		
-					}
+
+				}
+				//				}		
 			}
-			return tree;
-		
+		}
+		return tree;
+
 	}
 
 
@@ -178,11 +180,12 @@ public class TCTInducer2 {
 			ArrayList<Integer> trueExs= new ArrayList<Integer>();
 			ArrayList<Integer> falseExs= new ArrayList<Integer>();
 			ArrayList<Integer> undExs= new ArrayList<Integer>();
-			splitInstanceCheck(cConcepts[i], posExs, trueExs, falseExs, undExs);
-			Integer medoidP=  trueExs.isEmpty()?getMedoid(posExs): getMedoid(trueExs); // compute the overlap between individuals 
-			Integer  medoidN= falseExs.isEmpty()? getMedoid(posExs): getMedoid(falseExs);
+			split(cConcepts[i], posExs, trueExs, falseExs);
+			Integer medoidP=  getMedoid(trueExs); // compute the overlap between individuals 
+			Integer  medoidN= getMedoid(falseExs);
+			System.out.println(medoidP+ "-"+medoidN);
 
-			double simpleEntropyDistance = FeaturesDrivenDistance.distance(Parameters.distance,medoidP, medoidN);
+			double simpleEntropyDistance = (medoidP ==null) || (medoidN==null)?0:FeaturesDrivenDistance.distance(Parameters.distance,medoidP, medoidN);
 			if (simpleEntropyDistance>= maxDiff){
 				maxDiff= simpleEntropyDistance;
 				bestConcept= cConcepts[i];
@@ -256,14 +259,55 @@ public class TCTInducer2 {
 	}
 
 
-	private void split(Description newRootConcept, ArrayList<Integer> posExs,
-			ArrayList<Integer> posExsT,
-			ArrayList<Integer> negExsT) {
-		// TODO Auto-generated method stub
+	private void split (Description concept, ArrayList<Integer> iExs, ArrayList<Integer> posExs, ArrayList<Integer> negExs) {
+
+		ArrayList<Integer> exs=(ArrayList<Integer>)iExs.clone();
+		ArrayList<Integer> posExsT= new ArrayList<Integer>();
+		ArrayList<Integer> negExsT=new ArrayList<Integer>();;
+		ArrayList<Integer> undExsT=new ArrayList<Integer>();;
+		splitInstanceCheck(concept,exs,posExsT,negExsT,undExsT); // split according to instance check
+
+		System.out.println("Exs:"+ exs.size()+ "  l: "+posExsT.size()+ " r: "+negExsT.size());
+		if (posExsT.isEmpty())
+			fillSet(posExsT, negExsT,0.6);
+			System.out.println("Exs:"+ exs.size()+ "  l: "+posExsT.size()+ "  r: "+negExsT.size());
+		Integer posMedoid= getMedoid(posExsT);
+		if (negExsT.isEmpty())
+			fillSet(negExsT, posExsT,0.6);
+		Integer negMedoid= getMedoid(negExsT);
+		
+
+		for (Integer ind: exs) //split according to the closeness to the medoid
+			if (FeaturesDrivenDistance.distance(Parameters.distance, ind, posMedoid) <= FeaturesDrivenDistance.distance(Parameters.distance, ind, negMedoid))
+				posExs.add(ind);
+			else
+				negExs.add(ind);
 
 
 	}
 
+
+
+	private void fillSet(ArrayList<Integer> toFill, ArrayList<Integer> exs, double d) {
+		// TODO Auto-generated method stub
+		Integer medoid= getMedoid(exs);
+		for (Integer i: exs)
+			if (FeaturesDrivenDistance.distance(Parameters.distance, i, medoid)>d){
+				toFill.add(i);
+			}
+		
+		
+		if (toFill.isEmpty()){
+		 int j = (exs.size()/3)+1;
+		 System.out.println(exs.size());
+		 System.out.println(j);
+		for (int i=0;i< j;i++)
+			 toFill.add(exs.get(i));
+		}
+		
+		exs.removeAll(toFill);
+	
+	}
 
 
 	public ArrayList<Description> extractDisjointnessAxiom (Description  fatherDescription, ClusterTree  tree){
@@ -280,7 +324,7 @@ public class TCTInducer2 {
 					root;
 			Description currentDescriptionRight= //fatherDescription !=null? new Intersection( new Negation(fatherDescription),new Negation(root)): 
 					new Negation(root);
-			
+
 			ArrayList<Description> toAdd= new ArrayList<Description>();
 			ArrayList<Description> toAdd2= new ArrayList<Description>();
 			toAdd.addAll(extractDisjointnessAxiom(currentDescriptionLeft, tree.getPos()));
@@ -305,7 +349,7 @@ public class TCTInducer2 {
 				Description  d= concepts.get(j);
 				if (!(c.equals(d))&& !(result.contains(new Couple(c,d))&& (!(result.contains(new Couple(d,c)))))){
 					if (kb.getReasoner().getIndividuals(new Intersection(c,d)).size()<5)
-					element.setFirstElement(c);
+						element.setFirstElement(c);
 					element.setSecondElement(d);
 					result.add(element);
 					//System.out.println(c +" disjoint With "+d);
