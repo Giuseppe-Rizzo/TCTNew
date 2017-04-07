@@ -11,8 +11,8 @@ Each method can be invoked by passing as argument on of the following value: "tc
 The progam can be configured modifying the file experiments.properties that contains the value of the following parameters:
 - the seed for controlling the random aspects of the algorithms
 - FOLDS, the number of run required for the experiments
--beam, the number of candidate refinements generated viaa refinement operator and used as features of the tree
--the distance measure adopted by the terminologicla cluster tree induction algorithm (admissible values: simpleDistance1,
-	simpleDistance2, entropicSimpleDistance1, entropicSimpleDistance2, sqrtDistance1,	sqrtDistance2)
+- beam, the number of candidate refinements generated via refinement operator and used as features of the tree
+- the distance measure adopted by the terminologicla cluster tree induction algorithm (admissible values: simpleDistance1,
+	simpleDistance2, entropicSimpleDistance1, entropicSimpleDistance2, sqrtDistance1, sqrtDistance2)
 
 # 
