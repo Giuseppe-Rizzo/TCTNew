@@ -23,11 +23,11 @@ import com.fasterxml.jackson.core.JsonFactory.Feature;
 
 
 
-
-
-
-
-
+/**
+ *  A class for inducing terminological cluster trees
+ * @author Giuseppe Rizzo
+ *
+ */
 
 public class TCTInducer2 {
 
@@ -258,7 +258,13 @@ public class TCTInducer2 {
 		}			
 	}
 
-
+/**
+ * Split according to the closeness w.r.t. the medoids
+ * @param concept
+ * @param iExs
+ * @param posExs
+ * @param negExs
+ */
 	private void split (Description concept, ArrayList<Integer> iExs, ArrayList<Integer> posExs, ArrayList<Integer> negExs) {
 
 		ArrayList<Integer> exs=(ArrayList<Integer>)iExs.clone();
@@ -288,6 +294,12 @@ public class TCTInducer2 {
 
 
 
+/**
+ * Extract a subset of the farthest individuals from the medoid
+ * @param toFill, the subset of individuals that are far from the medoid of the srt of indivduals 
+ * @param exs, the set of individuals for which a medoid is computed
+ * @param d
+ */
 	private void fillSet(ArrayList<Integer> toFill, ArrayList<Integer> exs, double d) {
 		// TODO Auto-generated method stub
 		Integer medoid= getMedoid(exs);
@@ -296,7 +308,8 @@ public class TCTInducer2 {
 				toFill.add(i);
 			}
 		
-		
+		//worst case: all the individuals are close to the medoid
+		//solutio: pick a fraction of individuals randomly (the first j individuals in exs)
 		if (toFill.isEmpty()){
 		 int j = (exs.size()/3)+1;
 		 //System.out.println(exs.size());
