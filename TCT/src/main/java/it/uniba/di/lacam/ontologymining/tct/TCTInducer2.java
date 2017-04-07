@@ -127,12 +127,12 @@ public class TCTInducer2 {
 					ClusterTree posTree= new ClusterTree();
 					ClusterTree negTree= new ClusterTree(); // recursive calls simulation
 					currentTree.setPosTree(posTree);
-					System.out.println("Instances routed to the left branch"+ posExs.size());
+					System.out.println("Instances routed to the left branch"+ posExsT.size());
 					posTree.setRoot(newRootConcept, posExsT, null, null);
 					Negation concept2 = new Negation(newRootConcept);
 					//System.out.println("Concept to be refined right branch:"+ concept2);
 					negTree.setRoot(concept2, negExsT, null, null);
-					System.out.println("Instances routed to the right branch: "+negExs.size());
+					System.out.println("Instances routed to the right branch: "+negExsT.size());
 					System.out.println();
 					currentTree.setNegTree(negTree);
 
@@ -183,7 +183,7 @@ public class TCTInducer2 {
 			split(cConcepts[i], posExs, trueExs, falseExs);
 			Integer medoidP=  getMedoid(trueExs); // compute the overlap between individuals 
 			Integer  medoidN= getMedoid(falseExs);
-			System.out.println(medoidP+ "-"+medoidN);
+			//System.out.println(medoidP+ "-"+medoidN);
 
 			double simpleEntropyDistance = (medoidP ==null) || (medoidN==null)?0:FeaturesDrivenDistance.distance(Parameters.distance,medoidP, medoidN);
 			if (simpleEntropyDistance>= maxDiff){
@@ -267,10 +267,10 @@ public class TCTInducer2 {
 		ArrayList<Integer> undExsT=new ArrayList<Integer>();;
 		splitInstanceCheck(concept,exs,posExsT,negExsT,undExsT); // split according to instance check
 
-		System.out.println("Exs:"+ exs.size()+ "  l: "+posExsT.size()+ " r: "+negExsT.size());
+		//System.out.println("Exs:"+ exs.size()+ "  l: "+posExsT.size()+ " r: "+negExsT.size());
 		if (posExsT.isEmpty())
 			fillSet(posExsT, negExsT,0.6);
-			System.out.println("Exs:"+ exs.size()+ "  l: "+posExsT.size()+ "  r: "+negExsT.size());
+			//System.out.println("Exs:"+ exs.size()+ "  l: "+posExsT.size()+ "  r: "+negExsT.size());
 		Integer posMedoid= getMedoid(posExsT);
 		if (negExsT.isEmpty())
 			fillSet(negExsT, posExsT,0.6);
@@ -299,8 +299,8 @@ public class TCTInducer2 {
 		
 		if (toFill.isEmpty()){
 		 int j = (exs.size()/3)+1;
-		 System.out.println(exs.size());
-		 System.out.println(j);
+		 //System.out.println(exs.size());
+		 //System.out.println(j);
 		for (int i=0;i< j;i++)
 			 toFill.add(exs.get(i));
 		}
