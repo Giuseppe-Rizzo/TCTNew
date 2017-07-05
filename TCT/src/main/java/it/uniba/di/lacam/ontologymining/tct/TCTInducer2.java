@@ -5,11 +5,13 @@ import it.uniba.di.lacam.ontologymining.tct.distances.FeaturesDrivenDistance;
 import it.uniba.di.lacam.ontologymining.tct.parameters.Parameters;
 import it.uniba.di.lacam.ontologymining.tct.refinementoperators.RefinementOperator;
 import it.uniba.di.lacam.ontologymining.tct.refinementoperators.RhoRefinementOperator;
+import it.uniba.di.lacam.ontologymining.tct.refinementoperators.SparkRefinementOperator;
 import it.uniba.di.lacam.ontologymining.tct.utils.*;
 
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
+import java.util.SortedSet;
 import java.util.Stack;
 
 import org.dllearner.core.owl.Description;
@@ -87,7 +89,7 @@ public class TCTInducer2 {
 				currentTree.setRoot(null, posExs, null, null); // set positive leaf
 			else{
 				long currentTime=System.currentTimeMillis(); // time out for making the approach more scalable
-				if (currentTime-startingTime>20000)
+				if (currentTime-startingTime>10000)
 					currentTree.setRoot(null, posExs, null, null);
 				else{
 					//System.out.println(currentTree.getRoot() instanceof Negation);
@@ -95,7 +97,7 @@ public class TCTInducer2 {
 					//System.out.println("Concept to be refined:"+currentTree.getRoot());
 					ArrayList<Description> generateNewConcepts = null;
 
-					generateNewConcepts=op.generateNewConcepts(currentTree.getRoot(),Parameters.beam, posExs, negExs); // genera i concetti sulla base degli esempi
+					generateNewConcepts= op instanceof SparkRefinementOperator? ((SparkRefinementOperator)op).generateNewConcepts(currentTree.getRoot(),Parameters.beam, posExs, negExs): op.generateNewConcepts(currentTree.getRoot(),Parameters.beam, posExs, negExs); // genera i concetti sulla base degli esempi
 
 
 					Description[] cConcepts= new Description[0];
@@ -181,11 +183,11 @@ public class TCTInducer2 {
 			ArrayList<Integer> falseExs= new ArrayList<Integer>();
 			ArrayList<Integer> undExs= new ArrayList<Integer>();
 			split(cConcepts[i], posExs, trueExs, falseExs);
-			Integer medoidP=  getMedoid(trueExs); // compute the overlap between individuals 
-			Integer  medoidN= getMedoid(falseExs);
+			//Integer medoidP=  getMedoid(trueExs); // compute the overlap between individuals 
+			//Integer  medoidN= getMedoid(falseExs);
 			//System.out.println(medoidP+ "-"+medoidN);
-
-			double simpleEntropyDistance = (medoidP ==null) || (medoidN==null)?0:FeaturesDrivenDistance.distance(Parameters.distance,medoidP, medoidN);
+			double simpleEntropyDistance= singlelinkage(trueExs,falseExs);
+			//double simpleEntropyDistance = (medoidP ==null) || (medoidN==null)?0:FeaturesDrivenDistance.distance(Parameters.distance,medoidP, medoidN);
 			if (simpleEntropyDistance>= maxDiff){
 				maxDiff= simpleEntropyDistance;
 				bestConcept= cConcepts[i];
@@ -202,6 +204,23 @@ public class TCTInducer2 {
 	}
 
 
+	private double singlelinkage(ArrayList<Integer> trueExs, ArrayList<Integer> falseExs) {
+		// TODO Auto-generated method stub
+		double minDistance =1.0f;
+		for (Integer integer : trueExs) {
+			for (Integer i:falseExs){
+				
+				double t=FeaturesDrivenDistance.distance(Parameters.distance, integer, i);
+				if (t>minDistance)
+					minDistance=t;
+			}
+			
+		}
+		
+		return minDistance;
+	}
+
+
 	/**
 	 * Return the medoid of a group of individuals
 	 * @param trueExs
@@ -215,11 +234,12 @@ public class TCTInducer2 {
 		else{
 			Double maxDist= Double.MIN_VALUE; // the maximum value is 1
 			Integer currentMedoid= trueExs.get(0); // the first element
+			double sumDistance= 0.0f;
 			for (Integer integer : trueExs) {
-				double sumDistance= 0.0f;
+				
 				for (Integer integer2 : trueExs) {
 					sumDistance+=FeaturesDrivenDistance.distance(Parameters.distance,integer, integer2);
-
+					
 				}
 
 				if (sumDistance> maxDist){
@@ -234,6 +254,8 @@ public class TCTInducer2 {
 
 
 	}
+
+	
 
 
 
@@ -333,10 +355,11 @@ public class TCTInducer2 {
 		}
 		else {
 
-			Description currentDescriptionLeft= //fatherDescription !=null? new Intersection(fatherDescription, root): 
-					root;
-			Description currentDescriptionRight= //fatherDescription !=null? new Intersection( new Negation(fatherDescription),new Negation(root)): 
-					new Negation(root);
+			Description currentDescriptionLeft= root; //fatherDescription !=null? new Intersection(fatherDescription, root): root;
+			Description currentDescriptionRight= //fatherDescription !=null? 
+					//new Intersection( new Negation(fatherDescription),new Negation(root))
+					//:
+						new Negation(root);
 
 			ArrayList<Description> toAdd= new ArrayList<Description>();
 			ArrayList<Description> toAdd2= new ArrayList<Description>();
@@ -358,13 +381,16 @@ public class TCTInducer2 {
 			Description  c= concepts.get(i);
 			Couple<Description,Description> element= new Couple<Description, Description>();
 
-			for (int j=0; j<concepts.size();j++){
+			for (int j=i; j<concepts.size();j++){
 				Description  d= concepts.get(j);
-				if (!(c.equals(d))&& !(result.contains(new Couple(c,d))&& (!(result.contains(new Couple(d,c)))))){
-					if (kb.getReasoner().getIndividuals(new Intersection(c,d)).size()<5)
+				if (!(c.equals(d))  && !(result.contains(new Couple(c,d))&& (!(result.contains(new Couple(d,c)))))){
+					//SortedSet<Description> subClasses1 = kb.getReasoner().getSubClasses(c);
+					//SortedSet<Description> subClasses2 = kb.getReasoner().getSubClasses(d);
+					if ((kb.getReasoner().getIndividuals(new Intersection(c,d)).size()<10)){
 						element.setFirstElement(c);
 					element.setSecondElement(d);
 					result.add(element);
+					}
 					//System.out.println(c +" disjoint With "+d);
 				}
 

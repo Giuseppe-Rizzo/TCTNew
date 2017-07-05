@@ -5,11 +5,13 @@ C:\Users\Utente\git\TCTNew\TCT\src\main\java\it\uniba\di\lacam\ontologymining\tc
 C:\Users\Utente\git\TCTNew\TCT\src\main\java\it\uniba\di\lacam\ontologymining\variableassociation\Correlations.java
 C:\Users\Utente\git\TCTNew\TCT\src\main\java\it\uniba\di\lacam\ontologymining\tct\utils\SetUtils.java
 C:\Users\Utente\git\TCTNew\TCT\src\main\java\Main.java
+C:\Users\Utente\git\TCTNew\TCT\src\main\java\it\uniba\di\lacam\ontologymining\tct\refinementoperators\SparkRefinementOperator.java
 C:\Users\Utente\git\TCTNew\TCT\src\main\java\it\uniba\di\lacam\ontologymining\tct\parameters\Parameters.java
 C:\Users\Utente\git\TCTNew\TCT\src\main\java\it\uniba\di\lacam\ontologymining\tct\KnowledgeBaseHandler\KnowledgeBase.java
 C:\Users\Utente\git\TCTNew\TCT\src\main\java\it\uniba\di\lacam\ontologymining\tct\refinementoperators\RefinementOperator.java
 C:\Users\Utente\git\TCTNew\TCT\src\main\java\it\uniba\di\lacam\ontologymining\tct\distances\FeatureConstruction.java
 C:\Users\Utente\git\TCTNew\TCT\src\main\java\it\uniba\di\lacam\ontologymining\tct\ClusterTree.java
+C:\Users\Utente\git\TCTNew\TCT\src\main\java\it\uniba\di\lacam\ontologymining\tct\utils\SparkConfiguration.java
 C:\Users\Utente\git\TCTNew\TCT\src\main\java\it\uniba\di\lacam\ontologymining\tct\refinementoperators\RhoRefinementOperator.java
 C:\Users\Utente\git\TCTNew\TCT\src\main\java\it\uniba\di\lacam\ontologymining\tct\TCTInducer2.java
 C:\Users\Utente\git\TCTNew\TCT\src\main\java\it\uniba\di\lacam\ontologymining\tct\utils\Generator.java
