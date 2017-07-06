@@ -3,6 +3,8 @@ import it.uniba.di.lacam.ontologymining.tct.*;
 import it.uniba.di.lacam.ontologymining.tct.distances.*;
 import it.uniba.di.lacam.ontologymining.tct.parameters.Parameters;
 import it.uniba.di.lacam.ontologymining.tct.refinementoperators.RefinementOperator;
+import it.uniba.di.lacam.ontologymining.tct.refinementoperators.SparkConfiguration;
+import it.uniba.di.lacam.ontologymining.tct.refinementoperators.SparkRefinementOperator;
 import it.uniba.di.lacam.ontologymining.tct.utils.Couple;
 import it.uniba.di.lacam.ontologymining.tct.utils.MathUtils;
 import it.uniba.di.lacam.ontologymining.variableassociation.Apriori;
@@ -49,6 +51,9 @@ public class Main {
 		System.out.println(Parameters.urlOwlFile);
 		kb = new it.uniba.di.lacam.ontologymining.tct.KnowledgeBaseHandler.KnowledgeBase(Parameters.urlOwlFile);
 
+		SparkConfiguration conf=null;
+		//if (args[0]=="tct")
+			conf= new SparkConfiguration();
 		//	Reasoner r=;
 		double [] resultsAxs = new double[Parameters.NFOLDS];
 		double [] resultsInc = new double[Parameters.NFOLDS];
@@ -84,7 +89,9 @@ public class Main {
 				//			//TODO da decommentare	
 				System.out.println("Learning algorithm: Terminological Cluster Tree");
 				TCTInducer2 t = new TCTInducer2(kb);
-				RefinementOperator op = new RefinementOperator(kb);
+				//RefinementOperator op = new RefinementOperator(kb);
+				SparkRefinementOperator op= new SparkRefinementOperator(kb);
+				System.out.println(op);
 				ArrayList<Integer> list= new ArrayList<Integer>();
 				for (int i = 0; i<individuals.length;i++)
 					list.add(i);

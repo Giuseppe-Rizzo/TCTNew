@@ -18,11 +18,14 @@ import org.dllearner.core.owl.Negation;
 import org.dllearner.core.owl.ObjectAllRestriction;
 import org.dllearner.core.owl.ObjectProperty;
 import org.dllearner.core.owl.ObjectSomeRestriction;
+import org.dllearner.reasoning.FastInstanceChecker;
 //import org.semanticweb.owlapi.model.OWLClassExpression;
 import org.semanticweb.owlapi.model.OWLDataFactory;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import it.uniba.di.lacam.ontologymining.tct.KnowledgeBaseHandler.FISerializable;
+import it.uniba.di.lacam.ontologymining.tct.KnowledgeBaseHandler.KnowledgeBase;
 //import it.uniba.di.lacam.ontologymining.tct.KnowledgeBaseHandler.KnowledgeBase;
 //import it.uniba.di.lacam.ontologymining.tct.KnowledgeBaseHandler.*;
 //mport it.uniba.di.lacam.ontologymining.tct.utils.SparkConfiguration;
@@ -53,6 +56,7 @@ public class SparkRefinementOperator  extends RefinementOperator implements Seri
 	private JavaRDD<Description> rddConcepts;
 	private Random generator;
 	private AbstractReasonerComponent r;
+	private KnowledgeBase kb;
 
 	//private OWLClassExpression expressio
 	//private OWLReasoner r;
@@ -80,13 +84,15 @@ public class SparkRefinementOperator  extends RefinementOperator implements Seri
 	//	}
 
 
-	public SparkRefinementOperator (AbstractReasonerComponent k) {
+	public SparkRefinementOperator (KnowledgeBase k) {
 		super();
 		// TODO Auto-generated constructor stub
 		//p= new OWLParser(k);
 	//	System.out.println("P: "+(p==null));
 		generator= new Random();
 		//r=reasoner;
+		
+		this.kb=k;
 		//System.out.println("is Reasoner null? "+reasoner==null);
 		//kb=k;
 		this.beam=100; // set the maximum number of candidates that can be generated
@@ -96,14 +102,14 @@ public class SparkRefinementOperator  extends RefinementOperator implements Seri
 		//this.allRoles.addAll(roles);
 		this.beam= beam;
 		ArrayList<Description> allConcepts2 = new ArrayList<Description>();
-		for (Description string : k.getAtomicConceptsList()) {
+		for (Description string : k.getClasses()) {
 			allConcepts.add(string);
 
 		}
-		this.r=k;
+		//this.r=k;
 
 		//allConcepts2.addAll(allConcepts.subList(0, 50));
-		rddConcepts= SparkConfiguration.sc.parallelize(allConcepts2, 4).persist(StorageLevel.MEMORY_ONLY());
+		rddConcepts= SparkConfiguration.sc.parallelize(allConcepts, 4).persist(StorageLevel.MEMORY_ONLY());
 		//System.out.println("RDD Number of partitions: "+rddConcepts.partitions());
 		generator= new Random(2);
 		// broadcastVar = ExampleKnowledgeBase.sc.broadcast(dataFactory);
@@ -141,7 +147,7 @@ public class SparkRefinementOperator  extends RefinementOperator implements Seri
 	}
 
 
-	public JavaRDD<Description> getPallelizedConcept(Description definition, SortedSet<Individual> posExs, SortedSet<Individual> negExs ) {
+	public JavaRDD<Description> getPallelizedConcept(Description definition, ArrayList<Individual> posExs, ArrayList<Individual> negExs ) {
 		double rate = (double)getBeam()/rddConcepts.count();
 		double l = rate>1?1:rate;
 		//System.out.println("Number of concepts"+l);
@@ -204,7 +210,8 @@ public class SparkRefinementOperator  extends RefinementOperator implements Seri
 		//			}});
 
 		JavaRDD<Description> complexRefinement=baseCaserefinements.map(f-> {
-			   AbstractReasonerComponent reasoner = r;   
+			  FISerializable reasoner = (FISerializable)kb.getReasoner();
+			 
 			Description newConcept= definition;
 			Description newConceptBase= f;
 			//System.out.println("base concept: "+newConceptBase);
@@ -420,8 +427,8 @@ public class SparkRefinementOperator  extends RefinementOperator implements Seri
 
 
 
-	public JavaRDD<Description> refine(Description definition, SortedSet<Individual> instances,
-			SortedSet<Individual> neginstances, boolean complement, boolean exRestr,boolean univRestr) {
+	public JavaRDD<Description> refine(Description definition, ArrayList<Individual> instances,
+			ArrayList<Individual> neginstances, boolean complement, boolean exRestr,boolean univRestr) {
 		//JavaRDD<OWLNamedIndividual> pExsRDD = ExampleKnowledgeBase.sc.p
 
 

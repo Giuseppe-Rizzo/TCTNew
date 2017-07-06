@@ -37,7 +37,7 @@ public class SparkConfiguration implements Serializable{
 		conf.set("spark.driver.maxResultSize", "1g");
 		conf.set("spark.rdd.compress", "true");
 		conf.set( "spark.serializer", "org.apache.spark.serializer.KryoSerializer" );
-		Class[] x = {OWLDataFactory.class,AbstractReasonerComponent.class,Description.class,ObjectProperty.class,Individual.class};
+		Class[] x = {OWLDataFactory.class,org.dllearner.reasoning.FastInstanceChecker.class,AbstractReasonerComponent.class,Description.class,ObjectProperty.class,Individual.class};
 		conf.registerKryoClasses(x);
 		conf.set( "spark.serializer.buffer", "1GB" );
 		sc = new JavaSparkContext(conf);

@@ -2,6 +2,7 @@ package it.uniba.di.lacam.ontologymining.tct.KnowledgeBaseHandler;
 
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
+import java.io.Serializable;
 import java.util.List;
 import java.util.Random;
 import java.util.Set;
@@ -35,7 +36,7 @@ import uk.ac.manchester.cs.owl.owlapi.OWLDataFactoryImpl;
 /**
  *  class for implementing the knowledge base
  */
-public class KnowledgeBase  {
+public class KnowledgeBase implements Serializable {
 	static final double d = 0.3;
 	//private String urlOwlFile = "file:///C:/Users/Giuseppe/Desktop//mod-biopax-example-ecocyc-glycolysis.owl";
 	private String urlOwlFile = "file:///C:/Users/Giusepp/Desktop/Ontologie/GeoSkills.owl";
@@ -93,7 +94,7 @@ public class KnowledgeBase  {
         IRI ontologyIRI = manager.getOntologyDocumentIRI(ontology);
         OWLAPIOntology wrapper= new OWLAPIOntology(ontology);
         
-        FastInstanceChecker fi= new FastInstanceChecker(wrapper);
+        FISerializable fi= new FISerializable(wrapper);
         
         reasoner =fi;
         try {

@@ -15,6 +15,7 @@ import java.util.SortedSet;
 import java.util.Stack;
 
 import org.dllearner.core.owl.Description;
+import org.dllearner.core.owl.Individual;
 import org.dllearner.core.owl.Intersection;
 import org.dllearner.core.owl.Negation;
 import org.dllearner.core.owl.Nothing;
@@ -53,7 +54,7 @@ public class TCTInducer2 {
 	 * @return
 	 */
 	public ClusterTree induceDLTree(ArrayList<Integer> posExs, ArrayList<Integer> negExs, ArrayList<Integer> undExs, 
-			int dim, RefinementOperator op) {		
+			int dim, SparkRefinementOperator op) {		
 		System.out.printf("Learning problem\t p:%d\t n:%d\t u:%d\t prPos:%4f\t prNeg:%4f\n", 
 				posExs.size(), negExs.size(), undExs.size(), 0.5, 0.5);
 		//		ArrayList<Integer> truePos= posExs;
@@ -96,8 +97,17 @@ public class TCTInducer2 {
 
 					//System.out.println("Concept to be refined:"+currentTree.getRoot());
 					ArrayList<Description> generateNewConcepts = null;
+					
+					ArrayList<Individual> posExs2= new ArrayList<Individual>(); // from indices to individuals
+					ArrayList<Individual> negExs2= new ArrayList<Individual>();
+					for (Integer p: posExs)
+						posExs2.add(kb.getIndividuals()[p]);
+					for (Integer p: negExs)
+						negExs2.add(kb.getIndividuals()[p]);
 
-					generateNewConcepts= op instanceof SparkRefinementOperator? ((SparkRefinementOperator)op).generateNewConcepts(currentTree.getRoot(),Parameters.beam, posExs, negExs): op.generateNewConcepts(currentTree.getRoot(),Parameters.beam, posExs, negExs); // genera i concetti sulla base degli esempi
+					generateNewConcepts= //op instanceof SparkRefinementOperator?
+							
+							new ArrayList(((SparkRefinementOperator)op).refine(currentTree.getRoot(), posExs2, negExs2, true, true, true).collect()); //: op.generateNewConcepts(currentTree.getRoot(),Parameters.beam, posExs, negExs); // genera i concetti sulla base degli esempi
 
 
 					Description[] cConcepts= new Description[0];
