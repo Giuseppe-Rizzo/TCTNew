@@ -14,6 +14,7 @@ import java.util.List;
 import java.util.SortedSet;
 import java.util.Stack;
 
+import org.apache.spark.api.java.JavaRDD;
 import org.dllearner.core.owl.Description;
 import org.dllearner.core.owl.Individual;
 import org.dllearner.core.owl.Intersection;
@@ -63,7 +64,7 @@ public class TCTInducer2 {
 		long startingTime= System.currentTimeMillis();
 
 		Npla<ArrayList<Integer>,ArrayList<Integer>,ArrayList<Integer>, Integer, Double, Double> examples = new Npla<ArrayList<Integer>,ArrayList<Integer>,ArrayList<Integer>, Integer, Double, Double>(posExs, negExs, undExs, dim, 0.5, 0.5);
-		Description concept = new Intersection(new Thing(),  new Thing());
+		Description concept = new Thing();
 		ClusterTree tree = new ClusterTree((Description)concept,  posExs, 0,0); // new (sub)tree
 
 
@@ -96,7 +97,7 @@ public class TCTInducer2 {
 					//System.out.println(currentTree.getRoot() instanceof Negation);
 
 					//System.out.println("Concept to be refined:"+currentTree.getRoot());
-					ArrayList<Description> generateNewConcepts = null;
+					ArrayList<Description> generateNewConcepts = new ArrayList<Description>();
 					
 					ArrayList<Individual> posExs2= new ArrayList<Individual>(); // from indices to individuals
 					ArrayList<Individual> negExs2= new ArrayList<Individual>();
@@ -104,10 +105,17 @@ public class TCTInducer2 {
 						posExs2.add(kb.getIndividuals()[p]);
 					for (Integer p: negExs)
 						negExs2.add(kb.getIndividuals()[p]);
-
-					generateNewConcepts= //op instanceof SparkRefinementOperator?
+					//System.out.println(posExs2.size());
+					Description root = currentTree.getRoot();
+					System.out.println("--x--"+root+"---"+kb.getReasoner().getIndividuals(root).size());
+					
+					JavaRDD<Description> refine = ((SparkRefinementOperator)op).refine(root, posExs2, negExs2, true, true, true);
+					//System.out.println("# refinements: "+refine.count());
+					List<Description> collect = refine.collect();
+					generateNewConcepts.addAll(collect); //op instanceof SparkRefinementOperator?
 							
-							new ArrayList(((SparkRefinementOperator)op).refine(currentTree.getRoot(), posExs2, negExs2, true, true, true).collect()); //: op.generateNewConcepts(currentTree.getRoot(),Parameters.beam, posExs, negExs); // genera i concetti sulla base degli esempi
+							
+							; //: op.generateNewConcepts(currentTree.getRoot(),Parameters.beam, posExs, negExs); // genera i concetti sulla base degli esempi
 
 
 					Description[] cConcepts= new Description[0];
@@ -393,7 +401,7 @@ public class TCTInducer2 {
 
 			for (int j=i; j<concepts.size();j++){
 				Description  d= concepts.get(j);
-				if (!(c.equals(d))  && !(result.contains(new Couple(c,d))&& (!(result.contains(new Couple(d,c)))))){
+				if (!(c.toKBSyntaxString().equals(d.toKBSyntaxString()))){//)  && !(result.contains(new Couple(c,d)))){ //(!(result.contains(new Couple(d,c))
 					//SortedSet<Description> subClasses1 = kb.getReasoner().getSubClasses(c);
 					//SortedSet<Description> subClasses2 = kb.getReasoner().getSubClasses(d);
 					if ((kb.getReasoner().getIndividuals(new Intersection(c,d)).size()<10)){
