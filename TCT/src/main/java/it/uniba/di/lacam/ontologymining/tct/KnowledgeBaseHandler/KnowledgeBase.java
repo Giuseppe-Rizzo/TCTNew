@@ -20,6 +20,7 @@ import org.dllearner.core.owl.ObjectProperty;
 import org.dllearner.core.owl.ObjectSomeRestriction;
 import org.dllearner.kb.OWLAPIOntology;
 import org.dllearner.reasoning.FastInstanceChecker;
+import org.dllearner.reasoning.OWLAPIReasoner;
 //import org.semanticweb.owl.model.OWLImportsDeclaration;
 //import org.semanticweb.owl.util.SimpleURIMapper;
 import org.semanticweb.owlapi.apibinding.OWLManager;
@@ -28,6 +29,9 @@ import org.semanticweb.owlapi.model.OWLDataFactory;
 import org.semanticweb.owlapi.model.OWLOntology;
 import org.semanticweb.owlapi.model.OWLOntologyCreationException;
 import org.semanticweb.owlapi.model.OWLOntologyManager;
+import org.semanticweb.owlapi.reasoner.BufferingMode;
+
+import com.clarkparsia.pellet.owlapiv3.PelletReasoner;
 
 //import evaluation.Parameters;
 import uk.ac.manchester.cs.owl.owlapi.OWLDataFactoryImpl;
@@ -58,6 +62,18 @@ public class KnowledgeBase implements Serializable {
 	private  Individual[] allExamples;
 	/* Data property: proprietà, valori e domini*/
 	private AbstractReasonerComponent reasoner;
+	private PelletReasonerSerializable r;
+	
+	public PelletReasonerSerializable getR() {
+		return r;
+	}
+
+
+
+	public void setR(PelletReasonerSerializable r) {
+		this.r = r;
+	}
+
 	private  DatatypeProperty[] properties;
 	private  Individual[][] domini;
 	private int[][] classifications;
@@ -95,10 +111,15 @@ public class KnowledgeBase implements Serializable {
         OWLAPIOntology wrapper= new OWLAPIOntology(ontology);
         
         FISerializable fi= new FISerializable(wrapper);
+        		//new OWLAPIReasonerSerializable(wrapper);
+         //r = new OWLAPIReasoner(wrapper);
+        
+        //r= 
         
         reasoner =fi;
         try {
 			reasoner.init();
+			//r.init();
 		} catch (ComponentInitException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

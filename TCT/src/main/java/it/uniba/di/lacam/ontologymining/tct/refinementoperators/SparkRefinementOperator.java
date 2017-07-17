@@ -1,6 +1,8 @@
 package it.uniba.di.lacam.ontologymining.tct.refinementoperators;
 
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Iterator;
 import java.util.Random;
 import java.util.Set;
 import java.util.SortedSet;
@@ -8,6 +10,7 @@ import java.util.TreeSet;
 import java.util.stream.Stream;
 
 import org.apache.spark.api.java.JavaRDD;
+import org.apache.spark.api.java.function.FlatMapFunction;
 import org.apache.spark.broadcast.Broadcast;
 import org.apache.spark.storage.StorageLevel;
 import org.dllearner.core.AbstractReasonerComponent;
@@ -19,8 +22,12 @@ import org.dllearner.core.owl.ObjectAllRestriction;
 import org.dllearner.core.owl.ObjectProperty;
 import org.dllearner.core.owl.ObjectSomeRestriction;
 import org.dllearner.reasoning.FastInstanceChecker;
+import org.dllearner.utilities.owl.OWLAPIConverter;
+import org.semanticweb.owlapi.model.OWLClassExpression;
 //import org.semanticweb.owlapi.model.OWLClassExpression;
 import org.semanticweb.owlapi.model.OWLDataFactory;
+import org.semanticweb.owlapi.model.OWLNamedIndividual;
+import org.dllearner.reasoning.DIGConverter;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -88,10 +95,10 @@ public class SparkRefinementOperator  extends RefinementOperator implements Seri
 		super();
 		// TODO Auto-generated constructor stub
 		//p= new OWLParser(k);
-	//	System.out.println("P: "+(p==null));
+		//	System.out.println("P: "+(p==null));
 		generator= new Random();
 		//r=reasoner;
-		
+
 		this.kb=k;
 		//System.out.println("is Reasoner null? "+reasoner==null);
 		//kb=k;
@@ -99,18 +106,22 @@ public class SparkRefinementOperator  extends RefinementOperator implements Seri
 		allConcepts= new ArrayList<Description>();
 		//allConcepts.addAll(k.getClasses());
 		this.allRoles = new ArrayList<ObjectProperty>();
+
 		//this.allRoles.addAll(roles);
 		this.beam= beam;
 		ArrayList<Description> allConcepts2 = new ArrayList<Description>();
 		for (Description string : k.getClasses()) {
+			System.out.println("--"+string);
 			allConcepts.add(string);
 
 		}
+
+		allRoles.addAll(Arrays.asList(k.getRoles()));
 		//this.r=k;
 
 		//allConcepts2.addAll(allConcepts.subList(0, 50));
 		rddConcepts= SparkConfiguration.sc.parallelize(allConcepts, 4).persist(StorageLevel.MEMORY_ONLY());
-		//System.out.println("RDD Number of partitions: "+rddConcepts.partitions());
+		//System.out.println("RDD Number of partitions: "+rddConcepts.count());
 		generator= new Random(2);
 		// broadcastVar = ExampleKnowledgeBase.sc.broadcast(dataFactory);
 
@@ -150,146 +161,183 @@ public class SparkRefinementOperator  extends RefinementOperator implements Seri
 	public JavaRDD<Description> getPallelizedConcept(Description definition, ArrayList<Individual> posExs, ArrayList<Individual> negExs ) {
 		double rate = (double)getBeam()/rddConcepts.count();
 		double l = rate>1?1:rate;
-		//System.out.println("Number of concepts"+l);
+		System.out.println("Number of concepts"+definition);
+		AbstractReasonerComponent reasoner = kb.getReasoner();
 
-		JavaRDD<Description> filter = rddConcepts; //.filter(f->!f.contains("?"));
-		JavaRDD<Description> baseCaserefinements = filter.sample (true, l);
+		JavaRDD<Description> filter = rddConcepts.filter(f->!OWLAPIConverter.getOWLAPIDescription(f).isOWLThing()); //.map(f->{return OWLAPIConverter.getOWLAPIDescription(f);});
+		JavaRDD<Description> baseCaserefinements = filter.sample (false,l);
+		
+		baseCaserefinements.foreach(f->System.out.println("Atomic concept"+f));
 		if (rate>1)
 			baseCaserefinements= baseCaserefinements.union(filter.sample(true, rate-1));
 		//JavaRDD<String> baseCasesrefinementString= baseCaserefinements.map(f->ExampleKnowledgeBase.renderer.render(f));
 		//sampling rate
 		//rddConcepts.persist();
 
-		String debugString = baseCaserefinements.toDebugString();
-		System.out.println(debugString);
+		//String debugString = baseCaserefinements.toDebugString();
+		//System.out.println(debugString);
 
+		JavaRDD<Description> complexRefinement=baseCaserefinements.map(f ->{
+			//public Iterator<Description> call(Iterator<Description> i) throws Exception {
+			
+			//ArrayList<Description> refs= new ArrayList<Description>();
+			//while(i.hasNext()){
+			Description newConcept= null;
+			Description newConceptBase=f;
+			boolean emptyIntersection= true;
+			newConceptBase= f; //i.next();
 
-		//		JavaRDD<OWLClassExpression> complexRefinement=baseCaserefinements.mapPartitions(new FlatMapFunction<Iterator<OWLClass>, OWLClassExpression>() {
-		//			@Override
-		//			public Iterator<OWLClassExpression> call(Iterator<OWLClass> i) throws Exception {
-		//				System.out.println("---->");
-		//				ArrayList<OWLClassExpression> refs= new ArrayList<OWLClassExpression>();
-		//				while(i.hasNext()){
-		//					OWLClassExpression newConcept= null;
-		//					OWLClassExpression newConceptBase=null;
-		//					boolean emptyIntersection= false;
-		//					newConceptBase=i.next();
-		//					System.out.println("xxxx");
-		//					do{
-		//							// base case
-		//						if (generator.nextDouble() < d) {
-		//
-		//							if (allRoles.size()>0){ // for tackling the absence of roles
-		//							if (generator.nextDouble() <d) { // new role restriction
-		//									OWLObjectProperty role = allRoles.get(generator.nextInt(allRoles.size()));
-		//														//OWLDescription roleRange = (OWLDescription) role.getRange
-		//									if (generator.nextDouble() < d)
-		//									newConceptBase = dataFactory.getOWLObjectAllValuesFrom(role, newConceptBase);
-		//									else
-		//										newConceptBase = dataFactory.getOWLObjectSomeValuesFrom(role, newConceptBase);
-		//								}
-		//								else					
-		//									newConceptBase = dataFactory.getOWLObjectComplementOf(newConceptBase);
-		//							}
-		//							else					
-		//								newConceptBase = dataFactory.getOWLObjectComplementOf(newConceptBase);
-		//						}
-		//
-		//						newConcept = dataFactory.getOWLObjectIntersectionOf(definition,newConceptBase);
-		//						//			System.out.println(c+"-  New Concept: "+newConcept);
-		//						//NodeSet<OWLNamedIndividual> individuals;
-		//						//
-		//						//individuals = (r.getInstances(newConcept, false));
-		//						//Stream<OWLNamedIndividual> instIterator = individuals.entities().parallel();
-		//						//emptyIntersection=instIterator.anyMatch(t->!posExs.contains(t)&& !negExs.contains(t));
-		//					}while(!(r.isSatisfiable(newConcept)));
-		//					refs.add(newConcept);
-		//					
-		//				}
-		//				return refs.iterator();
-		//			}});
-
-		JavaRDD<Description> complexRefinement=baseCaserefinements.map(f-> {
-			  FISerializable reasoner = (FISerializable)kb.getReasoner();
-			 
-			Description newConcept= definition;
-			Description newConceptBase= f;
-			//System.out.println("base concept: "+newConceptBase);
-			boolean b = false;//true;//!(p.getKb().getReasoner().isSatisfiable(p.parseClassExpression(newConcept)));
-			boolean emptyIntersection= false;
 			do{
 				// base case
-				//System.out.println("definition: "+(definition));
-				double nextDouble = generator.nextDouble();
-				if (nextDouble < 0.3) {
-					//	System.out.println("-x--->"+nextDouble);
+				if (generator.nextDouble() < d) {
 
-					//if (allRoles.size()>0){ // for tackling the absence of roles
-					//
-					//	System.out.println("----->"+nextDouble);
-					nextDouble = generator.nextDouble();
-					//	System.out.println("----->"+nextDouble);
-					//	System.out.println("--- ROLES"+allRoles.size());
-					if (nextDouble <0.4) {
-						//	System.out.println("vvvvv");// new role restriction
-						ObjectProperty role = allRoles.get(generator.nextInt(allRoles.size()));
-						//OWLDescription roleRange = (OWLDescription) role.getRange
-						nextDouble = generator.nextDouble();
-						//System.out.println("----->"+nextDouble);
-						if(existentialRestriction){
-							if (nextDouble < 0.2){
-								//System.out.println("xxxxxx");
-								newConceptBase =    new ObjectSomeRestriction(role, newConceptBase); //"("+role +" some "+ newConceptBase+") "; //dataFactory.getOWLObjectAllValuesFrom(role, newConceptBase);
-								//	System.out.println("1"+newConceptBase);
-							}else if(universalRestriction){
-								newConceptBase =   new ObjectAllRestriction(role, newConceptBase);//"(" +role +" all "+ newConceptBase+") "; //dataFactory.getOWLObjectSomeValuesFrom(role, newConceptBase);
-								//System.out.println("2"+newConceptBase);
-							}
+					if (allRoles.size()>0){ // for tackling the absence of roles
+						if (generator.nextDouble() <d) { // new role restriction
+							ObjectProperty role = allRoles.get(generator.nextInt(allRoles.size()));
+							//OWLDescription roleRange = (OWLDescription) role.getRange
+							if (generator.nextDouble() < d)
+								newConceptBase =  new ObjectAllRestriction (role, newConceptBase);
+							else
+								newConceptBase = new ObjectSomeRestriction(role, newConceptBase);;//new ObjectAllRestriction (role, newConceptBase);
 						}
-					}else{					
-						if (complement){
-							newConceptBase =   new Negation(newConceptBase); 
-						}
+						else					
+							newConceptBase =  new Negation(newConceptBase);
 					}
+					else					
+						newConceptBase =  new Negation(newConceptBase);
 				}
 
-				//if (!newConceptBase.contains("?"))
-					newConcept =  new Intersection (definition, newConceptBase);//dataFactory.getOWLObjectIntersectionOf(definition,newConceptBase);
-			//	try {
+				newConcept = newConceptBase; //new Intersection(definition,newConceptBase);
+				System.out.println("-  New Concept: "+newConcept);
+				//NodeSet<OWLNamedIndividual> individuals;
+				try{
+					SortedSet<Individual> individuals =reasoner.getIndividuals(newConcept);
+					System.out.println("NewConcepBase: "+ newConceptBase +" - "+individuals.size());
+					if (individuals.size()==0)
+						emptyIntersection= true;
+					else{
+						boolean emptyIntersectionP=true;
+						for (Individual individual : individuals) {
 
-				//	OWLClassExpression parseClassExpression = p.parseClassExpression(newConcept);
-					//System.out.println(parseClassExpression);
-					//b = !(reasoner.isSatisfiable(newConcept));
-					  SortedSet<Individual> individuals = reasoner.getIndividuals(newConcept);
-					Stream<Individual> instIterator = individuals.parallelStream();
-					emptyIntersection=instIterator.anyMatch(t->!posExs.contains(t)&& !negExs.contains(t));
-					b= b & emptyIntersection; // the concept must be both satisfiable and with instances in the training set
+							if (posExs.contains(individual))
+								emptyIntersectionP= emptyIntersectionP && false;
 
-					//	System.out.println("check: "+b);
-				//} catch (Exception e) {
+						}
 
+						boolean emptyIntersectionN=true;
+						for (Individual individual : individuals) {
 
-				//}
+							if (posExs.contains(individual))
+								emptyIntersectionN= emptyIntersectionN && false;
 
+						}
 
-			}while(emptyIntersection);
-			//				
-			return	newConcept;
-			//					
+						emptyIntersection= emptyIntersectionP || emptyIntersectionN;
+					}
+				}catch(Exception e){
+					emptyIntersection=true;
+				}
+						
+		}while(!emptyIntersection);
+		//refs.add(newConcept);
 
-			//	
-		});
+		//}
+		return   newConcept; //refs.iterator();
+	});
+
+		//		JavaRDD<Description> complexRefinement=baseCaserefinements.map(f-> {
+		//			System.out.println("f"+f);
+		//			//FISerializable reasoner = ;
+		//			FISerializable fiSerializable = (FISerializable)kb.getReasoner();
+		//			SortedSet<Individual> i=fiSerializable.getIndividuals(f);
+		//
+		//			Description newConcept= definition;
+		//			Description newConceptBase= f;
+		//			//System.out.println("to be refined concept: " +definition +"---"+i.size());
+		//			boolean b = false;//true;//!(p.getKb().getReasoner().isSatisfiable(p.parseClassExpression(newConcept)));
+		//			boolean emptyIntersection= false;
+		//			do{
+		//				// base case
+		//				//System.out.println("definition: "+(definition));
+		//				double nextDouble = generator.nextDouble();
+		//				if (nextDouble < 0.3) {
+		//					//	System.out.println("-x--->"+nextDouble);
+		//
+		//					//if (allRoles.size()>0){ // for tackling the absence of roles
+		//					//
+		//					//	System.out.println("----->"+nextDouble);
+		//					nextDouble = generator.nextDouble();
+		//					//	System.out.println("----->"+nextDouble);
+		//					//	System.out.println("--- ROLES"+allRoles.size());
+		//					if (nextDouble <0.4) {
+		//						//	System.out.println("vvvvv");// new role restriction
+		//						ObjectProperty role = allRoles.get(generator.nextInt(allRoles.size()));
+		//						//OWLDescription roleRange = (OWLDescription) role.getRange
+		//						nextDouble = generator.nextDouble();
+		//						//System.out.println("----->"+nextDouble);
+		//						if(existentialRestriction){
+		//							if (nextDouble < 0.2){
+		//								//System.out.println("xxxxxx");
+		//								newConceptBase =    new ObjectSomeRestriction(role, newConceptBase); //"("+role +" some "+ newConceptBase+") "; //dataFactory.getOWLObjectAllValuesFrom(role, newConceptBase);
+		//								System.out.println("1"+newConceptBase);
+		//							}else if(universalRestriction){
+		//								newConceptBase =   new ObjectAllRestriction(role, newConceptBase);//"(" +role +" all "+ newConceptBase+") "; //dataFactory.getOWLObjectSomeValuesFrom(role, newConceptBase);
+		//								System.out.println("2"+newConceptBase);
+		//							}
+		//						}
+		//					}else{					
+		//						//if (complement){
+		//						newConceptBase =   new Negation(newConceptBase); 
+		//						//}
+		//					}
+		//				}
+		//
+		//
+		//				//if (!newConceptBase.contains("?"))
+		//				newConcept = newConceptBase;//dataFactory.getOWLObjectIntersectionOf(definition,newConceptBase);
+		//
+		//				System.out.println(newConceptBase);
+		//				try {
+		//
+		//					//	OWLClassExpression parseClassExpression = p.parseClassExpression(newConcept);
+		//					//System.out.println(parseClassExpression);
+		//					//b = !(reasoner.isSatisfiable(newConcept));
+		//
+		//					SortedSet<Individual> individuals = fiSerializable.getInstances(newConceptBase);
+		//
+		//					// System.out.println("New Individuals  null? "+(individuals==null));
+		//					Stream<Individual> instIterator = individuals.parallelStream();
+		//					emptyIntersection=instIterator.anyMatch(t->!posExs.contains(t));
+		//					//b= b & emptyIntersection; // the concept must be both satisfiable and with instances in the training set
+		//
+		//
+		//					System.out.println("check: "+b);
+		//				} catch (Exception e) {
+		//					emptyIntersection =false;
+		//
+		//				}
+		//
+		//
+		//				}while(emptyIntersection);
+		//				//			
+		//				//ArrayList<Description> arrayList = new ArrayList<Description>();
+		//				//arrayList.add(newConcept);
+		//				//return	SparkConfiguration.sc.parallelize(arrayList);
+		//				//					
+		//				return  newConcept; 
+		//				//	
+		//			});
 
 		return complexRefinement; //complexRefinement;
-	}
+}
 
 
 
-	//	/**
-	//	 * Random concept generation
-	//	 * @return 
-	//	 */
-	/*public OWLClassExpression getRandomConcept() {
+//	/**
+//	 * Random concept generation
+//	 * @return 
+//	 */
+/*public OWLClassExpression getRandomConcept() {
 
 		OWLClassExpression newConcept = null;
 
@@ -329,44 +377,44 @@ public class SparkRefinementOperator  extends RefinementOperator implements Seri
 		//System.out.println("*********");
 		return newConcept;				
 	}
-*/
+ */
 
 
-	// public JavaRDD<OWLClassExpression> generateParallelNewConcepts(OWLClassExpression definition, SortedSet<OWLNamedIndividual> posExs, SortedSet<OWLNamedIndividual> negExs, boolean seed) {
+// public JavaRDD<OWLClassExpression> generateParallelNewConcepts(OWLClassExpression definition, SortedSet<OWLNamedIndividual> posExs, SortedSet<OWLNamedIndividual> negExs, boolean seed) {
 
-	//		logger.info("Generating node concepts ");
-	//		TreeSet<OWLClassExpression> rConcepts = new TreeSet<OWLClassExpression>();
-	//		System.out.println("Generating node concepts ");
-	//		OWLClassExpression newConcept=null;
-	//		boolean emptyIntersection;
-	//		for (int c=0; c<beam; c++) {
-	//
-	//			do {
-	//				emptyIntersection =  false;
-	//				//System.out.println("Before the try");
-	//				//					try{
-	//				
-	//				newConcept = dataFactory.getOWLObjectIntersectionOf(definition,getRandomConcept());
-	//				System.out.println(c+"-  New Concept: "+newConcept);
-	//				NodeSet<OWLNamedIndividual> individuals;
-	//
-	//				individuals = (r.getInstances(newConcept, false));
-	//				Stream<OWLNamedIndividual> instIterator = individuals.entities().parallel();
-	//				emptyIntersection=instIterator.anyMatch(t->!posExs.contains(t)&& !negExs.contains(t));
-	//				
-	//				
-	//			} while (emptyIntersection);
-	//			//if (newConcept !=null){
-	//			//System.out.println(newConcept==null);
-	//			rConcepts.add(newConcept);
-	//			//}
-	//
-	//		}
-	//		System.out.println();
+//		logger.info("Generating node concepts ");
+//		TreeSet<OWLClassExpression> rConcepts = new TreeSet<OWLClassExpression>();
+//		System.out.println("Generating node concepts ");
+//		OWLClassExpression newConcept=null;
+//		boolean emptyIntersection;
+//		for (int c=0; c<beam; c++) {
+//
+//			do {
+//				emptyIntersection =  false;
+//				//System.out.println("Before the try");
+//				//					try{
+//				
+//				newConcept = dataFactory.getOWLObjectIntersectionOf(definition,getRandomConcept());
+//				System.out.println(c+"-  New Concept: "+newConcept);
+//				NodeSet<OWLNamedIndividual> individuals;
+//
+//				individuals = (r.getInstances(newConcept, false));
+//				Stream<OWLNamedIndividual> instIterator = individuals.entities().parallel();
+//				emptyIntersection=instIterator.anyMatch(t->!posExs.contains(t)&& !negExs.contains(t));
+//				
+//				
+//			} while (emptyIntersection);
+//			//if (newConcept !=null){
+//			//System.out.println(newConcept==null);
+//			rConcepts.add(newConcept);
+//			//}
+//
+//		}
+//		System.out.println();
 
 
-	//		return null;
-	//	}
+//		return null;
+//	}
 
 
 
@@ -413,13 +461,13 @@ public class SparkRefinementOperator  extends RefinementOperator implements Seri
 
 
 
-	//	
-	//		public void setReasoner(OWLReasoner reasoner) {
-	//			// TODO Auto-generated method stub
-	//			this.r= reasoner;
-	//			allConcepts=new ArrayList<OWLClass>();
-	//
-	//		}
+//	
+//		public void setReasoner(OWLReasoner reasoner) {
+//			// TODO Auto-generated method stub
+//			this.r= reasoner;
+//			allConcepts=new ArrayList<OWLClass>();
+//
+//		}
 
 
 
@@ -427,37 +475,37 @@ public class SparkRefinementOperator  extends RefinementOperator implements Seri
 
 
 
-	public JavaRDD<Description> refine(Description definition, ArrayList<Individual> instances,
-			ArrayList<Individual> neginstances, boolean complement, boolean exRestr,boolean univRestr) {
-		//JavaRDD<OWLNamedIndividual> pExsRDD = ExampleKnowledgeBase.sc.p
+public JavaRDD<Description> refine(Description definition, ArrayList<Individual> instances,
+		ArrayList<Individual> neginstances, boolean complement, boolean exRestr,boolean univRestr) {
+	//JavaRDD<OWLNamedIndividual> pExsRDD = ExampleKnowledgeBase.sc.p
 
+	System.out.println(definition + " x");
+	this.complement=complement;
+	this.existentialRestriction=exRestr;
+	this.universalRestriction=univRestr;
+	return getPallelizedConcept(definition, instances, neginstances);
 
-		this.complement=complement;
-		this.existentialRestriction=exRestr;
-		this.universalRestriction=univRestr;
-		return getPallelizedConcept(definition, instances, neginstances);
+	//(generateConcepts(definition,posExs, negExs, false));
 
-		//(generateConcepts(definition,posExs, negExs, false));
-
-	}
-
-
-
-
-
-	public void setBeam(int i) {
-		// TODO Auto-generated method stub
-		beam=i;
-
-	}
+}
 
 
 
 
 
-	public int getBeam() {
-		return beam;
-	}
+public void setBeam(int i) {
+	// TODO Auto-generated method stub
+	beam=i;
+
+}
+
+
+
+
+
+public int getBeam() {
+	return beam;
+}
 
 
 
