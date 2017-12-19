@@ -15,4 +15,11 @@ The progam can be configured modifying the file experiments.properties that cont
 - the distance measure adopted by the terminologicla cluster tree induction algorithm (admissible values: simpleDistance1,
 	simpleDistance2, entropicSimpleDistance1, entropicSimpleDistance2, sqrtDistance1, sqrtDistance2)
 
-# 
+# Publications
+- Giuseppe Rizzo, Claudia d'Amato, Nicola Fanizzi, Floriana Esposito:
+Terminological Cluster Trees for Disjointness Axiom Discovery. ESWC (1) 2017: 184-201
+
+- Giuseppe Rizzo, Claudia d'Amato, Nicola Fanizzi, Floriana Esposito:
+Induction of Terminological Cluster Trees. URSW@ISWC 2016: 49-60
+
+
