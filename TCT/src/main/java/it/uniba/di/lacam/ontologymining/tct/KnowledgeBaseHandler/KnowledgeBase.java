@@ -62,24 +62,23 @@ public class KnowledgeBase implements Serializable {
 	private  Individual[] allExamples;
 	/* Data property: proprietà, valori e domini*/
 	private AbstractReasonerComponent reasoner;
-	private PelletReasonerSerializable r;
+	private FISerializable r;
 	
-	public PelletReasonerSerializable getR() {
+	public FISerializable getR() {
 		return r;
 	}
 
 
 
-	public void setR(PelletReasonerSerializable r) {
+	public void setR(FISerializable r) {
 		this.r = r;
 	}
 
 	private  DatatypeProperty[] properties;
 	private  Individual[][] domini;
 	private int[][] classifications;
-	public static  Random generator = new Random(2);;
-	private  Random sceltaDataP= new Random(1);
-	private  Random sceltaObjectP= new Random(1);
+	public static  Random generator = new Random(1);
+
 	private Constant[][] dataPropertiesValue;
 	public KnowledgeBase(String url) {
 		urlOwlFile=url;
@@ -328,33 +327,6 @@ public class KnowledgeBase implements Serializable {
 				//				System.out.printf("-->\t %s\n",newConcept);
 				//			} while (newConcept==null || !(reasoner.getIndividuals(newConcept,false).size() > 0));
 			} while ((reasoner.getIndividuals(newConcept).size()<=0));
-//		}else{
-//			// for less expressive ontologies ALE and so on (complemento solo per concetti atomici)
-//			do {
-//				newConcept = allConcepts[KnowledgeBase.generator.nextInt(allConcepts.length)];
-//				if (KnowledgeBase.generator.nextDouble() < d) {
-//					Description newConceptBase = getRandomConcept();
-//					if (KnowledgeBase.generator.nextDouble() < d)
-//						if (KnowledgeBase.generator.nextDouble() < 0.1) { // new role restriction
-//							ObjectProperty role = allRoles[KnowledgeBase.generator.nextInt(allRoles.length)];
-//							//					OWLDescription roleRange = (OWLDescription) role.getRange;
-//
-//							if (KnowledgeBase.generator.nextDouble() < d)
-//								newConcept = new ObjectAllRestriction(role, newConceptBase);
-//							else
-//								newConcept = new ObjectSomeRestriction(role, newConceptBase);
-//						}
-//				} // else ext
-//				else{ //if (KnowledgeBase.generator.nextDouble() > 0.8) {					
-//					newConcept = new Negation(newConcept);
-//				}
-//				//				System.out.printf("-->\t %s\n",newConcept);
-//				//			} while (newConcept==null || !(reasoner.getIndividuals(newConcept,false).size() > 0));
-//			} while ((reasoner.getIndividuals(newConcept).size()<=0));
-			
-			
-			
-//		}
 
 		return newConcept;				
 	}

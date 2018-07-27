@@ -2,6 +2,7 @@ package it.uniba.di.lacam.ontologymining.tct;
 
 
 import java.util.ArrayList;
+import java.util.Stack;
 
 import org.dllearner.core.owl.Description;
 
@@ -18,11 +19,11 @@ public class ClusterTree {
 	private class DLNode {
 
 		Description concept;		// node concept
-	    ArrayList<Integer> cluster;
-	    Integer posMedoid;
-	    Integer  negMedoid;
+		ArrayList<Integer> cluster;
+		Integer posMedoid;
+		Integer  negMedoid;
 		ClusterTree pos; 			// positive decision subtree
-		
+
 		ClusterTree neg; 			// negative decision subtree
 
 		public DLNode(Description c, ArrayList<Integer>cluster, Integer p, Integer n) {
@@ -46,7 +47,7 @@ public class ClusterTree {
 	}
 
 	DLNode root;
-	
+
 	public ClusterTree() {
 
 	}
@@ -82,19 +83,45 @@ public class ClusterTree {
 
 	}
 
-	
+
 	//public String toString(){
-		
-		public String toString() {
-			if (root.concept==null)
-				return "{"+root.cluster.size()+"}";
-			if (root.pos == null && root.neg == null)
-				return root.toString();
-			else
-				return root.concept.toString() +"("+root.cluster.size() +") ["+root.pos.toString()+" "+root.neg.toString()+"]";
+
+	public String toString() {
+ 
+		String string= "[";
+		Stack<ClusterTree> s= new Stack<ClusterTree>();
+		s.push(this);
+		while (!s.isEmpty()){
+
+			ClusterTree.DLNode b=s.pop().root;
+			//s.pop();
+			if ((b.concept!=null)) 
+				//visito radice
+				string += "]";
+				else { 
+					string+=b.concept+ "[ ";
+					if (b.pos != null)
+						//memorizzo in stack il sottoalbero destro per la visita successiva
+						s.push(b.pos);
+
+					if (b.pos != null)
+						// visita sottoalb sinistro
+						s.push(b.neg);
+				}
+
+			}
+		return string;
+
+
+//			if (root.concept==null)
+//				return "{"+root.cluster.size()+"}";
+//			if (root.pos == null && root.neg == null)
+//				return root.toString();
+//			else
+//				return root.concept.toString() +"("+root.cluster.size() +") ["+root.pos.toString()+" "+root.neg.toString()+"]";
 		}
-				
-		
-//	}
-	
-}
+
+
+		//	}
+
+	}

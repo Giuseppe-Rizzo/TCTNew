@@ -161,13 +161,13 @@ public class SparkRefinementOperator  extends RefinementOperator implements Seri
 	public JavaRDD<Description> getPallelizedConcept(Description definition, ArrayList<Individual> posExs, ArrayList<Individual> negExs ) {
 		double rate = (double)getBeam()/rddConcepts.count();
 		double l = rate>1?1:rate;
-		System.out.println("Number of concepts"+definition);
-		AbstractReasonerComponent reasoner = kb.getReasoner();
+		System.out.println("Current definition "+definition);
+		AbstractReasonerComponent reasoner = kb.getR();
 
 		JavaRDD<Description> filter = rddConcepts.filter(f->!OWLAPIConverter.getOWLAPIDescription(f).isOWLThing()); //.map(f->{return OWLAPIConverter.getOWLAPIDescription(f);});
 		JavaRDD<Description> baseCaserefinements = filter.sample (false,l);
 		
-		baseCaserefinements.foreach(f->System.out.println("Atomic concept"+f));
+		baseCaserefinements.foreach(f->System.out.println("Concept: "+f));
 		if (rate>1)
 			baseCaserefinements= baseCaserefinements.union(filter.sample(true, rate-1));
 		//JavaRDD<String> baseCasesrefinementString= baseCaserefinements.map(f->ExampleKnowledgeBase.renderer.render(f));
@@ -175,7 +175,7 @@ public class SparkRefinementOperator  extends RefinementOperator implements Seri
 		//rddConcepts.persist();
 
 		//String debugString = baseCaserefinements.toDebugString();
-		//System.out.println(debugString);
+		System.out.println();
 
 		JavaRDD<Description> complexRefinement=baseCaserefinements.map(f ->{
 			//public Iterator<Description> call(Iterator<Description> i) throws Exception {
@@ -187,9 +187,10 @@ public class SparkRefinementOperator  extends RefinementOperator implements Seri
 			boolean emptyIntersection= true;
 			newConceptBase= f; //i.next();
 
+			System.out.println("Potential new conjunct: "+newConceptBase);
 			do{
 				// base case
-				if (generator.nextDouble() < d) {
+				if (generator.nextDouble() > d) {
 
 					if (allRoles.size()>0){ // for tackling the absence of roles
 						if (generator.nextDouble() <d) { // new role restriction
@@ -207,12 +208,15 @@ public class SparkRefinementOperator  extends RefinementOperator implements Seri
 						newConceptBase =  new Negation(newConceptBase);
 				}
 
-				newConcept = newConceptBase; //new Intersection(definition,newConceptBase);
-				System.out.println("-  New Concept: "+newConcept);
+				//System.out.println(reasoner.getIndividuals(definition));
+				newConcept = newConceptBase;//reasoner.getSubClasses(definition).contains(newConceptBase)? definition:
+	//new Intersection(definition,newConceptBase);
+				System.out.println("     New Concept: "+newConcept);
 				//NodeSet<OWLNamedIndividual> individuals;
-				try{
+								try{
+									System.out.println("xxxxxxxxxxxx");
 					SortedSet<Individual> individuals =reasoner.getIndividuals(newConcept);
-					System.out.println("NewConcepBase: "+ newConceptBase +" - "+individuals.size());
+					System.out.println("Evaluating  : "+ newConcept +" - "+individuals.size());
 					if (individuals.size()==0)
 						emptyIntersection= true;
 					else{
@@ -479,7 +483,7 @@ public JavaRDD<Description> refine(Description definition, ArrayList<Individual>
 		ArrayList<Individual> neginstances, boolean complement, boolean exRestr,boolean univRestr) {
 	//JavaRDD<OWLNamedIndividual> pExsRDD = ExampleKnowledgeBase.sc.p
 
-	System.out.println(definition + " x");
+	
 	this.complement=complement;
 	this.existentialRestriction=exRestr;
 	this.universalRestriction=univRestr;

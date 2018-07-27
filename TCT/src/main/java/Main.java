@@ -90,14 +90,16 @@ public class Main {
 				System.out.println("Learning algorithm: Terminological Cluster Tree");
 				TCTInducer2 t = new TCTInducer2(kb);
 				//RefinementOperator op = new RefinementOperator(kb);
-				SparkRefinementOperator op= new SparkRefinementOperator(kb);
+				RefinementOperator op= new RefinementOperator(kb);
 				System.out.println(op);
 				ArrayList<Integer> list= new ArrayList<Integer>();
 				for (int i = 0; i<individuals.length;i++)
 					list.add(i);
 				ClusterTree induceDLTree = t.induceDLTree(list, new ArrayList<Integer>(),  new ArrayList<Integer>(), 50, op);
 				//System.out.println(induceDLTree);	 
-				final ArrayList<Couple<Description,Description>> extractDisjointnessAxiom = t.extractDisjointnessAxiom(induceDLTree);
+				
+				TCT2DisAxsConverter.kb=kb;
+				final ArrayList<Couple<Description,Description>> extractDisjointnessAxiom = TCT2DisAxsConverter.extractDisjointnessAxiom(induceDLTree);
 				System.out.println("Number of axioms: "+ extractDisjointnessAxiom.size());
 				resultsAxs[j]= extractDisjointnessAxiom.size();
 				int nInc=0;

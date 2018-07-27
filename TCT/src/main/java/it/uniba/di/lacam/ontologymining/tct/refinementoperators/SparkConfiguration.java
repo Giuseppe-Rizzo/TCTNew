@@ -13,8 +13,10 @@ import org.semanticweb.owlapi.model.OWLDataFactory;
 
 import com.clarkparsia.pellet.owlapiv3.PelletReasoner;
 
-import it.uniba.di.lacam.ontologymining.tct.KnowledgeBaseHandler.OWLAPIReasonerSerializable;
-import it.uniba.di.lacam.ontologymining.tct.KnowledgeBaseHandler.PelletReasonerSerializable;
+import it.uniba.di.lacam.ontologymining.tct.KnowledgeBaseHandler.FISerializable;
+
+//import it.uniba.di.lacam.ontologymining.tct.KnowledgeBaseHandler.OWLAPIReasonerSerializable;
+//import it.uniba.di.lacam.ontologymining.tct.KnowledgeBaseHandler.PelletReasonerSerializable;
 
 public class SparkConfiguration implements Serializable{
 	
@@ -42,7 +44,7 @@ public class SparkConfiguration implements Serializable{
 		conf.set("spark.driver.maxResultSize", "1g");
 		conf.set("spark.rdd.compress", "true");
 		conf.set( "spark.serializer", "org.apache.spark.serializer.KryoSerializer" );
-		Class[] x = {OWLAPIReasonerSerializable.class,OWLDataFactory.class,org.dllearner.reasoning.FastInstanceChecker.class,AbstractReasonerComponent.class,Description.class,ObjectProperty.class,Individual.class};
+		Class[] x = {FISerializable.class,OWLDataFactory.class,org.dllearner.reasoning.FastInstanceChecker.class,AbstractReasonerComponent.class,Description.class,ObjectProperty.class,Individual.class};
 		conf.registerKryoClasses(x);
 		conf.set( "spark.serializer.buffer", "1GB" );
 		sc = new JavaSparkContext(conf);

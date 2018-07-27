@@ -36,10 +36,10 @@ import com.fasterxml.jackson.core.JsonFactory.Feature;
 public class TCTInducer2 {
 
 
-	KnowledgeBase kb;
+	TCT2DisAxsConverter data = new TCT2DisAxsConverter();
 	public TCTInducer2(KnowledgeBase k){
 
-		kb=k;
+		data.kb=k;
 		//	super(k);
 
 	}
@@ -55,7 +55,7 @@ public class TCTInducer2 {
 	 * @return
 	 */
 	public ClusterTree induceDLTree(ArrayList<Integer> posExs, ArrayList<Integer> negExs, ArrayList<Integer> undExs, 
-			int dim, SparkRefinementOperator op) {		
+			int dim, RefinementOperator op) {		
 		System.out.printf("Learning problem\t p:%d\t n:%d\t u:%d\t prPos:%4f\t prNeg:%4f\n", 
 				posExs.size(), negExs.size(), undExs.size(), 0.5, 0.5);
 		//		ArrayList<Integer> truePos= posExs;
@@ -91,36 +91,39 @@ public class TCTInducer2 {
 				currentTree.setRoot(null, posExs, null, null); // set positive leaf
 			else{
 				long currentTime=System.currentTimeMillis(); // time out for making the approach more scalable
-				if (currentTime-startingTime>10000)
+				if (currentTime-startingTime>100000)
 					currentTree.setRoot(null, posExs, null, null);
 				else{
 					//System.out.println(currentTree.getRoot() instanceof Negation);
 
 					//System.out.println("Concept to be refined:"+currentTree.getRoot());
 					ArrayList<Description> generateNewConcepts = new ArrayList<Description>();
-					
+
 					ArrayList<Individual> posExs2= new ArrayList<Individual>(); // from indices to individuals
 					ArrayList<Individual> negExs2= new ArrayList<Individual>();
 					for (Integer p: posExs)
-						posExs2.add(kb.getIndividuals()[p]);
+						posExs2.add(data.kb.getIndividuals()[p]);
 					for (Integer p: negExs)
-						negExs2.add(kb.getIndividuals()[p]);
+						negExs2.add(data.kb.getIndividuals()[p]);
 					//System.out.println(posExs2.size());
 					Description root = currentTree.getRoot();
-					System.out.println("--x--"+root+"---"+kb.getReasoner().getIndividuals(root).size());
-					
-					JavaRDD<Description> refine = ((SparkRefinementOperator)op).refine(root, posExs2, negExs2, true, true, true);
+					System.out.println("Current node: "+root+"---"+posExs2.size());
+
+					//JavaRDD<Description> refine = ((SparkRefinementOperator)op).refine(root, posExs2, negExs2, true, true, true);
 					//System.out.println("# refinements: "+refine.count());
-					List<Description> collect = refine.collect();
-					generateNewConcepts.addAll(collect); //op instanceof SparkRefinementOperator?
-							
-							
-							; //: op.generateNewConcepts(currentTree.getRoot(),Parameters.beam, posExs, negExs); // genera i concetti sulla base degli esempi
+					//List<Description> collect = //refine.collect();
+					//generateNewConcepts.addAll(collect); //op instanceof SparkRefinementOperator?
 
 
-					Description[] cConcepts= new Description[0];
+					//	; //: 
+
+					// genera i concetti sulla base degli esempi
+
+
+					Description[] cConcepts= new Description[Parameters.beam];
 					//
-					cConcepts = generateNewConcepts.toArray(cConcepts);
+					cConcepts =  op.generateNewConcepts(currentTree.getRoot(),Parameters.beam, posExs, negExs).toArray(cConcepts); //generateNewConcepts.toArray(cConcepts);
+					for (Description c:cConcepts) System.out.println(c);
 
 					// select node concept
 					Description newRootConcept =  selectConceptWithMinOverlap(cConcepts, posExs) ; //(Parameters.CCP?(selectBestConceptCCP(cConcepts, posExs, negExs, undExs, prPos, prNeg, truePos, trueNeg)):(selectBestConcept(cConcepts, posExs, negExs, undExs, prPos, prNeg));
@@ -133,9 +136,9 @@ public class TCTInducer2 {
 					ArrayList<Integer> negExsF = new ArrayList<Integer>();
 					ArrayList<Integer> undExsF = new ArrayList<Integer>();
 
-//					splitInstanceCheck(newRootConcept, posExs, posExsT, negExsT, undExsT);
-//					Integer medoidP = getMedoid(posExsT);
-//					Integer medoidN = getMedoid(negExsT);
+					//					splitInstanceCheck(newRootConcept, posExs, posExsT, negExsT, undExsT);
+					//					Integer medoidP = getMedoid(posExsT);
+					//					Integer medoidN = getMedoid(negExsT);
 					split(newRootConcept, posExs,  posExsT, negExsT);
 
 
@@ -193,6 +196,7 @@ public class TCTInducer2 {
 
 		Double maxDiff= 0.0d;
 		Description bestConcept= cConcepts[0];
+		System.out.println(bestConcept);
 		int idx=0;
 
 		for (int i =0; i< cConcepts.length;i++){
@@ -227,14 +231,14 @@ public class TCTInducer2 {
 		double minDistance =1.0f;
 		for (Integer integer : trueExs) {
 			for (Integer i:falseExs){
-				
+
 				double t=FeaturesDrivenDistance.distance(Parameters.distance, integer, i);
 				if (t>minDistance)
 					minDistance=t;
 			}
-			
+
 		}
-		
+
 		return minDistance;
 	}
 
@@ -254,10 +258,10 @@ public class TCTInducer2 {
 			Integer currentMedoid= trueExs.get(0); // the first element
 			double sumDistance= 0.0f;
 			for (Integer integer : trueExs) {
-				
+
 				for (Integer integer2 : trueExs) {
 					sumDistance+=FeaturesDrivenDistance.distance(Parameters.distance,integer, integer2);
-					
+
 				}
 
 				if (sumDistance> maxDist){
@@ -273,7 +277,7 @@ public class TCTInducer2 {
 
 	}
 
-	
+
 
 
 
@@ -289,22 +293,22 @@ public class TCTInducer2 {
 		Description negConcept = new Negation(concept);
 		for (int e=0; e<posExs.size(); e++) {
 			int exIndex = posExs.get(e);
-			if (kb.getReasoner().hasType(concept,kb.getIndividuals()[exIndex]))
+			if (data.kb.getReasoner().hasType(concept,data.kb.getIndividuals()[exIndex]))
 				posExsT.add(exIndex);
-			else if (kb.getReasoner().hasType(negConcept, kb.getIndividuals()[exIndex]))
+			else if (data.kb.getReasoner().hasType(negConcept, data.kb.getIndividuals()[exIndex]))
 				negExsT.add(exIndex);
 			else
 				undExsT.add(exIndex);		
 		}			
 	}
 
-/**
- * Split according to the closeness w.r.t. the medoids
- * @param concept
- * @param iExs
- * @param posExs
- * @param negExs
- */
+	/**
+	 * Split according to the closeness w.r.t. the medoids
+	 * @param concept
+	 * @param iExs
+	 * @param posExs
+	 * @param negExs
+	 */
 	private void split (Description concept, ArrayList<Integer> iExs, ArrayList<Integer> posExs, ArrayList<Integer> negExs) {
 
 		ArrayList<Integer> exs=(ArrayList<Integer>)iExs.clone();
@@ -316,12 +320,12 @@ public class TCTInducer2 {
 		//System.out.println("Exs:"+ exs.size()+ "  l: "+posExsT.size()+ " r: "+negExsT.size());
 		if (posExsT.isEmpty())
 			fillSet(posExsT, negExsT,0.6);
-			//System.out.println("Exs:"+ exs.size()+ "  l: "+posExsT.size()+ "  r: "+negExsT.size());
+		//System.out.println("Exs:"+ exs.size()+ "  l: "+posExsT.size()+ "  r: "+negExsT.size());
 		Integer posMedoid= getMedoid(posExsT);
 		if (negExsT.isEmpty())
 			fillSet(negExsT, posExsT,0.6);
 		Integer negMedoid= getMedoid(negExsT);
-		
+
 
 		for (Integer ind: exs) //split according to the closeness to the medoid
 			if (FeaturesDrivenDistance.distance(Parameters.distance, ind, posMedoid) <= FeaturesDrivenDistance.distance(Parameters.distance, ind, negMedoid))
@@ -334,12 +338,12 @@ public class TCTInducer2 {
 
 
 
-/**
- * Extract a subset of the farthest individuals from the medoid
- * @param toFill, the subset of individuals that are far from the medoid of the srt of indivduals 
- * @param exs, the set of individuals for which a medoid is computed
- * @param d
- */
+	/**
+	 * Extract a subset of the farthest individuals from the medoid
+	 * @param toFill, the subset of individuals that are far from the medoid of the srt of indivduals 
+	 * @param exs, the set of individuals for which a medoid is computed
+	 * @param d
+	 */
 	private void fillSet(ArrayList<Integer> toFill, ArrayList<Integer> exs, double d) {
 		// TODO Auto-generated method stub
 		Integer medoid= getMedoid(exs);
@@ -347,77 +351,23 @@ public class TCTInducer2 {
 			if (FeaturesDrivenDistance.distance(Parameters.distance, i, medoid)>d){
 				toFill.add(i);
 			}
-		
+
 		//worst case: all the individuals are close to the medoid
 		//solutio: pick a fraction of individuals randomly (the first j individuals in exs)
 		if (toFill.isEmpty()){
-		 int j = (exs.size()/3)+1;
-		 //System.out.println(exs.size());
-		 //System.out.println(j);
-		for (int i=0;i< j;i++)
-			 toFill.add(exs.get(i));
+			int j = (exs.size()/3)+1;
+			//System.out.println(exs.size());
+			//System.out.println(j);
+			for (int i=0;i< j;i++)
+				toFill.add(exs.get(i));
 		}
-		
+
 		exs.removeAll(toFill);
+
+	}
+
+
 	
-	}
-
-
-	public ArrayList<Description> extractDisjointnessAxiom (Description  fatherDescription, ClusterTree  tree){
-
-		ArrayList<Description> concepts= new ArrayList<Description>();
-		Description root = tree.getRoot();
-		if (root ==null){
-			concepts.add(fatherDescription);
-			return   concepts;
-		}
-		else {
-
-			Description currentDescriptionLeft= root; //fatherDescription !=null? new Intersection(fatherDescription, root): root;
-			Description currentDescriptionRight= //fatherDescription !=null? 
-					//new Intersection( new Negation(fatherDescription),new Negation(root))
-					//:
-						new Negation(root);
-
-			ArrayList<Description> toAdd= new ArrayList<Description>();
-			ArrayList<Description> toAdd2= new ArrayList<Description>();
-			toAdd.addAll(extractDisjointnessAxiom(currentDescriptionLeft, tree.getPos()));
-			toAdd2.addAll(extractDisjointnessAxiom(currentDescriptionRight, tree.getNeg()));
-			concepts.addAll(toAdd);
-			concepts.addAll(toAdd2);
-			;			return concepts;
-		}
-
-	}
-
-	public ArrayList<Couple<Description,Description>>  extractDisjointnessAxiom(ClusterTree t){
-		Description fatherNode= null;
-		ArrayList<Description> concepts=  extractDisjointnessAxiom(fatherNode, t);
-		ArrayList<Couple<Description,Description>>result= new ArrayList<Couple<Description,Description>>();
-
-		for  (int i=0; i<concepts.size();i++){
-			Description  c= concepts.get(i);
-			Couple<Description,Description> element= new Couple<Description, Description>();
-
-			for (int j=i; j<concepts.size();j++){
-				Description  d= concepts.get(j);
-				if (!(c.toKBSyntaxString().equals(d.toKBSyntaxString()))){//)  && !(result.contains(new Couple(c,d)))){ //(!(result.contains(new Couple(d,c))
-					//SortedSet<Description> subClasses1 = kb.getReasoner().getSubClasses(c);
-					//SortedSet<Description> subClasses2 = kb.getReasoner().getSubClasses(d);
-					if ((kb.getReasoner().getIndividuals(new Intersection(c,d)).size()<10)){
-						element.setFirstElement(c);
-					element.setSecondElement(d);
-					result.add(element);
-					}
-					//System.out.println(c +" disjoint With "+d);
-				}
-
-			} 
-		}
-
-		return result;
-	}
-
 }
 
 

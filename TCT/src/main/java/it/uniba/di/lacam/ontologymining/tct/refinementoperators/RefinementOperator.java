@@ -33,6 +33,7 @@ public class RefinementOperator {
 		// TODO Auto-generated constructor stub
 	this.kb=kb;
 	allConcepts=kb.getClasses();
+	System.out.println(allConcepts==null);
 	allRoles=kb.getRoles();
 	
 	
@@ -46,34 +47,37 @@ public class RefinementOperator {
 	 */
 	public Description getRandomConcept() {
 		// sceglie casualmente uno tra i concetti presenti 
-		Description newConcept = null;
-			
-			// case A:  ALC and more expressive ontologies
-			do {
-				
-				     newConcept = allConcepts[KnowledgeBase.generator.nextInt(allConcepts.length)];
-				
-				if (KnowledgeBase.generator.nextDouble() > 0.5) {
-				   Description newConceptBase = getRandomConcept();
-					if (KnowledgeBase.generator.nextDouble() >0.5) {
-						if (KnowledgeBase.generator.nextDouble() <0.7) { // new role restriction
-							ObjectProperty role = allRoles[KnowledgeBase.generator.nextInt(allRoles.length)];
-							//					OWLDescription roleRange = (OWLDescription) role.getRange;
-							if (KnowledgeBase.generator.nextDouble() < 0.9)
-								newConcept = new ObjectAllRestriction(role, newConceptBase);
-							else
-								newConcept = new ObjectSomeRestriction(role, newConceptBase);
-						}
-						else					
-							newConcept = new Negation(newConceptBase);
-					}
-				} // else ext
-				
-			} while ((newConcept instanceof Thing) &&(!((kb.getReasoner().getIndividuals(newConcept).size())>0)));
-						
-//		}
+//		Description newConcept = null;
+//			
+//			// case A:  ALC and more expressive ontologies
+//			do {
+//				
+//			System.out.println(allConcepts==null);
+//				newConcept = allConcepts[KnowledgeBase.generator.nextInt(allConcepts.length)];
+//				
+//				if (KnowledgeBase.generator.nextDouble() > 0.5) {
+//				   Description newConceptBase = getRandomConcept();
+//					if (KnowledgeBase.generator.nextDouble() >0.5) {
+//						if (KnowledgeBase.generator.nextDouble() <0.7) { // new role restriction
+//							ObjectProperty role = allRoles[KnowledgeBase.generator.nextInt(allRoles.length)];
+//							//					OWLDescription roleRange = (OWLDescription) role.getRange;
+//							if (KnowledgeBase.generator.nextDouble() < 0.9)
+//								newConcept = new ObjectAllRestriction(role, newConceptBase);
+//							else
+//								newConcept = new ObjectSomeRestriction(role, newConceptBase);
+//						}
+//						else					
+//							newConcept = new Negation(newConceptBase);
+//					}
+//				} // else ext
+//				
+//			} while ((newConcept instanceof Thing) &&(!((kb.getReasoner().getIndividuals(newConcept).size())>0)));
+//						
+////		}
+		
+		
 
-		return newConcept;				
+		return kb.getRandomConcept();				
 	}
 	
 	public ArrayList<Description> generateNewConcepts(Description father, int dim, ArrayList<Integer> posExs, ArrayList<Integer> negExs) {
@@ -90,7 +94,7 @@ public class RefinementOperator {
 //				boolean contains = kb.getReasoner().getSuperClasses(randomConcept).contains(father);
 				if (!(father instanceof Thing))
 				newConcept =  randomConcept; //contains? randomConcept:
-				else {if ((kb.getReasoner().getSuperClasses(randomConcept).contains(father))) 	
+				else {if ((kb.getReasoner().getSubClasses(father).contains(randomConcept))) 	
 				newConcept =  randomConcept;
 				else
 					newConcept=new Intersection(father,randomConcept);
