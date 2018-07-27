@@ -90,7 +90,11 @@ public class Main {
 				System.out.println("Learning algorithm: Terminological Cluster Tree");
 				TCTInducer2 t = new TCTInducer2(kb);
 				//RefinementOperator op = new RefinementOperator(kb);
-				RefinementOperator op= new RefinementOperator(kb);
+				RefinementOperator op= null;
+				if (Parameters.refinementOperator.equalsIgnoreCase("singlethread"))
+				op=new RefinementOperator(kb);
+				else
+					op= new SparkRefinementOperator(kb);
 				System.out.println(op);
 				ArrayList<Integer> list= new ArrayList<Integer>();
 				for (int i = 0; i<individuals.length;i++)

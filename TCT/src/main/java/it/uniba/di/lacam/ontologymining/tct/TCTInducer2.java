@@ -108,21 +108,23 @@ public class TCTInducer2 {
 					//System.out.println(posExs2.size());
 					Description root = currentTree.getRoot();
 					System.out.println("Current node: "+root+"---"+posExs2.size());
+					Description[] cConcepts =	new Description[Parameters.beam];
+					if (!Parameters.refinementOperator.equalsIgnoreCase("single")){
 
-					//JavaRDD<Description> refine = ((SparkRefinementOperator)op).refine(root, posExs2, negExs2, true, true, true);
+						
+					JavaRDD<Description> refine = ((SparkRefinementOperator)op).refine(root, posExs2, negExs2, true, true, true);
 					//System.out.println("# refinements: "+refine.count());
-					//List<Description> collect = //refine.collect();
+					List<Description> collect = refine.collect();
 					//generateNewConcepts.addAll(collect); //op instanceof SparkRefinementOperator?
 
-
+					}
 					//	; //: 
-
+					else {
 					// genera i concetti sulla base degli esempi
-
-
-					Description[] cConcepts= new Description[Parameters.beam];
 					//
 					cConcepts =  op.generateNewConcepts(currentTree.getRoot(),Parameters.beam, posExs, negExs).toArray(cConcepts); //generateNewConcepts.toArray(cConcepts);
+					
+					}
 					for (Description c:cConcepts) System.out.println(c);
 
 					// select node concept
