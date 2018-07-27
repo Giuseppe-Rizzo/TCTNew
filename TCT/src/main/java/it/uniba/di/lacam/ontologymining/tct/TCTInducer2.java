@@ -333,7 +333,6 @@ public class TCTInducer2 {
 			else
 				negExs.add(ind);
 
-
 	}
 
 
