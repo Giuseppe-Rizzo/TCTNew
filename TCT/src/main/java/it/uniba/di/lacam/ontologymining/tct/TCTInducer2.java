@@ -35,10 +35,11 @@ import com.fasterxml.jackson.core.JsonFactory.Feature;
 
 public class TCTInducer2 {
 
-
-	TCT2DisAxsConverter data = new TCT2DisAxsConverter();
+	TCT2DisAxsConverter data;
+	
 	public TCTInducer2(KnowledgeBase k){
 
+		data= new TCT2DisAxsConverter();
 		data.kb=k;
 		//	super(k);
 
@@ -207,13 +208,14 @@ public class TCTInducer2 {
 			ArrayList<Integer> falseExs= new ArrayList<Integer>();
 			ArrayList<Integer> undExs= new ArrayList<Integer>();
 			split(cConcepts[i], posExs, trueExs, falseExs);
-			//Integer medoidP=  getMedoid(trueExs); // compute the overlap between individuals 
-			//Integer  medoidN= getMedoid(falseExs);
+			System.out.println(cConcepts[i]+ " ("+posExs.size()+", "+trueExs.size()+","+falseExs.size()+")");
+			double score = score(trueExs, falseExs);
+			
 			//System.out.println(medoidP+ "-"+medoidN);
-			double simpleEntropyDistance= singlelinkage(trueExs,falseExs);
+			//double simpleEntropyDistance= singlelinkage(trueExs,falseExs);
 			//double simpleEntropyDistance = (medoidP ==null) || (medoidN==null)?0:FeaturesDrivenDistance.distance(Parameters.distance,medoidP, medoidN);
-			if (simpleEntropyDistance>= maxDiff){
-				maxDiff= simpleEntropyDistance;
+			if (score>= maxDiff){
+				maxDiff= score;
 				bestConcept= cConcepts[i];
 				idx= i;
 
@@ -225,6 +227,19 @@ public class TCTInducer2 {
 		}
 
 		return cConcepts[idx]; // the concept with the minimum risk of overlap
+	}
+
+
+	private double score(ArrayList<Integer> trueExs, ArrayList<Integer> falseExs) {
+		// TODO Auto-generated method stub
+		
+		if (Parameters.prototype.equalsIgnoreCase("medoid")) {
+		 Integer medoidP= getMedoid(trueExs);
+		Integer  medoidN= getMedoid(falseExs);
+		double distance =  medoidP== null || medoidN==null? 1: FeaturesDrivenDistance.distance(Parameters.distance, medoidP, medoidN);
+		 return distance;
+		}
+		return singlelinkage(trueExs,falseExs);
 	}
 
 

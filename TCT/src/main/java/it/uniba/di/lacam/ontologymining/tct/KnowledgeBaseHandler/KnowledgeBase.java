@@ -133,7 +133,7 @@ public class KnowledgeBase implements Serializable {
 		for(NamedClass cls : classList) {
 //			if (!fi. && !cls.isAnonymous()) {
 				allConcepts[c++] = cls;
-				System.out.println(c +" - "+cls);
+				System.out.println(c +":) "+cls);
 //			}	        		
 		}
 		System.out.println("---------------------------- "+c);

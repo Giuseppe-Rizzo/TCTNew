@@ -91,7 +91,7 @@ public class Main {
 				TCTInducer2 t = new TCTInducer2(kb);
 				//RefinementOperator op = new RefinementOperator(kb);
 				RefinementOperator op= null;
-				if (Parameters.refinementOperator.equalsIgnoreCase("singlethread"))
+				if (Parameters.refinementOperator.equalsIgnoreCase("single"))
 				op=new RefinementOperator(kb);
 				else
 					op= new SparkRefinementOperator(kb);
