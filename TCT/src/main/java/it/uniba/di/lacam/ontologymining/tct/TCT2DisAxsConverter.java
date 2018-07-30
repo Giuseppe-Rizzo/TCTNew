@@ -41,7 +41,7 @@ public class TCT2DisAxsConverter {
 				//System.out.println("    "+root );
 				concepts.add(root);
 				if (tree1.getPos().getRoot()!=null) {
-			
+						
 
 				ClusterTree p = tree1.getPos();
 				//ClusterTree n= tree1.getNeg();
@@ -49,8 +49,7 @@ public class TCT2DisAxsConverter {
 				}
 				//queue.add(n);
 				if (tree1.getNeg().getRoot()!=null){
-
-					ClusterTree n = tree1.getNeg();
+										ClusterTree n = tree1.getNeg();
 					//ClusterTree n= tree1.getNeg();
 					queue.add(n);
 				}

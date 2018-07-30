@@ -60,10 +60,10 @@ public class RefinementOperator {
 				if (KnowledgeBase.generator.nextDouble() > 0.5) {
 				   Description newConceptBase = getRandomConcept();
 					if (KnowledgeBase.generator.nextDouble() >0.5) {
-						if (KnowledgeBase.generator.nextDouble() <0.7) { // new role restriction
+						if (KnowledgeBase.generator.nextDouble() >0.5) { // new role restriction
 							ObjectProperty role = allRoles[KnowledgeBase.generator.nextInt(allRoles.length)];
 							//					OWLDescription roleRange = (OWLDescription) role.getRange;
-							if (KnowledgeBase.generator.nextDouble() < 0.9)
+							if (KnowledgeBase.generator.nextDouble() > 0.5)
 								newConcept = new ObjectAllRestriction(role, newConceptBase);
 							else
 								newConcept = new ObjectSomeRestriction(role, newConceptBase);
