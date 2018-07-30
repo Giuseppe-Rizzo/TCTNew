@@ -33,7 +33,7 @@ public class RefinementOperator {
 		// TODO Auto-generated constructor stub
 	this.kb=kb;
 	allConcepts=kb.getClasses();
-	System.out.println("All classes:"+ allConcepts);
+//	/System.out.println("All classes:"+ allConcepts);
 	
 	allRoles=kb.getRoles();
 	
@@ -50,11 +50,11 @@ public class RefinementOperator {
 		// sceglie casualmente uno tra i concetti presenti 
 		Description newConcept = null;
 //			
- System.out.println("All concepts: "+allConcepts);
+ //System.out.println("All concepts: "+allConcepts);
 			// case A:  ALC and more expressive ontologies
 			do {
 				
-			System.out.println(allConcepts==null);
+	//		System.out.println(allConcepts==null);
 				newConcept = allConcepts[KnowledgeBase.generator.nextInt(allConcepts.length)];
 				
 				if (KnowledgeBase.generator.nextDouble() > 0.5) {

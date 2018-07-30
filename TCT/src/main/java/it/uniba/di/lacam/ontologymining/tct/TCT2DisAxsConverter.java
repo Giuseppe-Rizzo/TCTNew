@@ -1,12 +1,15 @@
 package it.uniba.di.lacam.ontologymining.tct;
 
 import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.List;
 
 import org.dllearner.core.owl.Description;
 import org.dllearner.core.owl.Intersection;
 import org.dllearner.core.owl.Negation;
 
 import it.uniba.di.lacam.ontologymining.tct.KnowledgeBaseHandler.KnowledgeBase;
+import it.uniba.di.lacam.ontologymining.tct.parameters.Parameters;
 import it.uniba.di.lacam.ontologymining.tct.utils.Couple;
 
 public class TCT2DisAxsConverter {
@@ -93,20 +96,25 @@ public class TCT2DisAxsConverter {
 		public static ArrayList<Couple<Description,Description>>  extractDisjointnessAxiom(ClusterTree t){
 			Description fatherNode= null;
 			ArrayList<Description> concepts=  extractConcepts(fatherNode, t);
+			int size = Parameters.nOfresults==0?concepts.size():Parameters.nOfresults;
+			List<Description> clist = concepts.subList(0, size-1);
+			HashSet<Description> conceptset= new HashSet<Description>(clist);
 			ArrayList<Couple<Description,Description>>result= new ArrayList<Couple<Description,Description>>();
+		
 
-			for  (int i=0; i<concepts.size();i++){
-				Description  c= concepts.get(i);
-				System.out.println(c);
+			//System.out.println("starting disjointness extraction: "+ conceptset.size()*conceptset.size());
+			
+			
+			for  (Description c: conceptset){
+			//	Description  c= concepts.get(i);	
 				Couple<Description,Description> element= new Couple<Description, Description>();
 
-				for (int j=i; j<concepts.size();j++){
-					Description  d= concepts.get(j);
-					System.out.println(d);
-					if (!(c.toKBSyntaxString().equals(d.toKBSyntaxString()))){//)  && !(result.contains(new Couple(c,d)))){ //(!(result.contains(new Couple(d,c))
+				for (Description  d:conceptset) {
+					
+					if ((c.toKBSyntaxString().compareTo(d.toKBSyntaxString()))!=0){//)  && !(result.contains(new Couple(c,d)))){ //(!(result.contains(new Couple(d,c))
 						//SortedSet<Description> subClasses1 = kb.getReasoner().getSubClasses(c);
 						//SortedSet<Description> subClasses2 = kb.getReasoner().getSubClasses(d);
-						if ((kb.getReasoner().getIndividuals(new Intersection(c,d)).size()<10)){
+						if ((kb.getReasoner().getIndividuals(new Intersection(c,d)).size()<5)){
 							element.setFirstElement(c);
 							element.setSecondElement(d);
 							result.add(element);

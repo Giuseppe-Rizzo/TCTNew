@@ -103,16 +103,17 @@ public class Main {
 				//System.out.println(induceDLTree);	 
 				
 				TCT2DisAxsConverter.kb=kb;
-				final ArrayList<Couple<Description,Description>> extractDisjointnessAxiom = TCT2DisAxsConverter.extractDisjointnessAxiom(induceDLTree);
+				ArrayList<Couple<Description,Description>> extractDisjointnessAxiom = TCT2DisAxsConverter.extractDisjointnessAxiom(induceDLTree);
+				HashSet<Couple<Description,Description>>e = new HashSet<Couple<Description,Description>>(extractDisjointnessAxiom);
 				System.out.println("Number of axioms: "+ extractDisjointnessAxiom.size());
-				resultsAxs[j]= extractDisjointnessAxiom.size();
+				//resultsAxs[j]= extractDisjointnessAxiom.size();
 				int nInc=0;
 				TreeSet<String> out= new TreeSet<String>();
-				for (Couple<Description,Description> c:extractDisjointnessAxiom){
-					System.out.println(c.getFirstElement()+ " disjointWith " +c.getSecondElement());
+				for (Couple<Description,Description> c:e){
+					System.out.println(c);
 					SortedSet<Individual> individuals2 = reasoner.getIndividuals((new Intersection(c.getFirstElement(),c.getSecondElement())));
 					
-					if (individuals2.size()>10){
+					if (individuals2.size()>0){
 						nInc++;
 						out.add(nInc+") Axiom: "+ c.getFirstElement()+ "  disjoint with "+ c.getSecondElement()+ ":   "+individuals2.size());
 						

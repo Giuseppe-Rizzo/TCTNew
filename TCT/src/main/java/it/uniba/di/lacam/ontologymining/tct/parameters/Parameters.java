@@ -19,11 +19,15 @@ public class Parameters {
 	private static Properties props;
 	private static InputStream input;
 	public static String prototype;
+	public static int timeout;
+	public static int nOfresults;
 	public static void loadParameters(){
 		props= new Properties();
 		try {
 			input= new FileInputStream(new File("experiments.properties"));
 			props.load(input);
+			timeout= Integer.parseInt(props.getProperty("timeout"));
+			nOfresults=Integer.parseInt(props.getProperty("nResults"));
 		//	samplingrate = Double.parseDouble(props.getProperty("samplingrate"));
 		//	originalImbalance =Double.parseDouble(props.getProperty("originalImbalance"));
 			NFOLDS = Integer.parseInt(props.getProperty("NFOLDS"));

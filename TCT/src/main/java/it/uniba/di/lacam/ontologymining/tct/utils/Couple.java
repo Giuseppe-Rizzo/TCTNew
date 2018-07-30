@@ -2,7 +2,7 @@ package it.uniba.di.lacam.ontologymining.tct.utils;
 
 import org.dllearner.core.owl.Description;
 
-public class Couple<S,T> {
+public class Couple<S,T> implements Comparable {
 	 private S firstElement;
 	 private T secondElement;
 	
@@ -36,6 +36,14 @@ public class Couple<S,T> {
 	public String toString(){
 		
 		return "<"+firstElement.toString()+", "+secondElement+">";
+	}
+
+	@Override
+	public int compareTo(Object arg0) {
+		// TODO Auto-generated method stub
+		if (arg0 instanceof Couple)
+			 return this.toString().compareTo(arg0.toString());
+		else		return 1;
 	}
 
 }
