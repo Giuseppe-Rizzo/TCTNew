@@ -2,7 +2,7 @@
 The project aims at discovering disjointness axiom through the induction of a Terminological Cluster Tree (TCT), an unsupervised model that extends first order logic tree in order to be compliant with SW representations. 
 
 # How to run 
-The project can be imported as Maven project after the repository is cloned. For the sake of comparisons, the project allows to discover disjointness axioms via 3 possible approaches:
+The project can be imported as a Maven project after the repository is cloned. For the sake of comparisons, the project allows to discover disjointness axioms via 3 possible approaches:
 - terminological cluster tree  
 - pearson coefficient correlation
 - negative association rule mining
@@ -19,7 +19,7 @@ The progam can be configured modifying the file experiments.properties that cont
 - refinementoperator, the refinement operator adopted by a TCT (admissible values: single , i.e. a single thread refinement operator, 
 -spark,  i.e. the spark implementation of the previuous one)
 - prototype, the kind of prototypical individuals used to split the set of individuals (admissbile values:  single, a single linkage approach to cluster the individuals, medoids, i.e. a partitioning around the medoids of two clusters of individuals)
-
+- split, the type of split used  to partition the set of individuals rooted to the current node (admissible values: instance, i.e. according to the instance check, or prototype, i.e. according to the prototypes-- the medoids by default)
 
 # Publications
 - Giuseppe Rizzo, Claudia d'Amato, Nicola Fanizzi, Floriana Esposito:
