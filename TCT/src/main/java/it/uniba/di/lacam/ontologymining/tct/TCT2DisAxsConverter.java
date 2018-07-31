@@ -33,12 +33,12 @@ public class TCT2DisAxsConverter {
 
 			if ( tree1.getRoot() !=null && (tree1.getPos().root==null && tree1.getNeg().root==null)) 
 			{	 Description root = tree1.getRoot();
-			//System.out.println(root+" Added" );
+			System.out.println(root+" Added" );
 			concepts.add(root);
 
 			}else{ 
 				Description root = tree1.getRoot();
-				//System.out.println("    "+root );
+				System.out.println("Added:    "+root );
 				concepts.add(root);
 				if (tree1.getPos().getRoot()!=null) {
 						

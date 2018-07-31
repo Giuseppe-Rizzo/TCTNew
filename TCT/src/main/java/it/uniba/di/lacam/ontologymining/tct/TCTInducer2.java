@@ -87,7 +87,7 @@ public class TCTInducer2 {
 			negExs=currentExamples.getSecond();
 			undExs=currentExamples.getThird();
 
-			if (posExs.size() <=1) // no exs
+			if (posExs.size() <=4) // no exs
 				//	if (prPos >= prNeg) { // prior majority of positives
 				currentTree.setRoot(null, posExs, null, null); // set positive leaf
 			else{
@@ -112,7 +112,7 @@ public class TCTInducer2 {
 							negExs2.add(data.kb.getIndividuals()[p]);
 						//System.out.println(posExs2.size());
 						Description root = currentTree.getRoot();
-						System.out.println("Current node: "+root+"---"+posExs2.size());
+						System.out.println("Current node: "+root+"    Cluster size: "+posExs2.size());
 						Description[] cConcepts =	new Description[Parameters.beam];
 						if (!Parameters.refinementOperator.equalsIgnoreCase("single")){
 
@@ -130,10 +130,11 @@ public class TCTInducer2 {
 							cConcepts =  op.generateNewConcepts(currentTree.getRoot(),Parameters.beam, posExs, negExs).toArray(cConcepts); //generateNewConcepts.toArray(cConcepts);
 
 						}
-						for (Description c:cConcepts) System.out.println(c);
+						//for (Description c:cConcepts) System.out.println(c);
 
 						// select node concept
 						Description newRootConcept =  selectConceptWithMinOverlap(cConcepts, posExs) ; //(Parameters.CCP?(selectBestConceptCCP(cConcepts, posExs, negExs, undExs, prPos, prNeg, truePos, trueNeg)):(selectBestConcept(cConcepts, posExs, negExs, undExs, prPos, prNeg));
+						System.out.println();
 						System.out.println("Best Concept:"+newRootConcept);
 						//System.out.println();
 						ArrayList<Integer> posExsT = new ArrayList<Integer>();
@@ -203,7 +204,7 @@ public class TCTInducer2 {
 
 			Double maxDiff= 0.0d;
 			Description bestConcept= cConcepts[0];
-			System.out.println(bestConcept);
+			//System.out.println(bestConcept);
 			int idx=0;
 
 			for (int i =0; i< cConcepts.length;i++){
@@ -212,7 +213,7 @@ public class TCTInducer2 {
 				ArrayList<Integer> falseExs= new ArrayList<Integer>();
 				ArrayList<Integer> undExs= new ArrayList<Integer>();
 				split(cConcepts[i], posExs, trueExs, falseExs);
-				System.out.println(cConcepts[i]+ " ("+posExs.size()+", "+trueExs.size()+","+falseExs.size()+")");
+				System.out.println("Concept: "+cConcepts[i]+ " ( Cluster: "+posExs.size()+",  l: "+trueExs.size()+",   r: "+falseExs.size()+")");
 				double score = score(trueExs, falseExs);
 
 				//System.out.println(medoidP+ "-"+medoidN);
@@ -341,7 +342,7 @@ public class TCTInducer2 {
 			//System.out.println("Exs:"+ exs.size()+ "  l: "+posExsT.size()+ " r: "+negExsT.size());
 			if (posExsT.isEmpty())
 				fillSet(posExsT, negExsT,0.6);
-			//System.out.println("Exs:"+ exs.size()+ "  l: "+posExsT.size()+ "  r: "+negExsT.size());
+			System.out.println("Exs:"+ exs.size()+ "  l: "+posExsT.size()+ "  r: "+negExsT.size());
 			Integer posMedoid= getMedoid(posExsT);
 			if (negExsT.isEmpty())
 				fillSet(negExsT, posExsT,0.6);

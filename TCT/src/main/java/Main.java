@@ -66,6 +66,8 @@ public class Main {
 			it.uniba.di.lacam.ontologymining.tct.distances.FeaturesDrivenDistance.preLoadPi(reasoner, classes, individuals);
 			FeaturesDrivenDistance.computeFeatureEntropies(reasoner, classes);
 			System.out.println( "************************Discovering disjointntness axioms ********** ");
+			
+			
 			if (args[0].equalsIgnoreCase("apriori")){
 				System.out.println("Learning algorithm: A priori");
 				Apriori apriori= new Apriori(reasoner, classes, individuals);
