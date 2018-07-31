@@ -76,6 +76,7 @@ public class TCTInducer2 {
 		toInduce.setSecondElement(examples);
 		stack.push(toInduce);
 
+		List<Description> candidates = new ArrayList<Description>();
 		while(!stack.isEmpty()){
 
 			Couple<ClusterTree,Npla<ArrayList<Integer>,ArrayList<Integer>,ArrayList<Integer>, Integer, Double, Double>> current= stack.pop(); // extract the next element
@@ -127,13 +128,14 @@ public class TCTInducer2 {
 						else {
 							// genera i concetti sulla base degli esempi
 							//
-							cConcepts =  op.generateNewConcepts(currentTree.getRoot(),Parameters.beam, posExs, negExs).toArray(cConcepts); //generateNewConcepts.toArray(cConcepts);
+							cConcepts =  op.generateNewConcepts(currentTree.getRoot(),Parameters.beam, posExs, negExs,candidates).toArray(cConcepts); //generateNewConcepts.toArray(cConcepts);
 
 						}
 						//for (Description c:cConcepts) System.out.println(c);
 
 						// select node concept
 						Description newRootConcept =  selectConceptWithMinOverlap(cConcepts, posExs) ; //(Parameters.CCP?(selectBestConceptCCP(cConcepts, posExs, negExs, undExs, prPos, prNeg, truePos, trueNeg)):(selectBestConcept(cConcepts, posExs, negExs, undExs, prPos, prNeg));
+						candidates.add(newRootConcept);
 						System.out.println();
 						System.out.println("Best Concept:"+newRootConcept);
 						//System.out.println();
@@ -333,12 +335,14 @@ public class TCTInducer2 {
 		 */
 		private void split (Description concept, ArrayList<Integer> iExs, ArrayList<Integer> posExs, ArrayList<Integer> negExs) {
 
+			
 			ArrayList<Integer> exs=(ArrayList<Integer>)iExs.clone();
 			ArrayList<Integer> posExsT= new ArrayList<Integer>();
 			ArrayList<Integer> negExsT=new ArrayList<Integer>();;
 			ArrayList<Integer> undExsT=new ArrayList<Integer>();;
 			splitInstanceCheck(concept,exs,posExsT,negExsT,undExsT); // split according to instance check
 
+			if (Parameters.split.equalsIgnoreCase("medoid")) {
 			//System.out.println("Exs:"+ exs.size()+ "  l: "+posExsT.size()+ " r: "+negExsT.size());
 			if (posExsT.isEmpty())
 				fillSet(posExsT, negExsT,0.6);
@@ -355,6 +359,12 @@ public class TCTInducer2 {
 				else
 					negExs.add(ind);
 
+			}
+			else {
+				posExs.addAll(posExsT);
+				negExs.addAll(negExsT);
+				
+			}
 		}
 
 

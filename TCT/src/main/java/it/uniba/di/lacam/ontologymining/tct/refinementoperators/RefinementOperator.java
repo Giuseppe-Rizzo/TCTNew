@@ -2,6 +2,7 @@ package it.uniba.di.lacam.ontologymining.tct.refinementoperators;
 
 import java.util.ArrayList;
 import java.util.Iterator;
+import java.util.List;
 import java.util.Set;
 
 
@@ -82,7 +83,7 @@ public class RefinementOperator {
 		return kb.getRandomConcept();				
 	}
 	
-	public ArrayList<Description> generateNewConcepts(Description father, int dim, ArrayList<Integer> posExs, ArrayList<Integer> negExs) {
+	public ArrayList<Description> generateNewConcepts(Description father, int dim, ArrayList<Integer> posExs, ArrayList<Integer> negExs, List<Description> candidates) {
 
 		System.out.printf("Generating node concepts ");
 		ArrayList<Description> rConcepts = new ArrayList<Description>(dim);
@@ -113,8 +114,8 @@ public class RefinementOperator {
 					else if (negExs.contains(index))
 						emptyIntersection = false;
 				}					
-			} while (emptyIntersection);
-			rConcepts.add(newConcept);
+			} while (emptyIntersection || candidates.contains(newConcept));
+			rConcepts.add(newConcept); 
 			System.out.printf("%d ", c);
 		}
 		System.out.println();

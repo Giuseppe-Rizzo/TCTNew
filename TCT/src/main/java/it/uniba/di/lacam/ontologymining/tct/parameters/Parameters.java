@@ -21,6 +21,7 @@ public class Parameters {
 	public static String prototype;
 	public static int timeout;
 	public static int nOfresults;
+	public static String split;
 	public static void loadParameters(){
 		props= new Properties();
 		try {
@@ -28,6 +29,7 @@ public class Parameters {
 			props.load(input);
 			timeout= Integer.parseInt(props.getProperty("timeout"));
 			nOfresults=Integer.parseInt(props.getProperty("nResults"));
+			split = props.getProperty("split");
 		//	samplingrate = Double.parseDouble(props.getProperty("samplingrate"));
 		//	originalImbalance =Double.parseDouble(props.getProperty("originalImbalance"));
 			NFOLDS = Integer.parseInt(props.getProperty("NFOLDS"));
