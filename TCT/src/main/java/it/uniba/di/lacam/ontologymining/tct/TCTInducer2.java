@@ -93,9 +93,9 @@ public class TCTInducer2 {
 				currentTree.setRoot(null, posExs, null, null); // set positive leaf
 			else{
 				long currentTime=System.currentTimeMillis(); // time out for making the approach more scalable
-			//	if (Parameters.timeout>0 && currentTime-startingTime>100000)
-				//	currentTree.setRoot(null, posExs, null, null);
-				//else {
+				if (Parameters.timeout>0 && currentTime-startingTime>100000)
+					currentTree.setRoot(null, posExs, null, null);
+				else {
 					//Description concept=currentTree.getRoot();
 					//if (score(posExs, negExs)>=1)
 					//currentTree.setRoot(null, posExs, null, null);
@@ -187,7 +187,7 @@ public class TCTInducer2 {
 
 					}
 						//			}		
-				//}
+				}
 			}
 			return tree;
 

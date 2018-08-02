@@ -1,0 +1,498 @@
+C:/Users/Giuseppe/Documents/ontos/vicodi_new.owl
+
+Classes
+-------
+1:) http://vicodi.org/ontology#Abbey
+2:) http://vicodi.org/ontology#Abstract-Notion
+3:) http://vicodi.org/ontology#Actor
+4:) http://vicodi.org/ontology#Animal
+5:) http://vicodi.org/ontology#Architect
+6:) http://vicodi.org/ontology#Armament
+7:) http://vicodi.org/ontology#Art-Form
+8:) http://vicodi.org/ontology#Artefact
+9:) http://vicodi.org/ontology#Artist
+10:) http://vicodi.org/ontology#Artistic-Movement
+11:) http://vicodi.org/ontology#Artistic-Style
+12:) http://vicodi.org/ontology#Astronaut
+13:) http://vicodi.org/ontology#Author
+14:) http://vicodi.org/ontology#Badge
+15:) http://vicodi.org/ontology#Battle
+16:) http://vicodi.org/ontology#Board
+17:) http://vicodi.org/ontology#Book
+18:) http://vicodi.org/ontology#Building
+19:) http://vicodi.org/ontology#Business-Leader
+20:) http://vicodi.org/ontology#Category
+21:) http://vicodi.org/ontology#Cathedral
+22:) http://vicodi.org/ontology#Church
+23:) http://vicodi.org/ontology#Church-Reformer
+24:) http://vicodi.org/ontology#City
+25:) http://vicodi.org/ontology#Cleric
+26:) http://vicodi.org/ontology#Clerical-Leader
+27:) http://vicodi.org/ontology#Clothing
+28:) http://vicodi.org/ontology#Commodity
+29:) http://vicodi.org/ontology#Composer
+30:) http://vicodi.org/ontology#Conceptual-Object
+31:) http://vicodi.org/ontology#Conductor
+32:) http://vicodi.org/ontology#Country
+33:) http://vicodi.org/ontology#Creator
+34:) http://vicodi.org/ontology#Crime
+35:) http://vicodi.org/ontology#Criminal
+36:) http://vicodi.org/ontology#Cultural-Agreement
+37:) http://vicodi.org/ontology#Cultural-Organisation
+38:) http://vicodi.org/ontology#Dancer
+39:) http://vicodi.org/ontology#Diplomat
+40:) http://vicodi.org/ontology#Disaster
+41:) http://vicodi.org/ontology#Discoverer
+42:) http://vicodi.org/ontology#Disease
+43:) http://vicodi.org/ontology#Dramaturge
+44:) http://vicodi.org/ontology#Dynasty
+45:) http://vicodi.org/ontology#Ecclesiarch
+46:) http://vicodi.org/ontology#Economic-Enterprise
+47:) http://vicodi.org/ontology#Economic-Organisation
+48:) http://vicodi.org/ontology#Economic-Process
+49:) http://vicodi.org/ontology#Economic-Symbol
+50:) http://vicodi.org/ontology#Economist
+51:) http://vicodi.org/ontology#Educational-Organisation
+52:) http://vicodi.org/ontology#Election
+53:) http://vicodi.org/ontology#Emperor
+54:) http://vicodi.org/ontology#Engineer
+55:) http://vicodi.org/ontology#Entertainer
+56:) http://vicodi.org/ontology#Environment
+57:) http://vicodi.org/ontology#Ethnic-Group
+58:) http://vicodi.org/ontology#Event
+59:) http://vicodi.org/ontology#Fictional-Event
+60:) http://vicodi.org/ontology#Fictional-Person
+61:) http://vicodi.org/ontology#Field-of-Knowledge
+62:) http://vicodi.org/ontology#Film-Maker
+63:) http://vicodi.org/ontology#Flavour
+64:) http://vicodi.org/ontology#Food
+65:) http://vicodi.org/ontology#Foreign-Minister
+66:) http://vicodi.org/ontology#Functionary
+67:) http://vicodi.org/ontology#FuzzyTemporalInterval
+68:) http://vicodi.org/ontology#Geographer
+69:) http://vicodi.org/ontology#Geographical-Discovery
+70:) http://vicodi.org/ontology#Geographical-Feature
+71:) http://vicodi.org/ontology#Geographical-Region
+72:) http://vicodi.org/ontology#Governmental-Organisation
+73:) http://vicodi.org/ontology#Head-of-Government
+74:) http://vicodi.org/ontology#Head-of-State
+75:) http://vicodi.org/ontology#Idea
+76:) http://vicodi.org/ontology#Ideology
+77:) http://vicodi.org/ontology#Illness
+78:) http://vicodi.org/ontology#Individual
+79:) http://vicodi.org/ontology#Intellectual-Construct
+80:) http://vicodi.org/ontology#Intellectual-Movement
+81:) http://vicodi.org/ontology#International-Alliance
+82:) http://vicodi.org/ontology#International-Organisation
+83:) http://vicodi.org/ontology#Intra-State-Group
+84:) http://vicodi.org/ontology#Inventor
+85:) http://vicodi.org/ontology#Journal
+86:) http://vicodi.org/ontology#Journalist
+87:) http://vicodi.org/ontology#Jurist
+88:) http://vicodi.org/ontology#King
+89:) http://vicodi.org/ontology#Landmark
+90:) http://vicodi.org/ontology#Language
+91:) http://vicodi.org/ontology#Leader
+92:) http://vicodi.org/ontology#League
+93:) http://vicodi.org/ontology#Legislation
+94:) http://vicodi.org/ontology#Life-Event
+95:) http://vicodi.org/ontology#Liturgical-Object
+96:) http://vicodi.org/ontology#Location
+97:) http://vicodi.org/ontology#Location-Part-Relation
+98:) http://vicodi.org/ontology#Magnate
+99:) http://vicodi.org/ontology#Management-Organisation
+100:) http://vicodi.org/ontology#Masonic-Lodge
+101:) http://vicodi.org/ontology#Measurable-Trend
+102:) http://vicodi.org/ontology#Meeting
+103:) http://vicodi.org/ontology#Military-Organisation
+104:) http://vicodi.org/ontology#Military-Person
+105:) http://vicodi.org/ontology#Military-Unit
+106:) http://vicodi.org/ontology#Minister
+107:) http://vicodi.org/ontology#Monastery
+108:) http://vicodi.org/ontology#Movement
+109:) http://vicodi.org/ontology#Musician
+110:) http://vicodi.org/ontology#National-Symbol
+111:) http://vicodi.org/ontology#Natural-Object
+112:) http://vicodi.org/ontology#Newspaper
+113:) http://vicodi.org/ontology#Non-Military-Conflict
+114:) http://vicodi.org/ontology#Object
+115:) http://vicodi.org/ontology#Organisation
+116:) http://vicodi.org/ontology#Other-Religious-Leader
+117:) http://vicodi.org/ontology#Other-Religious-Person
+118:) http://vicodi.org/ontology#Painter
+119:) http://vicodi.org/ontology#Painting
+120:) http://vicodi.org/ontology#Pamphlet
+121:) http://vicodi.org/ontology#Party
+122:) http://vicodi.org/ontology#Pastime
+123:) http://vicodi.org/ontology#Period
+124:) http://vicodi.org/ontology#Period-in-Office
+125:) http://vicodi.org/ontology#Person
+126:) http://vicodi.org/ontology#Person-Role
+127:) http://vicodi.org/ontology#Philanthropist
+128:) http://vicodi.org/ontology#Philosopher
+129:) http://vicodi.org/ontology#Physician
+130:) http://vicodi.org/ontology#Piece-of-Music
+131:) http://vicodi.org/ontology#Political-Organisation
+132:) http://vicodi.org/ontology#Political-Region
+133:) http://vicodi.org/ontology#Political-Symbol
+134:) http://vicodi.org/ontology#Politician
+135:) http://vicodi.org/ontology#Pollution
+136:) http://vicodi.org/ontology#Pope
+137:) http://vicodi.org/ontology#Population-Movement
+138:) http://vicodi.org/ontology#Prince
+139:) http://vicodi.org/ontology#Professor
+140:) http://vicodi.org/ontology#Psychologist
+141:) http://vicodi.org/ontology#Public-Oration
+142:) http://vicodi.org/ontology#Publisher
+143:) http://vicodi.org/ontology#Queen
+144:) http://vicodi.org/ontology#Relic
+145:) http://vicodi.org/ontology#Religious-Community
+146:) http://vicodi.org/ontology#Religious-Ideology
+147:) http://vicodi.org/ontology#Religious-Leader
+148:) http://vicodi.org/ontology#Religious-Movement
+149:) http://vicodi.org/ontology#Religious-Order
+150:) http://vicodi.org/ontology#Religious-Organisation
+151:) http://vicodi.org/ontology#Religious-Practice
+152:) http://vicodi.org/ontology#Religious-Symbol
+153:) http://vicodi.org/ontology#Representative-Institution
+154:) http://vicodi.org/ontology#Ritual
+155:) http://vicodi.org/ontology#Role
+156:) http://vicodi.org/ontology#Saint
+157:) http://vicodi.org/ontology#Scandal
+158:) http://vicodi.org/ontology#Scientific-Instrument
+159:) http://vicodi.org/ontology#Scientist
+160:) http://vicodi.org/ontology#Sculptor
+161:) http://vicodi.org/ontology#Sculpture
+162:) http://vicodi.org/ontology#Secular-Ideology
+163:) http://vicodi.org/ontology#Secular-Leader
+164:) http://vicodi.org/ontology#Secular-Movement
+165:) http://vicodi.org/ontology#Settlement
+166:) http://vicodi.org/ontology#Ship
+167:) http://vicodi.org/ontology#Social-Group
+168:) http://vicodi.org/ontology#Social-Stratum
+169:) http://vicodi.org/ontology#Sportsman
+170:) http://vicodi.org/ontology#Stereotype-Group
+171:) http://vicodi.org/ontology#Structure
+172:) http://vicodi.org/ontology#Sultan
+173:) http://vicodi.org/ontology#Symbol
+174:) http://vicodi.org/ontology#Technical-Scientific-Advance
+175:) http://vicodi.org/ontology#TemporalInterval
+176:) http://vicodi.org/ontology#Theologian
+177:) http://vicodi.org/ontology#Time
+178:) http://vicodi.org/ontology#Time-Dependent
+179:) http://vicodi.org/ontology#Time-Dependent-Relation
+180:) http://vicodi.org/ontology#Trade-Association
+181:) http://vicodi.org/ontology#Trades-Union
+182:) http://vicodi.org/ontology#Trades-Unionist
+183:) http://vicodi.org/ontology#Train
+184:) http://vicodi.org/ontology#Treaty
+185:) http://vicodi.org/ontology#Trial
+186:) http://vicodi.org/ontology#University
+187:) http://vicodi.org/ontology#Uprising
+188:) http://vicodi.org/ontology#Vehicle
+189:) http://vicodi.org/ontology#VicodiOI
+190:) http://vicodi.org/ontology#Village
+191:) http://vicodi.org/ontology#War
+192:) http://vicodi.org/ontology#Water
+193:) http://vicodi.org/ontology#Work-of-Art
+194:) http://vicodi.org/ontology#Writing
+---------------------------- 194
+
+Properties
+-------
+1-http://vicodi.org/ontology#exists
+2-http://vicodi.org/ontology#hasCategory
+3-http://vicodi.org/ontology#hasLocationContainerMember
+4-http://vicodi.org/ontology#hasLocationPartMember
+5-http://vicodi.org/ontology#hasRelationMember
+6-http://vicodi.org/ontology#hasRole
+7-http://vicodi.org/ontology#isLocationContainerMemberOf
+8-http://vicodi.org/ontology#isLocationPartMemberOf
+9-http://vicodi.org/ontology#isRelationMemberOf
+10-http://vicodi.org/ontology#related
+---------------------------- 10
+
+Individuals
+-----------
+---------------------------- 33238
+
+KB loaded. 
+
+16:55:15,891 [org.apache.spark.SparkContext] - Running Spark version 2.1.0
+WARNING: An illegal reflective access operation has occurred
+WARNING: Illegal reflective access by org.apache.hadoop.security.authentication.util.KerberosUtil (file:/C:/Users/Giuseppe/.m2/repository/org/apache/hadoop/hadoop-auth/2.2.0/hadoop-auth-2.2.0.jar) to method sun.security.krb5.Config.getInstance()
+WARNING: Please consider reporting this to the maintainers of org.apache.hadoop.security.authentication.util.KerberosUtil
+WARNING: Use --illegal-access=warn to enable warnings of further illegal reflective access operations
+WARNING: All illegal access operations will be denied in a future release
+16:55:16,224 [org.apache.hadoop.util.NativeCodeLoader] - Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+16:55:16,435 [org.apache.spark.SecurityManager] - Changing view acls to: Giuseppe
+16:55:16,435 [org.apache.spark.SecurityManager] - Changing modify acls to: Giuseppe
+16:55:16,450 [org.apache.spark.SecurityManager] - Changing view acls groups to: 
+16:55:16,451 [org.apache.spark.SecurityManager] - Changing modify acls groups to: 
+16:55:16,451 [org.apache.spark.SecurityManager] - SecurityManager: authentication disabled; ui acls disabled; users  with view permissions: Set(Giuseppe); groups with view permissions: Set(); users  with modify permissions: Set(Giuseppe); groups with modify permissions: Set()
+16:55:17,156 [org.apache.spark.util.Utils] - Successfully started service 'sparkDriver' on port 58069.
+16:55:17,174 [org.apache.spark.SparkEnv] - Registering MapOutputTracker
+16:55:17,208 [org.apache.spark.SparkEnv] - Registering BlockManagerMaster
+16:55:17,208 [org.apache.spark.storage.BlockManagerMasterEndpoint] - Using org.apache.spark.storage.DefaultTopologyMapper for getting topology information
+16:55:17,208 [org.apache.spark.storage.BlockManagerMasterEndpoint] - BlockManagerMasterEndpoint up
+16:55:17,224 [org.apache.spark.storage.DiskBlockManager] - Created local directory at C:\Users\Giuseppe\AppData\Local\Temp\blockmgr-5055e35e-1f4c-451c-885e-88153465b1f6
+16:55:17,259 [org.apache.spark.storage.memory.MemoryStore] - MemoryStore started with capacity 1028.4 MB
+16:55:17,397 [org.apache.spark.SparkEnv] - Registering OutputCommitCoordinator
+16:55:17,509 [org.spark_project.jetty.util.log] - Logging initialized @130414ms
+16:55:17,617 [org.spark_project.jetty.server.Server] - jetty-9.2.z-SNAPSHOT
+16:55:17,633 [org.spark_project.jetty.server.handler.ContextHandler] - Started o.s.j.s.ServletContextHandler@7cb29ea8{/jobs,null,AVAILABLE}
+16:55:17,633 [org.spark_project.jetty.server.handler.ContextHandler] - Started o.s.j.s.ServletContextHandler@b5c902{/jobs/json,null,AVAILABLE}
+16:55:17,648 [org.spark_project.jetty.server.handler.ContextHandler] - Started o.s.j.s.ServletContextHandler@7e747037{/jobs/job,null,AVAILABLE}
+16:55:17,648 [org.spark_project.jetty.server.handler.ContextHandler] - Started o.s.j.s.ServletContextHandler@4d0e1a9a{/jobs/job/json,null,AVAILABLE}
+16:55:17,648 [org.spark_project.jetty.server.handler.ContextHandler] - Started o.s.j.s.ServletContextHandler@25218a4d{/stages,null,AVAILABLE}
+16:55:17,648 [org.spark_project.jetty.server.handler.ContextHandler] - Started o.s.j.s.ServletContextHandler@bf2aa32{/stages/json,null,AVAILABLE}
+16:55:17,648 [org.spark_project.jetty.server.handler.ContextHandler] - Started o.s.j.s.ServletContextHandler@56da96b3{/stages/stage,null,AVAILABLE}
+16:55:17,648 [org.spark_project.jetty.server.handler.ContextHandler] - Started o.s.j.s.ServletContextHandler@6b3d9c38{/stages/stage/json,null,AVAILABLE}
+16:55:17,648 [org.spark_project.jetty.server.handler.ContextHandler] - Started o.s.j.s.ServletContextHandler@426710f0{/stages/pool,null,AVAILABLE}
+16:55:17,648 [org.spark_project.jetty.server.handler.ContextHandler] - Started o.s.j.s.ServletContextHandler@5c5a91b4{/stages/pool/json,null,AVAILABLE}
+16:55:17,648 [org.spark_project.jetty.server.handler.ContextHandler] - Started o.s.j.s.ServletContextHandler@5e37fb82{/storage,null,AVAILABLE}
+16:55:17,648 [org.spark_project.jetty.server.handler.ContextHandler] - Started o.s.j.s.ServletContextHandler@59ec7020{/storage/json,null,AVAILABLE}
+16:55:17,648 [org.spark_project.jetty.server.handler.ContextHandler] - Started o.s.j.s.ServletContextHandler@23f60b7d{/storage/rdd,null,AVAILABLE}
+16:55:17,648 [org.spark_project.jetty.server.handler.ContextHandler] - Started o.s.j.s.ServletContextHandler@2ba9f986{/storage/rdd/json,null,AVAILABLE}
+16:55:17,648 [org.spark_project.jetty.server.handler.ContextHandler] - Started o.s.j.s.ServletContextHandler@4aa3fc9a{/environment,null,AVAILABLE}
+16:55:17,648 [org.spark_project.jetty.server.handler.ContextHandler] - Started o.s.j.s.ServletContextHandler@70f4f89e{/environment/json,null,AVAILABLE}
+16:55:17,648 [org.spark_project.jetty.server.handler.ContextHandler] - Started o.s.j.s.ServletContextHandler@634aa81e{/executors,null,AVAILABLE}
+16:55:17,648 [org.spark_project.jetty.server.handler.ContextHandler] - Started o.s.j.s.ServletContextHandler@74b1838{/executors/json,null,AVAILABLE}
+16:55:17,648 [org.spark_project.jetty.server.handler.ContextHandler] - Started o.s.j.s.ServletContextHandler@52d96367{/executors/threadDump,null,AVAILABLE}
+16:55:17,648 [org.spark_project.jetty.server.handler.ContextHandler] - Started o.s.j.s.ServletContextHandler@5be51aa{/executors/threadDump/json,null,AVAILABLE}
+16:55:17,648 [org.spark_project.jetty.server.handler.ContextHandler] - Started o.s.j.s.ServletContextHandler@3302035b{/static,null,AVAILABLE}
+16:55:17,648 [org.spark_project.jetty.server.handler.ContextHandler] - Started o.s.j.s.ServletContextHandler@6c5747db{/,null,AVAILABLE}
+16:55:17,648 [org.spark_project.jetty.server.handler.ContextHandler] - Started o.s.j.s.ServletContextHandler@750cd36d{/api,null,AVAILABLE}
+16:55:17,648 [org.spark_project.jetty.server.handler.ContextHandler] - Started o.s.j.s.ServletContextHandler@2c8ff67{/jobs/job/kill,null,AVAILABLE}
+16:55:17,648 [org.spark_project.jetty.server.handler.ContextHandler] - Started o.s.j.s.ServletContextHandler@21733cbe{/stages/stage/kill,null,AVAILABLE}
+16:55:17,664 [org.spark_project.jetty.server.ServerConnector] - Started ServerConnector@30827cd1{HTTP/1.1}{0.0.0.0:4040}
+16:55:17,664 [org.spark_project.jetty.server.Server] - Started @130573ms
+16:55:17,664 [org.apache.spark.util.Utils] - Successfully started service 'SparkUI' on port 4040.
+16:55:17,664 [org.apache.spark.ui.SparkUI] - Bound SparkUI to 0.0.0.0, and started at http://192.168.1.66:4040
+16:55:17,796 [org.apache.spark.executor.Executor] - Starting executor ID driver on host localhost
+16:55:17,828 [org.apache.spark.util.Utils] - Successfully started service 'org.apache.spark.network.netty.NettyBlockTransferService' on port 58086.
+16:55:17,828 [org.apache.spark.network.netty.NettyBlockTransferService] - Server created on 192.168.1.66:58086
+16:55:17,843 [org.apache.spark.storage.BlockManager] - Using org.apache.spark.storage.RandomBlockReplicationPolicy for block replication policy
+16:55:17,843 [org.apache.spark.storage.BlockManagerMaster] - Registering BlockManager BlockManagerId(driver, 192.168.1.66, 58086, None)
+16:55:17,843 [org.apache.spark.storage.BlockManagerMasterEndpoint] - Registering block manager 192.168.1.66:58086 with 1028.4 MB RAM, BlockManagerId(driver, 192.168.1.66, 58086, None)
+16:55:17,843 [org.apache.spark.storage.BlockManagerMaster] - Registered BlockManager BlockManagerId(driver, 192.168.1.66, 58086, None)
+16:55:17,843 [org.apache.spark.storage.BlockManager] - Initialized BlockManager: BlockManagerId(driver, 192.168.1.66, 58086, None)
+16:55:18,076 [org.spark_project.jetty.server.handler.ContextHandler] - Started o.s.j.s.ServletContextHandler@66ab924{/metrics/json,null,AVAILABLE}
+Pre-computing 194 x 33238 pi elements 
+   0.                   http://vicodi.org/ontology#Abbey | completed.   0,5% 
+   1.         http://vicodi.org/ontology#Abstract-Notion | completed.   1,0% 
+   2.                   http://vicodi.org/ontology#Actor | completed.   1,5% 
+   3.                  http://vicodi.org/ontology#Animal | completed.   2,1% 
+   4.               http://vicodi.org/ontology#Architect | completed.   2,6% 
+   5.                http://vicodi.org/ontology#Armament | completed.   3,1% 
+   6.                http://vicodi.org/ontology#Art-Form | completed.   3,6% 
+   7.                http://vicodi.org/ontology#Artefact | completed.   4,1% 
+   8.                  http://vicodi.org/ontology#Artist | completed.   4,6% 
+   9.       http://vicodi.org/ontology#Artistic-Movement | completed.   5,2% 
+  10.          http://vicodi.org/ontology#Artistic-Style | completed.   5,7% 
+  11.               http://vicodi.org/ontology#Astronaut | completed.   6,2% 
+  12.                  http://vicodi.org/ontology#Author | completed.   6,7% 
+  13.                   http://vicodi.org/ontology#Badge | completed.   7,2% 
+  14.                  http://vicodi.org/ontology#Battle | completed.   7,7% 
+  15.                   http://vicodi.org/ontology#Board | completed.   8,2% 
+  16.                    http://vicodi.org/ontology#Book | completed.   8,8% 
+  17.                http://vicodi.org/ontology#Building | completed.   9,3% 
+  18.         http://vicodi.org/ontology#Business-Leader | completed.   9,8% 
+  19.                http://vicodi.org/ontology#Category | completed.  10,3% 
+  20.               http://vicodi.org/ontology#Cathedral | completed.  10,8% 
+  21.                  http://vicodi.org/ontology#Church | completed.  11,3% 
+  22.         http://vicodi.org/ontology#Church-Reformer | completed.  11,9% 
+  23.                    http://vicodi.org/ontology#City | completed.  12,4% 
+  24.                  http://vicodi.org/ontology#Cleric | completed.  12,9% 
+  25.         http://vicodi.org/ontology#Clerical-Leader | completed.  13,4% 
+  26.                http://vicodi.org/ontology#Clothing | completed.  13,9% 
+  27.               http://vicodi.org/ontology#Commodity | completed.  14,4% 
+  28.                http://vicodi.org/ontology#Composer | completed.  14,9% 
+  29.       http://vicodi.org/ontology#Conceptual-Object | completed.  15,5% 
+  30.               http://vicodi.org/ontology#Conductor | completed.  16,0% 
+  31.                 http://vicodi.org/ontology#Country | completed.  16,5% 
+  32.                 http://vicodi.org/ontology#Creator | completed.  17,0% 
+  33.                   http://vicodi.org/ontology#Crime | completed.  17,5% 
+  34.                http://vicodi.org/ontology#Criminal | completed.  18,0% 
+  35.      http://vicodi.org/ontology#Cultural-Agreement | completed.  18,6% 
+  36.   http://vicodi.org/ontology#Cultural-Organisation | completed.  19,1% 
+  37.                  http://vicodi.org/ontology#Dancer | completed.  19,6% 
+  38.                http://vicodi.org/ontology#Diplomat | completed.  20,1% 
+  39.                http://vicodi.org/ontology#Disaster | completed.  20,6% 
+  40.              http://vicodi.org/ontology#Discoverer | completed.  21,1% 
+  41.                 http://vicodi.org/ontology#Disease | completed.  21,6% 
+  42.              http://vicodi.org/ontology#Dramaturge | completed.  22,2% 
+  43.                 http://vicodi.org/ontology#Dynasty | completed.  22,7% 
+  44.             http://vicodi.org/ontology#Ecclesiarch | completed.  23,2% 
+  45.     http://vicodi.org/ontology#Economic-Enterprise | completed.  23,7% 
+  46.   http://vicodi.org/ontology#Economic-Organisation | completed.  24,2% 
+  47.        http://vicodi.org/ontology#Economic-Process | completed.  24,7% 
+  48.         http://vicodi.org/ontology#Economic-Symbol | completed.  25,3% 
+  49.               http://vicodi.org/ontology#Economist | completed.  25,8% 
+  50. http://vicodi.org/ontology#Educational-Organisation | completed.  26,3% 
+  51.                http://vicodi.org/ontology#Election | completed.  26,8% 
+  52.                 http://vicodi.org/ontology#Emperor | completed.  27,3% 
+  53.                http://vicodi.org/ontology#Engineer | completed.  27,8% 
+  54.             http://vicodi.org/ontology#Entertainer | completed.  28,4% 
+  55.             http://vicodi.org/ontology#Environment | completed.  28,9% 
+  56.            http://vicodi.org/ontology#Ethnic-Group | completed.  29,4% 
+  57.                   http://vicodi.org/ontology#Event | completed.  29,9% 
+  58.         http://vicodi.org/ontology#Fictional-Event | completed.  30,4% 
+  59.        http://vicodi.org/ontology#Fictional-Person | completed.  30,9% 
+  60.      http://vicodi.org/ontology#Field-of-Knowledge | completed.  31,4% 
+  61.              http://vicodi.org/ontology#Film-Maker | completed.  32,0% 
+  62.                 http://vicodi.org/ontology#Flavour | completed.  32,5% 
+  63.                    http://vicodi.org/ontology#Food | completed.  33,0% 
+  64.        http://vicodi.org/ontology#Foreign-Minister | completed.  33,5% 
+  65.             http://vicodi.org/ontology#Functionary | completed.  34,0% 
+  66.   http://vicodi.org/ontology#FuzzyTemporalInterval | completed.  34,5% 
+  67.              http://vicodi.org/ontology#Geographer | completed.  35,1% 
+  68.  http://vicodi.org/ontology#Geographical-Discovery | completed.  35,6% 
+  69.    http://vicodi.org/ontology#Geographical-Feature | completed.  36,1% 
+  70.     http://vicodi.org/ontology#Geographical-Region | completed.  36,6% 
+  71. http://vicodi.org/ontology#Governmental-Organisation | completed.  37,1% 
+  72.      http://vicodi.org/ontology#Head-of-Government | completed.  37,6% 
+  73.           http://vicodi.org/ontology#Head-of-State | completed.  38,1% 
+  74.                    http://vicodi.org/ontology#Idea | completed.  38,7% 
+  75.                http://vicodi.org/ontology#Ideology | completed.  39,2% 
+  76.                 http://vicodi.org/ontology#Illness | completed.  39,7% 
+  77.              http://vicodi.org/ontology#Individual | completed.  40,2% 
+  78.  http://vicodi.org/ontology#Intellectual-Construct | completed.  40,7% 
+  79.   http://vicodi.org/ontology#Intellectual-Movement | completed.  41,2% 
+  80.  http://vicodi.org/ontology#International-Alliance | completed.  41,8% 
+  81. http://vicodi.org/ontology#International-Organisation | completed.  42,3% 
+  82.       http://vicodi.org/ontology#Intra-State-Group | completed.  42,8% 
+  83.                http://vicodi.org/ontology#Inventor | completed.  43,3% 
+  84.                 http://vicodi.org/ontology#Journal | completed.  43,8% 
+  85.              http://vicodi.org/ontology#Journalist | completed.  44,3% 
+  86.                  http://vicodi.org/ontology#Jurist | completed.  44,8% 
+  87.                    http://vicodi.org/ontology#King | completed.  45,4% 
+  88.                http://vicodi.org/ontology#Landmark | completed.  45,9% 
+  89.                http://vicodi.org/ontology#Language | completed.  46,4% 
+  90.                  http://vicodi.org/ontology#Leader | completed.  46,9% 
+  91.                  http://vicodi.org/ontology#League | completed.  47,4% 
+  92.             http://vicodi.org/ontology#Legislation | completed.  47,9% 
+  93.              http://vicodi.org/ontology#Life-Event | completed.  48,5% 
+  94.       http://vicodi.org/ontology#Liturgical-Object | completed.  49,0% 
+  95.                http://vicodi.org/ontology#Location | completed.  49,5% 
+  96.  http://vicodi.org/ontology#Location-Part-Relation | completed.  50,0% 
+  97.                 http://vicodi.org/ontology#Magnate | completed.  50,5% 
+  98. http://vicodi.org/ontology#Management-Organisation | completed.  51,0% 
+  99.           http://vicodi.org/ontology#Masonic-Lodge | completed.  51,5% 
+ 100.        http://vicodi.org/ontology#Measurable-Trend | completed.  52,1% 
+ 101.                 http://vicodi.org/ontology#Meeting | completed.  52,6% 
+ 102.   http://vicodi.org/ontology#Military-Organisation | completed.  53,1% 
+ 103.         http://vicodi.org/ontology#Military-Person | completed.  53,6% 
+ 104.           http://vicodi.org/ontology#Military-Unit | completed.  54,1% 
+ 105.                http://vicodi.org/ontology#Minister | completed.  54,6% 
+ 106.               http://vicodi.org/ontology#Monastery | completed.  55,2% 
+ 107.                http://vicodi.org/ontology#Movement | completed.  55,7% 
+ 108.                http://vicodi.org/ontology#Musician | completed.  56,2% 
+ 109.         http://vicodi.org/ontology#National-Symbol | completed.  56,7% 
+ 110.          http://vicodi.org/ontology#Natural-Object | completed.  57,2% 
+ 111.               http://vicodi.org/ontology#Newspaper | completed.  57,7% 
+ 112.   http://vicodi.org/ontology#Non-Military-Conflict | completed.  58,2% 
+ 113.                  http://vicodi.org/ontology#Object | completed.  58,8% 
+ 114.            http://vicodi.org/ontology#Organisation | completed.  59,3% 
+ 115.  http://vicodi.org/ontology#Other-Religious-Leader | completed.  59,8% 
+ 116.  http://vicodi.org/ontology#Other-Religious-Person | completed.  60,3% 
+ 117.                 http://vicodi.org/ontology#Painter | completed.  60,8% 
+ 118.                http://vicodi.org/ontology#Painting | completed.  61,3% 
+ 119.                http://vicodi.org/ontology#Pamphlet | completed.  61,9% 
+ 120.                   http://vicodi.org/ontology#Party | completed.  62,4% 
+ 121.                 http://vicodi.org/ontology#Pastime | completed.  62,9% 
+ 122.                  http://vicodi.org/ontology#Period | completed.  63,4% 
+ 123.        http://vicodi.org/ontology#Period-in-Office | completed.  63,9% 
+ 124.                  http://vicodi.org/ontology#Person | completed.  64,4% 
+ 125.             http://vicodi.org/ontology#Person-Role | completed.  64,9% 
+ 126.          http://vicodi.org/ontology#Philanthropist | completed.  65,5% 
+ 127.             http://vicodi.org/ontology#Philosopher | completed.  66,0% 
+ 128.               http://vicodi.org/ontology#Physician | completed.  66,5% 
+ 129.          http://vicodi.org/ontology#Piece-of-Music | completed.  67,0% 
+ 130.  http://vicodi.org/ontology#Political-Organisation | completed.  67,5% 
+ 131.        http://vicodi.org/ontology#Political-Region | completed.  68,0% 
+ 132.        http://vicodi.org/ontology#Political-Symbol | completed.  68,6% 
+ 133.              http://vicodi.org/ontology#Politician | completed.  69,1% 
+ 134.               http://vicodi.org/ontology#Pollution | completed.  69,6% 
+ 135.                    http://vicodi.org/ontology#Pope | completed.  70,1% 
+ 136.     http://vicodi.org/ontology#Population-Movement | completed.  70,6% 
+ 137.                  http://vicodi.org/ontology#Prince | completed.  71,1% 
+ 138.               http://vicodi.org/ontology#Professor | completed.  71,6% 
+ 139.            http://vicodi.org/ontology#Psychologist | completed.  72,2% 
+ 140.          http://vicodi.org/ontology#Public-Oration | completed.  72,7% 
+ 141.               http://vicodi.org/ontology#Publisher | completed.  73,2% 
+ 142.                   http://vicodi.org/ontology#Queen | completed.  73,7% 
+ 143.                   http://vicodi.org/ontology#Relic | completed.  74,2% 
+ 144.     http://vicodi.org/ontology#Religious-Community | completed.  74,7% 
+ 145.      http://vicodi.org/ontology#Religious-Ideology | completed.  75,3% 
+ 146.        http://vicodi.org/ontology#Religious-Leader | completed.  75,8% 
+ 147.      http://vicodi.org/ontology#Religious-Movement | completed.  76,3% 
+ 148.         http://vicodi.org/ontology#Religious-Order | completed.  76,8% 
+ 149.  http://vicodi.org/ontology#Religious-Organisation | completed.  77,3% 
+ 150.      http://vicodi.org/ontology#Religious-Practice | completed.  77,8% 
+ 151.        http://vicodi.org/ontology#Religious-Symbol | completed.  78,4% 
+ 152. http://vicodi.org/ontology#Representative-Institution | completed.  78,9% 
+ 153.                  http://vicodi.org/ontology#Ritual | completed.  79,4% 
+ 154.                    http://vicodi.org/ontology#Role | completed.  79,9% 
+ 155.                   http://vicodi.org/ontology#Saint | completed.  80,4% 
+ 156.                 http://vicodi.org/ontology#Scandal | completed.  80,9% 
+ 157.   http://vicodi.org/ontology#Scientific-Instrument | completed.  81,4% 
+ 158.               http://vicodi.org/ontology#Scientist | completed.  82,0% 
+ 159.                http://vicodi.org/ontology#Sculptor | completed.  82,5% 
+ 160.               http://vicodi.org/ontology#Sculpture | completed.  83,0% 
+ 161.        http://vicodi.org/ontology#Secular-Ideology | completed.  83,5% 
+ 162.          http://vicodi.org/ontology#Secular-Leader | completed.  84,0% 
+ 163.        http://vicodi.org/ontology#Secular-Movement | completed.  84,5% 
+ 164.              http://vicodi.org/ontology#Settlement | completed.  85,1% 
+ 165.                    http://vicodi.org/ontology#Ship | completed.  85,6% 
+ 166.            http://vicodi.org/ontology#Social-Group | completed.  86,1% 
+ 167.          http://vicodi.org/ontology#Social-Stratum | completed.  86,6% 
+ 168.               http://vicodi.org/ontology#Sportsman | completed.  87,1% 
+ 169.        http://vicodi.org/ontology#Stereotype-Group | completed.  87,6% 
+ 170.               http://vicodi.org/ontology#Structure | completed.  88,1% 
+ 171.                  http://vicodi.org/ontology#Sultan | completed.  88,7% 
+ 172.                  http://vicodi.org/ontology#Symbol | completed.  89,2% 
+ 173. http://vicodi.org/ontology#Technical-Scientific-Advance | completed.  89,7% 
+ 174.        http://vicodi.org/ontology#TemporalInterval | completed.  90,2% 
+ 175.              http://vicodi.org/ontology#Theologian | completed.  90,7% 
+ 176.                    http://vicodi.org/ontology#Time | completed.  91,2% 
+ 177.          http://vicodi.org/ontology#Time-Dependent | completed.  91,8% 
+ 178. http://vicodi.org/ontology#Time-Dependent-Relation | completed.  92,3% 
+ 179.       http://vicodi.org/ontology#Trade-Association | completed.  92,8% 
+ 180.            http://vicodi.org/ontology#Trades-Union | completed.  93,3% 
+ 181.         http://vicodi.org/ontology#Trades-Unionist | completed.  93,8% 
+ 182.                   http://vicodi.org/ontology#Train | completed.  94,3% 
+ 183.                  http://vicodi.org/ontology#Treaty | completed.  94,8% 
+ 184.                   http://vicodi.org/ontology#Trial | completed.  95,4% 
+ 185.              http://vicodi.org/ontology#University | completed.  95,9% 
+ 186.                http://vicodi.org/ontology#Uprising | completed.  96,4% 
+ 187.                 http://vicodi.org/ontology#Vehicle | completed.  96,9% 
+ 188.                http://vicodi.org/ontology#VicodiOI | completed.  97,4% 
+ 189.                 http://vicodi.org/ontology#Village | completed.  97,9% 
+ 190.                     http://vicodi.org/ontology#War | completed.  98,5% 
+ 191.                   http://vicodi.org/ontology#Water | completed.  99,0% 
+ 192.             http://vicodi.org/ontology#Work-of-Art | completed.  99,5% 
+ 193.                 http://vicodi.org/ontology#Writing | completed. 100,0% 
+-----------------------------------------------------------------------------------------------------------
+************************Discovering disjointntness axioms ********** 
+Learning algorithm: Terminological Cluster Tree
+it.uniba.di.lacam.ontologymining.tct.refinementoperators.RefinementOperator@425b5fe2
+Learning problem	 p:33238	 n:0	 u:0	 prPos:0,500000	 prNeg:0,500000
+Current node: TOP    Cluster size: 33238
+Generating node concepts 0 1 2 3 
+Concept: (TOP AND http://vicodi.org/ontology#Economist) ( Cluster: 33238,  l: 58,   r: 33180)
+Concept: (TOP AND http://vicodi.org/ontology#Artistic-Movement) ( Cluster: 33238,  l: 3,   r: 33235)
+Concept: (TOP AND http://vicodi.org/ontology#Location-Part-Relation) ( Cluster: 33238,  l: 628,   r: 32610)
+Concept: (TOP AND http://vicodi.org/ontology#Fictional-Person) ( Cluster: 33238,  l: 1,   r: 33237)
+
+Best Concept:(TOP AND http://vicodi.org/ontology#Fictional-Person)
+Instances routed to the left branch1
+Instances routed to the right branch: 33237
+
+
+
+***************************************************************
+ Overall Results
+Axioms: 16456.0 (0.0)
+Inconsistencies: 0.0 (0.0)
+

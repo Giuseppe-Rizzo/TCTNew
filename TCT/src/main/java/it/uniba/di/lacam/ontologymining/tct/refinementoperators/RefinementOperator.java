@@ -114,7 +114,7 @@ public class RefinementOperator {
 					else if (negExs.contains(index))
 						emptyIntersection = false;
 				}					
-			} while (emptyIntersection || candidates.contains(newConcept));
+			} while (emptyIntersection);// || candidates.contains(newConcept));
 			rConcepts.add(newConcept); 
 			System.out.printf("%d ", c);
 		}
