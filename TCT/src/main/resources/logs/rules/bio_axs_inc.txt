@@ -1,0 +1,498 @@
+C:/Users/Giuseppe/Documents/ontos/biopax.owl
+
+Classes
+-------
+1:) http://www.biopax.org/examples/glycolysis#bioSource
+2:) http://www.biopax.org/examples/glycolysis#biochemicalReaction
+3:) http://www.biopax.org/examples/glycolysis#catalysis
+4:) http://www.biopax.org/examples/glycolysis#chemicalStructure
+5:) http://www.biopax.org/examples/glycolysis#complex
+6:) http://www.biopax.org/examples/glycolysis#complexAssembly
+7:) http://www.biopax.org/examples/glycolysis#confidence
+8:) http://www.biopax.org/examples/glycolysis#control
+9:) http://www.biopax.org/examples/glycolysis#conversion
+10:) http://www.biopax.org/examples/glycolysis#dataSource
+11:) http://www.biopax.org/examples/glycolysis#deltaGprimeO
+12:) http://www.biopax.org/examples/glycolysis#dna
+13:) http://www.biopax.org/examples/glycolysis#entity
+14:) http://www.biopax.org/examples/glycolysis#evidence
+15:) http://www.biopax.org/examples/glycolysis#experimentalForm
+16:) http://www.biopax.org/examples/glycolysis#externalReferenceUtilityClass
+17:) http://www.biopax.org/examples/glycolysis#interaction
+18:) http://www.biopax.org/examples/glycolysis#kPrime
+19:) http://www.biopax.org/examples/glycolysis#modulation
+20:) http://www.biopax.org/examples/glycolysis#openControlledVocabulary
+21:) http://www.biopax.org/examples/glycolysis#pathway
+22:) http://www.biopax.org/examples/glycolysis#pathwayStep
+23:) http://www.biopax.org/examples/glycolysis#physicalEntity
+24:) http://www.biopax.org/examples/glycolysis#physicalEntityParticipant
+25:) http://www.biopax.org/examples/glycolysis#physicalInteraction
+26:) http://www.biopax.org/examples/glycolysis#protein
+27:) http://www.biopax.org/examples/glycolysis#publicationXref
+28:) http://www.biopax.org/examples/glycolysis#relationshipXref
+29:) http://www.biopax.org/examples/glycolysis#rna
+30:) http://www.biopax.org/examples/glycolysis#sequenceFeature
+31:) http://www.biopax.org/examples/glycolysis#sequenceInterval
+32:) http://www.biopax.org/examples/glycolysis#sequenceLocation
+33:) http://www.biopax.org/examples/glycolysis#sequenceParticipant
+34:) http://www.biopax.org/examples/glycolysis#sequenceSite
+35:) http://www.biopax.org/examples/glycolysis#smallMolecule
+36:) http://www.biopax.org/examples/glycolysis#transport
+37:) http://www.biopax.org/examples/glycolysis#transportWithBiochemicalReaction
+38:) http://www.biopax.org/examples/glycolysis#unificationXref
+39:) http://www.biopax.org/examples/glycolysis#utilityClass
+40:) http://www.biopax.org/examples/glycolysis#xref
+41:) http://www.w3.org/2002/07/owl#Thing
+---------------------------- 41
+
+Properties
+-------
+1-http://www.biopax.org/examples/glycolysis#CELLTYPE
+2-http://www.biopax.org/examples/glycolysis#CELLULAR-LOCATION
+3-http://www.biopax.org/examples/glycolysis#COFACTOR
+4-http://www.biopax.org/examples/glycolysis#COMPONENTS
+5-http://www.biopax.org/examples/glycolysis#CONFIDENCE
+6-http://www.biopax.org/examples/glycolysis#CONTROLLED
+7-http://www.biopax.org/examples/glycolysis#CONTROLLER
+8-http://www.biopax.org/examples/glycolysis#DATA-SOURCE
+9-http://www.biopax.org/examples/glycolysis#DELTA-G
+10-http://www.biopax.org/examples/glycolysis#EVIDENCE
+11-http://www.biopax.org/examples/glycolysis#EVIDENCE-CODE
+12-http://www.biopax.org/examples/glycolysis#EXPERIMENTAL-FORM
+13-http://www.biopax.org/examples/glycolysis#EXPERIMENTAL-FORM-TYPE
+14-http://www.biopax.org/examples/glycolysis#FEATURE-LOCATION
+15-http://www.biopax.org/examples/glycolysis#FEATURE-TYPE
+16-http://www.biopax.org/examples/glycolysis#INTERACTION-TYPE
+17-http://www.biopax.org/examples/glycolysis#KEQ
+18-http://www.biopax.org/examples/glycolysis#LEFT
+19-http://www.biopax.org/examples/glycolysis#NEXT-STEP
+20-http://www.biopax.org/examples/glycolysis#ORGANISM
+21-http://www.biopax.org/examples/glycolysis#PARTICIPANT
+22-http://www.biopax.org/examples/glycolysis#PARTICIPANTS
+23-http://www.biopax.org/examples/glycolysis#PATHWAY-COMPONENTS
+24-http://www.biopax.org/examples/glycolysis#PHYSICAL-ENTITY
+25-http://www.biopax.org/examples/glycolysis#RIGHT
+26-http://www.biopax.org/examples/glycolysis#SEQUENCE-FEATURE-LIST
+27-http://www.biopax.org/examples/glycolysis#SEQUENCE-INTERVAL-BEGIN
+28-http://www.biopax.org/examples/glycolysis#SEQUENCE-INTERVAL-END
+29-http://www.biopax.org/examples/glycolysis#STEP-INTERACTIONS
+30-http://www.biopax.org/examples/glycolysis#STRUCTURE
+31-http://www.biopax.org/examples/glycolysis#TAXON-XREF
+32-http://www.biopax.org/examples/glycolysis#TISSUE
+33-http://www.biopax.org/examples/glycolysis#XREF
+---------------------------- 33
+
+Individuals
+-----------
+---------------------------- 323
+
+KB loaded. 
+
+15:06:50,099 [org.apache.spark.SparkContext] - Running Spark version 2.1.0
+WARNING: An illegal reflective access operation has occurred
+WARNING: Illegal reflective access by org.apache.hadoop.security.authentication.util.KerberosUtil (file:/C:/Users/Giuseppe/.m2/repository/org/apache/hadoop/hadoop-auth/2.2.0/hadoop-auth-2.2.0.jar) to method sun.security.krb5.Config.getInstance()
+WARNING: Please consider reporting this to the maintainers of org.apache.hadoop.security.authentication.util.KerberosUtil
+WARNING: Use --illegal-access=warn to enable warnings of further illegal reflective access operations
+WARNING: All illegal access operations will be denied in a future release
+15:06:50,745 [org.apache.hadoop.util.NativeCodeLoader] - Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+15:06:50,968 [org.apache.spark.SecurityManager] - Changing view acls to: Giuseppe
+15:06:50,968 [org.apache.spark.SecurityManager] - Changing modify acls to: Giuseppe
+15:06:50,969 [org.apache.spark.SecurityManager] - Changing view acls groups to: 
+15:06:50,970 [org.apache.spark.SecurityManager] - Changing modify acls groups to: 
+15:06:50,970 [org.apache.spark.SecurityManager] - SecurityManager: authentication disabled; ui acls disabled; users  with view permissions: Set(Giuseppe); groups with view permissions: Set(); users  with modify permissions: Set(Giuseppe); groups with modify permissions: Set()
+15:06:51,524 [org.apache.spark.util.Utils] - Successfully started service 'sparkDriver' on port 62611.
+15:06:51,543 [org.apache.spark.SparkEnv] - Registering MapOutputTracker
+15:06:51,563 [org.apache.spark.SparkEnv] - Registering BlockManagerMaster
+15:06:51,567 [org.apache.spark.storage.BlockManagerMasterEndpoint] - Using org.apache.spark.storage.DefaultTopologyMapper for getting topology information
+15:06:51,567 [org.apache.spark.storage.BlockManagerMasterEndpoint] - BlockManagerMasterEndpoint up
+15:06:51,580 [org.apache.spark.storage.DiskBlockManager] - Created local directory at C:\Users\Giuseppe\AppData\Local\Temp\blockmgr-e6c0c9e9-c010-401b-b6bd-e7284de1c972
+15:06:51,598 [org.apache.spark.storage.memory.MemoryStore] - MemoryStore started with capacity 1028.4 MB
+15:06:51,731 [org.apache.spark.SparkEnv] - Registering OutputCommitCoordinator
+15:06:51,933 [org.spark_project.jetty.util.log] - Logging initialized @8351ms
+15:06:52,191 [org.spark_project.jetty.server.Server] - jetty-9.2.z-SNAPSHOT
+15:06:52,208 [org.spark_project.jetty.server.handler.ContextHandler] - Started o.s.j.s.ServletContextHandler@19b07407{/jobs,null,AVAILABLE}
+15:06:52,208 [org.spark_project.jetty.server.handler.ContextHandler] - Started o.s.j.s.ServletContextHandler@54ffa561{/jobs/json,null,AVAILABLE}
+15:06:52,209 [org.spark_project.jetty.server.handler.ContextHandler] - Started o.s.j.s.ServletContextHandler@49c099b{/jobs/job,null,AVAILABLE}
+15:06:52,209 [org.spark_project.jetty.server.handler.ContextHandler] - Started o.s.j.s.ServletContextHandler@3d9f0a5{/jobs/job/json,null,AVAILABLE}
+15:06:52,209 [org.spark_project.jetty.server.handler.ContextHandler] - Started o.s.j.s.ServletContextHandler@1953bc95{/stages,null,AVAILABLE}
+15:06:52,209 [org.spark_project.jetty.server.handler.ContextHandler] - Started o.s.j.s.ServletContextHandler@30aec673{/stages/json,null,AVAILABLE}
+15:06:52,209 [org.spark_project.jetty.server.handler.ContextHandler] - Started o.s.j.s.ServletContextHandler@549ac12c{/stages/stage,null,AVAILABLE}
+15:06:52,210 [org.spark_project.jetty.server.handler.ContextHandler] - Started o.s.j.s.ServletContextHandler@188a5fc2{/stages/stage/json,null,AVAILABLE}
+15:06:52,210 [org.spark_project.jetty.server.handler.ContextHandler] - Started o.s.j.s.ServletContextHandler@1cb9ef52{/stages/pool,null,AVAILABLE}
+15:06:52,210 [org.spark_project.jetty.server.handler.ContextHandler] - Started o.s.j.s.ServletContextHandler@5a622fe8{/stages/pool/json,null,AVAILABLE}
+15:06:52,210 [org.spark_project.jetty.server.handler.ContextHandler] - Started o.s.j.s.ServletContextHandler@58f31629{/storage,null,AVAILABLE}
+15:06:52,211 [org.spark_project.jetty.server.handler.ContextHandler] - Started o.s.j.s.ServletContextHandler@124d26ba{/storage/json,null,AVAILABLE}
+15:06:52,211 [org.spark_project.jetty.server.handler.ContextHandler] - Started o.s.j.s.ServletContextHandler@415d88de{/storage/rdd,null,AVAILABLE}
+15:06:52,211 [org.spark_project.jetty.server.handler.ContextHandler] - Started o.s.j.s.ServletContextHandler@a0bf272{/storage/rdd/json,null,AVAILABLE}
+15:06:52,211 [org.spark_project.jetty.server.handler.ContextHandler] - Started o.s.j.s.ServletContextHandler@4a89ef44{/environment,null,AVAILABLE}
+15:06:52,211 [org.spark_project.jetty.server.handler.ContextHandler] - Started o.s.j.s.ServletContextHandler@310a7859{/environment/json,null,AVAILABLE}
+15:06:52,211 [org.spark_project.jetty.server.handler.ContextHandler] - Started o.s.j.s.ServletContextHandler@1cbc1dde{/executors,null,AVAILABLE}
+15:06:52,212 [org.spark_project.jetty.server.handler.ContextHandler] - Started o.s.j.s.ServletContextHandler@4971f459{/executors/json,null,AVAILABLE}
+15:06:52,212 [org.spark_project.jetty.server.handler.ContextHandler] - Started o.s.j.s.ServletContextHandler@4c07d1fc{/executors/threadDump,null,AVAILABLE}
+15:06:52,212 [org.spark_project.jetty.server.handler.ContextHandler] - Started o.s.j.s.ServletContextHandler@2eada095{/executors/threadDump/json,null,AVAILABLE}
+15:06:52,217 [org.spark_project.jetty.server.handler.ContextHandler] - Started o.s.j.s.ServletContextHandler@52831a73{/static,null,AVAILABLE}
+15:06:52,217 [org.spark_project.jetty.server.handler.ContextHandler] - Started o.s.j.s.ServletContextHandler@1416ff46{/,null,AVAILABLE}
+15:06:52,218 [org.spark_project.jetty.server.handler.ContextHandler] - Started o.s.j.s.ServletContextHandler@66ec4409{/api,null,AVAILABLE}
+15:06:52,219 [org.spark_project.jetty.server.handler.ContextHandler] - Started o.s.j.s.ServletContextHandler@2506e949{/jobs/job/kill,null,AVAILABLE}
+15:06:52,219 [org.spark_project.jetty.server.handler.ContextHandler] - Started o.s.j.s.ServletContextHandler@6f1c3f18{/stages/stage/kill,null,AVAILABLE}
+15:06:52,228 [org.spark_project.jetty.server.ServerConnector] - Started ServerConnector@2ea85d47{HTTP/1.1}{0.0.0.0:4040}
+15:06:52,228 [org.spark_project.jetty.server.Server] - Started @8649ms
+15:06:52,228 [org.apache.spark.util.Utils] - Successfully started service 'SparkUI' on port 4040.
+15:06:52,230 [org.apache.spark.ui.SparkUI] - Bound SparkUI to 0.0.0.0, and started at http://192.168.1.66:4040
+15:06:52,388 [org.apache.spark.executor.Executor] - Starting executor ID driver on host localhost
+15:06:52,424 [org.apache.spark.util.Utils] - Successfully started service 'org.apache.spark.network.netty.NettyBlockTransferService' on port 62628.
+15:06:52,425 [org.apache.spark.network.netty.NettyBlockTransferService] - Server created on 192.168.1.66:62628
+15:06:52,427 [org.apache.spark.storage.BlockManager] - Using org.apache.spark.storage.RandomBlockReplicationPolicy for block replication policy
+15:06:52,428 [org.apache.spark.storage.BlockManagerMaster] - Registering BlockManager BlockManagerId(driver, 192.168.1.66, 62628, None)
+15:06:52,432 [org.apache.spark.storage.BlockManagerMasterEndpoint] - Registering block manager 192.168.1.66:62628 with 1028.4 MB RAM, BlockManagerId(driver, 192.168.1.66, 62628, None)
+15:06:52,436 [org.apache.spark.storage.BlockManagerMaster] - Registered BlockManager BlockManagerId(driver, 192.168.1.66, 62628, None)
+15:06:52,436 [org.apache.spark.storage.BlockManager] - Initialized BlockManager: BlockManagerId(driver, 192.168.1.66, 62628, None)
+15:06:52,670 [org.spark_project.jetty.server.handler.ContextHandler] - Started o.s.j.s.ServletContextHandler@755a7218{/metrics/json,null,AVAILABLE}
+Pre-computing 41 x 323 pi elements 
+   0. http://www.biopax.org/examples/glycolysis#bioSource | completed.   2,4% 
+   1. http://www.biopax.org/examples/glycolysis#biochemicalReaction | completed.   4,9% 
+   2. http://www.biopax.org/examples/glycolysis#catalysis | completed.   7,3% 
+   3. http://www.biopax.org/examples/glycolysis#chemicalStructure | completed.   9,8% 
+   4.  http://www.biopax.org/examples/glycolysis#complex | completed.  12,2% 
+   5. http://www.biopax.org/examples/glycolysis#complexAssembly | completed.  14,6% 
+   6. http://www.biopax.org/examples/glycolysis#confidence | completed.  17,1% 
+   7.  http://www.biopax.org/examples/glycolysis#control | completed.  19,5% 
+   8. http://www.biopax.org/examples/glycolysis#conversion | completed.  22,0% 
+   9. http://www.biopax.org/examples/glycolysis#dataSource | completed.  24,4% 
+  10. http://www.biopax.org/examples/glycolysis#deltaGprimeO | completed.  26,8% 
+  11.      http://www.biopax.org/examples/glycolysis#dna | completed.  29,3% 
+  12.   http://www.biopax.org/examples/glycolysis#entity | completed.  31,7% 
+  13. http://www.biopax.org/examples/glycolysis#evidence | completed.  34,1% 
+  14. http://www.biopax.org/examples/glycolysis#experimentalForm | completed.  36,6% 
+  15. http://www.biopax.org/examples/glycolysis#externalReferenceUtilityClass | completed.  39,0% 
+  16. http://www.biopax.org/examples/glycolysis#interaction | completed.  41,5% 
+  17.   http://www.biopax.org/examples/glycolysis#kPrime | completed.  43,9% 
+  18. http://www.biopax.org/examples/glycolysis#modulation | completed.  46,3% 
+  19. http://www.biopax.org/examples/glycolysis#openControlledVocabulary | completed.  48,8% 
+  20.  http://www.biopax.org/examples/glycolysis#pathway | completed.  51,2% 
+  21. http://www.biopax.org/examples/glycolysis#pathwayStep | completed.  53,7% 
+  22. http://www.biopax.org/examples/glycolysis#physicalEntity | completed.  56,1% 
+  23. http://www.biopax.org/examples/glycolysis#physicalEntityParticipant | completed.  58,5% 
+  24. http://www.biopax.org/examples/glycolysis#physicalInteraction | completed.  61,0% 
+  25.  http://www.biopax.org/examples/glycolysis#protein | completed.  63,4% 
+  26. http://www.biopax.org/examples/glycolysis#publicationXref | completed.  65,9% 
+  27. http://www.biopax.org/examples/glycolysis#relationshipXref | completed.  68,3% 
+  28.      http://www.biopax.org/examples/glycolysis#rna | completed.  70,7% 
+  29. http://www.biopax.org/examples/glycolysis#sequenceFeature | completed.  73,2% 
+  30. http://www.biopax.org/examples/glycolysis#sequenceInterval | completed.  75,6% 
+  31. http://www.biopax.org/examples/glycolysis#sequenceLocation | completed.  78,0% 
+  32. http://www.biopax.org/examples/glycolysis#sequenceParticipant | completed.  80,5% 
+  33. http://www.biopax.org/examples/glycolysis#sequenceSite | completed.  82,9% 
+  34. http://www.biopax.org/examples/glycolysis#smallMolecule | completed.  85,4% 
+  35. http://www.biopax.org/examples/glycolysis#transport | completed.  87,8% 
+  36. http://www.biopax.org/examples/glycolysis#transportWithBiochemicalReaction | completed.  90,2% 
+  37. http://www.biopax.org/examples/glycolysis#unificationXref | completed.  92,7% 
+  38. http://www.biopax.org/examples/glycolysis#utilityClass | completed.  95,1% 
+  39.     http://www.biopax.org/examples/glycolysis#xref | completed.  97,6% 
+  40.                http://www.w3.org/2002/07/owl#Thing | completed. 100,0% 
+-----------------------------------------------------------------------------------------------------------
+************************Discovering disjointntness axioms ********** 
+Learning algorithm: pearson's correlation coefficient
+Number of axioms: 280
+http://www.biopax.org/examples/glycolysis#bioSource disjointWith http://www.biopax.org/examples/glycolysis#biochemicalReaction
+http://www.biopax.org/examples/glycolysis#bioSource disjointWith http://www.biopax.org/examples/glycolysis#catalysis
+http://www.biopax.org/examples/glycolysis#bioSource disjointWith http://www.biopax.org/examples/glycolysis#chemicalStructure
+http://www.biopax.org/examples/glycolysis#bioSource disjointWith http://www.biopax.org/examples/glycolysis#complex
+http://www.biopax.org/examples/glycolysis#bioSource disjointWith http://www.biopax.org/examples/glycolysis#control
+http://www.biopax.org/examples/glycolysis#bioSource disjointWith http://www.biopax.org/examples/glycolysis#conversion
+http://www.biopax.org/examples/glycolysis#bioSource disjointWith http://www.biopax.org/examples/glycolysis#dataSource
+http://www.biopax.org/examples/glycolysis#bioSource disjointWith http://www.biopax.org/examples/glycolysis#entity
+http://www.biopax.org/examples/glycolysis#bioSource disjointWith http://www.biopax.org/examples/glycolysis#externalReferenceUtilityClass
+http://www.biopax.org/examples/glycolysis#bioSource disjointWith http://www.biopax.org/examples/glycolysis#interaction
+http://www.biopax.org/examples/glycolysis#bioSource disjointWith http://www.biopax.org/examples/glycolysis#modulation
+http://www.biopax.org/examples/glycolysis#bioSource disjointWith http://www.biopax.org/examples/glycolysis#openControlledVocabulary
+http://www.biopax.org/examples/glycolysis#bioSource disjointWith http://www.biopax.org/examples/glycolysis#pathway
+http://www.biopax.org/examples/glycolysis#bioSource disjointWith http://www.biopax.org/examples/glycolysis#pathwayStep
+http://www.biopax.org/examples/glycolysis#bioSource disjointWith http://www.biopax.org/examples/glycolysis#physicalEntity
+http://www.biopax.org/examples/glycolysis#bioSource disjointWith http://www.biopax.org/examples/glycolysis#physicalEntityParticipant
+http://www.biopax.org/examples/glycolysis#bioSource disjointWith http://www.biopax.org/examples/glycolysis#physicalInteraction
+http://www.biopax.org/examples/glycolysis#bioSource disjointWith http://www.biopax.org/examples/glycolysis#protein
+http://www.biopax.org/examples/glycolysis#bioSource disjointWith http://www.biopax.org/examples/glycolysis#publicationXref
+http://www.biopax.org/examples/glycolysis#bioSource disjointWith http://www.biopax.org/examples/glycolysis#relationshipXref
+http://www.biopax.org/examples/glycolysis#bioSource disjointWith http://www.biopax.org/examples/glycolysis#smallMolecule
+http://www.biopax.org/examples/glycolysis#bioSource disjointWith http://www.biopax.org/examples/glycolysis#unificationXref
+http://www.biopax.org/examples/glycolysis#bioSource disjointWith http://www.biopax.org/examples/glycolysis#utilityClass
+http://www.biopax.org/examples/glycolysis#bioSource disjointWith http://www.biopax.org/examples/glycolysis#xref
+http://www.biopax.org/examples/glycolysis#biochemicalReaction disjointWith http://www.biopax.org/examples/glycolysis#catalysis
+http://www.biopax.org/examples/glycolysis#biochemicalReaction disjointWith http://www.biopax.org/examples/glycolysis#chemicalStructure
+http://www.biopax.org/examples/glycolysis#biochemicalReaction disjointWith http://www.biopax.org/examples/glycolysis#complex
+http://www.biopax.org/examples/glycolysis#biochemicalReaction disjointWith http://www.biopax.org/examples/glycolysis#control
+http://www.biopax.org/examples/glycolysis#biochemicalReaction disjointWith http://www.biopax.org/examples/glycolysis#dataSource
+http://www.biopax.org/examples/glycolysis#biochemicalReaction disjointWith http://www.biopax.org/examples/glycolysis#entity
+http://www.biopax.org/examples/glycolysis#biochemicalReaction disjointWith http://www.biopax.org/examples/glycolysis#externalReferenceUtilityClass
+http://www.biopax.org/examples/glycolysis#biochemicalReaction disjointWith http://www.biopax.org/examples/glycolysis#interaction
+http://www.biopax.org/examples/glycolysis#biochemicalReaction disjointWith http://www.biopax.org/examples/glycolysis#modulation
+http://www.biopax.org/examples/glycolysis#biochemicalReaction disjointWith http://www.biopax.org/examples/glycolysis#openControlledVocabulary
+http://www.biopax.org/examples/glycolysis#biochemicalReaction disjointWith http://www.biopax.org/examples/glycolysis#pathway
+http://www.biopax.org/examples/glycolysis#biochemicalReaction disjointWith http://www.biopax.org/examples/glycolysis#pathwayStep
+http://www.biopax.org/examples/glycolysis#biochemicalReaction disjointWith http://www.biopax.org/examples/glycolysis#physicalEntity
+http://www.biopax.org/examples/glycolysis#biochemicalReaction disjointWith http://www.biopax.org/examples/glycolysis#physicalEntityParticipant
+http://www.biopax.org/examples/glycolysis#biochemicalReaction disjointWith http://www.biopax.org/examples/glycolysis#physicalInteraction
+http://www.biopax.org/examples/glycolysis#biochemicalReaction disjointWith http://www.biopax.org/examples/glycolysis#protein
+http://www.biopax.org/examples/glycolysis#biochemicalReaction disjointWith http://www.biopax.org/examples/glycolysis#publicationXref
+http://www.biopax.org/examples/glycolysis#biochemicalReaction disjointWith http://www.biopax.org/examples/glycolysis#relationshipXref
+http://www.biopax.org/examples/glycolysis#biochemicalReaction disjointWith http://www.biopax.org/examples/glycolysis#smallMolecule
+http://www.biopax.org/examples/glycolysis#biochemicalReaction disjointWith http://www.biopax.org/examples/glycolysis#unificationXref
+http://www.biopax.org/examples/glycolysis#biochemicalReaction disjointWith http://www.biopax.org/examples/glycolysis#utilityClass
+http://www.biopax.org/examples/glycolysis#biochemicalReaction disjointWith http://www.biopax.org/examples/glycolysis#xref
+http://www.biopax.org/examples/glycolysis#catalysis disjointWith http://www.biopax.org/examples/glycolysis#chemicalStructure
+http://www.biopax.org/examples/glycolysis#catalysis disjointWith http://www.biopax.org/examples/glycolysis#complex
+http://www.biopax.org/examples/glycolysis#catalysis disjointWith http://www.biopax.org/examples/glycolysis#conversion
+http://www.biopax.org/examples/glycolysis#catalysis disjointWith http://www.biopax.org/examples/glycolysis#dataSource
+http://www.biopax.org/examples/glycolysis#catalysis disjointWith http://www.biopax.org/examples/glycolysis#entity
+Number of inconsistencies: 1
+http://www.biopax.org/examples/glycolysis#catalysis disjointWith http://www.biopax.org/examples/glycolysis#externalReferenceUtilityClass
+http://www.biopax.org/examples/glycolysis#catalysis disjointWith http://www.biopax.org/examples/glycolysis#modulation
+http://www.biopax.org/examples/glycolysis#catalysis disjointWith http://www.biopax.org/examples/glycolysis#openControlledVocabulary
+http://www.biopax.org/examples/glycolysis#catalysis disjointWith http://www.biopax.org/examples/glycolysis#pathway
+http://www.biopax.org/examples/glycolysis#catalysis disjointWith http://www.biopax.org/examples/glycolysis#pathwayStep
+http://www.biopax.org/examples/glycolysis#catalysis disjointWith http://www.biopax.org/examples/glycolysis#physicalEntity
+http://www.biopax.org/examples/glycolysis#catalysis disjointWith http://www.biopax.org/examples/glycolysis#physicalEntityParticipant
+http://www.biopax.org/examples/glycolysis#catalysis disjointWith http://www.biopax.org/examples/glycolysis#protein
+http://www.biopax.org/examples/glycolysis#catalysis disjointWith http://www.biopax.org/examples/glycolysis#publicationXref
+http://www.biopax.org/examples/glycolysis#catalysis disjointWith http://www.biopax.org/examples/glycolysis#relationshipXref
+http://www.biopax.org/examples/glycolysis#catalysis disjointWith http://www.biopax.org/examples/glycolysis#smallMolecule
+http://www.biopax.org/examples/glycolysis#catalysis disjointWith http://www.biopax.org/examples/glycolysis#unificationXref
+http://www.biopax.org/examples/glycolysis#catalysis disjointWith http://www.biopax.org/examples/glycolysis#utilityClass
+http://www.biopax.org/examples/glycolysis#catalysis disjointWith http://www.biopax.org/examples/glycolysis#xref
+http://www.biopax.org/examples/glycolysis#chemicalStructure disjointWith http://www.biopax.org/examples/glycolysis#complex
+http://www.biopax.org/examples/glycolysis#chemicalStructure disjointWith http://www.biopax.org/examples/glycolysis#control
+http://www.biopax.org/examples/glycolysis#chemicalStructure disjointWith http://www.biopax.org/examples/glycolysis#conversion
+http://www.biopax.org/examples/glycolysis#chemicalStructure disjointWith http://www.biopax.org/examples/glycolysis#dataSource
+http://www.biopax.org/examples/glycolysis#chemicalStructure disjointWith http://www.biopax.org/examples/glycolysis#entity
+http://www.biopax.org/examples/glycolysis#chemicalStructure disjointWith http://www.biopax.org/examples/glycolysis#externalReferenceUtilityClass
+http://www.biopax.org/examples/glycolysis#chemicalStructure disjointWith http://www.biopax.org/examples/glycolysis#interaction
+http://www.biopax.org/examples/glycolysis#chemicalStructure disjointWith http://www.biopax.org/examples/glycolysis#modulation
+http://www.biopax.org/examples/glycolysis#chemicalStructure disjointWith http://www.biopax.org/examples/glycolysis#openControlledVocabulary
+http://www.biopax.org/examples/glycolysis#chemicalStructure disjointWith http://www.biopax.org/examples/glycolysis#pathway
+http://www.biopax.org/examples/glycolysis#chemicalStructure disjointWith http://www.biopax.org/examples/glycolysis#pathwayStep
+http://www.biopax.org/examples/glycolysis#chemicalStructure disjointWith http://www.biopax.org/examples/glycolysis#physicalEntity
+http://www.biopax.org/examples/glycolysis#chemicalStructure disjointWith http://www.biopax.org/examples/glycolysis#physicalEntityParticipant
+http://www.biopax.org/examples/glycolysis#chemicalStructure disjointWith http://www.biopax.org/examples/glycolysis#physicalInteraction
+http://www.biopax.org/examples/glycolysis#chemicalStructure disjointWith http://www.biopax.org/examples/glycolysis#protein
+http://www.biopax.org/examples/glycolysis#chemicalStructure disjointWith http://www.biopax.org/examples/glycolysis#publicationXref
+http://www.biopax.org/examples/glycolysis#chemicalStructure disjointWith http://www.biopax.org/examples/glycolysis#relationshipXref
+http://www.biopax.org/examples/glycolysis#chemicalStructure disjointWith http://www.biopax.org/examples/glycolysis#smallMolecule
+http://www.biopax.org/examples/glycolysis#chemicalStructure disjointWith http://www.biopax.org/examples/glycolysis#unificationXref
+http://www.biopax.org/examples/glycolysis#chemicalStructure disjointWith http://www.biopax.org/examples/glycolysis#utilityClass
+Number of inconsistencies: 2
+http://www.biopax.org/examples/glycolysis#chemicalStructure disjointWith http://www.biopax.org/examples/glycolysis#xref
+http://www.biopax.org/examples/glycolysis#complex disjointWith http://www.biopax.org/examples/glycolysis#control
+http://www.biopax.org/examples/glycolysis#complex disjointWith http://www.biopax.org/examples/glycolysis#conversion
+http://www.biopax.org/examples/glycolysis#complex disjointWith http://www.biopax.org/examples/glycolysis#dataSource
+http://www.biopax.org/examples/glycolysis#complex disjointWith http://www.biopax.org/examples/glycolysis#entity
+http://www.biopax.org/examples/glycolysis#complex disjointWith http://www.biopax.org/examples/glycolysis#externalReferenceUtilityClass
+http://www.biopax.org/examples/glycolysis#complex disjointWith http://www.biopax.org/examples/glycolysis#interaction
+http://www.biopax.org/examples/glycolysis#complex disjointWith http://www.biopax.org/examples/glycolysis#modulation
+http://www.biopax.org/examples/glycolysis#complex disjointWith http://www.biopax.org/examples/glycolysis#openControlledVocabulary
+http://www.biopax.org/examples/glycolysis#complex disjointWith http://www.biopax.org/examples/glycolysis#pathway
+http://www.biopax.org/examples/glycolysis#complex disjointWith http://www.biopax.org/examples/glycolysis#pathwayStep
+http://www.biopax.org/examples/glycolysis#complex disjointWith http://www.biopax.org/examples/glycolysis#physicalEntity
+http://www.biopax.org/examples/glycolysis#complex disjointWith http://www.biopax.org/examples/glycolysis#physicalEntityParticipant
+http://www.biopax.org/examples/glycolysis#complex disjointWith http://www.biopax.org/examples/glycolysis#physicalInteraction
+http://www.biopax.org/examples/glycolysis#complex disjointWith http://www.biopax.org/examples/glycolysis#protein
+http://www.biopax.org/examples/glycolysis#complex disjointWith http://www.biopax.org/examples/glycolysis#publicationXref
+http://www.biopax.org/examples/glycolysis#complex disjointWith http://www.biopax.org/examples/glycolysis#relationshipXref
+http://www.biopax.org/examples/glycolysis#complex disjointWith http://www.biopax.org/examples/glycolysis#smallMolecule
+http://www.biopax.org/examples/glycolysis#complex disjointWith http://www.biopax.org/examples/glycolysis#unificationXref
+http://www.biopax.org/examples/glycolysis#complex disjointWith http://www.biopax.org/examples/glycolysis#utilityClass
+http://www.biopax.org/examples/glycolysis#complex disjointWith http://www.biopax.org/examples/glycolysis#xref
+http://www.biopax.org/examples/glycolysis#control disjointWith http://www.biopax.org/examples/glycolysis#conversion
+http://www.biopax.org/examples/glycolysis#control disjointWith http://www.biopax.org/examples/glycolysis#dataSource
+http://www.biopax.org/examples/glycolysis#control disjointWith http://www.biopax.org/examples/glycolysis#externalReferenceUtilityClass
+http://www.biopax.org/examples/glycolysis#control disjointWith http://www.biopax.org/examples/glycolysis#openControlledVocabulary
+http://www.biopax.org/examples/glycolysis#control disjointWith http://www.biopax.org/examples/glycolysis#pathway
+http://www.biopax.org/examples/glycolysis#control disjointWith http://www.biopax.org/examples/glycolysis#pathwayStep
+http://www.biopax.org/examples/glycolysis#control disjointWith http://www.biopax.org/examples/glycolysis#physicalEntity
+http://www.biopax.org/examples/glycolysis#control disjointWith http://www.biopax.org/examples/glycolysis#physicalEntityParticipant
+http://www.biopax.org/examples/glycolysis#control disjointWith http://www.biopax.org/examples/glycolysis#protein
+http://www.biopax.org/examples/glycolysis#control disjointWith http://www.biopax.org/examples/glycolysis#publicationXref
+http://www.biopax.org/examples/glycolysis#control disjointWith http://www.biopax.org/examples/glycolysis#relationshipXref
+http://www.biopax.org/examples/glycolysis#control disjointWith http://www.biopax.org/examples/glycolysis#smallMolecule
+http://www.biopax.org/examples/glycolysis#control disjointWith http://www.biopax.org/examples/glycolysis#unificationXref
+http://www.biopax.org/examples/glycolysis#control disjointWith http://www.biopax.org/examples/glycolysis#utilityClass
+http://www.biopax.org/examples/glycolysis#control disjointWith http://www.biopax.org/examples/glycolysis#xref
+http://www.biopax.org/examples/glycolysis#conversion disjointWith http://www.biopax.org/examples/glycolysis#dataSource
+http://www.biopax.org/examples/glycolysis#conversion disjointWith http://www.biopax.org/examples/glycolysis#entity
+http://www.biopax.org/examples/glycolysis#conversion disjointWith http://www.biopax.org/examples/glycolysis#externalReferenceUtilityClass
+http://www.biopax.org/examples/glycolysis#conversion disjointWith http://www.biopax.org/examples/glycolysis#interaction
+http://www.biopax.org/examples/glycolysis#conversion disjointWith http://www.biopax.org/examples/glycolysis#modulation
+http://www.biopax.org/examples/glycolysis#conversion disjointWith http://www.biopax.org/examples/glycolysis#openControlledVocabulary
+http://www.biopax.org/examples/glycolysis#conversion disjointWith http://www.biopax.org/examples/glycolysis#pathway
+http://www.biopax.org/examples/glycolysis#conversion disjointWith http://www.biopax.org/examples/glycolysis#pathwayStep
+http://www.biopax.org/examples/glycolysis#conversion disjointWith http://www.biopax.org/examples/glycolysis#physicalEntity
+http://www.biopax.org/examples/glycolysis#conversion disjointWith http://www.biopax.org/examples/glycolysis#physicalEntityParticipant
+http://www.biopax.org/examples/glycolysis#conversion disjointWith http://www.biopax.org/examples/glycolysis#physicalInteraction
+http://www.biopax.org/examples/glycolysis#conversion disjointWith http://www.biopax.org/examples/glycolysis#protein
+http://www.biopax.org/examples/glycolysis#conversion disjointWith http://www.biopax.org/examples/glycolysis#publicationXref
+http://www.biopax.org/examples/glycolysis#conversion disjointWith http://www.biopax.org/examples/glycolysis#relationshipXref
+http://www.biopax.org/examples/glycolysis#conversion disjointWith http://www.biopax.org/examples/glycolysis#smallMolecule
+http://www.biopax.org/examples/glycolysis#conversion disjointWith http://www.biopax.org/examples/glycolysis#unificationXref
+http://www.biopax.org/examples/glycolysis#conversion disjointWith http://www.biopax.org/examples/glycolysis#utilityClass
+http://www.biopax.org/examples/glycolysis#conversion disjointWith http://www.biopax.org/examples/glycolysis#xref
+http://www.biopax.org/examples/glycolysis#dataSource disjointWith http://www.biopax.org/examples/glycolysis#entity
+http://www.biopax.org/examples/glycolysis#dataSource disjointWith http://www.biopax.org/examples/glycolysis#externalReferenceUtilityClass
+http://www.biopax.org/examples/glycolysis#dataSource disjointWith http://www.biopax.org/examples/glycolysis#interaction
+http://www.biopax.org/examples/glycolysis#dataSource disjointWith http://www.biopax.org/examples/glycolysis#modulation
+http://www.biopax.org/examples/glycolysis#dataSource disjointWith http://www.biopax.org/examples/glycolysis#openControlledVocabulary
+http://www.biopax.org/examples/glycolysis#dataSource disjointWith http://www.biopax.org/examples/glycolysis#pathway
+http://www.biopax.org/examples/glycolysis#dataSource disjointWith http://www.biopax.org/examples/glycolysis#pathwayStep
+http://www.biopax.org/examples/glycolysis#dataSource disjointWith http://www.biopax.org/examples/glycolysis#physicalEntity
+http://www.biopax.org/examples/glycolysis#dataSource disjointWith http://www.biopax.org/examples/glycolysis#physicalEntityParticipant
+http://www.biopax.org/examples/glycolysis#dataSource disjointWith http://www.biopax.org/examples/glycolysis#physicalInteraction
+http://www.biopax.org/examples/glycolysis#dataSource disjointWith http://www.biopax.org/examples/glycolysis#protein
+http://www.biopax.org/examples/glycolysis#dataSource disjointWith http://www.biopax.org/examples/glycolysis#publicationXref
+http://www.biopax.org/examples/glycolysis#dataSource disjointWith http://www.biopax.org/examples/glycolysis#relationshipXref
+http://www.biopax.org/examples/glycolysis#dataSource disjointWith http://www.biopax.org/examples/glycolysis#smallMolecule
+http://www.biopax.org/examples/glycolysis#dataSource disjointWith http://www.biopax.org/examples/glycolysis#unificationXref
+http://www.biopax.org/examples/glycolysis#dataSource disjointWith http://www.biopax.org/examples/glycolysis#utilityClass
+http://www.biopax.org/examples/glycolysis#dataSource disjointWith http://www.biopax.org/examples/glycolysis#xref
+http://www.biopax.org/examples/glycolysis#entity disjointWith http://www.biopax.org/examples/glycolysis#externalReferenceUtilityClass
+http://www.biopax.org/examples/glycolysis#entity disjointWith http://www.biopax.org/examples/glycolysis#modulation
+Number of inconsistencies: 3
+http://www.biopax.org/examples/glycolysis#entity disjointWith http://www.biopax.org/examples/glycolysis#openControlledVocabulary
+http://www.biopax.org/examples/glycolysis#entity disjointWith http://www.biopax.org/examples/glycolysis#pathway
+http://www.biopax.org/examples/glycolysis#entity disjointWith http://www.biopax.org/examples/glycolysis#pathwayStep
+http://www.biopax.org/examples/glycolysis#entity disjointWith http://www.biopax.org/examples/glycolysis#physicalEntityParticipant
+http://www.biopax.org/examples/glycolysis#entity disjointWith http://www.biopax.org/examples/glycolysis#protein
+Number of inconsistencies: 4
+http://www.biopax.org/examples/glycolysis#entity disjointWith http://www.biopax.org/examples/glycolysis#publicationXref
+http://www.biopax.org/examples/glycolysis#entity disjointWith http://www.biopax.org/examples/glycolysis#relationshipXref
+http://www.biopax.org/examples/glycolysis#entity disjointWith http://www.biopax.org/examples/glycolysis#smallMolecule
+Number of inconsistencies: 5
+http://www.biopax.org/examples/glycolysis#entity disjointWith http://www.biopax.org/examples/glycolysis#unificationXref
+http://www.biopax.org/examples/glycolysis#entity disjointWith http://www.biopax.org/examples/glycolysis#utilityClass
+http://www.biopax.org/examples/glycolysis#entity disjointWith http://www.biopax.org/examples/glycolysis#xref
+http://www.biopax.org/examples/glycolysis#externalReferenceUtilityClass disjointWith http://www.biopax.org/examples/glycolysis#interaction
+http://www.biopax.org/examples/glycolysis#externalReferenceUtilityClass disjointWith http://www.biopax.org/examples/glycolysis#modulation
+http://www.biopax.org/examples/glycolysis#externalReferenceUtilityClass disjointWith http://www.biopax.org/examples/glycolysis#openControlledVocabulary
+http://www.biopax.org/examples/glycolysis#externalReferenceUtilityClass disjointWith http://www.biopax.org/examples/glycolysis#pathway
+http://www.biopax.org/examples/glycolysis#externalReferenceUtilityClass disjointWith http://www.biopax.org/examples/glycolysis#pathwayStep
+http://www.biopax.org/examples/glycolysis#externalReferenceUtilityClass disjointWith http://www.biopax.org/examples/glycolysis#physicalEntity
+http://www.biopax.org/examples/glycolysis#externalReferenceUtilityClass disjointWith http://www.biopax.org/examples/glycolysis#physicalEntityParticipant
+http://www.biopax.org/examples/glycolysis#externalReferenceUtilityClass disjointWith http://www.biopax.org/examples/glycolysis#physicalInteraction
+http://www.biopax.org/examples/glycolysis#externalReferenceUtilityClass disjointWith http://www.biopax.org/examples/glycolysis#protein
+http://www.biopax.org/examples/glycolysis#externalReferenceUtilityClass disjointWith http://www.biopax.org/examples/glycolysis#publicationXref
+Number of inconsistencies: 6
+http://www.biopax.org/examples/glycolysis#externalReferenceUtilityClass disjointWith http://www.biopax.org/examples/glycolysis#relationshipXref
+Number of inconsistencies: 7
+http://www.biopax.org/examples/glycolysis#externalReferenceUtilityClass disjointWith http://www.biopax.org/examples/glycolysis#smallMolecule
+http://www.biopax.org/examples/glycolysis#interaction disjointWith http://www.biopax.org/examples/glycolysis#openControlledVocabulary
+http://www.biopax.org/examples/glycolysis#interaction disjointWith http://www.biopax.org/examples/glycolysis#pathway
+http://www.biopax.org/examples/glycolysis#interaction disjointWith http://www.biopax.org/examples/glycolysis#pathwayStep
+http://www.biopax.org/examples/glycolysis#interaction disjointWith http://www.biopax.org/examples/glycolysis#physicalEntity
+http://www.biopax.org/examples/glycolysis#interaction disjointWith http://www.biopax.org/examples/glycolysis#physicalEntityParticipant
+http://www.biopax.org/examples/glycolysis#interaction disjointWith http://www.biopax.org/examples/glycolysis#protein
+http://www.biopax.org/examples/glycolysis#interaction disjointWith http://www.biopax.org/examples/glycolysis#publicationXref
+http://www.biopax.org/examples/glycolysis#interaction disjointWith http://www.biopax.org/examples/glycolysis#relationshipXref
+http://www.biopax.org/examples/glycolysis#interaction disjointWith http://www.biopax.org/examples/glycolysis#smallMolecule
+http://www.biopax.org/examples/glycolysis#interaction disjointWith http://www.biopax.org/examples/glycolysis#unificationXref
+http://www.biopax.org/examples/glycolysis#interaction disjointWith http://www.biopax.org/examples/glycolysis#utilityClass
+http://www.biopax.org/examples/glycolysis#interaction disjointWith http://www.biopax.org/examples/glycolysis#xref
+http://www.biopax.org/examples/glycolysis#modulation disjointWith http://www.biopax.org/examples/glycolysis#openControlledVocabulary
+http://www.biopax.org/examples/glycolysis#modulation disjointWith http://www.biopax.org/examples/glycolysis#pathway
+http://www.biopax.org/examples/glycolysis#modulation disjointWith http://www.biopax.org/examples/glycolysis#pathwayStep
+http://www.biopax.org/examples/glycolysis#modulation disjointWith http://www.biopax.org/examples/glycolysis#physicalEntity
+http://www.biopax.org/examples/glycolysis#modulation disjointWith http://www.biopax.org/examples/glycolysis#physicalEntityParticipant
+http://www.biopax.org/examples/glycolysis#modulation disjointWith http://www.biopax.org/examples/glycolysis#protein
+http://www.biopax.org/examples/glycolysis#modulation disjointWith http://www.biopax.org/examples/glycolysis#publicationXref
+http://www.biopax.org/examples/glycolysis#modulation disjointWith http://www.biopax.org/examples/glycolysis#relationshipXref
+http://www.biopax.org/examples/glycolysis#modulation disjointWith http://www.biopax.org/examples/glycolysis#smallMolecule
+http://www.biopax.org/examples/glycolysis#modulation disjointWith http://www.biopax.org/examples/glycolysis#unificationXref
+http://www.biopax.org/examples/glycolysis#modulation disjointWith http://www.biopax.org/examples/glycolysis#utilityClass
+http://www.biopax.org/examples/glycolysis#modulation disjointWith http://www.biopax.org/examples/glycolysis#xref
+http://www.biopax.org/examples/glycolysis#openControlledVocabulary disjointWith http://www.biopax.org/examples/glycolysis#pathway
+http://www.biopax.org/examples/glycolysis#openControlledVocabulary disjointWith http://www.biopax.org/examples/glycolysis#pathwayStep
+http://www.biopax.org/examples/glycolysis#openControlledVocabulary disjointWith http://www.biopax.org/examples/glycolysis#physicalEntity
+http://www.biopax.org/examples/glycolysis#openControlledVocabulary disjointWith http://www.biopax.org/examples/glycolysis#physicalEntityParticipant
+http://www.biopax.org/examples/glycolysis#openControlledVocabulary disjointWith http://www.biopax.org/examples/glycolysis#physicalInteraction
+http://www.biopax.org/examples/glycolysis#openControlledVocabulary disjointWith http://www.biopax.org/examples/glycolysis#protein
+http://www.biopax.org/examples/glycolysis#openControlledVocabulary disjointWith http://www.biopax.org/examples/glycolysis#publicationXref
+http://www.biopax.org/examples/glycolysis#openControlledVocabulary disjointWith http://www.biopax.org/examples/glycolysis#relationshipXref
+http://www.biopax.org/examples/glycolysis#openControlledVocabulary disjointWith http://www.biopax.org/examples/glycolysis#smallMolecule
+http://www.biopax.org/examples/glycolysis#openControlledVocabulary disjointWith http://www.biopax.org/examples/glycolysis#unificationXref
+http://www.biopax.org/examples/glycolysis#openControlledVocabulary disjointWith http://www.biopax.org/examples/glycolysis#utilityClass
+http://www.biopax.org/examples/glycolysis#openControlledVocabulary disjointWith http://www.biopax.org/examples/glycolysis#xref
+http://www.biopax.org/examples/glycolysis#pathway disjointWith http://www.biopax.org/examples/glycolysis#pathwayStep
+http://www.biopax.org/examples/glycolysis#pathway disjointWith http://www.biopax.org/examples/glycolysis#physicalEntity
+http://www.biopax.org/examples/glycolysis#pathway disjointWith http://www.biopax.org/examples/glycolysis#physicalEntityParticipant
+http://www.biopax.org/examples/glycolysis#pathway disjointWith http://www.biopax.org/examples/glycolysis#physicalInteraction
+http://www.biopax.org/examples/glycolysis#pathway disjointWith http://www.biopax.org/examples/glycolysis#protein
+http://www.biopax.org/examples/glycolysis#pathway disjointWith http://www.biopax.org/examples/glycolysis#publicationXref
+http://www.biopax.org/examples/glycolysis#pathway disjointWith http://www.biopax.org/examples/glycolysis#relationshipXref
+http://www.biopax.org/examples/glycolysis#pathway disjointWith http://www.biopax.org/examples/glycolysis#smallMolecule
+http://www.biopax.org/examples/glycolysis#pathway disjointWith http://www.biopax.org/examples/glycolysis#unificationXref
+http://www.biopax.org/examples/glycolysis#pathway disjointWith http://www.biopax.org/examples/glycolysis#utilityClass
+http://www.biopax.org/examples/glycolysis#pathway disjointWith http://www.biopax.org/examples/glycolysis#xref
+http://www.biopax.org/examples/glycolysis#pathwayStep disjointWith http://www.biopax.org/examples/glycolysis#physicalEntity
+http://www.biopax.org/examples/glycolysis#pathwayStep disjointWith http://www.biopax.org/examples/glycolysis#physicalEntityParticipant
+http://www.biopax.org/examples/glycolysis#pathwayStep disjointWith http://www.biopax.org/examples/glycolysis#physicalInteraction
+http://www.biopax.org/examples/glycolysis#pathwayStep disjointWith http://www.biopax.org/examples/glycolysis#protein
+http://www.biopax.org/examples/glycolysis#pathwayStep disjointWith http://www.biopax.org/examples/glycolysis#publicationXref
+http://www.biopax.org/examples/glycolysis#pathwayStep disjointWith http://www.biopax.org/examples/glycolysis#relationshipXref
+http://www.biopax.org/examples/glycolysis#pathwayStep disjointWith http://www.biopax.org/examples/glycolysis#smallMolecule
+http://www.biopax.org/examples/glycolysis#pathwayStep disjointWith http://www.biopax.org/examples/glycolysis#unificationXref
+http://www.biopax.org/examples/glycolysis#pathwayStep disjointWith http://www.biopax.org/examples/glycolysis#utilityClass
+http://www.biopax.org/examples/glycolysis#pathwayStep disjointWith http://www.biopax.org/examples/glycolysis#xref
+http://www.biopax.org/examples/glycolysis#physicalEntity disjointWith http://www.biopax.org/examples/glycolysis#physicalEntityParticipant
+http://www.biopax.org/examples/glycolysis#physicalEntity disjointWith http://www.biopax.org/examples/glycolysis#physicalInteraction
+http://www.biopax.org/examples/glycolysis#physicalEntity disjointWith http://www.biopax.org/examples/glycolysis#protein
+Number of inconsistencies: 8
+http://www.biopax.org/examples/glycolysis#physicalEntity disjointWith http://www.biopax.org/examples/glycolysis#publicationXref
+http://www.biopax.org/examples/glycolysis#physicalEntity disjointWith http://www.biopax.org/examples/glycolysis#relationshipXref
+http://www.biopax.org/examples/glycolysis#physicalEntity disjointWith http://www.biopax.org/examples/glycolysis#unificationXref
+http://www.biopax.org/examples/glycolysis#physicalEntity disjointWith http://www.biopax.org/examples/glycolysis#utilityClass
+http://www.biopax.org/examples/glycolysis#physicalEntity disjointWith http://www.biopax.org/examples/glycolysis#xref
+http://www.biopax.org/examples/glycolysis#physicalEntityParticipant disjointWith http://www.biopax.org/examples/glycolysis#physicalInteraction
+http://www.biopax.org/examples/glycolysis#physicalEntityParticipant disjointWith http://www.biopax.org/examples/glycolysis#protein
+http://www.biopax.org/examples/glycolysis#physicalEntityParticipant disjointWith http://www.biopax.org/examples/glycolysis#publicationXref
+http://www.biopax.org/examples/glycolysis#physicalEntityParticipant disjointWith http://www.biopax.org/examples/glycolysis#relationshipXref
+http://www.biopax.org/examples/glycolysis#physicalEntityParticipant disjointWith http://www.biopax.org/examples/glycolysis#smallMolecule
+http://www.biopax.org/examples/glycolysis#physicalEntityParticipant disjointWith http://www.biopax.org/examples/glycolysis#unificationXref
+http://www.biopax.org/examples/glycolysis#physicalEntityParticipant disjointWith http://www.biopax.org/examples/glycolysis#utilityClass
+Number of inconsistencies: 9
+http://www.biopax.org/examples/glycolysis#physicalEntityParticipant disjointWith http://www.biopax.org/examples/glycolysis#xref
+http://www.biopax.org/examples/glycolysis#physicalInteraction disjointWith http://www.biopax.org/examples/glycolysis#protein
+http://www.biopax.org/examples/glycolysis#physicalInteraction disjointWith http://www.biopax.org/examples/glycolysis#publicationXref
+http://www.biopax.org/examples/glycolysis#physicalInteraction disjointWith http://www.biopax.org/examples/glycolysis#relationshipXref
+http://www.biopax.org/examples/glycolysis#physicalInteraction disjointWith http://www.biopax.org/examples/glycolysis#smallMolecule
+http://www.biopax.org/examples/glycolysis#physicalInteraction disjointWith http://www.biopax.org/examples/glycolysis#unificationXref
+http://www.biopax.org/examples/glycolysis#physicalInteraction disjointWith http://www.biopax.org/examples/glycolysis#utilityClass
+http://www.biopax.org/examples/glycolysis#physicalInteraction disjointWith http://www.biopax.org/examples/glycolysis#xref
+http://www.biopax.org/examples/glycolysis#protein disjointWith http://www.biopax.org/examples/glycolysis#publicationXref
+http://www.biopax.org/examples/glycolysis#protein disjointWith http://www.biopax.org/examples/glycolysis#relationshipXref
+http://www.biopax.org/examples/glycolysis#protein disjointWith http://www.biopax.org/examples/glycolysis#smallMolecule
+http://www.biopax.org/examples/glycolysis#protein disjointWith http://www.biopax.org/examples/glycolysis#unificationXref
+http://www.biopax.org/examples/glycolysis#protein disjointWith http://www.biopax.org/examples/glycolysis#utilityClass
+http://www.biopax.org/examples/glycolysis#protein disjointWith http://www.biopax.org/examples/glycolysis#xref
+http://www.biopax.org/examples/glycolysis#publicationXref disjointWith http://www.biopax.org/examples/glycolysis#relationshipXref
+http://www.biopax.org/examples/glycolysis#publicationXref disjointWith http://www.biopax.org/examples/glycolysis#smallMolecule
+http://www.biopax.org/examples/glycolysis#publicationXref disjointWith http://www.biopax.org/examples/glycolysis#unificationXref
+http://www.biopax.org/examples/glycolysis#publicationXref disjointWith http://www.biopax.org/examples/glycolysis#utilityClass
+Number of inconsistencies: 10
+http://www.biopax.org/examples/glycolysis#publicationXref disjointWith http://www.biopax.org/examples/glycolysis#xref
+Number of inconsistencies: 11
+http://www.biopax.org/examples/glycolysis#relationshipXref disjointWith http://www.biopax.org/examples/glycolysis#smallMolecule
+http://www.biopax.org/examples/glycolysis#relationshipXref disjointWith http://www.biopax.org/examples/glycolysis#unificationXref
+http://www.biopax.org/examples/glycolysis#relationshipXref disjointWith http://www.biopax.org/examples/glycolysis#utilityClass
+Number of inconsistencies: 12
+http://www.biopax.org/examples/glycolysis#relationshipXref disjointWith http://www.biopax.org/examples/glycolysis#xref
+Number of inconsistencies: 13
+http://www.biopax.org/examples/glycolysis#smallMolecule disjointWith http://www.biopax.org/examples/glycolysis#unificationXref
+http://www.biopax.org/examples/glycolysis#smallMolecule disjointWith http://www.biopax.org/examples/glycolysis#utilityClass
+http://www.biopax.org/examples/glycolysis#smallMolecule disjointWith http://www.biopax.org/examples/glycolysis#xref
+http://www.biopax.org/examples/glycolysis#unificationXref disjointWith http://www.biopax.org/examples/glycolysis#utilityClass
+Number of inconsistencies: 14
+Number of inconsistencies: 14
+***************************************************************
+ Overall Results
+Axioms: 280.0 (0.0)
+Inconsistencies: 14.0 (0.0)
+
+
+Ending: C:/Users/Giuseppe/Documents/ontos/biopax.owl

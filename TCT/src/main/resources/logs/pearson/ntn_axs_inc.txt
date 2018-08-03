@@ -1,0 +1,1187 @@
+C:/Users/Giuseppe/Documents/ontos/NTNames.owl
+
+Classes
+-------
+1:) http://semanticbible.com/2004/04/NTNames#BeliefSystem
+2:) http://semanticbible.com/2004/04/NTNames#CitizenshipAttribute
+3:) http://semanticbible.com/2004/04/NTNames#EthnicityAttribute
+4:) http://semanticbible.com/2004/04/NTNames#EvilSupernaturalBeing
+5:) http://semanticbible.com/2004/04/NTNames#FixedHoliday
+6:) http://semanticbible.com/2004/04/NTNames#GeographicCoordinate
+7:) http://semanticbible.com/2004/04/NTNames#God
+8:) http://semanticbible.com/2004/04/NTNames#HumanAttribute
+9:) http://semanticbible.com/2004/04/NTNames#Mountain
+10:) http://semanticbible.com/2004/04/NTNames#PoliticalAttribute
+11:) http://semanticbible.com/2004/04/NTNames#PoliticalBeliefSystem
+12:) http://semanticbible.com/2004/04/NTNames#ReligiousBelief
+13:) http://semanticbible.com/2004/04/NTNames#ReligiousBeliefSystem
+14:) http://semanticbible.com/2004/04/NTNames#ResidenceGroup
+15:) http://semanticbible.com/2004/04/NTNames#ResidencyAttribute
+16:) http://semanticbible.com/2004/04/NTNames#SonOfGod
+17:) http://semanticbible.com/2004/04/NTNames#SupernaturalBeing
+18:) http://suo.ieee.org#Agent
+19:) http://suo.ieee.org#BeliefGroup
+20:) http://suo.ieee.org#Character
+21:) http://suo.ieee.org#City
+22:) http://suo.ieee.org#CognitiveAgent
+23:) http://suo.ieee.org#ContentBearingObject
+24:) http://suo.ieee.org#EthnicGroup
+25:) http://suo.ieee.org#FreshWaterArea
+26:) http://suo.ieee.org#GeographicArea
+27:) http://suo.ieee.org#GeopoliticalArea
+28:) http://suo.ieee.org#Group
+29:) http://suo.ieee.org#GroupOfPeople
+30:) http://suo.ieee.org#Human
+31:) http://suo.ieee.org#Island
+32:) http://suo.ieee.org#LandArea
+33:) http://suo.ieee.org#Man
+34:) http://suo.ieee.org#Nation
+35:) http://suo.ieee.org#NaturalLanguage
+36:) http://suo.ieee.org#Object
+37:) http://suo.ieee.org#Organization
+38:) http://suo.ieee.org#PoliticalOrganization
+39:) http://suo.ieee.org#Proposition
+40:) http://suo.ieee.org#Region
+41:) http://suo.ieee.org#ReligiousOrganization
+42:) http://suo.ieee.org#SaltWaterArea
+43:) http://suo.ieee.org#Serial
+44:) http://suo.ieee.org#StateOrProvince
+45:) http://suo.ieee.org#WaterArea
+46:) http://suo.ieee.org#Woman
+---------------------------- 46
+
+Properties
+-------
+1-http://purl.org/vocab/relationship#childOf
+2-http://purl.org/vocab/relationship#collaboratesWith
+3-http://purl.org/vocab/relationship#knowsOf
+4-http://purl.org/vocab/relationship#parentOf
+5-http://purl.org/vocab/relationship#siblingOf
+6-http://purl.org/vocab/relationship#spouseOf
+7-http://semanticbible.com/2004/04/NTNames#latitude
+8-http://semanticbible.com/2004/04/NTNames#longitude
+9-http://semanticbible.com/2004/04/NTNames#member
+10-http://semanticbible.com/2004/04/NTNames#memberOf
+11-http://semanticbible.com/2004/04/NTNames#nativePlace
+12-http://semanticbible.com/2004/04/NTNames#nativePlaceOf
+13-http://semanticbible.com/2004/04/NTNames#politicalBelief
+14-http://semanticbible.com/2004/04/NTNames#religiousBelief
+15-http://semanticbible.com/2004/04/NTNames#residentPlace
+16-http://semanticbible.com/2004/04/NTNames#residentPlaceOf
+17-http://semanticbible.com/2004/04/NTNames#subregion
+18-http://semanticbible.com/2004/04/NTNames#subregionOf
+19-http://semanticbible.com/2004/04/NTNames#visitedPlace
+20-http://semanticbible.com/2004/04/NTNames#visitedPlaceOf
+---------------------------- 20
+
+Individuals
+-----------
+---------------------------- 593
+
+KB loaded. 
+
+15:08:49,259 [org.apache.spark.SparkContext] - Running Spark version 2.1.0
+WARNING: An illegal reflective access operation has occurred
+WARNING: Illegal reflective access by org.apache.hadoop.security.authentication.util.KerberosUtil (file:/C:/Users/Giuseppe/.m2/repository/org/apache/hadoop/hadoop-auth/2.2.0/hadoop-auth-2.2.0.jar) to method sun.security.krb5.Config.getInstance()
+WARNING: Please consider reporting this to the maintainers of org.apache.hadoop.security.authentication.util.KerberosUtil
+WARNING: Use --illegal-access=warn to enable warnings of further illegal reflective access operations
+WARNING: All illegal access operations will be denied in a future release
+15:08:49,789 [org.apache.hadoop.util.NativeCodeLoader] - Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+15:08:50,110 [org.apache.spark.SecurityManager] - Changing view acls to: Giuseppe
+15:08:50,111 [org.apache.spark.SecurityManager] - Changing modify acls to: Giuseppe
+15:08:50,112 [org.apache.spark.SecurityManager] - Changing view acls groups to: 
+15:08:50,113 [org.apache.spark.SecurityManager] - Changing modify acls groups to: 
+15:08:50,113 [org.apache.spark.SecurityManager] - SecurityManager: authentication disabled; ui acls disabled; users  with view permissions: Set(Giuseppe); groups with view permissions: Set(); users  with modify permissions: Set(Giuseppe); groups with modify permissions: Set()
+15:08:51,154 [org.apache.spark.util.Utils] - Successfully started service 'sparkDriver' on port 62648.
+15:08:51,195 [org.apache.spark.SparkEnv] - Registering MapOutputTracker
+15:08:51,234 [org.apache.spark.SparkEnv] - Registering BlockManagerMaster
+15:08:51,240 [org.apache.spark.storage.BlockManagerMasterEndpoint] - Using org.apache.spark.storage.DefaultTopologyMapper for getting topology information
+15:08:51,240 [org.apache.spark.storage.BlockManagerMasterEndpoint] - BlockManagerMasterEndpoint up
+15:08:51,262 [org.apache.spark.storage.DiskBlockManager] - Created local directory at C:\Users\Giuseppe\AppData\Local\Temp\blockmgr-acb1cf98-4e9e-48df-851b-b9627db04a36
+15:08:51,306 [org.apache.spark.storage.memory.MemoryStore] - MemoryStore started with capacity 1028.4 MB
+15:08:51,533 [org.apache.spark.SparkEnv] - Registering OutputCommitCoordinator
+15:08:51,870 [org.spark_project.jetty.util.log] - Logging initialized @7033ms
+15:08:52,112 [org.spark_project.jetty.server.Server] - jetty-9.2.z-SNAPSHOT
+15:08:52,139 [org.spark_project.jetty.server.handler.ContextHandler] - Started o.s.j.s.ServletContextHandler@4451f60c{/jobs,null,AVAILABLE}
+15:08:52,140 [org.spark_project.jetty.server.handler.ContextHandler] - Started o.s.j.s.ServletContextHandler@6b357eb6{/jobs/json,null,AVAILABLE}
+15:08:52,140 [org.spark_project.jetty.server.handler.ContextHandler] - Started o.s.j.s.ServletContextHandler@64bebd55{/jobs/job,null,AVAILABLE}
+15:08:52,140 [org.spark_project.jetty.server.handler.ContextHandler] - Started o.s.j.s.ServletContextHandler@7c1a8f0f{/jobs/job/json,null,AVAILABLE}
+15:08:52,141 [org.spark_project.jetty.server.handler.ContextHandler] - Started o.s.j.s.ServletContextHandler@3730f716{/stages,null,AVAILABLE}
+15:08:52,141 [org.spark_project.jetty.server.handler.ContextHandler] - Started o.s.j.s.ServletContextHandler@7730ef88{/stages/json,null,AVAILABLE}
+15:08:52,141 [org.spark_project.jetty.server.handler.ContextHandler] - Started o.s.j.s.ServletContextHandler@66f5a02e{/stages/stage,null,AVAILABLE}
+15:08:52,141 [org.spark_project.jetty.server.handler.ContextHandler] - Started o.s.j.s.ServletContextHandler@4e3f2908{/stages/stage/json,null,AVAILABLE}
+15:08:52,141 [org.spark_project.jetty.server.handler.ContextHandler] - Started o.s.j.s.ServletContextHandler@7e87ef9e{/stages/pool,null,AVAILABLE}
+15:08:52,142 [org.spark_project.jetty.server.handler.ContextHandler] - Started o.s.j.s.ServletContextHandler@e3b0369{/stages/pool/json,null,AVAILABLE}
+15:08:52,142 [org.spark_project.jetty.server.handler.ContextHandler] - Started o.s.j.s.ServletContextHandler@45843650{/storage,null,AVAILABLE}
+15:08:52,142 [org.spark_project.jetty.server.handler.ContextHandler] - Started o.s.j.s.ServletContextHandler@72443081{/storage/json,null,AVAILABLE}
+15:08:52,142 [org.spark_project.jetty.server.handler.ContextHandler] - Started o.s.j.s.ServletContextHandler@33feda48{/storage/rdd,null,AVAILABLE}
+15:08:52,142 [org.spark_project.jetty.server.handler.ContextHandler] - Started o.s.j.s.ServletContextHandler@6588b715{/storage/rdd/json,null,AVAILABLE}
+15:08:52,143 [org.spark_project.jetty.server.handler.ContextHandler] - Started o.s.j.s.ServletContextHandler@15a3b42{/environment,null,AVAILABLE}
+15:08:52,143 [org.spark_project.jetty.server.handler.ContextHandler] - Started o.s.j.s.ServletContextHandler@52c9d3d0{/environment/json,null,AVAILABLE}
+15:08:52,143 [org.spark_project.jetty.server.handler.ContextHandler] - Started o.s.j.s.ServletContextHandler@17207f5b{/executors,null,AVAILABLE}
+15:08:52,143 [org.spark_project.jetty.server.handler.ContextHandler] - Started o.s.j.s.ServletContextHandler@373052b5{/executors/json,null,AVAILABLE}
+15:08:52,144 [org.spark_project.jetty.server.handler.ContextHandler] - Started o.s.j.s.ServletContextHandler@67e0ff3a{/executors/threadDump,null,AVAILABLE}
+15:08:52,144 [org.spark_project.jetty.server.handler.ContextHandler] - Started o.s.j.s.ServletContextHandler@7b2bf745{/executors/threadDump/json,null,AVAILABLE}
+15:08:52,152 [org.spark_project.jetty.server.handler.ContextHandler] - Started o.s.j.s.ServletContextHandler@6fe595dc{/static,null,AVAILABLE}
+15:08:52,153 [org.spark_project.jetty.server.handler.ContextHandler] - Started o.s.j.s.ServletContextHandler@5af5d76f{/,null,AVAILABLE}
+15:08:52,154 [org.spark_project.jetty.server.handler.ContextHandler] - Started o.s.j.s.ServletContextHandler@3a8cea24{/api,null,AVAILABLE}
+15:08:52,154 [org.spark_project.jetty.server.handler.ContextHandler] - Started o.s.j.s.ServletContextHandler@1eb9a3ef{/jobs/job/kill,null,AVAILABLE}
+15:08:52,154 [org.spark_project.jetty.server.handler.ContextHandler] - Started o.s.j.s.ServletContextHandler@5d318e91{/stages/stage/kill,null,AVAILABLE}
+15:08:52,174 [org.spark_project.jetty.server.ServerConnector] - Started ServerConnector@3dc40ab9{HTTP/1.1}{0.0.0.0:4040}
+15:08:52,174 [org.spark_project.jetty.server.Server] - Started @7340ms
+15:08:52,174 [org.apache.spark.util.Utils] - Successfully started service 'SparkUI' on port 4040.
+15:08:52,181 [org.apache.spark.ui.SparkUI] - Bound SparkUI to 0.0.0.0, and started at http://192.168.1.66:4040
+15:08:52,469 [org.apache.spark.executor.Executor] - Starting executor ID driver on host localhost
+15:08:52,564 [org.apache.spark.util.Utils] - Successfully started service 'org.apache.spark.network.netty.NettyBlockTransferService' on port 62666.
+15:08:52,565 [org.apache.spark.network.netty.NettyBlockTransferService] - Server created on 192.168.1.66:62666
+15:08:52,567 [org.apache.spark.storage.BlockManager] - Using org.apache.spark.storage.RandomBlockReplicationPolicy for block replication policy
+15:08:52,570 [org.apache.spark.storage.BlockManagerMaster] - Registering BlockManager BlockManagerId(driver, 192.168.1.66, 62666, None)
+15:08:52,576 [org.apache.spark.storage.BlockManagerMasterEndpoint] - Registering block manager 192.168.1.66:62666 with 1028.4 MB RAM, BlockManagerId(driver, 192.168.1.66, 62666, None)
+15:08:52,583 [org.apache.spark.storage.BlockManagerMaster] - Registered BlockManager BlockManagerId(driver, 192.168.1.66, 62666, None)
+15:08:52,584 [org.apache.spark.storage.BlockManager] - Initialized BlockManager: BlockManagerId(driver, 192.168.1.66, 62666, None)
+15:08:52,982 [org.spark_project.jetty.server.handler.ContextHandler] - Started o.s.j.s.ServletContextHandler@601d6622{/metrics/json,null,AVAILABLE}
+Pre-computing 46 x 593 pi elements 
+   0. http://semanticbible.com/2004/04/NTNames#BeliefSystem | completed.   2,2% 
+   1. http://semanticbible.com/2004/04/NTNames#CitizenshipAttribute | completed.   4,3% 
+   2. http://semanticbible.com/2004/04/NTNames#EthnicityAttribute | completed.   6,5% 
+   3. http://semanticbible.com/2004/04/NTNames#EvilSupernaturalBeing | completed.   8,7% 
+   4. http://semanticbible.com/2004/04/NTNames#FixedHoliday | completed.  10,9% 
+   5. http://semanticbible.com/2004/04/NTNames#GeographicCoordinate | completed.  13,0% 
+   6.       http://semanticbible.com/2004/04/NTNames#God | completed.  15,2% 
+   7. http://semanticbible.com/2004/04/NTNames#HumanAttribute | completed.  17,4% 
+   8.  http://semanticbible.com/2004/04/NTNames#Mountain | completed.  19,6% 
+   9. http://semanticbible.com/2004/04/NTNames#PoliticalAttribute | completed.  21,7% 
+  10. http://semanticbible.com/2004/04/NTNames#PoliticalBeliefSystem | completed.  23,9% 
+  11. http://semanticbible.com/2004/04/NTNames#ReligiousBelief | completed.  26,1% 
+  12. http://semanticbible.com/2004/04/NTNames#ReligiousBeliefSystem | completed.  28,3% 
+  13. http://semanticbible.com/2004/04/NTNames#ResidenceGroup | completed.  30,4% 
+  14. http://semanticbible.com/2004/04/NTNames#ResidencyAttribute | completed.  32,6% 
+  15.  http://semanticbible.com/2004/04/NTNames#SonOfGod | completed.  34,8% 
+  16. http://semanticbible.com/2004/04/NTNames#SupernaturalBeing | completed.  37,0% 
+  17.                          http://suo.ieee.org#Agent | completed.  39,1% 
+  18.                    http://suo.ieee.org#BeliefGroup | completed.  41,3% 
+  19.                      http://suo.ieee.org#Character | completed.  43,5% 
+  20.                           http://suo.ieee.org#City | completed.  45,7% 
+  21.                 http://suo.ieee.org#CognitiveAgent | completed.  47,8% 
+  22.           http://suo.ieee.org#ContentBearingObject | completed.  50,0% 
+  23.                    http://suo.ieee.org#EthnicGroup | completed.  52,2% 
+  24.                 http://suo.ieee.org#FreshWaterArea | completed.  54,3% 
+  25.                 http://suo.ieee.org#GeographicArea | completed.  56,5% 
+  26.               http://suo.ieee.org#GeopoliticalArea | completed.  58,7% 
+  27.                          http://suo.ieee.org#Group | completed.  60,9% 
+  28.                  http://suo.ieee.org#GroupOfPeople | completed.  63,0% 
+  29.                          http://suo.ieee.org#Human | completed.  65,2% 
+  30.                         http://suo.ieee.org#Island | completed.  67,4% 
+  31.                       http://suo.ieee.org#LandArea | completed.  69,6% 
+  32.                            http://suo.ieee.org#Man | completed.  71,7% 
+  33.                         http://suo.ieee.org#Nation | completed.  73,9% 
+  34.                http://suo.ieee.org#NaturalLanguage | completed.  76,1% 
+  35.                         http://suo.ieee.org#Object | completed.  78,3% 
+  36.                   http://suo.ieee.org#Organization | completed.  80,4% 
+  37.          http://suo.ieee.org#PoliticalOrganization | completed.  82,6% 
+  38.                    http://suo.ieee.org#Proposition | completed.  84,8% 
+  39.                         http://suo.ieee.org#Region | completed.  87,0% 
+  40.          http://suo.ieee.org#ReligiousOrganization | completed.  89,1% 
+  41.                  http://suo.ieee.org#SaltWaterArea | completed.  91,3% 
+  42.                         http://suo.ieee.org#Serial | completed.  93,5% 
+  43.                http://suo.ieee.org#StateOrProvince | completed.  95,7% 
+  44.                      http://suo.ieee.org#WaterArea | completed.  97,8% 
+  45.                          http://suo.ieee.org#Woman | completed. 100,0% 
+-----------------------------------------------------------------------------------------------------------
+************************Discovering disjointntness axioms ********** 
+Learning algorithm: pearson's correlation coefficient
+Number of axioms: 957
+http://semanticbible.com/2004/04/NTNames#BeliefSystem disjointWith http://semanticbible.com/2004/04/NTNames#CitizenshipAttribute
+http://semanticbible.com/2004/04/NTNames#BeliefSystem disjointWith http://semanticbible.com/2004/04/NTNames#EthnicityAttribute
+http://semanticbible.com/2004/04/NTNames#BeliefSystem disjointWith http://semanticbible.com/2004/04/NTNames#EvilSupernaturalBeing
+http://semanticbible.com/2004/04/NTNames#BeliefSystem disjointWith http://semanticbible.com/2004/04/NTNames#FixedHoliday
+http://semanticbible.com/2004/04/NTNames#BeliefSystem disjointWith http://semanticbible.com/2004/04/NTNames#God
+http://semanticbible.com/2004/04/NTNames#BeliefSystem disjointWith http://semanticbible.com/2004/04/NTNames#HumanAttribute
+http://semanticbible.com/2004/04/NTNames#BeliefSystem disjointWith http://semanticbible.com/2004/04/NTNames#Mountain
+http://semanticbible.com/2004/04/NTNames#BeliefSystem disjointWith http://semanticbible.com/2004/04/NTNames#PoliticalAttribute
+http://semanticbible.com/2004/04/NTNames#BeliefSystem disjointWith http://semanticbible.com/2004/04/NTNames#PoliticalBeliefSystem
+http://semanticbible.com/2004/04/NTNames#BeliefSystem disjointWith http://semanticbible.com/2004/04/NTNames#ReligiousBelief
+http://semanticbible.com/2004/04/NTNames#BeliefSystem disjointWith http://semanticbible.com/2004/04/NTNames#ResidenceGroup
+http://semanticbible.com/2004/04/NTNames#BeliefSystem disjointWith http://semanticbible.com/2004/04/NTNames#ResidencyAttribute
+http://semanticbible.com/2004/04/NTNames#BeliefSystem disjointWith http://semanticbible.com/2004/04/NTNames#SonOfGod
+http://semanticbible.com/2004/04/NTNames#BeliefSystem disjointWith http://semanticbible.com/2004/04/NTNames#SupernaturalBeing
+http://semanticbible.com/2004/04/NTNames#BeliefSystem disjointWith http://suo.ieee.org#Agent
+http://semanticbible.com/2004/04/NTNames#BeliefSystem disjointWith http://suo.ieee.org#BeliefGroup
+http://semanticbible.com/2004/04/NTNames#BeliefSystem disjointWith http://suo.ieee.org#Character
+http://semanticbible.com/2004/04/NTNames#BeliefSystem disjointWith http://suo.ieee.org#City
+http://semanticbible.com/2004/04/NTNames#BeliefSystem disjointWith http://suo.ieee.org#CognitiveAgent
+http://semanticbible.com/2004/04/NTNames#BeliefSystem disjointWith http://suo.ieee.org#ContentBearingObject
+http://semanticbible.com/2004/04/NTNames#BeliefSystem disjointWith http://suo.ieee.org#EthnicGroup
+http://semanticbible.com/2004/04/NTNames#BeliefSystem disjointWith http://suo.ieee.org#FreshWaterArea
+http://semanticbible.com/2004/04/NTNames#BeliefSystem disjointWith http://suo.ieee.org#GeographicArea
+http://semanticbible.com/2004/04/NTNames#BeliefSystem disjointWith http://suo.ieee.org#GeopoliticalArea
+http://semanticbible.com/2004/04/NTNames#BeliefSystem disjointWith http://suo.ieee.org#Group
+http://semanticbible.com/2004/04/NTNames#BeliefSystem disjointWith http://suo.ieee.org#GroupOfPeople
+http://semanticbible.com/2004/04/NTNames#BeliefSystem disjointWith http://suo.ieee.org#Human
+http://semanticbible.com/2004/04/NTNames#BeliefSystem disjointWith http://suo.ieee.org#Island
+http://semanticbible.com/2004/04/NTNames#BeliefSystem disjointWith http://suo.ieee.org#LandArea
+http://semanticbible.com/2004/04/NTNames#BeliefSystem disjointWith http://suo.ieee.org#Man
+http://semanticbible.com/2004/04/NTNames#BeliefSystem disjointWith http://suo.ieee.org#Nation
+http://semanticbible.com/2004/04/NTNames#BeliefSystem disjointWith http://suo.ieee.org#NaturalLanguage
+http://semanticbible.com/2004/04/NTNames#BeliefSystem disjointWith http://suo.ieee.org#Object
+http://semanticbible.com/2004/04/NTNames#BeliefSystem disjointWith http://suo.ieee.org#Organization
+http://semanticbible.com/2004/04/NTNames#BeliefSystem disjointWith http://suo.ieee.org#PoliticalOrganization
+http://semanticbible.com/2004/04/NTNames#BeliefSystem disjointWith http://suo.ieee.org#Region
+http://semanticbible.com/2004/04/NTNames#BeliefSystem disjointWith http://suo.ieee.org#ReligiousOrganization
+http://semanticbible.com/2004/04/NTNames#BeliefSystem disjointWith http://suo.ieee.org#SaltWaterArea
+http://semanticbible.com/2004/04/NTNames#BeliefSystem disjointWith http://suo.ieee.org#Serial
+http://semanticbible.com/2004/04/NTNames#BeliefSystem disjointWith http://suo.ieee.org#StateOrProvince
+http://semanticbible.com/2004/04/NTNames#BeliefSystem disjointWith http://suo.ieee.org#WaterArea
+http://semanticbible.com/2004/04/NTNames#BeliefSystem disjointWith http://suo.ieee.org#Woman
+http://semanticbible.com/2004/04/NTNames#CitizenshipAttribute disjointWith http://semanticbible.com/2004/04/NTNames#EthnicityAttribute
+http://semanticbible.com/2004/04/NTNames#CitizenshipAttribute disjointWith http://semanticbible.com/2004/04/NTNames#EvilSupernaturalBeing
+http://semanticbible.com/2004/04/NTNames#CitizenshipAttribute disjointWith http://semanticbible.com/2004/04/NTNames#FixedHoliday
+http://semanticbible.com/2004/04/NTNames#CitizenshipAttribute disjointWith http://semanticbible.com/2004/04/NTNames#God
+http://semanticbible.com/2004/04/NTNames#CitizenshipAttribute disjointWith http://semanticbible.com/2004/04/NTNames#HumanAttribute
+http://semanticbible.com/2004/04/NTNames#CitizenshipAttribute disjointWith http://semanticbible.com/2004/04/NTNames#Mountain
+http://semanticbible.com/2004/04/NTNames#CitizenshipAttribute disjointWith http://semanticbible.com/2004/04/NTNames#PoliticalAttribute
+http://semanticbible.com/2004/04/NTNames#CitizenshipAttribute disjointWith http://semanticbible.com/2004/04/NTNames#PoliticalBeliefSystem
+http://semanticbible.com/2004/04/NTNames#CitizenshipAttribute disjointWith http://semanticbible.com/2004/04/NTNames#ReligiousBelief
+http://semanticbible.com/2004/04/NTNames#CitizenshipAttribute disjointWith http://semanticbible.com/2004/04/NTNames#ReligiousBeliefSystem
+http://semanticbible.com/2004/04/NTNames#CitizenshipAttribute disjointWith http://semanticbible.com/2004/04/NTNames#ResidenceGroup
+http://semanticbible.com/2004/04/NTNames#CitizenshipAttribute disjointWith http://semanticbible.com/2004/04/NTNames#ResidencyAttribute
+http://semanticbible.com/2004/04/NTNames#CitizenshipAttribute disjointWith http://semanticbible.com/2004/04/NTNames#SonOfGod
+http://semanticbible.com/2004/04/NTNames#CitizenshipAttribute disjointWith http://semanticbible.com/2004/04/NTNames#SupernaturalBeing
+http://semanticbible.com/2004/04/NTNames#CitizenshipAttribute disjointWith http://suo.ieee.org#Agent
+http://semanticbible.com/2004/04/NTNames#CitizenshipAttribute disjointWith http://suo.ieee.org#BeliefGroup
+http://semanticbible.com/2004/04/NTNames#CitizenshipAttribute disjointWith http://suo.ieee.org#Character
+http://semanticbible.com/2004/04/NTNames#CitizenshipAttribute disjointWith http://suo.ieee.org#City
+http://semanticbible.com/2004/04/NTNames#CitizenshipAttribute disjointWith http://suo.ieee.org#CognitiveAgent
+http://semanticbible.com/2004/04/NTNames#CitizenshipAttribute disjointWith http://suo.ieee.org#ContentBearingObject
+http://semanticbible.com/2004/04/NTNames#CitizenshipAttribute disjointWith http://suo.ieee.org#EthnicGroup
+http://semanticbible.com/2004/04/NTNames#CitizenshipAttribute disjointWith http://suo.ieee.org#FreshWaterArea
+http://semanticbible.com/2004/04/NTNames#CitizenshipAttribute disjointWith http://suo.ieee.org#GeographicArea
+http://semanticbible.com/2004/04/NTNames#CitizenshipAttribute disjointWith http://suo.ieee.org#GeopoliticalArea
+http://semanticbible.com/2004/04/NTNames#CitizenshipAttribute disjointWith http://suo.ieee.org#Group
+http://semanticbible.com/2004/04/NTNames#CitizenshipAttribute disjointWith http://suo.ieee.org#GroupOfPeople
+http://semanticbible.com/2004/04/NTNames#CitizenshipAttribute disjointWith http://suo.ieee.org#Human
+http://semanticbible.com/2004/04/NTNames#CitizenshipAttribute disjointWith http://suo.ieee.org#Island
+http://semanticbible.com/2004/04/NTNames#CitizenshipAttribute disjointWith http://suo.ieee.org#LandArea
+http://semanticbible.com/2004/04/NTNames#CitizenshipAttribute disjointWith http://suo.ieee.org#Man
+http://semanticbible.com/2004/04/NTNames#CitizenshipAttribute disjointWith http://suo.ieee.org#Nation
+http://semanticbible.com/2004/04/NTNames#CitizenshipAttribute disjointWith http://suo.ieee.org#NaturalLanguage
+http://semanticbible.com/2004/04/NTNames#CitizenshipAttribute disjointWith http://suo.ieee.org#Object
+http://semanticbible.com/2004/04/NTNames#CitizenshipAttribute disjointWith http://suo.ieee.org#Organization
+http://semanticbible.com/2004/04/NTNames#CitizenshipAttribute disjointWith http://suo.ieee.org#PoliticalOrganization
+http://semanticbible.com/2004/04/NTNames#CitizenshipAttribute disjointWith http://suo.ieee.org#Proposition
+http://semanticbible.com/2004/04/NTNames#CitizenshipAttribute disjointWith http://suo.ieee.org#Region
+http://semanticbible.com/2004/04/NTNames#CitizenshipAttribute disjointWith http://suo.ieee.org#ReligiousOrganization
+http://semanticbible.com/2004/04/NTNames#CitizenshipAttribute disjointWith http://suo.ieee.org#SaltWaterArea
+http://semanticbible.com/2004/04/NTNames#CitizenshipAttribute disjointWith http://suo.ieee.org#Serial
+http://semanticbible.com/2004/04/NTNames#CitizenshipAttribute disjointWith http://suo.ieee.org#StateOrProvince
+http://semanticbible.com/2004/04/NTNames#CitizenshipAttribute disjointWith http://suo.ieee.org#WaterArea
+http://semanticbible.com/2004/04/NTNames#CitizenshipAttribute disjointWith http://suo.ieee.org#Woman
+http://semanticbible.com/2004/04/NTNames#EthnicityAttribute disjointWith http://semanticbible.com/2004/04/NTNames#EvilSupernaturalBeing
+http://semanticbible.com/2004/04/NTNames#EthnicityAttribute disjointWith http://semanticbible.com/2004/04/NTNames#FixedHoliday
+http://semanticbible.com/2004/04/NTNames#EthnicityAttribute disjointWith http://semanticbible.com/2004/04/NTNames#God
+http://semanticbible.com/2004/04/NTNames#EthnicityAttribute disjointWith http://semanticbible.com/2004/04/NTNames#Mountain
+http://semanticbible.com/2004/04/NTNames#EthnicityAttribute disjointWith http://semanticbible.com/2004/04/NTNames#PoliticalAttribute
+http://semanticbible.com/2004/04/NTNames#EthnicityAttribute disjointWith http://semanticbible.com/2004/04/NTNames#PoliticalBeliefSystem
+http://semanticbible.com/2004/04/NTNames#EthnicityAttribute disjointWith http://semanticbible.com/2004/04/NTNames#ReligiousBelief
+http://semanticbible.com/2004/04/NTNames#EthnicityAttribute disjointWith http://semanticbible.com/2004/04/NTNames#ReligiousBeliefSystem
+http://semanticbible.com/2004/04/NTNames#EthnicityAttribute disjointWith http://semanticbible.com/2004/04/NTNames#ResidenceGroup
+http://semanticbible.com/2004/04/NTNames#EthnicityAttribute disjointWith http://semanticbible.com/2004/04/NTNames#ResidencyAttribute
+http://semanticbible.com/2004/04/NTNames#EthnicityAttribute disjointWith http://semanticbible.com/2004/04/NTNames#SonOfGod
+http://semanticbible.com/2004/04/NTNames#EthnicityAttribute disjointWith http://semanticbible.com/2004/04/NTNames#SupernaturalBeing
+http://semanticbible.com/2004/04/NTNames#EthnicityAttribute disjointWith http://suo.ieee.org#Agent
+http://semanticbible.com/2004/04/NTNames#EthnicityAttribute disjointWith http://suo.ieee.org#BeliefGroup
+http://semanticbible.com/2004/04/NTNames#EthnicityAttribute disjointWith http://suo.ieee.org#Character
+http://semanticbible.com/2004/04/NTNames#EthnicityAttribute disjointWith http://suo.ieee.org#City
+http://semanticbible.com/2004/04/NTNames#EthnicityAttribute disjointWith http://suo.ieee.org#CognitiveAgent
+http://semanticbible.com/2004/04/NTNames#EthnicityAttribute disjointWith http://suo.ieee.org#ContentBearingObject
+http://semanticbible.com/2004/04/NTNames#EthnicityAttribute disjointWith http://suo.ieee.org#EthnicGroup
+http://semanticbible.com/2004/04/NTNames#EthnicityAttribute disjointWith http://suo.ieee.org#FreshWaterArea
+http://semanticbible.com/2004/04/NTNames#EthnicityAttribute disjointWith http://suo.ieee.org#GeographicArea
+http://semanticbible.com/2004/04/NTNames#EthnicityAttribute disjointWith http://suo.ieee.org#GeopoliticalArea
+http://semanticbible.com/2004/04/NTNames#EthnicityAttribute disjointWith http://suo.ieee.org#Group
+http://semanticbible.com/2004/04/NTNames#EthnicityAttribute disjointWith http://suo.ieee.org#GroupOfPeople
+http://semanticbible.com/2004/04/NTNames#EthnicityAttribute disjointWith http://suo.ieee.org#Human
+http://semanticbible.com/2004/04/NTNames#EthnicityAttribute disjointWith http://suo.ieee.org#Island
+http://semanticbible.com/2004/04/NTNames#EthnicityAttribute disjointWith http://suo.ieee.org#LandArea
+http://semanticbible.com/2004/04/NTNames#EthnicityAttribute disjointWith http://suo.ieee.org#Man
+http://semanticbible.com/2004/04/NTNames#EthnicityAttribute disjointWith http://suo.ieee.org#Nation
+http://semanticbible.com/2004/04/NTNames#EthnicityAttribute disjointWith http://suo.ieee.org#NaturalLanguage
+http://semanticbible.com/2004/04/NTNames#EthnicityAttribute disjointWith http://suo.ieee.org#Object
+http://semanticbible.com/2004/04/NTNames#EthnicityAttribute disjointWith http://suo.ieee.org#Organization
+http://semanticbible.com/2004/04/NTNames#EthnicityAttribute disjointWith http://suo.ieee.org#PoliticalOrganization
+http://semanticbible.com/2004/04/NTNames#EthnicityAttribute disjointWith http://suo.ieee.org#Proposition
+http://semanticbible.com/2004/04/NTNames#EthnicityAttribute disjointWith http://suo.ieee.org#Region
+http://semanticbible.com/2004/04/NTNames#EthnicityAttribute disjointWith http://suo.ieee.org#ReligiousOrganization
+http://semanticbible.com/2004/04/NTNames#EthnicityAttribute disjointWith http://suo.ieee.org#SaltWaterArea
+http://semanticbible.com/2004/04/NTNames#EthnicityAttribute disjointWith http://suo.ieee.org#Serial
+http://semanticbible.com/2004/04/NTNames#EthnicityAttribute disjointWith http://suo.ieee.org#StateOrProvince
+http://semanticbible.com/2004/04/NTNames#EthnicityAttribute disjointWith http://suo.ieee.org#WaterArea
+http://semanticbible.com/2004/04/NTNames#EthnicityAttribute disjointWith http://suo.ieee.org#Woman
+http://semanticbible.com/2004/04/NTNames#EvilSupernaturalBeing disjointWith http://semanticbible.com/2004/04/NTNames#FixedHoliday
+http://semanticbible.com/2004/04/NTNames#EvilSupernaturalBeing disjointWith http://semanticbible.com/2004/04/NTNames#God
+http://semanticbible.com/2004/04/NTNames#EvilSupernaturalBeing disjointWith http://semanticbible.com/2004/04/NTNames#HumanAttribute
+http://semanticbible.com/2004/04/NTNames#EvilSupernaturalBeing disjointWith http://semanticbible.com/2004/04/NTNames#Mountain
+http://semanticbible.com/2004/04/NTNames#EvilSupernaturalBeing disjointWith http://semanticbible.com/2004/04/NTNames#PoliticalAttribute
+http://semanticbible.com/2004/04/NTNames#EvilSupernaturalBeing disjointWith http://semanticbible.com/2004/04/NTNames#PoliticalBeliefSystem
+http://semanticbible.com/2004/04/NTNames#EvilSupernaturalBeing disjointWith http://semanticbible.com/2004/04/NTNames#ReligiousBelief
+http://semanticbible.com/2004/04/NTNames#EvilSupernaturalBeing disjointWith http://semanticbible.com/2004/04/NTNames#ReligiousBeliefSystem
+http://semanticbible.com/2004/04/NTNames#EvilSupernaturalBeing disjointWith http://semanticbible.com/2004/04/NTNames#ResidenceGroup
+http://semanticbible.com/2004/04/NTNames#EvilSupernaturalBeing disjointWith http://semanticbible.com/2004/04/NTNames#ResidencyAttribute
+http://semanticbible.com/2004/04/NTNames#EvilSupernaturalBeing disjointWith http://semanticbible.com/2004/04/NTNames#SonOfGod
+http://semanticbible.com/2004/04/NTNames#EvilSupernaturalBeing disjointWith http://suo.ieee.org#Agent
+http://semanticbible.com/2004/04/NTNames#EvilSupernaturalBeing disjointWith http://suo.ieee.org#BeliefGroup
+http://semanticbible.com/2004/04/NTNames#EvilSupernaturalBeing disjointWith http://suo.ieee.org#Character
+http://semanticbible.com/2004/04/NTNames#EvilSupernaturalBeing disjointWith http://suo.ieee.org#City
+http://semanticbible.com/2004/04/NTNames#EvilSupernaturalBeing disjointWith http://suo.ieee.org#CognitiveAgent
+http://semanticbible.com/2004/04/NTNames#EvilSupernaturalBeing disjointWith http://suo.ieee.org#ContentBearingObject
+http://semanticbible.com/2004/04/NTNames#EvilSupernaturalBeing disjointWith http://suo.ieee.org#EthnicGroup
+http://semanticbible.com/2004/04/NTNames#EvilSupernaturalBeing disjointWith http://suo.ieee.org#FreshWaterArea
+http://semanticbible.com/2004/04/NTNames#EvilSupernaturalBeing disjointWith http://suo.ieee.org#GeographicArea
+http://semanticbible.com/2004/04/NTNames#EvilSupernaturalBeing disjointWith http://suo.ieee.org#GeopoliticalArea
+http://semanticbible.com/2004/04/NTNames#EvilSupernaturalBeing disjointWith http://suo.ieee.org#Group
+http://semanticbible.com/2004/04/NTNames#EvilSupernaturalBeing disjointWith http://suo.ieee.org#GroupOfPeople
+http://semanticbible.com/2004/04/NTNames#EvilSupernaturalBeing disjointWith http://suo.ieee.org#Human
+http://semanticbible.com/2004/04/NTNames#EvilSupernaturalBeing disjointWith http://suo.ieee.org#Island
+http://semanticbible.com/2004/04/NTNames#EvilSupernaturalBeing disjointWith http://suo.ieee.org#LandArea
+http://semanticbible.com/2004/04/NTNames#EvilSupernaturalBeing disjointWith http://suo.ieee.org#Man
+http://semanticbible.com/2004/04/NTNames#EvilSupernaturalBeing disjointWith http://suo.ieee.org#Nation
+http://semanticbible.com/2004/04/NTNames#EvilSupernaturalBeing disjointWith http://suo.ieee.org#NaturalLanguage
+http://semanticbible.com/2004/04/NTNames#EvilSupernaturalBeing disjointWith http://suo.ieee.org#Object
+http://semanticbible.com/2004/04/NTNames#EvilSupernaturalBeing disjointWith http://suo.ieee.org#Organization
+http://semanticbible.com/2004/04/NTNames#EvilSupernaturalBeing disjointWith http://suo.ieee.org#PoliticalOrganization
+http://semanticbible.com/2004/04/NTNames#EvilSupernaturalBeing disjointWith http://suo.ieee.org#Proposition
+http://semanticbible.com/2004/04/NTNames#EvilSupernaturalBeing disjointWith http://suo.ieee.org#Region
+http://semanticbible.com/2004/04/NTNames#EvilSupernaturalBeing disjointWith http://suo.ieee.org#ReligiousOrganization
+http://semanticbible.com/2004/04/NTNames#EvilSupernaturalBeing disjointWith http://suo.ieee.org#SaltWaterArea
+http://semanticbible.com/2004/04/NTNames#EvilSupernaturalBeing disjointWith http://suo.ieee.org#Serial
+http://semanticbible.com/2004/04/NTNames#EvilSupernaturalBeing disjointWith http://suo.ieee.org#StateOrProvince
+http://semanticbible.com/2004/04/NTNames#EvilSupernaturalBeing disjointWith http://suo.ieee.org#WaterArea
+http://semanticbible.com/2004/04/NTNames#EvilSupernaturalBeing disjointWith http://suo.ieee.org#Woman
+http://semanticbible.com/2004/04/NTNames#FixedHoliday disjointWith http://semanticbible.com/2004/04/NTNames#God
+http://semanticbible.com/2004/04/NTNames#FixedHoliday disjointWith http://semanticbible.com/2004/04/NTNames#HumanAttribute
+http://semanticbible.com/2004/04/NTNames#FixedHoliday disjointWith http://semanticbible.com/2004/04/NTNames#Mountain
+http://semanticbible.com/2004/04/NTNames#FixedHoliday disjointWith http://semanticbible.com/2004/04/NTNames#PoliticalAttribute
+http://semanticbible.com/2004/04/NTNames#FixedHoliday disjointWith http://semanticbible.com/2004/04/NTNames#PoliticalBeliefSystem
+http://semanticbible.com/2004/04/NTNames#FixedHoliday disjointWith http://semanticbible.com/2004/04/NTNames#ReligiousBelief
+http://semanticbible.com/2004/04/NTNames#FixedHoliday disjointWith http://semanticbible.com/2004/04/NTNames#ReligiousBeliefSystem
+http://semanticbible.com/2004/04/NTNames#FixedHoliday disjointWith http://semanticbible.com/2004/04/NTNames#ResidenceGroup
+http://semanticbible.com/2004/04/NTNames#FixedHoliday disjointWith http://semanticbible.com/2004/04/NTNames#ResidencyAttribute
+http://semanticbible.com/2004/04/NTNames#FixedHoliday disjointWith http://semanticbible.com/2004/04/NTNames#SonOfGod
+http://semanticbible.com/2004/04/NTNames#FixedHoliday disjointWith http://semanticbible.com/2004/04/NTNames#SupernaturalBeing
+http://semanticbible.com/2004/04/NTNames#FixedHoliday disjointWith http://suo.ieee.org#Agent
+http://semanticbible.com/2004/04/NTNames#FixedHoliday disjointWith http://suo.ieee.org#BeliefGroup
+http://semanticbible.com/2004/04/NTNames#FixedHoliday disjointWith http://suo.ieee.org#Character
+http://semanticbible.com/2004/04/NTNames#FixedHoliday disjointWith http://suo.ieee.org#City
+http://semanticbible.com/2004/04/NTNames#FixedHoliday disjointWith http://suo.ieee.org#CognitiveAgent
+http://semanticbible.com/2004/04/NTNames#FixedHoliday disjointWith http://suo.ieee.org#ContentBearingObject
+http://semanticbible.com/2004/04/NTNames#FixedHoliday disjointWith http://suo.ieee.org#EthnicGroup
+http://semanticbible.com/2004/04/NTNames#FixedHoliday disjointWith http://suo.ieee.org#FreshWaterArea
+http://semanticbible.com/2004/04/NTNames#FixedHoliday disjointWith http://suo.ieee.org#GeographicArea
+http://semanticbible.com/2004/04/NTNames#FixedHoliday disjointWith http://suo.ieee.org#GeopoliticalArea
+http://semanticbible.com/2004/04/NTNames#FixedHoliday disjointWith http://suo.ieee.org#Group
+http://semanticbible.com/2004/04/NTNames#FixedHoliday disjointWith http://suo.ieee.org#GroupOfPeople
+http://semanticbible.com/2004/04/NTNames#FixedHoliday disjointWith http://suo.ieee.org#Human
+http://semanticbible.com/2004/04/NTNames#FixedHoliday disjointWith http://suo.ieee.org#Island
+http://semanticbible.com/2004/04/NTNames#FixedHoliday disjointWith http://suo.ieee.org#LandArea
+http://semanticbible.com/2004/04/NTNames#FixedHoliday disjointWith http://suo.ieee.org#Man
+http://semanticbible.com/2004/04/NTNames#FixedHoliday disjointWith http://suo.ieee.org#Nation
+http://semanticbible.com/2004/04/NTNames#FixedHoliday disjointWith http://suo.ieee.org#NaturalLanguage
+http://semanticbible.com/2004/04/NTNames#FixedHoliday disjointWith http://suo.ieee.org#Object
+http://semanticbible.com/2004/04/NTNames#FixedHoliday disjointWith http://suo.ieee.org#Organization
+http://semanticbible.com/2004/04/NTNames#FixedHoliday disjointWith http://suo.ieee.org#PoliticalOrganization
+http://semanticbible.com/2004/04/NTNames#FixedHoliday disjointWith http://suo.ieee.org#Proposition
+http://semanticbible.com/2004/04/NTNames#FixedHoliday disjointWith http://suo.ieee.org#Region
+http://semanticbible.com/2004/04/NTNames#FixedHoliday disjointWith http://suo.ieee.org#ReligiousOrganization
+http://semanticbible.com/2004/04/NTNames#FixedHoliday disjointWith http://suo.ieee.org#SaltWaterArea
+http://semanticbible.com/2004/04/NTNames#FixedHoliday disjointWith http://suo.ieee.org#Serial
+http://semanticbible.com/2004/04/NTNames#FixedHoliday disjointWith http://suo.ieee.org#StateOrProvince
+http://semanticbible.com/2004/04/NTNames#FixedHoliday disjointWith http://suo.ieee.org#WaterArea
+http://semanticbible.com/2004/04/NTNames#FixedHoliday disjointWith http://suo.ieee.org#Woman
+http://semanticbible.com/2004/04/NTNames#God disjointWith http://semanticbible.com/2004/04/NTNames#HumanAttribute
+http://semanticbible.com/2004/04/NTNames#God disjointWith http://semanticbible.com/2004/04/NTNames#Mountain
+http://semanticbible.com/2004/04/NTNames#God disjointWith http://semanticbible.com/2004/04/NTNames#PoliticalAttribute
+http://semanticbible.com/2004/04/NTNames#God disjointWith http://semanticbible.com/2004/04/NTNames#PoliticalBeliefSystem
+http://semanticbible.com/2004/04/NTNames#God disjointWith http://semanticbible.com/2004/04/NTNames#ReligiousBelief
+http://semanticbible.com/2004/04/NTNames#God disjointWith http://semanticbible.com/2004/04/NTNames#ReligiousBeliefSystem
+http://semanticbible.com/2004/04/NTNames#God disjointWith http://semanticbible.com/2004/04/NTNames#ResidenceGroup
+http://semanticbible.com/2004/04/NTNames#God disjointWith http://semanticbible.com/2004/04/NTNames#ResidencyAttribute
+http://semanticbible.com/2004/04/NTNames#God disjointWith http://suo.ieee.org#Agent
+http://semanticbible.com/2004/04/NTNames#God disjointWith http://suo.ieee.org#BeliefGroup
+http://semanticbible.com/2004/04/NTNames#God disjointWith http://suo.ieee.org#Character
+http://semanticbible.com/2004/04/NTNames#God disjointWith http://suo.ieee.org#City
+http://semanticbible.com/2004/04/NTNames#God disjointWith http://suo.ieee.org#CognitiveAgent
+http://semanticbible.com/2004/04/NTNames#God disjointWith http://suo.ieee.org#ContentBearingObject
+http://semanticbible.com/2004/04/NTNames#God disjointWith http://suo.ieee.org#EthnicGroup
+http://semanticbible.com/2004/04/NTNames#God disjointWith http://suo.ieee.org#FreshWaterArea
+http://semanticbible.com/2004/04/NTNames#God disjointWith http://suo.ieee.org#GeographicArea
+http://semanticbible.com/2004/04/NTNames#God disjointWith http://suo.ieee.org#GeopoliticalArea
+http://semanticbible.com/2004/04/NTNames#God disjointWith http://suo.ieee.org#Group
+http://semanticbible.com/2004/04/NTNames#God disjointWith http://suo.ieee.org#GroupOfPeople
+http://semanticbible.com/2004/04/NTNames#God disjointWith http://suo.ieee.org#Human
+http://semanticbible.com/2004/04/NTNames#God disjointWith http://suo.ieee.org#Island
+http://semanticbible.com/2004/04/NTNames#God disjointWith http://suo.ieee.org#LandArea
+http://semanticbible.com/2004/04/NTNames#God disjointWith http://suo.ieee.org#Man
+http://semanticbible.com/2004/04/NTNames#God disjointWith http://suo.ieee.org#Nation
+http://semanticbible.com/2004/04/NTNames#God disjointWith http://suo.ieee.org#NaturalLanguage
+http://semanticbible.com/2004/04/NTNames#God disjointWith http://suo.ieee.org#Object
+http://semanticbible.com/2004/04/NTNames#God disjointWith http://suo.ieee.org#Organization
+http://semanticbible.com/2004/04/NTNames#God disjointWith http://suo.ieee.org#PoliticalOrganization
+http://semanticbible.com/2004/04/NTNames#God disjointWith http://suo.ieee.org#Proposition
+http://semanticbible.com/2004/04/NTNames#God disjointWith http://suo.ieee.org#Region
+http://semanticbible.com/2004/04/NTNames#God disjointWith http://suo.ieee.org#ReligiousOrganization
+http://semanticbible.com/2004/04/NTNames#God disjointWith http://suo.ieee.org#SaltWaterArea
+http://semanticbible.com/2004/04/NTNames#God disjointWith http://suo.ieee.org#Serial
+http://semanticbible.com/2004/04/NTNames#God disjointWith http://suo.ieee.org#StateOrProvince
+http://semanticbible.com/2004/04/NTNames#God disjointWith http://suo.ieee.org#WaterArea
+http://semanticbible.com/2004/04/NTNames#God disjointWith http://suo.ieee.org#Woman
+http://semanticbible.com/2004/04/NTNames#HumanAttribute disjointWith http://semanticbible.com/2004/04/NTNames#Mountain
+http://semanticbible.com/2004/04/NTNames#HumanAttribute disjointWith http://semanticbible.com/2004/04/NTNames#PoliticalAttribute
+http://semanticbible.com/2004/04/NTNames#HumanAttribute disjointWith http://semanticbible.com/2004/04/NTNames#PoliticalBeliefSystem
+http://semanticbible.com/2004/04/NTNames#HumanAttribute disjointWith http://semanticbible.com/2004/04/NTNames#ReligiousBelief
+http://semanticbible.com/2004/04/NTNames#HumanAttribute disjointWith http://semanticbible.com/2004/04/NTNames#ReligiousBeliefSystem
+http://semanticbible.com/2004/04/NTNames#HumanAttribute disjointWith http://semanticbible.com/2004/04/NTNames#ResidenceGroup
+http://semanticbible.com/2004/04/NTNames#HumanAttribute disjointWith http://semanticbible.com/2004/04/NTNames#ResidencyAttribute
+http://semanticbible.com/2004/04/NTNames#HumanAttribute disjointWith http://semanticbible.com/2004/04/NTNames#SonOfGod
+http://semanticbible.com/2004/04/NTNames#HumanAttribute disjointWith http://semanticbible.com/2004/04/NTNames#SupernaturalBeing
+http://semanticbible.com/2004/04/NTNames#HumanAttribute disjointWith http://suo.ieee.org#Agent
+http://semanticbible.com/2004/04/NTNames#HumanAttribute disjointWith http://suo.ieee.org#BeliefGroup
+http://semanticbible.com/2004/04/NTNames#HumanAttribute disjointWith http://suo.ieee.org#Character
+http://semanticbible.com/2004/04/NTNames#HumanAttribute disjointWith http://suo.ieee.org#City
+http://semanticbible.com/2004/04/NTNames#HumanAttribute disjointWith http://suo.ieee.org#CognitiveAgent
+http://semanticbible.com/2004/04/NTNames#HumanAttribute disjointWith http://suo.ieee.org#ContentBearingObject
+http://semanticbible.com/2004/04/NTNames#HumanAttribute disjointWith http://suo.ieee.org#EthnicGroup
+http://semanticbible.com/2004/04/NTNames#HumanAttribute disjointWith http://suo.ieee.org#FreshWaterArea
+http://semanticbible.com/2004/04/NTNames#HumanAttribute disjointWith http://suo.ieee.org#GeographicArea
+http://semanticbible.com/2004/04/NTNames#HumanAttribute disjointWith http://suo.ieee.org#GeopoliticalArea
+http://semanticbible.com/2004/04/NTNames#HumanAttribute disjointWith http://suo.ieee.org#Group
+http://semanticbible.com/2004/04/NTNames#HumanAttribute disjointWith http://suo.ieee.org#GroupOfPeople
+http://semanticbible.com/2004/04/NTNames#HumanAttribute disjointWith http://suo.ieee.org#Human
+http://semanticbible.com/2004/04/NTNames#HumanAttribute disjointWith http://suo.ieee.org#Island
+http://semanticbible.com/2004/04/NTNames#HumanAttribute disjointWith http://suo.ieee.org#LandArea
+http://semanticbible.com/2004/04/NTNames#HumanAttribute disjointWith http://suo.ieee.org#Man
+http://semanticbible.com/2004/04/NTNames#HumanAttribute disjointWith http://suo.ieee.org#Nation
+http://semanticbible.com/2004/04/NTNames#HumanAttribute disjointWith http://suo.ieee.org#NaturalLanguage
+http://semanticbible.com/2004/04/NTNames#HumanAttribute disjointWith http://suo.ieee.org#Object
+http://semanticbible.com/2004/04/NTNames#HumanAttribute disjointWith http://suo.ieee.org#Organization
+http://semanticbible.com/2004/04/NTNames#HumanAttribute disjointWith http://suo.ieee.org#PoliticalOrganization
+http://semanticbible.com/2004/04/NTNames#HumanAttribute disjointWith http://suo.ieee.org#Proposition
+http://semanticbible.com/2004/04/NTNames#HumanAttribute disjointWith http://suo.ieee.org#Region
+http://semanticbible.com/2004/04/NTNames#HumanAttribute disjointWith http://suo.ieee.org#ReligiousOrganization
+http://semanticbible.com/2004/04/NTNames#HumanAttribute disjointWith http://suo.ieee.org#SaltWaterArea
+http://semanticbible.com/2004/04/NTNames#HumanAttribute disjointWith http://suo.ieee.org#Serial
+http://semanticbible.com/2004/04/NTNames#HumanAttribute disjointWith http://suo.ieee.org#StateOrProvince
+http://semanticbible.com/2004/04/NTNames#HumanAttribute disjointWith http://suo.ieee.org#WaterArea
+http://semanticbible.com/2004/04/NTNames#HumanAttribute disjointWith http://suo.ieee.org#Woman
+http://semanticbible.com/2004/04/NTNames#Mountain disjointWith http://semanticbible.com/2004/04/NTNames#PoliticalAttribute
+http://semanticbible.com/2004/04/NTNames#Mountain disjointWith http://semanticbible.com/2004/04/NTNames#PoliticalBeliefSystem
+http://semanticbible.com/2004/04/NTNames#Mountain disjointWith http://semanticbible.com/2004/04/NTNames#ReligiousBelief
+http://semanticbible.com/2004/04/NTNames#Mountain disjointWith http://semanticbible.com/2004/04/NTNames#ReligiousBeliefSystem
+http://semanticbible.com/2004/04/NTNames#Mountain disjointWith http://semanticbible.com/2004/04/NTNames#ResidenceGroup
+http://semanticbible.com/2004/04/NTNames#Mountain disjointWith http://semanticbible.com/2004/04/NTNames#ResidencyAttribute
+http://semanticbible.com/2004/04/NTNames#Mountain disjointWith http://semanticbible.com/2004/04/NTNames#SonOfGod
+http://semanticbible.com/2004/04/NTNames#Mountain disjointWith http://semanticbible.com/2004/04/NTNames#SupernaturalBeing
+http://semanticbible.com/2004/04/NTNames#Mountain disjointWith http://suo.ieee.org#Agent
+http://semanticbible.com/2004/04/NTNames#Mountain disjointWith http://suo.ieee.org#BeliefGroup
+http://semanticbible.com/2004/04/NTNames#Mountain disjointWith http://suo.ieee.org#Character
+http://semanticbible.com/2004/04/NTNames#Mountain disjointWith http://suo.ieee.org#City
+http://semanticbible.com/2004/04/NTNames#Mountain disjointWith http://suo.ieee.org#CognitiveAgent
+http://semanticbible.com/2004/04/NTNames#Mountain disjointWith http://suo.ieee.org#ContentBearingObject
+http://semanticbible.com/2004/04/NTNames#Mountain disjointWith http://suo.ieee.org#EthnicGroup
+http://semanticbible.com/2004/04/NTNames#Mountain disjointWith http://suo.ieee.org#FreshWaterArea
+http://semanticbible.com/2004/04/NTNames#Mountain disjointWith http://suo.ieee.org#GeographicArea
+http://semanticbible.com/2004/04/NTNames#Mountain disjointWith http://suo.ieee.org#GeopoliticalArea
+http://semanticbible.com/2004/04/NTNames#Mountain disjointWith http://suo.ieee.org#Group
+http://semanticbible.com/2004/04/NTNames#Mountain disjointWith http://suo.ieee.org#GroupOfPeople
+http://semanticbible.com/2004/04/NTNames#Mountain disjointWith http://suo.ieee.org#Human
+http://semanticbible.com/2004/04/NTNames#Mountain disjointWith http://suo.ieee.org#Island
+http://semanticbible.com/2004/04/NTNames#Mountain disjointWith http://suo.ieee.org#LandArea
+http://semanticbible.com/2004/04/NTNames#Mountain disjointWith http://suo.ieee.org#Man
+http://semanticbible.com/2004/04/NTNames#Mountain disjointWith http://suo.ieee.org#Nation
+http://semanticbible.com/2004/04/NTNames#Mountain disjointWith http://suo.ieee.org#NaturalLanguage
+http://semanticbible.com/2004/04/NTNames#Mountain disjointWith http://suo.ieee.org#Object
+http://semanticbible.com/2004/04/NTNames#Mountain disjointWith http://suo.ieee.org#Organization
+http://semanticbible.com/2004/04/NTNames#Mountain disjointWith http://suo.ieee.org#PoliticalOrganization
+http://semanticbible.com/2004/04/NTNames#Mountain disjointWith http://suo.ieee.org#Proposition
+http://semanticbible.com/2004/04/NTNames#Mountain disjointWith http://suo.ieee.org#Region
+http://semanticbible.com/2004/04/NTNames#Mountain disjointWith http://suo.ieee.org#ReligiousOrganization
+http://semanticbible.com/2004/04/NTNames#Mountain disjointWith http://suo.ieee.org#SaltWaterArea
+http://semanticbible.com/2004/04/NTNames#Mountain disjointWith http://suo.ieee.org#Serial
+http://semanticbible.com/2004/04/NTNames#Mountain disjointWith http://suo.ieee.org#StateOrProvince
+http://semanticbible.com/2004/04/NTNames#Mountain disjointWith http://suo.ieee.org#WaterArea
+http://semanticbible.com/2004/04/NTNames#Mountain disjointWith http://suo.ieee.org#Woman
+http://semanticbible.com/2004/04/NTNames#PoliticalAttribute disjointWith http://semanticbible.com/2004/04/NTNames#PoliticalBeliefSystem
+http://semanticbible.com/2004/04/NTNames#PoliticalAttribute disjointWith http://semanticbible.com/2004/04/NTNames#ReligiousBelief
+http://semanticbible.com/2004/04/NTNames#PoliticalAttribute disjointWith http://semanticbible.com/2004/04/NTNames#ReligiousBeliefSystem
+http://semanticbible.com/2004/04/NTNames#PoliticalAttribute disjointWith http://semanticbible.com/2004/04/NTNames#ResidenceGroup
+http://semanticbible.com/2004/04/NTNames#PoliticalAttribute disjointWith http://semanticbible.com/2004/04/NTNames#ResidencyAttribute
+http://semanticbible.com/2004/04/NTNames#PoliticalAttribute disjointWith http://semanticbible.com/2004/04/NTNames#SonOfGod
+http://semanticbible.com/2004/04/NTNames#PoliticalAttribute disjointWith http://semanticbible.com/2004/04/NTNames#SupernaturalBeing
+http://semanticbible.com/2004/04/NTNames#PoliticalAttribute disjointWith http://suo.ieee.org#Agent
+http://semanticbible.com/2004/04/NTNames#PoliticalAttribute disjointWith http://suo.ieee.org#BeliefGroup
+http://semanticbible.com/2004/04/NTNames#PoliticalAttribute disjointWith http://suo.ieee.org#Character
+http://semanticbible.com/2004/04/NTNames#PoliticalAttribute disjointWith http://suo.ieee.org#City
+http://semanticbible.com/2004/04/NTNames#PoliticalAttribute disjointWith http://suo.ieee.org#CognitiveAgent
+http://semanticbible.com/2004/04/NTNames#PoliticalAttribute disjointWith http://suo.ieee.org#ContentBearingObject
+http://semanticbible.com/2004/04/NTNames#PoliticalAttribute disjointWith http://suo.ieee.org#EthnicGroup
+http://semanticbible.com/2004/04/NTNames#PoliticalAttribute disjointWith http://suo.ieee.org#FreshWaterArea
+http://semanticbible.com/2004/04/NTNames#PoliticalAttribute disjointWith http://suo.ieee.org#GeographicArea
+http://semanticbible.com/2004/04/NTNames#PoliticalAttribute disjointWith http://suo.ieee.org#GeopoliticalArea
+http://semanticbible.com/2004/04/NTNames#PoliticalAttribute disjointWith http://suo.ieee.org#Group
+http://semanticbible.com/2004/04/NTNames#PoliticalAttribute disjointWith http://suo.ieee.org#GroupOfPeople
+http://semanticbible.com/2004/04/NTNames#PoliticalAttribute disjointWith http://suo.ieee.org#Human
+http://semanticbible.com/2004/04/NTNames#PoliticalAttribute disjointWith http://suo.ieee.org#Island
+http://semanticbible.com/2004/04/NTNames#PoliticalAttribute disjointWith http://suo.ieee.org#LandArea
+http://semanticbible.com/2004/04/NTNames#PoliticalAttribute disjointWith http://suo.ieee.org#Man
+http://semanticbible.com/2004/04/NTNames#PoliticalAttribute disjointWith http://suo.ieee.org#Nation
+http://semanticbible.com/2004/04/NTNames#PoliticalAttribute disjointWith http://suo.ieee.org#NaturalLanguage
+http://semanticbible.com/2004/04/NTNames#PoliticalAttribute disjointWith http://suo.ieee.org#Object
+http://semanticbible.com/2004/04/NTNames#PoliticalAttribute disjointWith http://suo.ieee.org#Organization
+http://semanticbible.com/2004/04/NTNames#PoliticalAttribute disjointWith http://suo.ieee.org#PoliticalOrganization
+http://semanticbible.com/2004/04/NTNames#PoliticalAttribute disjointWith http://suo.ieee.org#Proposition
+http://semanticbible.com/2004/04/NTNames#PoliticalAttribute disjointWith http://suo.ieee.org#Region
+http://semanticbible.com/2004/04/NTNames#PoliticalAttribute disjointWith http://suo.ieee.org#ReligiousOrganization
+http://semanticbible.com/2004/04/NTNames#PoliticalAttribute disjointWith http://suo.ieee.org#SaltWaterArea
+http://semanticbible.com/2004/04/NTNames#PoliticalAttribute disjointWith http://suo.ieee.org#Serial
+http://semanticbible.com/2004/04/NTNames#PoliticalAttribute disjointWith http://suo.ieee.org#StateOrProvince
+http://semanticbible.com/2004/04/NTNames#PoliticalAttribute disjointWith http://suo.ieee.org#WaterArea
+http://semanticbible.com/2004/04/NTNames#PoliticalAttribute disjointWith http://suo.ieee.org#Woman
+http://semanticbible.com/2004/04/NTNames#PoliticalBeliefSystem disjointWith http://semanticbible.com/2004/04/NTNames#ReligiousBelief
+http://semanticbible.com/2004/04/NTNames#PoliticalBeliefSystem disjointWith http://semanticbible.com/2004/04/NTNames#ReligiousBeliefSystem
+http://semanticbible.com/2004/04/NTNames#PoliticalBeliefSystem disjointWith http://semanticbible.com/2004/04/NTNames#ResidenceGroup
+http://semanticbible.com/2004/04/NTNames#PoliticalBeliefSystem disjointWith http://semanticbible.com/2004/04/NTNames#ResidencyAttribute
+http://semanticbible.com/2004/04/NTNames#PoliticalBeliefSystem disjointWith http://semanticbible.com/2004/04/NTNames#SonOfGod
+http://semanticbible.com/2004/04/NTNames#PoliticalBeliefSystem disjointWith http://semanticbible.com/2004/04/NTNames#SupernaturalBeing
+http://semanticbible.com/2004/04/NTNames#PoliticalBeliefSystem disjointWith http://suo.ieee.org#Agent
+http://semanticbible.com/2004/04/NTNames#PoliticalBeliefSystem disjointWith http://suo.ieee.org#BeliefGroup
+http://semanticbible.com/2004/04/NTNames#PoliticalBeliefSystem disjointWith http://suo.ieee.org#Character
+http://semanticbible.com/2004/04/NTNames#PoliticalBeliefSystem disjointWith http://suo.ieee.org#City
+http://semanticbible.com/2004/04/NTNames#PoliticalBeliefSystem disjointWith http://suo.ieee.org#CognitiveAgent
+http://semanticbible.com/2004/04/NTNames#PoliticalBeliefSystem disjointWith http://suo.ieee.org#ContentBearingObject
+http://semanticbible.com/2004/04/NTNames#PoliticalBeliefSystem disjointWith http://suo.ieee.org#EthnicGroup
+http://semanticbible.com/2004/04/NTNames#PoliticalBeliefSystem disjointWith http://suo.ieee.org#FreshWaterArea
+http://semanticbible.com/2004/04/NTNames#PoliticalBeliefSystem disjointWith http://suo.ieee.org#GeographicArea
+http://semanticbible.com/2004/04/NTNames#PoliticalBeliefSystem disjointWith http://suo.ieee.org#GeopoliticalArea
+http://semanticbible.com/2004/04/NTNames#PoliticalBeliefSystem disjointWith http://suo.ieee.org#Group
+http://semanticbible.com/2004/04/NTNames#PoliticalBeliefSystem disjointWith http://suo.ieee.org#GroupOfPeople
+http://semanticbible.com/2004/04/NTNames#PoliticalBeliefSystem disjointWith http://suo.ieee.org#Human
+http://semanticbible.com/2004/04/NTNames#PoliticalBeliefSystem disjointWith http://suo.ieee.org#Island
+http://semanticbible.com/2004/04/NTNames#PoliticalBeliefSystem disjointWith http://suo.ieee.org#LandArea
+http://semanticbible.com/2004/04/NTNames#PoliticalBeliefSystem disjointWith http://suo.ieee.org#Man
+http://semanticbible.com/2004/04/NTNames#PoliticalBeliefSystem disjointWith http://suo.ieee.org#Nation
+http://semanticbible.com/2004/04/NTNames#PoliticalBeliefSystem disjointWith http://suo.ieee.org#NaturalLanguage
+http://semanticbible.com/2004/04/NTNames#PoliticalBeliefSystem disjointWith http://suo.ieee.org#Object
+http://semanticbible.com/2004/04/NTNames#PoliticalBeliefSystem disjointWith http://suo.ieee.org#Organization
+http://semanticbible.com/2004/04/NTNames#PoliticalBeliefSystem disjointWith http://suo.ieee.org#PoliticalOrganization
+http://semanticbible.com/2004/04/NTNames#PoliticalBeliefSystem disjointWith http://suo.ieee.org#Proposition
+http://semanticbible.com/2004/04/NTNames#PoliticalBeliefSystem disjointWith http://suo.ieee.org#Region
+http://semanticbible.com/2004/04/NTNames#PoliticalBeliefSystem disjointWith http://suo.ieee.org#ReligiousOrganization
+http://semanticbible.com/2004/04/NTNames#PoliticalBeliefSystem disjointWith http://suo.ieee.org#SaltWaterArea
+http://semanticbible.com/2004/04/NTNames#PoliticalBeliefSystem disjointWith http://suo.ieee.org#Serial
+http://semanticbible.com/2004/04/NTNames#PoliticalBeliefSystem disjointWith http://suo.ieee.org#StateOrProvince
+http://semanticbible.com/2004/04/NTNames#PoliticalBeliefSystem disjointWith http://suo.ieee.org#WaterArea
+http://semanticbible.com/2004/04/NTNames#PoliticalBeliefSystem disjointWith http://suo.ieee.org#Woman
+http://semanticbible.com/2004/04/NTNames#ReligiousBelief disjointWith http://semanticbible.com/2004/04/NTNames#ReligiousBeliefSystem
+http://semanticbible.com/2004/04/NTNames#ReligiousBelief disjointWith http://semanticbible.com/2004/04/NTNames#ResidenceGroup
+http://semanticbible.com/2004/04/NTNames#ReligiousBelief disjointWith http://semanticbible.com/2004/04/NTNames#ResidencyAttribute
+http://semanticbible.com/2004/04/NTNames#ReligiousBelief disjointWith http://semanticbible.com/2004/04/NTNames#SonOfGod
+http://semanticbible.com/2004/04/NTNames#ReligiousBelief disjointWith http://semanticbible.com/2004/04/NTNames#SupernaturalBeing
+http://semanticbible.com/2004/04/NTNames#ReligiousBelief disjointWith http://suo.ieee.org#Agent
+http://semanticbible.com/2004/04/NTNames#ReligiousBelief disjointWith http://suo.ieee.org#BeliefGroup
+http://semanticbible.com/2004/04/NTNames#ReligiousBelief disjointWith http://suo.ieee.org#Character
+http://semanticbible.com/2004/04/NTNames#ReligiousBelief disjointWith http://suo.ieee.org#City
+http://semanticbible.com/2004/04/NTNames#ReligiousBelief disjointWith http://suo.ieee.org#CognitiveAgent
+http://semanticbible.com/2004/04/NTNames#ReligiousBelief disjointWith http://suo.ieee.org#ContentBearingObject
+http://semanticbible.com/2004/04/NTNames#ReligiousBelief disjointWith http://suo.ieee.org#EthnicGroup
+http://semanticbible.com/2004/04/NTNames#ReligiousBelief disjointWith http://suo.ieee.org#FreshWaterArea
+http://semanticbible.com/2004/04/NTNames#ReligiousBelief disjointWith http://suo.ieee.org#GeographicArea
+http://semanticbible.com/2004/04/NTNames#ReligiousBelief disjointWith http://suo.ieee.org#GeopoliticalArea
+http://semanticbible.com/2004/04/NTNames#ReligiousBelief disjointWith http://suo.ieee.org#Group
+http://semanticbible.com/2004/04/NTNames#ReligiousBelief disjointWith http://suo.ieee.org#GroupOfPeople
+http://semanticbible.com/2004/04/NTNames#ReligiousBelief disjointWith http://suo.ieee.org#Human
+http://semanticbible.com/2004/04/NTNames#ReligiousBelief disjointWith http://suo.ieee.org#Island
+http://semanticbible.com/2004/04/NTNames#ReligiousBelief disjointWith http://suo.ieee.org#LandArea
+http://semanticbible.com/2004/04/NTNames#ReligiousBelief disjointWith http://suo.ieee.org#Man
+http://semanticbible.com/2004/04/NTNames#ReligiousBelief disjointWith http://suo.ieee.org#Nation
+http://semanticbible.com/2004/04/NTNames#ReligiousBelief disjointWith http://suo.ieee.org#NaturalLanguage
+http://semanticbible.com/2004/04/NTNames#ReligiousBelief disjointWith http://suo.ieee.org#Object
+http://semanticbible.com/2004/04/NTNames#ReligiousBelief disjointWith http://suo.ieee.org#Organization
+http://semanticbible.com/2004/04/NTNames#ReligiousBelief disjointWith http://suo.ieee.org#PoliticalOrganization
+http://semanticbible.com/2004/04/NTNames#ReligiousBelief disjointWith http://suo.ieee.org#Proposition
+http://semanticbible.com/2004/04/NTNames#ReligiousBelief disjointWith http://suo.ieee.org#Region
+http://semanticbible.com/2004/04/NTNames#ReligiousBelief disjointWith http://suo.ieee.org#ReligiousOrganization
+http://semanticbible.com/2004/04/NTNames#ReligiousBelief disjointWith http://suo.ieee.org#SaltWaterArea
+http://semanticbible.com/2004/04/NTNames#ReligiousBelief disjointWith http://suo.ieee.org#Serial
+http://semanticbible.com/2004/04/NTNames#ReligiousBelief disjointWith http://suo.ieee.org#StateOrProvince
+http://semanticbible.com/2004/04/NTNames#ReligiousBelief disjointWith http://suo.ieee.org#WaterArea
+http://semanticbible.com/2004/04/NTNames#ReligiousBelief disjointWith http://suo.ieee.org#Woman
+http://semanticbible.com/2004/04/NTNames#ReligiousBeliefSystem disjointWith http://semanticbible.com/2004/04/NTNames#ResidenceGroup
+http://semanticbible.com/2004/04/NTNames#ReligiousBeliefSystem disjointWith http://semanticbible.com/2004/04/NTNames#ResidencyAttribute
+http://semanticbible.com/2004/04/NTNames#ReligiousBeliefSystem disjointWith http://semanticbible.com/2004/04/NTNames#SonOfGod
+http://semanticbible.com/2004/04/NTNames#ReligiousBeliefSystem disjointWith http://semanticbible.com/2004/04/NTNames#SupernaturalBeing
+http://semanticbible.com/2004/04/NTNames#ReligiousBeliefSystem disjointWith http://suo.ieee.org#Agent
+http://semanticbible.com/2004/04/NTNames#ReligiousBeliefSystem disjointWith http://suo.ieee.org#BeliefGroup
+http://semanticbible.com/2004/04/NTNames#ReligiousBeliefSystem disjointWith http://suo.ieee.org#Character
+http://semanticbible.com/2004/04/NTNames#ReligiousBeliefSystem disjointWith http://suo.ieee.org#City
+http://semanticbible.com/2004/04/NTNames#ReligiousBeliefSystem disjointWith http://suo.ieee.org#CognitiveAgent
+http://semanticbible.com/2004/04/NTNames#ReligiousBeliefSystem disjointWith http://suo.ieee.org#ContentBearingObject
+http://semanticbible.com/2004/04/NTNames#ReligiousBeliefSystem disjointWith http://suo.ieee.org#EthnicGroup
+http://semanticbible.com/2004/04/NTNames#ReligiousBeliefSystem disjointWith http://suo.ieee.org#FreshWaterArea
+http://semanticbible.com/2004/04/NTNames#ReligiousBeliefSystem disjointWith http://suo.ieee.org#GeographicArea
+http://semanticbible.com/2004/04/NTNames#ReligiousBeliefSystem disjointWith http://suo.ieee.org#GeopoliticalArea
+http://semanticbible.com/2004/04/NTNames#ReligiousBeliefSystem disjointWith http://suo.ieee.org#Group
+http://semanticbible.com/2004/04/NTNames#ReligiousBeliefSystem disjointWith http://suo.ieee.org#GroupOfPeople
+http://semanticbible.com/2004/04/NTNames#ReligiousBeliefSystem disjointWith http://suo.ieee.org#Human
+http://semanticbible.com/2004/04/NTNames#ReligiousBeliefSystem disjointWith http://suo.ieee.org#Island
+http://semanticbible.com/2004/04/NTNames#ReligiousBeliefSystem disjointWith http://suo.ieee.org#LandArea
+http://semanticbible.com/2004/04/NTNames#ReligiousBeliefSystem disjointWith http://suo.ieee.org#Man
+http://semanticbible.com/2004/04/NTNames#ReligiousBeliefSystem disjointWith http://suo.ieee.org#Nation
+http://semanticbible.com/2004/04/NTNames#ReligiousBeliefSystem disjointWith http://suo.ieee.org#NaturalLanguage
+http://semanticbible.com/2004/04/NTNames#ReligiousBeliefSystem disjointWith http://suo.ieee.org#Object
+http://semanticbible.com/2004/04/NTNames#ReligiousBeliefSystem disjointWith http://suo.ieee.org#Organization
+http://semanticbible.com/2004/04/NTNames#ReligiousBeliefSystem disjointWith http://suo.ieee.org#PoliticalOrganization
+http://semanticbible.com/2004/04/NTNames#ReligiousBeliefSystem disjointWith http://suo.ieee.org#Region
+http://semanticbible.com/2004/04/NTNames#ReligiousBeliefSystem disjointWith http://suo.ieee.org#ReligiousOrganization
+http://semanticbible.com/2004/04/NTNames#ReligiousBeliefSystem disjointWith http://suo.ieee.org#SaltWaterArea
+http://semanticbible.com/2004/04/NTNames#ReligiousBeliefSystem disjointWith http://suo.ieee.org#Serial
+http://semanticbible.com/2004/04/NTNames#ReligiousBeliefSystem disjointWith http://suo.ieee.org#StateOrProvince
+http://semanticbible.com/2004/04/NTNames#ReligiousBeliefSystem disjointWith http://suo.ieee.org#WaterArea
+http://semanticbible.com/2004/04/NTNames#ReligiousBeliefSystem disjointWith http://suo.ieee.org#Woman
+http://semanticbible.com/2004/04/NTNames#ResidenceGroup disjointWith http://semanticbible.com/2004/04/NTNames#ResidencyAttribute
+http://semanticbible.com/2004/04/NTNames#ResidenceGroup disjointWith http://semanticbible.com/2004/04/NTNames#SonOfGod
+http://semanticbible.com/2004/04/NTNames#ResidenceGroup disjointWith http://semanticbible.com/2004/04/NTNames#SupernaturalBeing
+http://semanticbible.com/2004/04/NTNames#ResidenceGroup disjointWith http://suo.ieee.org#Agent
+Number of inconsistencies: 1
+http://semanticbible.com/2004/04/NTNames#ResidenceGroup disjointWith http://suo.ieee.org#BeliefGroup
+http://semanticbible.com/2004/04/NTNames#ResidenceGroup disjointWith http://suo.ieee.org#Character
+http://semanticbible.com/2004/04/NTNames#ResidenceGroup disjointWith http://suo.ieee.org#City
+http://semanticbible.com/2004/04/NTNames#ResidenceGroup disjointWith http://suo.ieee.org#CognitiveAgent
+http://semanticbible.com/2004/04/NTNames#ResidenceGroup disjointWith http://suo.ieee.org#ContentBearingObject
+http://semanticbible.com/2004/04/NTNames#ResidenceGroup disjointWith http://suo.ieee.org#EthnicGroup
+http://semanticbible.com/2004/04/NTNames#ResidenceGroup disjointWith http://suo.ieee.org#FreshWaterArea
+http://semanticbible.com/2004/04/NTNames#ResidenceGroup disjointWith http://suo.ieee.org#GeographicArea
+http://semanticbible.com/2004/04/NTNames#ResidenceGroup disjointWith http://suo.ieee.org#GeopoliticalArea
+http://semanticbible.com/2004/04/NTNames#ResidenceGroup disjointWith http://suo.ieee.org#Human
+http://semanticbible.com/2004/04/NTNames#ResidenceGroup disjointWith http://suo.ieee.org#Island
+http://semanticbible.com/2004/04/NTNames#ResidenceGroup disjointWith http://suo.ieee.org#LandArea
+http://semanticbible.com/2004/04/NTNames#ResidenceGroup disjointWith http://suo.ieee.org#Man
+http://semanticbible.com/2004/04/NTNames#ResidenceGroup disjointWith http://suo.ieee.org#Nation
+http://semanticbible.com/2004/04/NTNames#ResidenceGroup disjointWith http://suo.ieee.org#NaturalLanguage
+http://semanticbible.com/2004/04/NTNames#ResidenceGroup disjointWith http://suo.ieee.org#Object
+Number of inconsistencies: 2
+http://semanticbible.com/2004/04/NTNames#ResidenceGroup disjointWith http://suo.ieee.org#Organization
+http://semanticbible.com/2004/04/NTNames#ResidenceGroup disjointWith http://suo.ieee.org#PoliticalOrganization
+http://semanticbible.com/2004/04/NTNames#ResidenceGroup disjointWith http://suo.ieee.org#Proposition
+http://semanticbible.com/2004/04/NTNames#ResidenceGroup disjointWith http://suo.ieee.org#Region
+http://semanticbible.com/2004/04/NTNames#ResidenceGroup disjointWith http://suo.ieee.org#ReligiousOrganization
+http://semanticbible.com/2004/04/NTNames#ResidenceGroup disjointWith http://suo.ieee.org#SaltWaterArea
+http://semanticbible.com/2004/04/NTNames#ResidenceGroup disjointWith http://suo.ieee.org#Serial
+http://semanticbible.com/2004/04/NTNames#ResidenceGroup disjointWith http://suo.ieee.org#StateOrProvince
+http://semanticbible.com/2004/04/NTNames#ResidenceGroup disjointWith http://suo.ieee.org#WaterArea
+http://semanticbible.com/2004/04/NTNames#ResidenceGroup disjointWith http://suo.ieee.org#Woman
+http://semanticbible.com/2004/04/NTNames#ResidencyAttribute disjointWith http://semanticbible.com/2004/04/NTNames#SonOfGod
+http://semanticbible.com/2004/04/NTNames#ResidencyAttribute disjointWith http://semanticbible.com/2004/04/NTNames#SupernaturalBeing
+http://semanticbible.com/2004/04/NTNames#ResidencyAttribute disjointWith http://suo.ieee.org#Agent
+http://semanticbible.com/2004/04/NTNames#ResidencyAttribute disjointWith http://suo.ieee.org#BeliefGroup
+http://semanticbible.com/2004/04/NTNames#ResidencyAttribute disjointWith http://suo.ieee.org#Character
+http://semanticbible.com/2004/04/NTNames#ResidencyAttribute disjointWith http://suo.ieee.org#City
+http://semanticbible.com/2004/04/NTNames#ResidencyAttribute disjointWith http://suo.ieee.org#CognitiveAgent
+http://semanticbible.com/2004/04/NTNames#ResidencyAttribute disjointWith http://suo.ieee.org#ContentBearingObject
+http://semanticbible.com/2004/04/NTNames#ResidencyAttribute disjointWith http://suo.ieee.org#EthnicGroup
+http://semanticbible.com/2004/04/NTNames#ResidencyAttribute disjointWith http://suo.ieee.org#FreshWaterArea
+http://semanticbible.com/2004/04/NTNames#ResidencyAttribute disjointWith http://suo.ieee.org#GeographicArea
+http://semanticbible.com/2004/04/NTNames#ResidencyAttribute disjointWith http://suo.ieee.org#GeopoliticalArea
+http://semanticbible.com/2004/04/NTNames#ResidencyAttribute disjointWith http://suo.ieee.org#Group
+http://semanticbible.com/2004/04/NTNames#ResidencyAttribute disjointWith http://suo.ieee.org#GroupOfPeople
+http://semanticbible.com/2004/04/NTNames#ResidencyAttribute disjointWith http://suo.ieee.org#Human
+http://semanticbible.com/2004/04/NTNames#ResidencyAttribute disjointWith http://suo.ieee.org#Island
+http://semanticbible.com/2004/04/NTNames#ResidencyAttribute disjointWith http://suo.ieee.org#LandArea
+http://semanticbible.com/2004/04/NTNames#ResidencyAttribute disjointWith http://suo.ieee.org#Man
+http://semanticbible.com/2004/04/NTNames#ResidencyAttribute disjointWith http://suo.ieee.org#Nation
+http://semanticbible.com/2004/04/NTNames#ResidencyAttribute disjointWith http://suo.ieee.org#NaturalLanguage
+http://semanticbible.com/2004/04/NTNames#ResidencyAttribute disjointWith http://suo.ieee.org#Object
+http://semanticbible.com/2004/04/NTNames#ResidencyAttribute disjointWith http://suo.ieee.org#Organization
+http://semanticbible.com/2004/04/NTNames#ResidencyAttribute disjointWith http://suo.ieee.org#PoliticalOrganization
+http://semanticbible.com/2004/04/NTNames#ResidencyAttribute disjointWith http://suo.ieee.org#Proposition
+http://semanticbible.com/2004/04/NTNames#ResidencyAttribute disjointWith http://suo.ieee.org#Region
+http://semanticbible.com/2004/04/NTNames#ResidencyAttribute disjointWith http://suo.ieee.org#ReligiousOrganization
+http://semanticbible.com/2004/04/NTNames#ResidencyAttribute disjointWith http://suo.ieee.org#SaltWaterArea
+http://semanticbible.com/2004/04/NTNames#ResidencyAttribute disjointWith http://suo.ieee.org#Serial
+http://semanticbible.com/2004/04/NTNames#ResidencyAttribute disjointWith http://suo.ieee.org#StateOrProvince
+http://semanticbible.com/2004/04/NTNames#ResidencyAttribute disjointWith http://suo.ieee.org#WaterArea
+http://semanticbible.com/2004/04/NTNames#ResidencyAttribute disjointWith http://suo.ieee.org#Woman
+http://semanticbible.com/2004/04/NTNames#SonOfGod disjointWith http://semanticbible.com/2004/04/NTNames#SupernaturalBeing
+http://semanticbible.com/2004/04/NTNames#SonOfGod disjointWith http://suo.ieee.org#Agent
+http://semanticbible.com/2004/04/NTNames#SonOfGod disjointWith http://suo.ieee.org#BeliefGroup
+http://semanticbible.com/2004/04/NTNames#SonOfGod disjointWith http://suo.ieee.org#Character
+http://semanticbible.com/2004/04/NTNames#SonOfGod disjointWith http://suo.ieee.org#City
+http://semanticbible.com/2004/04/NTNames#SonOfGod disjointWith http://suo.ieee.org#CognitiveAgent
+http://semanticbible.com/2004/04/NTNames#SonOfGod disjointWith http://suo.ieee.org#ContentBearingObject
+http://semanticbible.com/2004/04/NTNames#SonOfGod disjointWith http://suo.ieee.org#EthnicGroup
+http://semanticbible.com/2004/04/NTNames#SonOfGod disjointWith http://suo.ieee.org#FreshWaterArea
+http://semanticbible.com/2004/04/NTNames#SonOfGod disjointWith http://suo.ieee.org#GeographicArea
+http://semanticbible.com/2004/04/NTNames#SonOfGod disjointWith http://suo.ieee.org#GeopoliticalArea
+http://semanticbible.com/2004/04/NTNames#SonOfGod disjointWith http://suo.ieee.org#Group
+http://semanticbible.com/2004/04/NTNames#SonOfGod disjointWith http://suo.ieee.org#GroupOfPeople
+http://semanticbible.com/2004/04/NTNames#SonOfGod disjointWith http://suo.ieee.org#Human
+http://semanticbible.com/2004/04/NTNames#SonOfGod disjointWith http://suo.ieee.org#Island
+http://semanticbible.com/2004/04/NTNames#SonOfGod disjointWith http://suo.ieee.org#LandArea
+http://semanticbible.com/2004/04/NTNames#SonOfGod disjointWith http://suo.ieee.org#Man
+http://semanticbible.com/2004/04/NTNames#SonOfGod disjointWith http://suo.ieee.org#Nation
+http://semanticbible.com/2004/04/NTNames#SonOfGod disjointWith http://suo.ieee.org#NaturalLanguage
+http://semanticbible.com/2004/04/NTNames#SonOfGod disjointWith http://suo.ieee.org#Object
+http://semanticbible.com/2004/04/NTNames#SonOfGod disjointWith http://suo.ieee.org#Organization
+http://semanticbible.com/2004/04/NTNames#SonOfGod disjointWith http://suo.ieee.org#PoliticalOrganization
+http://semanticbible.com/2004/04/NTNames#SonOfGod disjointWith http://suo.ieee.org#Proposition
+http://semanticbible.com/2004/04/NTNames#SonOfGod disjointWith http://suo.ieee.org#Region
+http://semanticbible.com/2004/04/NTNames#SonOfGod disjointWith http://suo.ieee.org#ReligiousOrganization
+http://semanticbible.com/2004/04/NTNames#SonOfGod disjointWith http://suo.ieee.org#SaltWaterArea
+http://semanticbible.com/2004/04/NTNames#SonOfGod disjointWith http://suo.ieee.org#Serial
+http://semanticbible.com/2004/04/NTNames#SonOfGod disjointWith http://suo.ieee.org#StateOrProvince
+http://semanticbible.com/2004/04/NTNames#SonOfGod disjointWith http://suo.ieee.org#WaterArea
+http://semanticbible.com/2004/04/NTNames#SonOfGod disjointWith http://suo.ieee.org#Woman
+http://semanticbible.com/2004/04/NTNames#SupernaturalBeing disjointWith http://suo.ieee.org#Agent
+Number of inconsistencies: 3
+http://semanticbible.com/2004/04/NTNames#SupernaturalBeing disjointWith http://suo.ieee.org#BeliefGroup
+http://semanticbible.com/2004/04/NTNames#SupernaturalBeing disjointWith http://suo.ieee.org#Character
+http://semanticbible.com/2004/04/NTNames#SupernaturalBeing disjointWith http://suo.ieee.org#City
+http://semanticbible.com/2004/04/NTNames#SupernaturalBeing disjointWith http://suo.ieee.org#CognitiveAgent
+Number of inconsistencies: 4
+http://semanticbible.com/2004/04/NTNames#SupernaturalBeing disjointWith http://suo.ieee.org#ContentBearingObject
+http://semanticbible.com/2004/04/NTNames#SupernaturalBeing disjointWith http://suo.ieee.org#EthnicGroup
+http://semanticbible.com/2004/04/NTNames#SupernaturalBeing disjointWith http://suo.ieee.org#FreshWaterArea
+http://semanticbible.com/2004/04/NTNames#SupernaturalBeing disjointWith http://suo.ieee.org#GeographicArea
+http://semanticbible.com/2004/04/NTNames#SupernaturalBeing disjointWith http://suo.ieee.org#GeopoliticalArea
+http://semanticbible.com/2004/04/NTNames#SupernaturalBeing disjointWith http://suo.ieee.org#Group
+http://semanticbible.com/2004/04/NTNames#SupernaturalBeing disjointWith http://suo.ieee.org#GroupOfPeople
+http://semanticbible.com/2004/04/NTNames#SupernaturalBeing disjointWith http://suo.ieee.org#Human
+http://semanticbible.com/2004/04/NTNames#SupernaturalBeing disjointWith http://suo.ieee.org#Island
+http://semanticbible.com/2004/04/NTNames#SupernaturalBeing disjointWith http://suo.ieee.org#LandArea
+http://semanticbible.com/2004/04/NTNames#SupernaturalBeing disjointWith http://suo.ieee.org#Man
+http://semanticbible.com/2004/04/NTNames#SupernaturalBeing disjointWith http://suo.ieee.org#Nation
+http://semanticbible.com/2004/04/NTNames#SupernaturalBeing disjointWith http://suo.ieee.org#NaturalLanguage
+http://semanticbible.com/2004/04/NTNames#SupernaturalBeing disjointWith http://suo.ieee.org#Object
+Number of inconsistencies: 5
+http://semanticbible.com/2004/04/NTNames#SupernaturalBeing disjointWith http://suo.ieee.org#Organization
+http://semanticbible.com/2004/04/NTNames#SupernaturalBeing disjointWith http://suo.ieee.org#PoliticalOrganization
+http://semanticbible.com/2004/04/NTNames#SupernaturalBeing disjointWith http://suo.ieee.org#Proposition
+http://semanticbible.com/2004/04/NTNames#SupernaturalBeing disjointWith http://suo.ieee.org#Region
+http://semanticbible.com/2004/04/NTNames#SupernaturalBeing disjointWith http://suo.ieee.org#ReligiousOrganization
+http://semanticbible.com/2004/04/NTNames#SupernaturalBeing disjointWith http://suo.ieee.org#SaltWaterArea
+http://semanticbible.com/2004/04/NTNames#SupernaturalBeing disjointWith http://suo.ieee.org#Serial
+http://semanticbible.com/2004/04/NTNames#SupernaturalBeing disjointWith http://suo.ieee.org#StateOrProvince
+http://semanticbible.com/2004/04/NTNames#SupernaturalBeing disjointWith http://suo.ieee.org#WaterArea
+http://semanticbible.com/2004/04/NTNames#SupernaturalBeing disjointWith http://suo.ieee.org#Woman
+http://suo.ieee.org#Agent disjointWith http://suo.ieee.org#BeliefGroup
+http://suo.ieee.org#Agent disjointWith http://suo.ieee.org#Character
+http://suo.ieee.org#Agent disjointWith http://suo.ieee.org#City
+http://suo.ieee.org#Agent disjointWith http://suo.ieee.org#ContentBearingObject
+http://suo.ieee.org#Agent disjointWith http://suo.ieee.org#EthnicGroup
+Number of inconsistencies: 6
+http://suo.ieee.org#Agent disjointWith http://suo.ieee.org#FreshWaterArea
+http://suo.ieee.org#Agent disjointWith http://suo.ieee.org#GeographicArea
+http://suo.ieee.org#Agent disjointWith http://suo.ieee.org#GeopoliticalArea
+http://suo.ieee.org#Agent disjointWith http://suo.ieee.org#Group
+Number of inconsistencies: 7
+http://suo.ieee.org#Agent disjointWith http://suo.ieee.org#GroupOfPeople
+Number of inconsistencies: 8
+http://suo.ieee.org#Agent disjointWith http://suo.ieee.org#Island
+http://suo.ieee.org#Agent disjointWith http://suo.ieee.org#LandArea
+http://suo.ieee.org#Agent disjointWith http://suo.ieee.org#Nation
+http://suo.ieee.org#Agent disjointWith http://suo.ieee.org#NaturalLanguage
+http://suo.ieee.org#Agent disjointWith http://suo.ieee.org#Object
+Number of inconsistencies: 9
+http://suo.ieee.org#Agent disjointWith http://suo.ieee.org#Organization
+http://suo.ieee.org#Agent disjointWith http://suo.ieee.org#PoliticalOrganization
+http://suo.ieee.org#Agent disjointWith http://suo.ieee.org#Proposition
+http://suo.ieee.org#Agent disjointWith http://suo.ieee.org#Region
+http://suo.ieee.org#Agent disjointWith http://suo.ieee.org#ReligiousOrganization
+http://suo.ieee.org#Agent disjointWith http://suo.ieee.org#SaltWaterArea
+http://suo.ieee.org#Agent disjointWith http://suo.ieee.org#Serial
+http://suo.ieee.org#Agent disjointWith http://suo.ieee.org#StateOrProvince
+http://suo.ieee.org#Agent disjointWith http://suo.ieee.org#WaterArea
+http://suo.ieee.org#Agent disjointWith http://suo.ieee.org#Woman
+Number of inconsistencies: 10
+http://suo.ieee.org#BeliefGroup disjointWith http://suo.ieee.org#Character
+http://suo.ieee.org#BeliefGroup disjointWith http://suo.ieee.org#City
+http://suo.ieee.org#BeliefGroup disjointWith http://suo.ieee.org#CognitiveAgent
+http://suo.ieee.org#BeliefGroup disjointWith http://suo.ieee.org#ContentBearingObject
+http://suo.ieee.org#BeliefGroup disjointWith http://suo.ieee.org#EthnicGroup
+http://suo.ieee.org#BeliefGroup disjointWith http://suo.ieee.org#FreshWaterArea
+http://suo.ieee.org#BeliefGroup disjointWith http://suo.ieee.org#GeographicArea
+http://suo.ieee.org#BeliefGroup disjointWith http://suo.ieee.org#GeopoliticalArea
+http://suo.ieee.org#BeliefGroup disjointWith http://suo.ieee.org#Group
+http://suo.ieee.org#BeliefGroup disjointWith http://suo.ieee.org#GroupOfPeople
+http://suo.ieee.org#BeliefGroup disjointWith http://suo.ieee.org#Human
+http://suo.ieee.org#BeliefGroup disjointWith http://suo.ieee.org#Island
+http://suo.ieee.org#BeliefGroup disjointWith http://suo.ieee.org#LandArea
+http://suo.ieee.org#BeliefGroup disjointWith http://suo.ieee.org#Man
+http://suo.ieee.org#BeliefGroup disjointWith http://suo.ieee.org#Nation
+http://suo.ieee.org#BeliefGroup disjointWith http://suo.ieee.org#NaturalLanguage
+http://suo.ieee.org#BeliefGroup disjointWith http://suo.ieee.org#Object
+http://suo.ieee.org#BeliefGroup disjointWith http://suo.ieee.org#Organization
+http://suo.ieee.org#BeliefGroup disjointWith http://suo.ieee.org#PoliticalOrganization
+http://suo.ieee.org#BeliefGroup disjointWith http://suo.ieee.org#Proposition
+http://suo.ieee.org#BeliefGroup disjointWith http://suo.ieee.org#Region
+http://suo.ieee.org#BeliefGroup disjointWith http://suo.ieee.org#SaltWaterArea
+http://suo.ieee.org#BeliefGroup disjointWith http://suo.ieee.org#Serial
+http://suo.ieee.org#BeliefGroup disjointWith http://suo.ieee.org#StateOrProvince
+http://suo.ieee.org#BeliefGroup disjointWith http://suo.ieee.org#WaterArea
+http://suo.ieee.org#BeliefGroup disjointWith http://suo.ieee.org#Woman
+http://suo.ieee.org#Character disjointWith http://suo.ieee.org#City
+http://suo.ieee.org#Character disjointWith http://suo.ieee.org#CognitiveAgent
+http://suo.ieee.org#Character disjointWith http://suo.ieee.org#ContentBearingObject
+http://suo.ieee.org#Character disjointWith http://suo.ieee.org#EthnicGroup
+http://suo.ieee.org#Character disjointWith http://suo.ieee.org#FreshWaterArea
+http://suo.ieee.org#Character disjointWith http://suo.ieee.org#GeographicArea
+http://suo.ieee.org#Character disjointWith http://suo.ieee.org#GeopoliticalArea
+http://suo.ieee.org#Character disjointWith http://suo.ieee.org#Group
+http://suo.ieee.org#Character disjointWith http://suo.ieee.org#GroupOfPeople
+http://suo.ieee.org#Character disjointWith http://suo.ieee.org#Human
+http://suo.ieee.org#Character disjointWith http://suo.ieee.org#Island
+http://suo.ieee.org#Character disjointWith http://suo.ieee.org#LandArea
+http://suo.ieee.org#Character disjointWith http://suo.ieee.org#Man
+http://suo.ieee.org#Character disjointWith http://suo.ieee.org#Nation
+http://suo.ieee.org#Character disjointWith http://suo.ieee.org#NaturalLanguage
+http://suo.ieee.org#Character disjointWith http://suo.ieee.org#Object
+http://suo.ieee.org#Character disjointWith http://suo.ieee.org#Organization
+http://suo.ieee.org#Character disjointWith http://suo.ieee.org#PoliticalOrganization
+http://suo.ieee.org#Character disjointWith http://suo.ieee.org#Proposition
+http://suo.ieee.org#Character disjointWith http://suo.ieee.org#Region
+http://suo.ieee.org#Character disjointWith http://suo.ieee.org#ReligiousOrganization
+http://suo.ieee.org#Character disjointWith http://suo.ieee.org#SaltWaterArea
+http://suo.ieee.org#Character disjointWith http://suo.ieee.org#Serial
+http://suo.ieee.org#Character disjointWith http://suo.ieee.org#StateOrProvince
+http://suo.ieee.org#Character disjointWith http://suo.ieee.org#WaterArea
+http://suo.ieee.org#Character disjointWith http://suo.ieee.org#Woman
+http://suo.ieee.org#City disjointWith http://suo.ieee.org#CognitiveAgent
+http://suo.ieee.org#City disjointWith http://suo.ieee.org#ContentBearingObject
+http://suo.ieee.org#City disjointWith http://suo.ieee.org#EthnicGroup
+http://suo.ieee.org#City disjointWith http://suo.ieee.org#FreshWaterArea
+http://suo.ieee.org#City disjointWith http://suo.ieee.org#Group
+http://suo.ieee.org#City disjointWith http://suo.ieee.org#GroupOfPeople
+http://suo.ieee.org#City disjointWith http://suo.ieee.org#Human
+http://suo.ieee.org#City disjointWith http://suo.ieee.org#Island
+http://suo.ieee.org#City disjointWith http://suo.ieee.org#Man
+http://suo.ieee.org#City disjointWith http://suo.ieee.org#Nation
+http://suo.ieee.org#City disjointWith http://suo.ieee.org#NaturalLanguage
+http://suo.ieee.org#City disjointWith http://suo.ieee.org#Object
+Number of inconsistencies: 11
+http://suo.ieee.org#City disjointWith http://suo.ieee.org#Organization
+http://suo.ieee.org#City disjointWith http://suo.ieee.org#PoliticalOrganization
+http://suo.ieee.org#City disjointWith http://suo.ieee.org#Proposition
+http://suo.ieee.org#City disjointWith http://suo.ieee.org#ReligiousOrganization
+http://suo.ieee.org#City disjointWith http://suo.ieee.org#SaltWaterArea
+http://suo.ieee.org#City disjointWith http://suo.ieee.org#Serial
+http://suo.ieee.org#City disjointWith http://suo.ieee.org#StateOrProvince
+http://suo.ieee.org#City disjointWith http://suo.ieee.org#WaterArea
+http://suo.ieee.org#City disjointWith http://suo.ieee.org#Woman
+http://suo.ieee.org#CognitiveAgent disjointWith http://suo.ieee.org#ContentBearingObject
+http://suo.ieee.org#CognitiveAgent disjointWith http://suo.ieee.org#EthnicGroup
+http://suo.ieee.org#CognitiveAgent disjointWith http://suo.ieee.org#FreshWaterArea
+http://suo.ieee.org#CognitiveAgent disjointWith http://suo.ieee.org#GeographicArea
+http://suo.ieee.org#CognitiveAgent disjointWith http://suo.ieee.org#GeopoliticalArea
+http://suo.ieee.org#CognitiveAgent disjointWith http://suo.ieee.org#Group
+http://suo.ieee.org#CognitiveAgent disjointWith http://suo.ieee.org#GroupOfPeople
+http://suo.ieee.org#CognitiveAgent disjointWith http://suo.ieee.org#Island
+http://suo.ieee.org#CognitiveAgent disjointWith http://suo.ieee.org#LandArea
+http://suo.ieee.org#CognitiveAgent disjointWith http://suo.ieee.org#Nation
+http://suo.ieee.org#CognitiveAgent disjointWith http://suo.ieee.org#NaturalLanguage
+http://suo.ieee.org#CognitiveAgent disjointWith http://suo.ieee.org#Object
+Number of inconsistencies: 12
+http://suo.ieee.org#CognitiveAgent disjointWith http://suo.ieee.org#Organization
+http://suo.ieee.org#CognitiveAgent disjointWith http://suo.ieee.org#PoliticalOrganization
+http://suo.ieee.org#CognitiveAgent disjointWith http://suo.ieee.org#Proposition
+http://suo.ieee.org#CognitiveAgent disjointWith http://suo.ieee.org#Region
+http://suo.ieee.org#CognitiveAgent disjointWith http://suo.ieee.org#ReligiousOrganization
+http://suo.ieee.org#CognitiveAgent disjointWith http://suo.ieee.org#SaltWaterArea
+http://suo.ieee.org#CognitiveAgent disjointWith http://suo.ieee.org#Serial
+http://suo.ieee.org#CognitiveAgent disjointWith http://suo.ieee.org#StateOrProvince
+http://suo.ieee.org#CognitiveAgent disjointWith http://suo.ieee.org#WaterArea
+http://suo.ieee.org#CognitiveAgent disjointWith http://suo.ieee.org#Woman
+Number of inconsistencies: 13
+http://suo.ieee.org#ContentBearingObject disjointWith http://suo.ieee.org#EthnicGroup
+http://suo.ieee.org#ContentBearingObject disjointWith http://suo.ieee.org#FreshWaterArea
+http://suo.ieee.org#ContentBearingObject disjointWith http://suo.ieee.org#GeographicArea
+http://suo.ieee.org#ContentBearingObject disjointWith http://suo.ieee.org#GeopoliticalArea
+http://suo.ieee.org#ContentBearingObject disjointWith http://suo.ieee.org#Group
+http://suo.ieee.org#ContentBearingObject disjointWith http://suo.ieee.org#GroupOfPeople
+http://suo.ieee.org#ContentBearingObject disjointWith http://suo.ieee.org#Human
+http://suo.ieee.org#ContentBearingObject disjointWith http://suo.ieee.org#Island
+http://suo.ieee.org#ContentBearingObject disjointWith http://suo.ieee.org#LandArea
+http://suo.ieee.org#ContentBearingObject disjointWith http://suo.ieee.org#Man
+http://suo.ieee.org#ContentBearingObject disjointWith http://suo.ieee.org#Nation
+http://suo.ieee.org#ContentBearingObject disjointWith http://suo.ieee.org#Object
+http://suo.ieee.org#ContentBearingObject disjointWith http://suo.ieee.org#Organization
+http://suo.ieee.org#ContentBearingObject disjointWith http://suo.ieee.org#PoliticalOrganization
+http://suo.ieee.org#ContentBearingObject disjointWith http://suo.ieee.org#Proposition
+http://suo.ieee.org#ContentBearingObject disjointWith http://suo.ieee.org#Region
+http://suo.ieee.org#ContentBearingObject disjointWith http://suo.ieee.org#ReligiousOrganization
+http://suo.ieee.org#ContentBearingObject disjointWith http://suo.ieee.org#SaltWaterArea
+http://suo.ieee.org#ContentBearingObject disjointWith http://suo.ieee.org#Serial
+http://suo.ieee.org#ContentBearingObject disjointWith http://suo.ieee.org#StateOrProvince
+http://suo.ieee.org#ContentBearingObject disjointWith http://suo.ieee.org#WaterArea
+http://suo.ieee.org#ContentBearingObject disjointWith http://suo.ieee.org#Woman
+http://suo.ieee.org#EthnicGroup disjointWith http://suo.ieee.org#FreshWaterArea
+http://suo.ieee.org#EthnicGroup disjointWith http://suo.ieee.org#GeographicArea
+http://suo.ieee.org#EthnicGroup disjointWith http://suo.ieee.org#GeopoliticalArea
+http://suo.ieee.org#EthnicGroup disjointWith http://suo.ieee.org#Human
+http://suo.ieee.org#EthnicGroup disjointWith http://suo.ieee.org#Island
+http://suo.ieee.org#EthnicGroup disjointWith http://suo.ieee.org#LandArea
+http://suo.ieee.org#EthnicGroup disjointWith http://suo.ieee.org#Man
+http://suo.ieee.org#EthnicGroup disjointWith http://suo.ieee.org#Nation
+http://suo.ieee.org#EthnicGroup disjointWith http://suo.ieee.org#NaturalLanguage
+http://suo.ieee.org#EthnicGroup disjointWith http://suo.ieee.org#Object
+Number of inconsistencies: 14
+http://suo.ieee.org#EthnicGroup disjointWith http://suo.ieee.org#Organization
+http://suo.ieee.org#EthnicGroup disjointWith http://suo.ieee.org#PoliticalOrganization
+http://suo.ieee.org#EthnicGroup disjointWith http://suo.ieee.org#Proposition
+http://suo.ieee.org#EthnicGroup disjointWith http://suo.ieee.org#Region
+http://suo.ieee.org#EthnicGroup disjointWith http://suo.ieee.org#ReligiousOrganization
+http://suo.ieee.org#EthnicGroup disjointWith http://suo.ieee.org#SaltWaterArea
+http://suo.ieee.org#EthnicGroup disjointWith http://suo.ieee.org#Serial
+http://suo.ieee.org#EthnicGroup disjointWith http://suo.ieee.org#StateOrProvince
+http://suo.ieee.org#EthnicGroup disjointWith http://suo.ieee.org#WaterArea
+http://suo.ieee.org#EthnicGroup disjointWith http://suo.ieee.org#Woman
+http://suo.ieee.org#FreshWaterArea disjointWith http://suo.ieee.org#GeographicArea
+http://suo.ieee.org#FreshWaterArea disjointWith http://suo.ieee.org#GeopoliticalArea
+http://suo.ieee.org#FreshWaterArea disjointWith http://suo.ieee.org#Group
+http://suo.ieee.org#FreshWaterArea disjointWith http://suo.ieee.org#GroupOfPeople
+http://suo.ieee.org#FreshWaterArea disjointWith http://suo.ieee.org#Human
+http://suo.ieee.org#FreshWaterArea disjointWith http://suo.ieee.org#Island
+http://suo.ieee.org#FreshWaterArea disjointWith http://suo.ieee.org#LandArea
+http://suo.ieee.org#FreshWaterArea disjointWith http://suo.ieee.org#Man
+http://suo.ieee.org#FreshWaterArea disjointWith http://suo.ieee.org#Nation
+http://suo.ieee.org#FreshWaterArea disjointWith http://suo.ieee.org#NaturalLanguage
+http://suo.ieee.org#FreshWaterArea disjointWith http://suo.ieee.org#Object
+http://suo.ieee.org#FreshWaterArea disjointWith http://suo.ieee.org#Organization
+http://suo.ieee.org#FreshWaterArea disjointWith http://suo.ieee.org#PoliticalOrganization
+http://suo.ieee.org#FreshWaterArea disjointWith http://suo.ieee.org#Proposition
+http://suo.ieee.org#FreshWaterArea disjointWith http://suo.ieee.org#Region
+http://suo.ieee.org#FreshWaterArea disjointWith http://suo.ieee.org#ReligiousOrganization
+http://suo.ieee.org#FreshWaterArea disjointWith http://suo.ieee.org#SaltWaterArea
+http://suo.ieee.org#FreshWaterArea disjointWith http://suo.ieee.org#Serial
+http://suo.ieee.org#FreshWaterArea disjointWith http://suo.ieee.org#StateOrProvince
+http://suo.ieee.org#FreshWaterArea disjointWith http://suo.ieee.org#Woman
+http://suo.ieee.org#GeographicArea disjointWith http://suo.ieee.org#Group
+http://suo.ieee.org#GeographicArea disjointWith http://suo.ieee.org#GroupOfPeople
+http://suo.ieee.org#GeographicArea disjointWith http://suo.ieee.org#Human
+http://suo.ieee.org#GeographicArea disjointWith http://suo.ieee.org#Island
+http://suo.ieee.org#GeographicArea disjointWith http://suo.ieee.org#Man
+http://suo.ieee.org#GeographicArea disjointWith http://suo.ieee.org#Nation
+http://suo.ieee.org#GeographicArea disjointWith http://suo.ieee.org#NaturalLanguage
+http://suo.ieee.org#GeographicArea disjointWith http://suo.ieee.org#Object
+Number of inconsistencies: 15
+http://suo.ieee.org#GeographicArea disjointWith http://suo.ieee.org#Organization
+http://suo.ieee.org#GeographicArea disjointWith http://suo.ieee.org#PoliticalOrganization
+http://suo.ieee.org#GeographicArea disjointWith http://suo.ieee.org#Proposition
+http://suo.ieee.org#GeographicArea disjointWith http://suo.ieee.org#ReligiousOrganization
+http://suo.ieee.org#GeographicArea disjointWith http://suo.ieee.org#SaltWaterArea
+http://suo.ieee.org#GeographicArea disjointWith http://suo.ieee.org#Serial
+http://suo.ieee.org#GeographicArea disjointWith http://suo.ieee.org#StateOrProvince
+Number of inconsistencies: 16
+http://suo.ieee.org#GeographicArea disjointWith http://suo.ieee.org#WaterArea
+http://suo.ieee.org#GeographicArea disjointWith http://suo.ieee.org#Woman
+http://suo.ieee.org#GeopoliticalArea disjointWith http://suo.ieee.org#Group
+http://suo.ieee.org#GeopoliticalArea disjointWith http://suo.ieee.org#GroupOfPeople
+http://suo.ieee.org#GeopoliticalArea disjointWith http://suo.ieee.org#Human
+http://suo.ieee.org#GeopoliticalArea disjointWith http://suo.ieee.org#Island
+http://suo.ieee.org#GeopoliticalArea disjointWith http://suo.ieee.org#Man
+http://suo.ieee.org#GeopoliticalArea disjointWith http://suo.ieee.org#Nation
+http://suo.ieee.org#GeopoliticalArea disjointWith http://suo.ieee.org#NaturalLanguage
+http://suo.ieee.org#GeopoliticalArea disjointWith http://suo.ieee.org#Object
+Number of inconsistencies: 17
+http://suo.ieee.org#GeopoliticalArea disjointWith http://suo.ieee.org#Organization
+http://suo.ieee.org#GeopoliticalArea disjointWith http://suo.ieee.org#PoliticalOrganization
+http://suo.ieee.org#GeopoliticalArea disjointWith http://suo.ieee.org#Proposition
+http://suo.ieee.org#GeopoliticalArea disjointWith http://suo.ieee.org#ReligiousOrganization
+http://suo.ieee.org#GeopoliticalArea disjointWith http://suo.ieee.org#SaltWaterArea
+http://suo.ieee.org#GeopoliticalArea disjointWith http://suo.ieee.org#Serial
+http://suo.ieee.org#GeopoliticalArea disjointWith http://suo.ieee.org#StateOrProvince
+Number of inconsistencies: 18
+http://suo.ieee.org#GeopoliticalArea disjointWith http://suo.ieee.org#WaterArea
+http://suo.ieee.org#GeopoliticalArea disjointWith http://suo.ieee.org#Woman
+http://suo.ieee.org#Group disjointWith http://suo.ieee.org#Human
+http://suo.ieee.org#Group disjointWith http://suo.ieee.org#Island
+http://suo.ieee.org#Group disjointWith http://suo.ieee.org#LandArea
+http://suo.ieee.org#Group disjointWith http://suo.ieee.org#Man
+http://suo.ieee.org#Group disjointWith http://suo.ieee.org#Nation
+http://suo.ieee.org#Group disjointWith http://suo.ieee.org#NaturalLanguage
+http://suo.ieee.org#Group disjointWith http://suo.ieee.org#Object
+Number of inconsistencies: 19
+http://suo.ieee.org#Group disjointWith http://suo.ieee.org#Organization
+http://suo.ieee.org#Group disjointWith http://suo.ieee.org#PoliticalOrganization
+http://suo.ieee.org#Group disjointWith http://suo.ieee.org#Proposition
+http://suo.ieee.org#Group disjointWith http://suo.ieee.org#Region
+http://suo.ieee.org#Group disjointWith http://suo.ieee.org#ReligiousOrganization
+http://suo.ieee.org#Group disjointWith http://suo.ieee.org#SaltWaterArea
+http://suo.ieee.org#Group disjointWith http://suo.ieee.org#Serial
+http://suo.ieee.org#Group disjointWith http://suo.ieee.org#StateOrProvince
+http://suo.ieee.org#Group disjointWith http://suo.ieee.org#WaterArea
+http://suo.ieee.org#Group disjointWith http://suo.ieee.org#Woman
+http://suo.ieee.org#GroupOfPeople disjointWith http://suo.ieee.org#Human
+http://suo.ieee.org#GroupOfPeople disjointWith http://suo.ieee.org#Island
+http://suo.ieee.org#GroupOfPeople disjointWith http://suo.ieee.org#LandArea
+http://suo.ieee.org#GroupOfPeople disjointWith http://suo.ieee.org#Man
+http://suo.ieee.org#GroupOfPeople disjointWith http://suo.ieee.org#Nation
+http://suo.ieee.org#GroupOfPeople disjointWith http://suo.ieee.org#NaturalLanguage
+http://suo.ieee.org#GroupOfPeople disjointWith http://suo.ieee.org#Object
+Number of inconsistencies: 20
+http://suo.ieee.org#GroupOfPeople disjointWith http://suo.ieee.org#Organization
+http://suo.ieee.org#GroupOfPeople disjointWith http://suo.ieee.org#PoliticalOrganization
+http://suo.ieee.org#GroupOfPeople disjointWith http://suo.ieee.org#Proposition
+http://suo.ieee.org#GroupOfPeople disjointWith http://suo.ieee.org#Region
+http://suo.ieee.org#GroupOfPeople disjointWith http://suo.ieee.org#ReligiousOrganization
+http://suo.ieee.org#GroupOfPeople disjointWith http://suo.ieee.org#SaltWaterArea
+http://suo.ieee.org#GroupOfPeople disjointWith http://suo.ieee.org#Serial
+http://suo.ieee.org#GroupOfPeople disjointWith http://suo.ieee.org#StateOrProvince
+http://suo.ieee.org#GroupOfPeople disjointWith http://suo.ieee.org#WaterArea
+http://suo.ieee.org#GroupOfPeople disjointWith http://suo.ieee.org#Woman
+http://suo.ieee.org#Human disjointWith http://suo.ieee.org#Island
+http://suo.ieee.org#Human disjointWith http://suo.ieee.org#LandArea
+http://suo.ieee.org#Human disjointWith http://suo.ieee.org#Nation
+http://suo.ieee.org#Human disjointWith http://suo.ieee.org#NaturalLanguage
+http://suo.ieee.org#Human disjointWith http://suo.ieee.org#Object
+Number of inconsistencies: 21
+http://suo.ieee.org#Human disjointWith http://suo.ieee.org#Organization
+http://suo.ieee.org#Human disjointWith http://suo.ieee.org#PoliticalOrganization
+http://suo.ieee.org#Human disjointWith http://suo.ieee.org#Proposition
+http://suo.ieee.org#Human disjointWith http://suo.ieee.org#Region
+http://suo.ieee.org#Human disjointWith http://suo.ieee.org#ReligiousOrganization
+http://suo.ieee.org#Human disjointWith http://suo.ieee.org#SaltWaterArea
+http://suo.ieee.org#Human disjointWith http://suo.ieee.org#Serial
+http://suo.ieee.org#Human disjointWith http://suo.ieee.org#StateOrProvince
+http://suo.ieee.org#Human disjointWith http://suo.ieee.org#WaterArea
+http://suo.ieee.org#Human disjointWith http://suo.ieee.org#Woman
+Number of inconsistencies: 22
+http://suo.ieee.org#Island disjointWith http://suo.ieee.org#LandArea
+http://suo.ieee.org#Island disjointWith http://suo.ieee.org#Man
+http://suo.ieee.org#Island disjointWith http://suo.ieee.org#Nation
+http://suo.ieee.org#Island disjointWith http://suo.ieee.org#NaturalLanguage
+http://suo.ieee.org#Island disjointWith http://suo.ieee.org#Object
+http://suo.ieee.org#Island disjointWith http://suo.ieee.org#Organization
+http://suo.ieee.org#Island disjointWith http://suo.ieee.org#PoliticalOrganization
+http://suo.ieee.org#Island disjointWith http://suo.ieee.org#Proposition
+http://suo.ieee.org#Island disjointWith http://suo.ieee.org#Region
+http://suo.ieee.org#Island disjointWith http://suo.ieee.org#ReligiousOrganization
+http://suo.ieee.org#Island disjointWith http://suo.ieee.org#SaltWaterArea
+http://suo.ieee.org#Island disjointWith http://suo.ieee.org#Serial
+http://suo.ieee.org#Island disjointWith http://suo.ieee.org#StateOrProvince
+http://suo.ieee.org#Island disjointWith http://suo.ieee.org#WaterArea
+http://suo.ieee.org#Island disjointWith http://suo.ieee.org#Woman
+http://suo.ieee.org#LandArea disjointWith http://suo.ieee.org#Man
+http://suo.ieee.org#LandArea disjointWith http://suo.ieee.org#Nation
+http://suo.ieee.org#LandArea disjointWith http://suo.ieee.org#NaturalLanguage
+http://suo.ieee.org#LandArea disjointWith http://suo.ieee.org#Object
+Number of inconsistencies: 23
+http://suo.ieee.org#LandArea disjointWith http://suo.ieee.org#Organization
+http://suo.ieee.org#LandArea disjointWith http://suo.ieee.org#PoliticalOrganization
+http://suo.ieee.org#LandArea disjointWith http://suo.ieee.org#Proposition
+http://suo.ieee.org#LandArea disjointWith http://suo.ieee.org#ReligiousOrganization
+http://suo.ieee.org#LandArea disjointWith http://suo.ieee.org#SaltWaterArea
+http://suo.ieee.org#LandArea disjointWith http://suo.ieee.org#Serial
+http://suo.ieee.org#LandArea disjointWith http://suo.ieee.org#StateOrProvince
+Number of inconsistencies: 24
+http://suo.ieee.org#LandArea disjointWith http://suo.ieee.org#WaterArea
+http://suo.ieee.org#LandArea disjointWith http://suo.ieee.org#Woman
+http://suo.ieee.org#Man disjointWith http://suo.ieee.org#Nation
+http://suo.ieee.org#Man disjointWith http://suo.ieee.org#NaturalLanguage
+http://suo.ieee.org#Man disjointWith http://suo.ieee.org#Object
+Number of inconsistencies: 25
+http://suo.ieee.org#Man disjointWith http://suo.ieee.org#Organization
+http://suo.ieee.org#Man disjointWith http://suo.ieee.org#PoliticalOrganization
+http://suo.ieee.org#Man disjointWith http://suo.ieee.org#Proposition
+http://suo.ieee.org#Man disjointWith http://suo.ieee.org#Region
+http://suo.ieee.org#Man disjointWith http://suo.ieee.org#ReligiousOrganization
+http://suo.ieee.org#Man disjointWith http://suo.ieee.org#SaltWaterArea
+http://suo.ieee.org#Man disjointWith http://suo.ieee.org#Serial
+http://suo.ieee.org#Man disjointWith http://suo.ieee.org#StateOrProvince
+http://suo.ieee.org#Man disjointWith http://suo.ieee.org#WaterArea
+http://suo.ieee.org#Man disjointWith http://suo.ieee.org#Woman
+http://suo.ieee.org#Nation disjointWith http://suo.ieee.org#NaturalLanguage
+http://suo.ieee.org#Nation disjointWith http://suo.ieee.org#Object
+http://suo.ieee.org#Nation disjointWith http://suo.ieee.org#Organization
+http://suo.ieee.org#Nation disjointWith http://suo.ieee.org#PoliticalOrganization
+http://suo.ieee.org#Nation disjointWith http://suo.ieee.org#Proposition
+http://suo.ieee.org#Nation disjointWith http://suo.ieee.org#Region
+http://suo.ieee.org#Nation disjointWith http://suo.ieee.org#ReligiousOrganization
+http://suo.ieee.org#Nation disjointWith http://suo.ieee.org#SaltWaterArea
+http://suo.ieee.org#Nation disjointWith http://suo.ieee.org#Serial
+http://suo.ieee.org#Nation disjointWith http://suo.ieee.org#StateOrProvince
+http://suo.ieee.org#Nation disjointWith http://suo.ieee.org#WaterArea
+http://suo.ieee.org#Nation disjointWith http://suo.ieee.org#Woman
+http://suo.ieee.org#NaturalLanguage disjointWith http://suo.ieee.org#Object
+http://suo.ieee.org#NaturalLanguage disjointWith http://suo.ieee.org#Organization
+http://suo.ieee.org#NaturalLanguage disjointWith http://suo.ieee.org#PoliticalOrganization
+http://suo.ieee.org#NaturalLanguage disjointWith http://suo.ieee.org#Proposition
+http://suo.ieee.org#NaturalLanguage disjointWith http://suo.ieee.org#Region
+http://suo.ieee.org#NaturalLanguage disjointWith http://suo.ieee.org#ReligiousOrganization
+http://suo.ieee.org#NaturalLanguage disjointWith http://suo.ieee.org#SaltWaterArea
+http://suo.ieee.org#NaturalLanguage disjointWith http://suo.ieee.org#Serial
+http://suo.ieee.org#NaturalLanguage disjointWith http://suo.ieee.org#StateOrProvince
+http://suo.ieee.org#NaturalLanguage disjointWith http://suo.ieee.org#WaterArea
+http://suo.ieee.org#NaturalLanguage disjointWith http://suo.ieee.org#Woman
+http://suo.ieee.org#Object disjointWith http://suo.ieee.org#Organization
+http://suo.ieee.org#Object disjointWith http://suo.ieee.org#PoliticalOrganization
+http://suo.ieee.org#Object disjointWith http://suo.ieee.org#Proposition
+http://suo.ieee.org#Object disjointWith http://suo.ieee.org#Region
+Number of inconsistencies: 26
+http://suo.ieee.org#Object disjointWith http://suo.ieee.org#ReligiousOrganization
+http://suo.ieee.org#Object disjointWith http://suo.ieee.org#SaltWaterArea
+http://suo.ieee.org#Object disjointWith http://suo.ieee.org#Serial
+http://suo.ieee.org#Object disjointWith http://suo.ieee.org#StateOrProvince
+Number of inconsistencies: 27
+http://suo.ieee.org#Object disjointWith http://suo.ieee.org#WaterArea
+http://suo.ieee.org#Object disjointWith http://suo.ieee.org#Woman
+Number of inconsistencies: 28
+http://suo.ieee.org#Organization disjointWith http://suo.ieee.org#Proposition
+http://suo.ieee.org#Organization disjointWith http://suo.ieee.org#Region
+http://suo.ieee.org#Organization disjointWith http://suo.ieee.org#ReligiousOrganization
+http://suo.ieee.org#Organization disjointWith http://suo.ieee.org#SaltWaterArea
+http://suo.ieee.org#Organization disjointWith http://suo.ieee.org#Serial
+http://suo.ieee.org#Organization disjointWith http://suo.ieee.org#StateOrProvince
+http://suo.ieee.org#Organization disjointWith http://suo.ieee.org#WaterArea
+http://suo.ieee.org#Organization disjointWith http://suo.ieee.org#Woman
+http://suo.ieee.org#PoliticalOrganization disjointWith http://suo.ieee.org#Proposition
+http://suo.ieee.org#PoliticalOrganization disjointWith http://suo.ieee.org#Region
+http://suo.ieee.org#PoliticalOrganization disjointWith http://suo.ieee.org#ReligiousOrganization
+http://suo.ieee.org#PoliticalOrganization disjointWith http://suo.ieee.org#SaltWaterArea
+http://suo.ieee.org#PoliticalOrganization disjointWith http://suo.ieee.org#Serial
+http://suo.ieee.org#PoliticalOrganization disjointWith http://suo.ieee.org#StateOrProvince
+http://suo.ieee.org#PoliticalOrganization disjointWith http://suo.ieee.org#WaterArea
+http://suo.ieee.org#PoliticalOrganization disjointWith http://suo.ieee.org#Woman
+http://suo.ieee.org#Proposition disjointWith http://suo.ieee.org#Region
+http://suo.ieee.org#Proposition disjointWith http://suo.ieee.org#ReligiousOrganization
+http://suo.ieee.org#Proposition disjointWith http://suo.ieee.org#SaltWaterArea
+http://suo.ieee.org#Proposition disjointWith http://suo.ieee.org#Serial
+http://suo.ieee.org#Proposition disjointWith http://suo.ieee.org#StateOrProvince
+http://suo.ieee.org#Proposition disjointWith http://suo.ieee.org#WaterArea
+http://suo.ieee.org#Proposition disjointWith http://suo.ieee.org#Woman
+http://suo.ieee.org#Region disjointWith http://suo.ieee.org#ReligiousOrganization
+http://suo.ieee.org#Region disjointWith http://suo.ieee.org#SaltWaterArea
+http://suo.ieee.org#Region disjointWith http://suo.ieee.org#Serial
+http://suo.ieee.org#Region disjointWith http://suo.ieee.org#StateOrProvince
+Number of inconsistencies: 29
+http://suo.ieee.org#Region disjointWith http://suo.ieee.org#WaterArea
+http://suo.ieee.org#Region disjointWith http://suo.ieee.org#Woman
+http://suo.ieee.org#ReligiousOrganization disjointWith http://suo.ieee.org#SaltWaterArea
+http://suo.ieee.org#ReligiousOrganization disjointWith http://suo.ieee.org#Serial
+http://suo.ieee.org#ReligiousOrganization disjointWith http://suo.ieee.org#StateOrProvince
+http://suo.ieee.org#ReligiousOrganization disjointWith http://suo.ieee.org#WaterArea
+http://suo.ieee.org#ReligiousOrganization disjointWith http://suo.ieee.org#Woman
+http://suo.ieee.org#SaltWaterArea disjointWith http://suo.ieee.org#Serial
+http://suo.ieee.org#SaltWaterArea disjointWith http://suo.ieee.org#StateOrProvince
+http://suo.ieee.org#SaltWaterArea disjointWith http://suo.ieee.org#Woman
+http://suo.ieee.org#Serial disjointWith http://suo.ieee.org#StateOrProvince
+http://suo.ieee.org#Serial disjointWith http://suo.ieee.org#WaterArea
+http://suo.ieee.org#Serial disjointWith http://suo.ieee.org#Woman
+http://suo.ieee.org#StateOrProvince disjointWith http://suo.ieee.org#WaterArea
+http://suo.ieee.org#StateOrProvince disjointWith http://suo.ieee.org#Woman
+http://suo.ieee.org#WaterArea disjointWith http://suo.ieee.org#Woman
+Number of inconsistencies: 29
+***************************************************************
+ Overall Results
+Axioms: 957.0 (0.0)
+Inconsistencies: 29.0 (0.0)
+
+
+Ending: C:/Users/Giuseppe/Documents/ontos/NTNames.owl

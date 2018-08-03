@@ -1,0 +1,1343 @@
+C:/Users/Giuseppe/Documents/ontos/financial.owl
+
+Classes
+-------
+1:) http://www.owl-ontologies.com/unnamed.owl#Above65
+2:) http://www.owl-ontologies.com/unnamed.owl#Account
+3:) http://www.owl-ontologies.com/unnamed.owl#AfterTransaction
+4:) http://www.owl-ontologies.com/unnamed.owl#AgeValue
+5:) http://www.owl-ontologies.com/unnamed.owl#Below18
+6:) http://www.owl-ontologies.com/unnamed.owl#CashCredit
+7:) http://www.owl-ontologies.com/unnamed.owl#CashWithdrawal
+8:) http://www.owl-ontologies.com/unnamed.owl#CentralBohemia
+9:) http://www.owl-ontologies.com/unnamed.owl#Classic
+10:) http://www.owl-ontologies.com/unnamed.owl#Client
+11:) http://www.owl-ontologies.com/unnamed.owl#CollectionAnotherBank
+12:) http://www.owl-ontologies.com/unnamed.owl#Credit
+13:) http://www.owl-ontologies.com/unnamed.owl#CreditCard
+14:) http://www.owl-ontologies.com/unnamed.owl#CreditCardWithdrawal
+15:) http://www.owl-ontologies.com/unnamed.owl#DebtRunningLoan
+16:) http://www.owl-ontologies.com/unnamed.owl#EastBohemia
+17:) http://www.owl-ontologies.com/unnamed.owl#FemaleSex
+18:) http://www.owl-ontologies.com/unnamed.owl#Finished
+19:) http://www.owl-ontologies.com/unnamed.owl#ForStatementPayment
+20:) http://www.owl-ontologies.com/unnamed.owl#From18To25
+21:) http://www.owl-ontologies.com/unnamed.owl#From25To35
+22:) http://www.owl-ontologies.com/unnamed.owl#From35To50
+23:) http://www.owl-ontologies.com/unnamed.owl#From50To65
+24:) http://www.owl-ontologies.com/unnamed.owl#Gold
+25:) http://www.owl-ontologies.com/unnamed.owl#HouseholdPayment
+26:) http://www.owl-ontologies.com/unnamed.owl#InsurrancePayment
+27:) http://www.owl-ontologies.com/unnamed.owl#InterestsCredited
+28:) http://www.owl-ontologies.com/unnamed.owl#Junior
+29:) http://www.owl-ontologies.com/unnamed.owl#Leasing
+30:) http://www.owl-ontologies.com/unnamed.owl#Loan
+31:) http://www.owl-ontologies.com/unnamed.owl#LoanPayment
+32:) http://www.owl-ontologies.com/unnamed.owl#LoanStatusValue
+33:) http://www.owl-ontologies.com/unnamed.owl#MaleSex
+34:) http://www.owl-ontologies.com/unnamed.owl#Man
+35:) http://www.owl-ontologies.com/unnamed.owl#Monthly
+36:) http://www.owl-ontologies.com/unnamed.owl#NoProblemsFinishedLoan
+37:) http://www.owl-ontologies.com/unnamed.owl#NorthBohemia
+38:) http://www.owl-ontologies.com/unnamed.owl#NorthMoravia
+39:) http://www.owl-ontologies.com/unnamed.owl#NotPaidFinishedLoan
+40:) http://www.owl-ontologies.com/unnamed.owl#OKRunningLoan
+41:) http://www.owl-ontologies.com/unnamed.owl#OKStatus
+42:) http://www.owl-ontologies.com/unnamed.owl#OldAgePension
+43:) http://www.owl-ontologies.com/unnamed.owl#Payment
+44:) http://www.owl-ontologies.com/unnamed.owl#PermanentOrder
+45:) http://www.owl-ontologies.com/unnamed.owl#Prague
+46:) http://www.owl-ontologies.com/unnamed.owl#ProblemStatus
+47:) http://www.owl-ontologies.com/unnamed.owl#Region
+48:) http://www.owl-ontologies.com/unnamed.owl#RemittanceAnotherBank
+49:) http://www.owl-ontologies.com/unnamed.owl#Running
+50:) http://www.owl-ontologies.com/unnamed.owl#SanctionInterestCashWithdrawal
+51:) http://www.owl-ontologies.com/unnamed.owl#SexValue
+52:) http://www.owl-ontologies.com/unnamed.owl#SouthBohemia
+53:) http://www.owl-ontologies.com/unnamed.owl#SouthMoravia
+54:) http://www.owl-ontologies.com/unnamed.owl#StatementIssuanceFrequencyValue
+55:) http://www.owl-ontologies.com/unnamed.owl#Transaction
+56:) http://www.owl-ontologies.com/unnamed.owl#Weekly
+57:) http://www.owl-ontologies.com/unnamed.owl#WestBohemia
+58:) http://www.owl-ontologies.com/unnamed.owl#Withdrawal
+59:) http://www.owl-ontologies.com/unnamed.owl#Woman
+60:) http://www.w3.org/2002/07/owl#Thing
+---------------------------- 60
+
+Properties
+-------
+1-http://www.owl-ontologies.com/unnamed.owl#IsLoanOf
+2-http://www.owl-ontologies.com/unnamed.owl#hasAgeValue
+3-http://www.owl-ontologies.com/unnamed.owl#hasCreditCard
+4-http://www.owl-ontologies.com/unnamed.owl#hasLoan
+5-http://www.owl-ontologies.com/unnamed.owl#hasLoanStatusValue
+6-http://www.owl-ontologies.com/unnamed.owl#hasOwner
+7-http://www.owl-ontologies.com/unnamed.owl#hasPermanentOrder
+8-http://www.owl-ontologies.com/unnamed.owl#hasSexValue
+9-http://www.owl-ontologies.com/unnamed.owl#hasStatementIssuanceFrequency
+10-http://www.owl-ontologies.com/unnamed.owl#isCreditCardOf
+11-http://www.owl-ontologies.com/unnamed.owl#isOwnerOf
+12-http://www.owl-ontologies.com/unnamed.owl#isPermanentOrderFor
+13-http://www.owl-ontologies.com/unnamed.owl#isTransactionFrom
+14-http://www.owl-ontologies.com/unnamed.owl#isUserOf
+15-http://www.owl-ontologies.com/unnamed.owl#isWithdrawalFor
+16-http://www.owl-ontologies.com/unnamed.owl#livesIn
+---------------------------- 16
+
+Individuals
+-----------
+---------------------------- 1000
+
+KB loaded. 
+
+15:17:13,290 [org.apache.spark.SparkContext] - Running Spark version 2.1.0
+WARNING: An illegal reflective access operation has occurred
+WARNING: Illegal reflective access by org.apache.hadoop.security.authentication.util.KerberosUtil (file:/C:/Users/Giuseppe/.m2/repository/org/apache/hadoop/hadoop-auth/2.2.0/hadoop-auth-2.2.0.jar) to method sun.security.krb5.Config.getInstance()
+WARNING: Please consider reporting this to the maintainers of org.apache.hadoop.security.authentication.util.KerberosUtil
+WARNING: Use --illegal-access=warn to enable warnings of further illegal reflective access operations
+WARNING: All illegal access operations will be denied in a future release
+15:17:13,646 [org.apache.hadoop.util.NativeCodeLoader] - Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+15:17:13,861 [org.apache.spark.SecurityManager] - Changing view acls to: Giuseppe
+15:17:13,862 [org.apache.spark.SecurityManager] - Changing modify acls to: Giuseppe
+15:17:13,863 [org.apache.spark.SecurityManager] - Changing view acls groups to: 
+15:17:13,864 [org.apache.spark.SecurityManager] - Changing modify acls groups to: 
+15:17:13,864 [org.apache.spark.SecurityManager] - SecurityManager: authentication disabled; ui acls disabled; users  with view permissions: Set(Giuseppe); groups with view permissions: Set(); users  with modify permissions: Set(Giuseppe); groups with modify permissions: Set()
+15:17:14,502 [org.apache.spark.util.Utils] - Successfully started service 'sparkDriver' on port 62748.
+15:17:14,532 [org.apache.spark.SparkEnv] - Registering MapOutputTracker
+15:17:14,565 [org.apache.spark.SparkEnv] - Registering BlockManagerMaster
+15:17:14,570 [org.apache.spark.storage.BlockManagerMasterEndpoint] - Using org.apache.spark.storage.DefaultTopologyMapper for getting topology information
+15:17:14,571 [org.apache.spark.storage.BlockManagerMasterEndpoint] - BlockManagerMasterEndpoint up
+15:17:14,591 [org.apache.spark.storage.DiskBlockManager] - Created local directory at C:\Users\Giuseppe\AppData\Local\Temp\blockmgr-8cb59372-ffe6-4ff1-b35d-ed76b7fad285
+15:17:14,624 [org.apache.spark.storage.memory.MemoryStore] - MemoryStore started with capacity 1028.4 MB
+15:17:14,726 [org.apache.spark.SparkEnv] - Registering OutputCommitCoordinator
+15:17:14,850 [org.spark_project.jetty.util.log] - Logging initialized @7138ms
+15:17:14,975 [org.spark_project.jetty.server.Server] - jetty-9.2.z-SNAPSHOT
+15:17:14,992 [org.spark_project.jetty.server.handler.ContextHandler] - Started o.s.j.s.ServletContextHandler@66c9b52f{/jobs,null,AVAILABLE}
+15:17:14,993 [org.spark_project.jetty.server.handler.ContextHandler] - Started o.s.j.s.ServletContextHandler@1536ea40{/jobs/json,null,AVAILABLE}
+15:17:14,993 [org.spark_project.jetty.server.handler.ContextHandler] - Started o.s.j.s.ServletContextHandler@36776c32{/jobs/job,null,AVAILABLE}
+15:17:14,993 [org.spark_project.jetty.server.handler.ContextHandler] - Started o.s.j.s.ServletContextHandler@7792d851{/jobs/job/json,null,AVAILABLE}
+15:17:14,994 [org.spark_project.jetty.server.handler.ContextHandler] - Started o.s.j.s.ServletContextHandler@5cd96b41{/stages,null,AVAILABLE}
+15:17:14,994 [org.spark_project.jetty.server.handler.ContextHandler] - Started o.s.j.s.ServletContextHandler@7e1ffe70{/stages/json,null,AVAILABLE}
+15:17:14,994 [org.spark_project.jetty.server.handler.ContextHandler] - Started o.s.j.s.ServletContextHandler@73041b7d{/stages/stage,null,AVAILABLE}
+15:17:14,994 [org.spark_project.jetty.server.handler.ContextHandler] - Started o.s.j.s.ServletContextHandler@1235151c{/stages/stage/json,null,AVAILABLE}
+15:17:14,995 [org.spark_project.jetty.server.handler.ContextHandler] - Started o.s.j.s.ServletContextHandler@5a1f778{/stages/pool,null,AVAILABLE}
+15:17:14,995 [org.spark_project.jetty.server.handler.ContextHandler] - Started o.s.j.s.ServletContextHandler@4cc65c2{/stages/pool/json,null,AVAILABLE}
+15:17:14,995 [org.spark_project.jetty.server.handler.ContextHandler] - Started o.s.j.s.ServletContextHandler@574059d5{/storage,null,AVAILABLE}
+15:17:14,995 [org.spark_project.jetty.server.handler.ContextHandler] - Started o.s.j.s.ServletContextHandler@6d672bd4{/storage/json,null,AVAILABLE}
+15:17:14,995 [org.spark_project.jetty.server.handler.ContextHandler] - Started o.s.j.s.ServletContextHandler@67770b37{/storage/rdd,null,AVAILABLE}
+15:17:14,995 [org.spark_project.jetty.server.handler.ContextHandler] - Started o.s.j.s.ServletContextHandler@72906e{/storage/rdd/json,null,AVAILABLE}
+15:17:14,996 [org.spark_project.jetty.server.handler.ContextHandler] - Started o.s.j.s.ServletContextHandler@5529ff44{/environment,null,AVAILABLE}
+15:17:14,996 [org.spark_project.jetty.server.handler.ContextHandler] - Started o.s.j.s.ServletContextHandler@14447be{/environment/json,null,AVAILABLE}
+15:17:14,996 [org.spark_project.jetty.server.handler.ContextHandler] - Started o.s.j.s.ServletContextHandler@5eb5da12{/executors,null,AVAILABLE}
+15:17:14,996 [org.spark_project.jetty.server.handler.ContextHandler] - Started o.s.j.s.ServletContextHandler@4a50d04a{/executors/json,null,AVAILABLE}
+15:17:14,997 [org.spark_project.jetty.server.handler.ContextHandler] - Started o.s.j.s.ServletContextHandler@5099c59b{/executors/threadDump,null,AVAILABLE}
+15:17:14,997 [org.spark_project.jetty.server.handler.ContextHandler] - Started o.s.j.s.ServletContextHandler@73c31181{/executors/threadDump/json,null,AVAILABLE}
+15:17:15,003 [org.spark_project.jetty.server.handler.ContextHandler] - Started o.s.j.s.ServletContextHandler@3d620a1{/static,null,AVAILABLE}
+15:17:15,003 [org.spark_project.jetty.server.handler.ContextHandler] - Started o.s.j.s.ServletContextHandler@4f486211{/,null,AVAILABLE}
+15:17:15,004 [org.spark_project.jetty.server.handler.ContextHandler] - Started o.s.j.s.ServletContextHandler@51e3d37e{/api,null,AVAILABLE}
+15:17:15,004 [org.spark_project.jetty.server.handler.ContextHandler] - Started o.s.j.s.ServletContextHandler@3a479fda{/jobs/job/kill,null,AVAILABLE}
+15:17:15,004 [org.spark_project.jetty.server.handler.ContextHandler] - Started o.s.j.s.ServletContextHandler@8a6631b{/stages/stage/kill,null,AVAILABLE}
+15:17:15,013 [org.spark_project.jetty.server.ServerConnector] - Started ServerConnector@208205ed{HTTP/1.1}{0.0.0.0:4040}
+15:17:15,013 [org.spark_project.jetty.server.Server] - Started @7303ms
+15:17:15,014 [org.apache.spark.util.Utils] - Successfully started service 'SparkUI' on port 4040.
+15:17:15,016 [org.apache.spark.ui.SparkUI] - Bound SparkUI to 0.0.0.0, and started at http://192.168.1.66:4040
+15:17:15,166 [org.apache.spark.executor.Executor] - Starting executor ID driver on host localhost
+15:17:15,204 [org.apache.spark.util.Utils] - Successfully started service 'org.apache.spark.network.netty.NettyBlockTransferService' on port 62765.
+15:17:15,205 [org.apache.spark.network.netty.NettyBlockTransferService] - Server created on 192.168.1.66:62765
+15:17:15,207 [org.apache.spark.storage.BlockManager] - Using org.apache.spark.storage.RandomBlockReplicationPolicy for block replication policy
+15:17:15,210 [org.apache.spark.storage.BlockManagerMaster] - Registering BlockManager BlockManagerId(driver, 192.168.1.66, 62765, None)
+15:17:15,214 [org.apache.spark.storage.BlockManagerMasterEndpoint] - Registering block manager 192.168.1.66:62765 with 1028.4 MB RAM, BlockManagerId(driver, 192.168.1.66, 62765, None)
+15:17:15,226 [org.apache.spark.storage.BlockManagerMaster] - Registered BlockManager BlockManagerId(driver, 192.168.1.66, 62765, None)
+15:17:15,227 [org.apache.spark.storage.BlockManager] - Initialized BlockManager: BlockManagerId(driver, 192.168.1.66, 62765, None)
+15:17:15,511 [org.spark_project.jetty.server.handler.ContextHandler] - Started o.s.j.s.ServletContextHandler@3a3b10f4{/metrics/json,null,AVAILABLE}
+Pre-computing 60 x 1000 pi elements 
+   0.  http://www.owl-ontologies.com/unnamed.owl#Above65 | completed.   1,7% 
+   1.  http://www.owl-ontologies.com/unnamed.owl#Account | completed.   3,3% 
+   2. http://www.owl-ontologies.com/unnamed.owl#AfterTransaction | completed.   5,0% 
+   3. http://www.owl-ontologies.com/unnamed.owl#AgeValue | completed.   6,7% 
+   4.  http://www.owl-ontologies.com/unnamed.owl#Below18 | completed.   8,3% 
+   5. http://www.owl-ontologies.com/unnamed.owl#CashCredit | completed.  10,0% 
+   6. http://www.owl-ontologies.com/unnamed.owl#CashWithdrawal | completed.  11,7% 
+   7. http://www.owl-ontologies.com/unnamed.owl#CentralBohemia | completed.  13,3% 
+   8.  http://www.owl-ontologies.com/unnamed.owl#Classic | completed.  15,0% 
+   9.   http://www.owl-ontologies.com/unnamed.owl#Client | completed.  16,7% 
+  10. http://www.owl-ontologies.com/unnamed.owl#CollectionAnotherBank | completed.  18,3% 
+  11.   http://www.owl-ontologies.com/unnamed.owl#Credit | completed.  20,0% 
+  12. http://www.owl-ontologies.com/unnamed.owl#CreditCard | completed.  21,7% 
+  13. http://www.owl-ontologies.com/unnamed.owl#CreditCardWithdrawal | completed.  23,3% 
+  14. http://www.owl-ontologies.com/unnamed.owl#DebtRunningLoan | completed.  25,0% 
+  15. http://www.owl-ontologies.com/unnamed.owl#EastBohemia | completed.  26,7% 
+  16. http://www.owl-ontologies.com/unnamed.owl#FemaleSex | completed.  28,3% 
+  17. http://www.owl-ontologies.com/unnamed.owl#Finished | completed.  30,0% 
+  18. http://www.owl-ontologies.com/unnamed.owl#ForStatementPayment | completed.  31,7% 
+  19. http://www.owl-ontologies.com/unnamed.owl#From18To25 | completed.  33,3% 
+  20. http://www.owl-ontologies.com/unnamed.owl#From25To35 | completed.  35,0% 
+  21. http://www.owl-ontologies.com/unnamed.owl#From35To50 | completed.  36,7% 
+  22. http://www.owl-ontologies.com/unnamed.owl#From50To65 | completed.  38,3% 
+  23.     http://www.owl-ontologies.com/unnamed.owl#Gold | completed.  40,0% 
+  24. http://www.owl-ontologies.com/unnamed.owl#HouseholdPayment | completed.  41,7% 
+  25. http://www.owl-ontologies.com/unnamed.owl#InsurrancePayment | completed.  43,3% 
+  26. http://www.owl-ontologies.com/unnamed.owl#InterestsCredited | completed.  45,0% 
+  27.   http://www.owl-ontologies.com/unnamed.owl#Junior | completed.  46,7% 
+  28.  http://www.owl-ontologies.com/unnamed.owl#Leasing | completed.  48,3% 
+  29.     http://www.owl-ontologies.com/unnamed.owl#Loan | completed.  50,0% 
+  30. http://www.owl-ontologies.com/unnamed.owl#LoanPayment | completed.  51,7% 
+  31. http://www.owl-ontologies.com/unnamed.owl#LoanStatusValue | completed.  53,3% 
+  32.  http://www.owl-ontologies.com/unnamed.owl#MaleSex | completed.  55,0% 
+  33.      http://www.owl-ontologies.com/unnamed.owl#Man | completed.  56,7% 
+  34.  http://www.owl-ontologies.com/unnamed.owl#Monthly | completed.  58,3% 
+  35. http://www.owl-ontologies.com/unnamed.owl#NoProblemsFinishedLoan | completed.  60,0% 
+  36. http://www.owl-ontologies.com/unnamed.owl#NorthBohemia | completed.  61,7% 
+  37. http://www.owl-ontologies.com/unnamed.owl#NorthMoravia | completed.  63,3% 
+  38. http://www.owl-ontologies.com/unnamed.owl#NotPaidFinishedLoan | completed.  65,0% 
+  39. http://www.owl-ontologies.com/unnamed.owl#OKRunningLoan | completed.  66,7% 
+  40. http://www.owl-ontologies.com/unnamed.owl#OKStatus | completed.  68,3% 
+  41. http://www.owl-ontologies.com/unnamed.owl#OldAgePension | completed.  70,0% 
+  42.  http://www.owl-ontologies.com/unnamed.owl#Payment | completed.  71,7% 
+  43. http://www.owl-ontologies.com/unnamed.owl#PermanentOrder | completed.  73,3% 
+  44.   http://www.owl-ontologies.com/unnamed.owl#Prague | completed.  75,0% 
+  45. http://www.owl-ontologies.com/unnamed.owl#ProblemStatus | completed.  76,7% 
+  46.   http://www.owl-ontologies.com/unnamed.owl#Region | completed.  78,3% 
+  47. http://www.owl-ontologies.com/unnamed.owl#RemittanceAnotherBank | completed.  80,0% 
+  48.  http://www.owl-ontologies.com/unnamed.owl#Running | completed.  81,7% 
+  49. http://www.owl-ontologies.com/unnamed.owl#SanctionInterestCashWithdrawal | completed.  83,3% 
+  50. http://www.owl-ontologies.com/unnamed.owl#SexValue | completed.  85,0% 
+  51. http://www.owl-ontologies.com/unnamed.owl#SouthBohemia | completed.  86,7% 
+  52. http://www.owl-ontologies.com/unnamed.owl#SouthMoravia | completed.  88,3% 
+  53. http://www.owl-ontologies.com/unnamed.owl#StatementIssuanceFrequencyValue | completed.  90,0% 
+  54. http://www.owl-ontologies.com/unnamed.owl#Transaction | completed.  91,7% 
+  55.   http://www.owl-ontologies.com/unnamed.owl#Weekly | completed.  93,3% 
+  56. http://www.owl-ontologies.com/unnamed.owl#WestBohemia | completed.  95,0% 
+  57. http://www.owl-ontologies.com/unnamed.owl#Withdrawal | completed.  96,7% 
+  58.    http://www.owl-ontologies.com/unnamed.owl#Woman | completed.  98,3% 
+  59.                http://www.w3.org/2002/07/owl#Thing | completed. 100,0% 
+-----------------------------------------------------------------------------------------------------------
+************************Discovering disjointntness axioms ********** 
+Learning algorithm: pearson's correlation coefficient
+Number of axioms: 1112
+http://www.owl-ontologies.com/unnamed.owl#Above65 disjointWith http://www.owl-ontologies.com/unnamed.owl#Account
+http://www.owl-ontologies.com/unnamed.owl#Above65 disjointWith http://www.owl-ontologies.com/unnamed.owl#AfterTransaction
+http://www.owl-ontologies.com/unnamed.owl#Above65 disjointWith http://www.owl-ontologies.com/unnamed.owl#AgeValue
+http://www.owl-ontologies.com/unnamed.owl#Above65 disjointWith http://www.owl-ontologies.com/unnamed.owl#Below18
+http://www.owl-ontologies.com/unnamed.owl#Above65 disjointWith http://www.owl-ontologies.com/unnamed.owl#CentralBohemia
+http://www.owl-ontologies.com/unnamed.owl#Above65 disjointWith http://www.owl-ontologies.com/unnamed.owl#Classic
+http://www.owl-ontologies.com/unnamed.owl#Above65 disjointWith http://www.owl-ontologies.com/unnamed.owl#Client
+http://www.owl-ontologies.com/unnamed.owl#Above65 disjointWith http://www.owl-ontologies.com/unnamed.owl#CreditCard
+http://www.owl-ontologies.com/unnamed.owl#Above65 disjointWith http://www.owl-ontologies.com/unnamed.owl#DebtRunningLoan
+http://www.owl-ontologies.com/unnamed.owl#Above65 disjointWith http://www.owl-ontologies.com/unnamed.owl#EastBohemia
+http://www.owl-ontologies.com/unnamed.owl#Above65 disjointWith http://www.owl-ontologies.com/unnamed.owl#FemaleSex
+http://www.owl-ontologies.com/unnamed.owl#Above65 disjointWith http://www.owl-ontologies.com/unnamed.owl#Finished
+http://www.owl-ontologies.com/unnamed.owl#Above65 disjointWith http://www.owl-ontologies.com/unnamed.owl#ForStatementPayment
+http://www.owl-ontologies.com/unnamed.owl#Above65 disjointWith http://www.owl-ontologies.com/unnamed.owl#From18To25
+http://www.owl-ontologies.com/unnamed.owl#Above65 disjointWith http://www.owl-ontologies.com/unnamed.owl#From25To35
+http://www.owl-ontologies.com/unnamed.owl#Above65 disjointWith http://www.owl-ontologies.com/unnamed.owl#From35To50
+http://www.owl-ontologies.com/unnamed.owl#Above65 disjointWith http://www.owl-ontologies.com/unnamed.owl#From50To65
+http://www.owl-ontologies.com/unnamed.owl#Above65 disjointWith http://www.owl-ontologies.com/unnamed.owl#Gold
+http://www.owl-ontologies.com/unnamed.owl#Above65 disjointWith http://www.owl-ontologies.com/unnamed.owl#HouseholdPayment
+http://www.owl-ontologies.com/unnamed.owl#Above65 disjointWith http://www.owl-ontologies.com/unnamed.owl#InsurrancePayment
+http://www.owl-ontologies.com/unnamed.owl#Above65 disjointWith http://www.owl-ontologies.com/unnamed.owl#Junior
+http://www.owl-ontologies.com/unnamed.owl#Above65 disjointWith http://www.owl-ontologies.com/unnamed.owl#Leasing
+http://www.owl-ontologies.com/unnamed.owl#Above65 disjointWith http://www.owl-ontologies.com/unnamed.owl#Loan
+http://www.owl-ontologies.com/unnamed.owl#Above65 disjointWith http://www.owl-ontologies.com/unnamed.owl#LoanPayment
+http://www.owl-ontologies.com/unnamed.owl#Above65 disjointWith http://www.owl-ontologies.com/unnamed.owl#LoanStatusValue
+http://www.owl-ontologies.com/unnamed.owl#Above65 disjointWith http://www.owl-ontologies.com/unnamed.owl#MaleSex
+http://www.owl-ontologies.com/unnamed.owl#Above65 disjointWith http://www.owl-ontologies.com/unnamed.owl#Man
+http://www.owl-ontologies.com/unnamed.owl#Above65 disjointWith http://www.owl-ontologies.com/unnamed.owl#Monthly
+http://www.owl-ontologies.com/unnamed.owl#Above65 disjointWith http://www.owl-ontologies.com/unnamed.owl#NoProblemsFinishedLoan
+http://www.owl-ontologies.com/unnamed.owl#Above65 disjointWith http://www.owl-ontologies.com/unnamed.owl#NorthBohemia
+http://www.owl-ontologies.com/unnamed.owl#Above65 disjointWith http://www.owl-ontologies.com/unnamed.owl#NorthMoravia
+http://www.owl-ontologies.com/unnamed.owl#Above65 disjointWith http://www.owl-ontologies.com/unnamed.owl#NotPaidFinishedLoan
+http://www.owl-ontologies.com/unnamed.owl#Above65 disjointWith http://www.owl-ontologies.com/unnamed.owl#OKRunningLoan
+http://www.owl-ontologies.com/unnamed.owl#Above65 disjointWith http://www.owl-ontologies.com/unnamed.owl#OKStatus
+http://www.owl-ontologies.com/unnamed.owl#Above65 disjointWith http://www.owl-ontologies.com/unnamed.owl#Payment
+http://www.owl-ontologies.com/unnamed.owl#Above65 disjointWith http://www.owl-ontologies.com/unnamed.owl#PermanentOrder
+http://www.owl-ontologies.com/unnamed.owl#Above65 disjointWith http://www.owl-ontologies.com/unnamed.owl#Prague
+http://www.owl-ontologies.com/unnamed.owl#Above65 disjointWith http://www.owl-ontologies.com/unnamed.owl#ProblemStatus
+http://www.owl-ontologies.com/unnamed.owl#Above65 disjointWith http://www.owl-ontologies.com/unnamed.owl#Region
+http://www.owl-ontologies.com/unnamed.owl#Above65 disjointWith http://www.owl-ontologies.com/unnamed.owl#Running
+http://www.owl-ontologies.com/unnamed.owl#Above65 disjointWith http://www.owl-ontologies.com/unnamed.owl#SexValue
+http://www.owl-ontologies.com/unnamed.owl#Above65 disjointWith http://www.owl-ontologies.com/unnamed.owl#SouthBohemia
+http://www.owl-ontologies.com/unnamed.owl#Above65 disjointWith http://www.owl-ontologies.com/unnamed.owl#SouthMoravia
+http://www.owl-ontologies.com/unnamed.owl#Above65 disjointWith http://www.owl-ontologies.com/unnamed.owl#StatementIssuanceFrequencyValue
+http://www.owl-ontologies.com/unnamed.owl#Above65 disjointWith http://www.owl-ontologies.com/unnamed.owl#Weekly
+http://www.owl-ontologies.com/unnamed.owl#Above65 disjointWith http://www.owl-ontologies.com/unnamed.owl#WestBohemia
+http://www.owl-ontologies.com/unnamed.owl#Above65 disjointWith http://www.owl-ontologies.com/unnamed.owl#Woman
+http://www.owl-ontologies.com/unnamed.owl#Account disjointWith http://www.owl-ontologies.com/unnamed.owl#AfterTransaction
+http://www.owl-ontologies.com/unnamed.owl#Account disjointWith http://www.owl-ontologies.com/unnamed.owl#AgeValue
+http://www.owl-ontologies.com/unnamed.owl#Account disjointWith http://www.owl-ontologies.com/unnamed.owl#Below18
+http://www.owl-ontologies.com/unnamed.owl#Account disjointWith http://www.owl-ontologies.com/unnamed.owl#CentralBohemia
+http://www.owl-ontologies.com/unnamed.owl#Account disjointWith http://www.owl-ontologies.com/unnamed.owl#Classic
+http://www.owl-ontologies.com/unnamed.owl#Account disjointWith http://www.owl-ontologies.com/unnamed.owl#Client
+http://www.owl-ontologies.com/unnamed.owl#Account disjointWith http://www.owl-ontologies.com/unnamed.owl#CreditCard
+http://www.owl-ontologies.com/unnamed.owl#Account disjointWith http://www.owl-ontologies.com/unnamed.owl#DebtRunningLoan
+http://www.owl-ontologies.com/unnamed.owl#Account disjointWith http://www.owl-ontologies.com/unnamed.owl#EastBohemia
+http://www.owl-ontologies.com/unnamed.owl#Account disjointWith http://www.owl-ontologies.com/unnamed.owl#FemaleSex
+http://www.owl-ontologies.com/unnamed.owl#Account disjointWith http://www.owl-ontologies.com/unnamed.owl#Finished
+http://www.owl-ontologies.com/unnamed.owl#Account disjointWith http://www.owl-ontologies.com/unnamed.owl#ForStatementPayment
+http://www.owl-ontologies.com/unnamed.owl#Account disjointWith http://www.owl-ontologies.com/unnamed.owl#From18To25
+http://www.owl-ontologies.com/unnamed.owl#Account disjointWith http://www.owl-ontologies.com/unnamed.owl#From25To35
+http://www.owl-ontologies.com/unnamed.owl#Account disjointWith http://www.owl-ontologies.com/unnamed.owl#From35To50
+http://www.owl-ontologies.com/unnamed.owl#Account disjointWith http://www.owl-ontologies.com/unnamed.owl#From50To65
+http://www.owl-ontologies.com/unnamed.owl#Account disjointWith http://www.owl-ontologies.com/unnamed.owl#Gold
+http://www.owl-ontologies.com/unnamed.owl#Account disjointWith http://www.owl-ontologies.com/unnamed.owl#HouseholdPayment
+http://www.owl-ontologies.com/unnamed.owl#Account disjointWith http://www.owl-ontologies.com/unnamed.owl#InsurrancePayment
+http://www.owl-ontologies.com/unnamed.owl#Account disjointWith http://www.owl-ontologies.com/unnamed.owl#Junior
+http://www.owl-ontologies.com/unnamed.owl#Account disjointWith http://www.owl-ontologies.com/unnamed.owl#Leasing
+http://www.owl-ontologies.com/unnamed.owl#Account disjointWith http://www.owl-ontologies.com/unnamed.owl#Loan
+http://www.owl-ontologies.com/unnamed.owl#Account disjointWith http://www.owl-ontologies.com/unnamed.owl#LoanPayment
+http://www.owl-ontologies.com/unnamed.owl#Account disjointWith http://www.owl-ontologies.com/unnamed.owl#LoanStatusValue
+http://www.owl-ontologies.com/unnamed.owl#Account disjointWith http://www.owl-ontologies.com/unnamed.owl#MaleSex
+http://www.owl-ontologies.com/unnamed.owl#Account disjointWith http://www.owl-ontologies.com/unnamed.owl#Man
+http://www.owl-ontologies.com/unnamed.owl#Account disjointWith http://www.owl-ontologies.com/unnamed.owl#Monthly
+http://www.owl-ontologies.com/unnamed.owl#Account disjointWith http://www.owl-ontologies.com/unnamed.owl#NoProblemsFinishedLoan
+http://www.owl-ontologies.com/unnamed.owl#Account disjointWith http://www.owl-ontologies.com/unnamed.owl#NorthBohemia
+http://www.owl-ontologies.com/unnamed.owl#Account disjointWith http://www.owl-ontologies.com/unnamed.owl#NorthMoravia
+http://www.owl-ontologies.com/unnamed.owl#Account disjointWith http://www.owl-ontologies.com/unnamed.owl#NotPaidFinishedLoan
+http://www.owl-ontologies.com/unnamed.owl#Account disjointWith http://www.owl-ontologies.com/unnamed.owl#OKRunningLoan
+http://www.owl-ontologies.com/unnamed.owl#Account disjointWith http://www.owl-ontologies.com/unnamed.owl#OKStatus
+http://www.owl-ontologies.com/unnamed.owl#Account disjointWith http://www.owl-ontologies.com/unnamed.owl#Payment
+http://www.owl-ontologies.com/unnamed.owl#Account disjointWith http://www.owl-ontologies.com/unnamed.owl#PermanentOrder
+http://www.owl-ontologies.com/unnamed.owl#Account disjointWith http://www.owl-ontologies.com/unnamed.owl#Prague
+http://www.owl-ontologies.com/unnamed.owl#Account disjointWith http://www.owl-ontologies.com/unnamed.owl#ProblemStatus
+http://www.owl-ontologies.com/unnamed.owl#Account disjointWith http://www.owl-ontologies.com/unnamed.owl#Region
+http://www.owl-ontologies.com/unnamed.owl#Account disjointWith http://www.owl-ontologies.com/unnamed.owl#Running
+http://www.owl-ontologies.com/unnamed.owl#Account disjointWith http://www.owl-ontologies.com/unnamed.owl#SexValue
+http://www.owl-ontologies.com/unnamed.owl#Account disjointWith http://www.owl-ontologies.com/unnamed.owl#SouthBohemia
+http://www.owl-ontologies.com/unnamed.owl#Account disjointWith http://www.owl-ontologies.com/unnamed.owl#SouthMoravia
+http://www.owl-ontologies.com/unnamed.owl#Account disjointWith http://www.owl-ontologies.com/unnamed.owl#StatementIssuanceFrequencyValue
+http://www.owl-ontologies.com/unnamed.owl#Account disjointWith http://www.owl-ontologies.com/unnamed.owl#Weekly
+http://www.owl-ontologies.com/unnamed.owl#Account disjointWith http://www.owl-ontologies.com/unnamed.owl#WestBohemia
+http://www.owl-ontologies.com/unnamed.owl#Account disjointWith http://www.owl-ontologies.com/unnamed.owl#Woman
+http://www.owl-ontologies.com/unnamed.owl#AfterTransaction disjointWith http://www.owl-ontologies.com/unnamed.owl#AgeValue
+http://www.owl-ontologies.com/unnamed.owl#AfterTransaction disjointWith http://www.owl-ontologies.com/unnamed.owl#Below18
+http://www.owl-ontologies.com/unnamed.owl#AfterTransaction disjointWith http://www.owl-ontologies.com/unnamed.owl#CentralBohemia
+http://www.owl-ontologies.com/unnamed.owl#AfterTransaction disjointWith http://www.owl-ontologies.com/unnamed.owl#Classic
+http://www.owl-ontologies.com/unnamed.owl#AfterTransaction disjointWith http://www.owl-ontologies.com/unnamed.owl#Client
+http://www.owl-ontologies.com/unnamed.owl#AfterTransaction disjointWith http://www.owl-ontologies.com/unnamed.owl#CreditCard
+http://www.owl-ontologies.com/unnamed.owl#AfterTransaction disjointWith http://www.owl-ontologies.com/unnamed.owl#DebtRunningLoan
+http://www.owl-ontologies.com/unnamed.owl#AfterTransaction disjointWith http://www.owl-ontologies.com/unnamed.owl#EastBohemia
+http://www.owl-ontologies.com/unnamed.owl#AfterTransaction disjointWith http://www.owl-ontologies.com/unnamed.owl#FemaleSex
+http://www.owl-ontologies.com/unnamed.owl#AfterTransaction disjointWith http://www.owl-ontologies.com/unnamed.owl#Finished
+http://www.owl-ontologies.com/unnamed.owl#AfterTransaction disjointWith http://www.owl-ontologies.com/unnamed.owl#ForStatementPayment
+http://www.owl-ontologies.com/unnamed.owl#AfterTransaction disjointWith http://www.owl-ontologies.com/unnamed.owl#From18To25
+http://www.owl-ontologies.com/unnamed.owl#AfterTransaction disjointWith http://www.owl-ontologies.com/unnamed.owl#From25To35
+http://www.owl-ontologies.com/unnamed.owl#AfterTransaction disjointWith http://www.owl-ontologies.com/unnamed.owl#From35To50
+http://www.owl-ontologies.com/unnamed.owl#AfterTransaction disjointWith http://www.owl-ontologies.com/unnamed.owl#From50To65
+http://www.owl-ontologies.com/unnamed.owl#AfterTransaction disjointWith http://www.owl-ontologies.com/unnamed.owl#Gold
+http://www.owl-ontologies.com/unnamed.owl#AfterTransaction disjointWith http://www.owl-ontologies.com/unnamed.owl#HouseholdPayment
+http://www.owl-ontologies.com/unnamed.owl#AfterTransaction disjointWith http://www.owl-ontologies.com/unnamed.owl#InsurrancePayment
+http://www.owl-ontologies.com/unnamed.owl#AfterTransaction disjointWith http://www.owl-ontologies.com/unnamed.owl#Junior
+http://www.owl-ontologies.com/unnamed.owl#AfterTransaction disjointWith http://www.owl-ontologies.com/unnamed.owl#Leasing
+http://www.owl-ontologies.com/unnamed.owl#AfterTransaction disjointWith http://www.owl-ontologies.com/unnamed.owl#Loan
+http://www.owl-ontologies.com/unnamed.owl#AfterTransaction disjointWith http://www.owl-ontologies.com/unnamed.owl#LoanPayment
+http://www.owl-ontologies.com/unnamed.owl#AfterTransaction disjointWith http://www.owl-ontologies.com/unnamed.owl#LoanStatusValue
+http://www.owl-ontologies.com/unnamed.owl#AfterTransaction disjointWith http://www.owl-ontologies.com/unnamed.owl#MaleSex
+http://www.owl-ontologies.com/unnamed.owl#AfterTransaction disjointWith http://www.owl-ontologies.com/unnamed.owl#Man
+http://www.owl-ontologies.com/unnamed.owl#AfterTransaction disjointWith http://www.owl-ontologies.com/unnamed.owl#Monthly
+http://www.owl-ontologies.com/unnamed.owl#AfterTransaction disjointWith http://www.owl-ontologies.com/unnamed.owl#NoProblemsFinishedLoan
+http://www.owl-ontologies.com/unnamed.owl#AfterTransaction disjointWith http://www.owl-ontologies.com/unnamed.owl#NorthBohemia
+http://www.owl-ontologies.com/unnamed.owl#AfterTransaction disjointWith http://www.owl-ontologies.com/unnamed.owl#NorthMoravia
+http://www.owl-ontologies.com/unnamed.owl#AfterTransaction disjointWith http://www.owl-ontologies.com/unnamed.owl#NotPaidFinishedLoan
+http://www.owl-ontologies.com/unnamed.owl#AfterTransaction disjointWith http://www.owl-ontologies.com/unnamed.owl#OKRunningLoan
+http://www.owl-ontologies.com/unnamed.owl#AfterTransaction disjointWith http://www.owl-ontologies.com/unnamed.owl#OKStatus
+http://www.owl-ontologies.com/unnamed.owl#AfterTransaction disjointWith http://www.owl-ontologies.com/unnamed.owl#Payment
+http://www.owl-ontologies.com/unnamed.owl#AfterTransaction disjointWith http://www.owl-ontologies.com/unnamed.owl#PermanentOrder
+http://www.owl-ontologies.com/unnamed.owl#AfterTransaction disjointWith http://www.owl-ontologies.com/unnamed.owl#Prague
+http://www.owl-ontologies.com/unnamed.owl#AfterTransaction disjointWith http://www.owl-ontologies.com/unnamed.owl#ProblemStatus
+http://www.owl-ontologies.com/unnamed.owl#AfterTransaction disjointWith http://www.owl-ontologies.com/unnamed.owl#Region
+http://www.owl-ontologies.com/unnamed.owl#AfterTransaction disjointWith http://www.owl-ontologies.com/unnamed.owl#Running
+http://www.owl-ontologies.com/unnamed.owl#AfterTransaction disjointWith http://www.owl-ontologies.com/unnamed.owl#SexValue
+http://www.owl-ontologies.com/unnamed.owl#AfterTransaction disjointWith http://www.owl-ontologies.com/unnamed.owl#SouthBohemia
+http://www.owl-ontologies.com/unnamed.owl#AfterTransaction disjointWith http://www.owl-ontologies.com/unnamed.owl#SouthMoravia
+http://www.owl-ontologies.com/unnamed.owl#AfterTransaction disjointWith http://www.owl-ontologies.com/unnamed.owl#Weekly
+http://www.owl-ontologies.com/unnamed.owl#AfterTransaction disjointWith http://www.owl-ontologies.com/unnamed.owl#WestBohemia
+http://www.owl-ontologies.com/unnamed.owl#AfterTransaction disjointWith http://www.owl-ontologies.com/unnamed.owl#Woman
+http://www.owl-ontologies.com/unnamed.owl#AgeValue disjointWith http://www.owl-ontologies.com/unnamed.owl#Below18
+http://www.owl-ontologies.com/unnamed.owl#AgeValue disjointWith http://www.owl-ontologies.com/unnamed.owl#CentralBohemia
+http://www.owl-ontologies.com/unnamed.owl#AgeValue disjointWith http://www.owl-ontologies.com/unnamed.owl#Classic
+http://www.owl-ontologies.com/unnamed.owl#AgeValue disjointWith http://www.owl-ontologies.com/unnamed.owl#Client
+http://www.owl-ontologies.com/unnamed.owl#AgeValue disjointWith http://www.owl-ontologies.com/unnamed.owl#CreditCard
+http://www.owl-ontologies.com/unnamed.owl#AgeValue disjointWith http://www.owl-ontologies.com/unnamed.owl#DebtRunningLoan
+http://www.owl-ontologies.com/unnamed.owl#AgeValue disjointWith http://www.owl-ontologies.com/unnamed.owl#EastBohemia
+http://www.owl-ontologies.com/unnamed.owl#AgeValue disjointWith http://www.owl-ontologies.com/unnamed.owl#FemaleSex
+http://www.owl-ontologies.com/unnamed.owl#AgeValue disjointWith http://www.owl-ontologies.com/unnamed.owl#Finished
+http://www.owl-ontologies.com/unnamed.owl#AgeValue disjointWith http://www.owl-ontologies.com/unnamed.owl#ForStatementPayment
+http://www.owl-ontologies.com/unnamed.owl#AgeValue disjointWith http://www.owl-ontologies.com/unnamed.owl#From18To25
+http://www.owl-ontologies.com/unnamed.owl#AgeValue disjointWith http://www.owl-ontologies.com/unnamed.owl#From25To35
+http://www.owl-ontologies.com/unnamed.owl#AgeValue disjointWith http://www.owl-ontologies.com/unnamed.owl#From35To50
+http://www.owl-ontologies.com/unnamed.owl#AgeValue disjointWith http://www.owl-ontologies.com/unnamed.owl#From50To65
+http://www.owl-ontologies.com/unnamed.owl#AgeValue disjointWith http://www.owl-ontologies.com/unnamed.owl#Gold
+http://www.owl-ontologies.com/unnamed.owl#AgeValue disjointWith http://www.owl-ontologies.com/unnamed.owl#HouseholdPayment
+http://www.owl-ontologies.com/unnamed.owl#AgeValue disjointWith http://www.owl-ontologies.com/unnamed.owl#InsurrancePayment
+http://www.owl-ontologies.com/unnamed.owl#AgeValue disjointWith http://www.owl-ontologies.com/unnamed.owl#Junior
+http://www.owl-ontologies.com/unnamed.owl#AgeValue disjointWith http://www.owl-ontologies.com/unnamed.owl#Leasing
+http://www.owl-ontologies.com/unnamed.owl#AgeValue disjointWith http://www.owl-ontologies.com/unnamed.owl#Loan
+http://www.owl-ontologies.com/unnamed.owl#AgeValue disjointWith http://www.owl-ontologies.com/unnamed.owl#LoanPayment
+http://www.owl-ontologies.com/unnamed.owl#AgeValue disjointWith http://www.owl-ontologies.com/unnamed.owl#LoanStatusValue
+http://www.owl-ontologies.com/unnamed.owl#AgeValue disjointWith http://www.owl-ontologies.com/unnamed.owl#MaleSex
+http://www.owl-ontologies.com/unnamed.owl#AgeValue disjointWith http://www.owl-ontologies.com/unnamed.owl#Man
+http://www.owl-ontologies.com/unnamed.owl#AgeValue disjointWith http://www.owl-ontologies.com/unnamed.owl#Monthly
+http://www.owl-ontologies.com/unnamed.owl#AgeValue disjointWith http://www.owl-ontologies.com/unnamed.owl#NoProblemsFinishedLoan
+http://www.owl-ontologies.com/unnamed.owl#AgeValue disjointWith http://www.owl-ontologies.com/unnamed.owl#NorthBohemia
+http://www.owl-ontologies.com/unnamed.owl#AgeValue disjointWith http://www.owl-ontologies.com/unnamed.owl#NorthMoravia
+http://www.owl-ontologies.com/unnamed.owl#AgeValue disjointWith http://www.owl-ontologies.com/unnamed.owl#NotPaidFinishedLoan
+http://www.owl-ontologies.com/unnamed.owl#AgeValue disjointWith http://www.owl-ontologies.com/unnamed.owl#OKRunningLoan
+http://www.owl-ontologies.com/unnamed.owl#AgeValue disjointWith http://www.owl-ontologies.com/unnamed.owl#OKStatus
+http://www.owl-ontologies.com/unnamed.owl#AgeValue disjointWith http://www.owl-ontologies.com/unnamed.owl#Payment
+http://www.owl-ontologies.com/unnamed.owl#AgeValue disjointWith http://www.owl-ontologies.com/unnamed.owl#PermanentOrder
+http://www.owl-ontologies.com/unnamed.owl#AgeValue disjointWith http://www.owl-ontologies.com/unnamed.owl#Prague
+http://www.owl-ontologies.com/unnamed.owl#AgeValue disjointWith http://www.owl-ontologies.com/unnamed.owl#ProblemStatus
+http://www.owl-ontologies.com/unnamed.owl#AgeValue disjointWith http://www.owl-ontologies.com/unnamed.owl#Region
+http://www.owl-ontologies.com/unnamed.owl#AgeValue disjointWith http://www.owl-ontologies.com/unnamed.owl#Running
+http://www.owl-ontologies.com/unnamed.owl#AgeValue disjointWith http://www.owl-ontologies.com/unnamed.owl#SexValue
+http://www.owl-ontologies.com/unnamed.owl#AgeValue disjointWith http://www.owl-ontologies.com/unnamed.owl#SouthBohemia
+http://www.owl-ontologies.com/unnamed.owl#AgeValue disjointWith http://www.owl-ontologies.com/unnamed.owl#SouthMoravia
+http://www.owl-ontologies.com/unnamed.owl#AgeValue disjointWith http://www.owl-ontologies.com/unnamed.owl#StatementIssuanceFrequencyValue
+http://www.owl-ontologies.com/unnamed.owl#AgeValue disjointWith http://www.owl-ontologies.com/unnamed.owl#Weekly
+http://www.owl-ontologies.com/unnamed.owl#AgeValue disjointWith http://www.owl-ontologies.com/unnamed.owl#WestBohemia
+http://www.owl-ontologies.com/unnamed.owl#AgeValue disjointWith http://www.owl-ontologies.com/unnamed.owl#Woman
+http://www.owl-ontologies.com/unnamed.owl#Below18 disjointWith http://www.owl-ontologies.com/unnamed.owl#CentralBohemia
+http://www.owl-ontologies.com/unnamed.owl#Below18 disjointWith http://www.owl-ontologies.com/unnamed.owl#Classic
+http://www.owl-ontologies.com/unnamed.owl#Below18 disjointWith http://www.owl-ontologies.com/unnamed.owl#Client
+http://www.owl-ontologies.com/unnamed.owl#Below18 disjointWith http://www.owl-ontologies.com/unnamed.owl#CreditCard
+http://www.owl-ontologies.com/unnamed.owl#Below18 disjointWith http://www.owl-ontologies.com/unnamed.owl#DebtRunningLoan
+http://www.owl-ontologies.com/unnamed.owl#Below18 disjointWith http://www.owl-ontologies.com/unnamed.owl#EastBohemia
+http://www.owl-ontologies.com/unnamed.owl#Below18 disjointWith http://www.owl-ontologies.com/unnamed.owl#FemaleSex
+http://www.owl-ontologies.com/unnamed.owl#Below18 disjointWith http://www.owl-ontologies.com/unnamed.owl#Finished
+http://www.owl-ontologies.com/unnamed.owl#Below18 disjointWith http://www.owl-ontologies.com/unnamed.owl#ForStatementPayment
+http://www.owl-ontologies.com/unnamed.owl#Below18 disjointWith http://www.owl-ontologies.com/unnamed.owl#From18To25
+http://www.owl-ontologies.com/unnamed.owl#Below18 disjointWith http://www.owl-ontologies.com/unnamed.owl#From25To35
+http://www.owl-ontologies.com/unnamed.owl#Below18 disjointWith http://www.owl-ontologies.com/unnamed.owl#From35To50
+http://www.owl-ontologies.com/unnamed.owl#Below18 disjointWith http://www.owl-ontologies.com/unnamed.owl#From50To65
+http://www.owl-ontologies.com/unnamed.owl#Below18 disjointWith http://www.owl-ontologies.com/unnamed.owl#Gold
+http://www.owl-ontologies.com/unnamed.owl#Below18 disjointWith http://www.owl-ontologies.com/unnamed.owl#HouseholdPayment
+http://www.owl-ontologies.com/unnamed.owl#Below18 disjointWith http://www.owl-ontologies.com/unnamed.owl#InsurrancePayment
+http://www.owl-ontologies.com/unnamed.owl#Below18 disjointWith http://www.owl-ontologies.com/unnamed.owl#Junior
+http://www.owl-ontologies.com/unnamed.owl#Below18 disjointWith http://www.owl-ontologies.com/unnamed.owl#Leasing
+http://www.owl-ontologies.com/unnamed.owl#Below18 disjointWith http://www.owl-ontologies.com/unnamed.owl#Loan
+http://www.owl-ontologies.com/unnamed.owl#Below18 disjointWith http://www.owl-ontologies.com/unnamed.owl#LoanPayment
+http://www.owl-ontologies.com/unnamed.owl#Below18 disjointWith http://www.owl-ontologies.com/unnamed.owl#LoanStatusValue
+http://www.owl-ontologies.com/unnamed.owl#Below18 disjointWith http://www.owl-ontologies.com/unnamed.owl#MaleSex
+http://www.owl-ontologies.com/unnamed.owl#Below18 disjointWith http://www.owl-ontologies.com/unnamed.owl#Man
+http://www.owl-ontologies.com/unnamed.owl#Below18 disjointWith http://www.owl-ontologies.com/unnamed.owl#Monthly
+http://www.owl-ontologies.com/unnamed.owl#Below18 disjointWith http://www.owl-ontologies.com/unnamed.owl#NoProblemsFinishedLoan
+http://www.owl-ontologies.com/unnamed.owl#Below18 disjointWith http://www.owl-ontologies.com/unnamed.owl#NorthBohemia
+http://www.owl-ontologies.com/unnamed.owl#Below18 disjointWith http://www.owl-ontologies.com/unnamed.owl#NorthMoravia
+http://www.owl-ontologies.com/unnamed.owl#Below18 disjointWith http://www.owl-ontologies.com/unnamed.owl#NotPaidFinishedLoan
+http://www.owl-ontologies.com/unnamed.owl#Below18 disjointWith http://www.owl-ontologies.com/unnamed.owl#OKRunningLoan
+http://www.owl-ontologies.com/unnamed.owl#Below18 disjointWith http://www.owl-ontologies.com/unnamed.owl#OKStatus
+http://www.owl-ontologies.com/unnamed.owl#Below18 disjointWith http://www.owl-ontologies.com/unnamed.owl#Payment
+http://www.owl-ontologies.com/unnamed.owl#Below18 disjointWith http://www.owl-ontologies.com/unnamed.owl#PermanentOrder
+http://www.owl-ontologies.com/unnamed.owl#Below18 disjointWith http://www.owl-ontologies.com/unnamed.owl#Prague
+http://www.owl-ontologies.com/unnamed.owl#Below18 disjointWith http://www.owl-ontologies.com/unnamed.owl#ProblemStatus
+http://www.owl-ontologies.com/unnamed.owl#Below18 disjointWith http://www.owl-ontologies.com/unnamed.owl#Region
+http://www.owl-ontologies.com/unnamed.owl#Below18 disjointWith http://www.owl-ontologies.com/unnamed.owl#Running
+http://www.owl-ontologies.com/unnamed.owl#Below18 disjointWith http://www.owl-ontologies.com/unnamed.owl#SexValue
+http://www.owl-ontologies.com/unnamed.owl#Below18 disjointWith http://www.owl-ontologies.com/unnamed.owl#SouthBohemia
+http://www.owl-ontologies.com/unnamed.owl#Below18 disjointWith http://www.owl-ontologies.com/unnamed.owl#SouthMoravia
+http://www.owl-ontologies.com/unnamed.owl#Below18 disjointWith http://www.owl-ontologies.com/unnamed.owl#StatementIssuanceFrequencyValue
+http://www.owl-ontologies.com/unnamed.owl#Below18 disjointWith http://www.owl-ontologies.com/unnamed.owl#Weekly
+http://www.owl-ontologies.com/unnamed.owl#Below18 disjointWith http://www.owl-ontologies.com/unnamed.owl#WestBohemia
+http://www.owl-ontologies.com/unnamed.owl#Below18 disjointWith http://www.owl-ontologies.com/unnamed.owl#Woman
+http://www.owl-ontologies.com/unnamed.owl#CentralBohemia disjointWith http://www.owl-ontologies.com/unnamed.owl#Classic
+http://www.owl-ontologies.com/unnamed.owl#CentralBohemia disjointWith http://www.owl-ontologies.com/unnamed.owl#Client
+http://www.owl-ontologies.com/unnamed.owl#CentralBohemia disjointWith http://www.owl-ontologies.com/unnamed.owl#CreditCard
+http://www.owl-ontologies.com/unnamed.owl#CentralBohemia disjointWith http://www.owl-ontologies.com/unnamed.owl#DebtRunningLoan
+http://www.owl-ontologies.com/unnamed.owl#CentralBohemia disjointWith http://www.owl-ontologies.com/unnamed.owl#EastBohemia
+http://www.owl-ontologies.com/unnamed.owl#CentralBohemia disjointWith http://www.owl-ontologies.com/unnamed.owl#FemaleSex
+http://www.owl-ontologies.com/unnamed.owl#CentralBohemia disjointWith http://www.owl-ontologies.com/unnamed.owl#Finished
+http://www.owl-ontologies.com/unnamed.owl#CentralBohemia disjointWith http://www.owl-ontologies.com/unnamed.owl#ForStatementPayment
+http://www.owl-ontologies.com/unnamed.owl#CentralBohemia disjointWith http://www.owl-ontologies.com/unnamed.owl#From18To25
+http://www.owl-ontologies.com/unnamed.owl#CentralBohemia disjointWith http://www.owl-ontologies.com/unnamed.owl#From25To35
+http://www.owl-ontologies.com/unnamed.owl#CentralBohemia disjointWith http://www.owl-ontologies.com/unnamed.owl#From35To50
+http://www.owl-ontologies.com/unnamed.owl#CentralBohemia disjointWith http://www.owl-ontologies.com/unnamed.owl#From50To65
+http://www.owl-ontologies.com/unnamed.owl#CentralBohemia disjointWith http://www.owl-ontologies.com/unnamed.owl#Gold
+http://www.owl-ontologies.com/unnamed.owl#CentralBohemia disjointWith http://www.owl-ontologies.com/unnamed.owl#HouseholdPayment
+http://www.owl-ontologies.com/unnamed.owl#CentralBohemia disjointWith http://www.owl-ontologies.com/unnamed.owl#InsurrancePayment
+http://www.owl-ontologies.com/unnamed.owl#CentralBohemia disjointWith http://www.owl-ontologies.com/unnamed.owl#Junior
+http://www.owl-ontologies.com/unnamed.owl#CentralBohemia disjointWith http://www.owl-ontologies.com/unnamed.owl#Leasing
+http://www.owl-ontologies.com/unnamed.owl#CentralBohemia disjointWith http://www.owl-ontologies.com/unnamed.owl#Loan
+http://www.owl-ontologies.com/unnamed.owl#CentralBohemia disjointWith http://www.owl-ontologies.com/unnamed.owl#LoanPayment
+http://www.owl-ontologies.com/unnamed.owl#CentralBohemia disjointWith http://www.owl-ontologies.com/unnamed.owl#LoanStatusValue
+http://www.owl-ontologies.com/unnamed.owl#CentralBohemia disjointWith http://www.owl-ontologies.com/unnamed.owl#MaleSex
+http://www.owl-ontologies.com/unnamed.owl#CentralBohemia disjointWith http://www.owl-ontologies.com/unnamed.owl#Man
+http://www.owl-ontologies.com/unnamed.owl#CentralBohemia disjointWith http://www.owl-ontologies.com/unnamed.owl#Monthly
+http://www.owl-ontologies.com/unnamed.owl#CentralBohemia disjointWith http://www.owl-ontologies.com/unnamed.owl#NoProblemsFinishedLoan
+http://www.owl-ontologies.com/unnamed.owl#CentralBohemia disjointWith http://www.owl-ontologies.com/unnamed.owl#NorthBohemia
+http://www.owl-ontologies.com/unnamed.owl#CentralBohemia disjointWith http://www.owl-ontologies.com/unnamed.owl#NorthMoravia
+http://www.owl-ontologies.com/unnamed.owl#CentralBohemia disjointWith http://www.owl-ontologies.com/unnamed.owl#NotPaidFinishedLoan
+http://www.owl-ontologies.com/unnamed.owl#CentralBohemia disjointWith http://www.owl-ontologies.com/unnamed.owl#OKRunningLoan
+http://www.owl-ontologies.com/unnamed.owl#CentralBohemia disjointWith http://www.owl-ontologies.com/unnamed.owl#OKStatus
+http://www.owl-ontologies.com/unnamed.owl#CentralBohemia disjointWith http://www.owl-ontologies.com/unnamed.owl#Payment
+http://www.owl-ontologies.com/unnamed.owl#CentralBohemia disjointWith http://www.owl-ontologies.com/unnamed.owl#PermanentOrder
+http://www.owl-ontologies.com/unnamed.owl#CentralBohemia disjointWith http://www.owl-ontologies.com/unnamed.owl#Prague
+http://www.owl-ontologies.com/unnamed.owl#CentralBohemia disjointWith http://www.owl-ontologies.com/unnamed.owl#ProblemStatus
+http://www.owl-ontologies.com/unnamed.owl#CentralBohemia disjointWith http://www.owl-ontologies.com/unnamed.owl#Region
+http://www.owl-ontologies.com/unnamed.owl#CentralBohemia disjointWith http://www.owl-ontologies.com/unnamed.owl#Running
+http://www.owl-ontologies.com/unnamed.owl#CentralBohemia disjointWith http://www.owl-ontologies.com/unnamed.owl#SexValue
+http://www.owl-ontologies.com/unnamed.owl#CentralBohemia disjointWith http://www.owl-ontologies.com/unnamed.owl#SouthBohemia
+http://www.owl-ontologies.com/unnamed.owl#CentralBohemia disjointWith http://www.owl-ontologies.com/unnamed.owl#SouthMoravia
+http://www.owl-ontologies.com/unnamed.owl#CentralBohemia disjointWith http://www.owl-ontologies.com/unnamed.owl#StatementIssuanceFrequencyValue
+http://www.owl-ontologies.com/unnamed.owl#CentralBohemia disjointWith http://www.owl-ontologies.com/unnamed.owl#Weekly
+http://www.owl-ontologies.com/unnamed.owl#CentralBohemia disjointWith http://www.owl-ontologies.com/unnamed.owl#WestBohemia
+http://www.owl-ontologies.com/unnamed.owl#CentralBohemia disjointWith http://www.owl-ontologies.com/unnamed.owl#Woman
+http://www.owl-ontologies.com/unnamed.owl#Classic disjointWith http://www.owl-ontologies.com/unnamed.owl#Client
+http://www.owl-ontologies.com/unnamed.owl#Classic disjointWith http://www.owl-ontologies.com/unnamed.owl#CreditCard
+Number of inconsistencies: 1
+http://www.owl-ontologies.com/unnamed.owl#Classic disjointWith http://www.owl-ontologies.com/unnamed.owl#DebtRunningLoan
+http://www.owl-ontologies.com/unnamed.owl#Classic disjointWith http://www.owl-ontologies.com/unnamed.owl#EastBohemia
+http://www.owl-ontologies.com/unnamed.owl#Classic disjointWith http://www.owl-ontologies.com/unnamed.owl#FemaleSex
+http://www.owl-ontologies.com/unnamed.owl#Classic disjointWith http://www.owl-ontologies.com/unnamed.owl#Finished
+http://www.owl-ontologies.com/unnamed.owl#Classic disjointWith http://www.owl-ontologies.com/unnamed.owl#ForStatementPayment
+http://www.owl-ontologies.com/unnamed.owl#Classic disjointWith http://www.owl-ontologies.com/unnamed.owl#From18To25
+http://www.owl-ontologies.com/unnamed.owl#Classic disjointWith http://www.owl-ontologies.com/unnamed.owl#From25To35
+http://www.owl-ontologies.com/unnamed.owl#Classic disjointWith http://www.owl-ontologies.com/unnamed.owl#From35To50
+http://www.owl-ontologies.com/unnamed.owl#Classic disjointWith http://www.owl-ontologies.com/unnamed.owl#From50To65
+http://www.owl-ontologies.com/unnamed.owl#Classic disjointWith http://www.owl-ontologies.com/unnamed.owl#Gold
+http://www.owl-ontologies.com/unnamed.owl#Classic disjointWith http://www.owl-ontologies.com/unnamed.owl#HouseholdPayment
+http://www.owl-ontologies.com/unnamed.owl#Classic disjointWith http://www.owl-ontologies.com/unnamed.owl#InsurrancePayment
+http://www.owl-ontologies.com/unnamed.owl#Classic disjointWith http://www.owl-ontologies.com/unnamed.owl#Junior
+http://www.owl-ontologies.com/unnamed.owl#Classic disjointWith http://www.owl-ontologies.com/unnamed.owl#Leasing
+http://www.owl-ontologies.com/unnamed.owl#Classic disjointWith http://www.owl-ontologies.com/unnamed.owl#Loan
+http://www.owl-ontologies.com/unnamed.owl#Classic disjointWith http://www.owl-ontologies.com/unnamed.owl#LoanPayment
+http://www.owl-ontologies.com/unnamed.owl#Classic disjointWith http://www.owl-ontologies.com/unnamed.owl#LoanStatusValue
+http://www.owl-ontologies.com/unnamed.owl#Classic disjointWith http://www.owl-ontologies.com/unnamed.owl#MaleSex
+http://www.owl-ontologies.com/unnamed.owl#Classic disjointWith http://www.owl-ontologies.com/unnamed.owl#Man
+http://www.owl-ontologies.com/unnamed.owl#Classic disjointWith http://www.owl-ontologies.com/unnamed.owl#Monthly
+http://www.owl-ontologies.com/unnamed.owl#Classic disjointWith http://www.owl-ontologies.com/unnamed.owl#NoProblemsFinishedLoan
+http://www.owl-ontologies.com/unnamed.owl#Classic disjointWith http://www.owl-ontologies.com/unnamed.owl#NorthBohemia
+http://www.owl-ontologies.com/unnamed.owl#Classic disjointWith http://www.owl-ontologies.com/unnamed.owl#NorthMoravia
+http://www.owl-ontologies.com/unnamed.owl#Classic disjointWith http://www.owl-ontologies.com/unnamed.owl#NotPaidFinishedLoan
+http://www.owl-ontologies.com/unnamed.owl#Classic disjointWith http://www.owl-ontologies.com/unnamed.owl#OKRunningLoan
+http://www.owl-ontologies.com/unnamed.owl#Classic disjointWith http://www.owl-ontologies.com/unnamed.owl#OKStatus
+http://www.owl-ontologies.com/unnamed.owl#Classic disjointWith http://www.owl-ontologies.com/unnamed.owl#Payment
+http://www.owl-ontologies.com/unnamed.owl#Classic disjointWith http://www.owl-ontologies.com/unnamed.owl#PermanentOrder
+http://www.owl-ontologies.com/unnamed.owl#Classic disjointWith http://www.owl-ontologies.com/unnamed.owl#Prague
+http://www.owl-ontologies.com/unnamed.owl#Classic disjointWith http://www.owl-ontologies.com/unnamed.owl#ProblemStatus
+http://www.owl-ontologies.com/unnamed.owl#Classic disjointWith http://www.owl-ontologies.com/unnamed.owl#Region
+http://www.owl-ontologies.com/unnamed.owl#Classic disjointWith http://www.owl-ontologies.com/unnamed.owl#Running
+http://www.owl-ontologies.com/unnamed.owl#Classic disjointWith http://www.owl-ontologies.com/unnamed.owl#SexValue
+http://www.owl-ontologies.com/unnamed.owl#Classic disjointWith http://www.owl-ontologies.com/unnamed.owl#SouthBohemia
+http://www.owl-ontologies.com/unnamed.owl#Classic disjointWith http://www.owl-ontologies.com/unnamed.owl#SouthMoravia
+http://www.owl-ontologies.com/unnamed.owl#Classic disjointWith http://www.owl-ontologies.com/unnamed.owl#StatementIssuanceFrequencyValue
+http://www.owl-ontologies.com/unnamed.owl#Classic disjointWith http://www.owl-ontologies.com/unnamed.owl#Weekly
+http://www.owl-ontologies.com/unnamed.owl#Classic disjointWith http://www.owl-ontologies.com/unnamed.owl#WestBohemia
+http://www.owl-ontologies.com/unnamed.owl#Classic disjointWith http://www.owl-ontologies.com/unnamed.owl#Woman
+http://www.owl-ontologies.com/unnamed.owl#Client disjointWith http://www.owl-ontologies.com/unnamed.owl#CreditCard
+http://www.owl-ontologies.com/unnamed.owl#Client disjointWith http://www.owl-ontologies.com/unnamed.owl#DebtRunningLoan
+http://www.owl-ontologies.com/unnamed.owl#Client disjointWith http://www.owl-ontologies.com/unnamed.owl#EastBohemia
+http://www.owl-ontologies.com/unnamed.owl#Client disjointWith http://www.owl-ontologies.com/unnamed.owl#FemaleSex
+http://www.owl-ontologies.com/unnamed.owl#Client disjointWith http://www.owl-ontologies.com/unnamed.owl#Finished
+http://www.owl-ontologies.com/unnamed.owl#Client disjointWith http://www.owl-ontologies.com/unnamed.owl#ForStatementPayment
+http://www.owl-ontologies.com/unnamed.owl#Client disjointWith http://www.owl-ontologies.com/unnamed.owl#From18To25
+http://www.owl-ontologies.com/unnamed.owl#Client disjointWith http://www.owl-ontologies.com/unnamed.owl#From25To35
+http://www.owl-ontologies.com/unnamed.owl#Client disjointWith http://www.owl-ontologies.com/unnamed.owl#From35To50
+http://www.owl-ontologies.com/unnamed.owl#Client disjointWith http://www.owl-ontologies.com/unnamed.owl#From50To65
+http://www.owl-ontologies.com/unnamed.owl#Client disjointWith http://www.owl-ontologies.com/unnamed.owl#Gold
+http://www.owl-ontologies.com/unnamed.owl#Client disjointWith http://www.owl-ontologies.com/unnamed.owl#HouseholdPayment
+http://www.owl-ontologies.com/unnamed.owl#Client disjointWith http://www.owl-ontologies.com/unnamed.owl#InsurrancePayment
+http://www.owl-ontologies.com/unnamed.owl#Client disjointWith http://www.owl-ontologies.com/unnamed.owl#Junior
+http://www.owl-ontologies.com/unnamed.owl#Client disjointWith http://www.owl-ontologies.com/unnamed.owl#Leasing
+http://www.owl-ontologies.com/unnamed.owl#Client disjointWith http://www.owl-ontologies.com/unnamed.owl#Loan
+http://www.owl-ontologies.com/unnamed.owl#Client disjointWith http://www.owl-ontologies.com/unnamed.owl#LoanPayment
+http://www.owl-ontologies.com/unnamed.owl#Client disjointWith http://www.owl-ontologies.com/unnamed.owl#LoanStatusValue
+http://www.owl-ontologies.com/unnamed.owl#Client disjointWith http://www.owl-ontologies.com/unnamed.owl#MaleSex
+http://www.owl-ontologies.com/unnamed.owl#Client disjointWith http://www.owl-ontologies.com/unnamed.owl#Man
+Number of inconsistencies: 2
+http://www.owl-ontologies.com/unnamed.owl#Client disjointWith http://www.owl-ontologies.com/unnamed.owl#Monthly
+http://www.owl-ontologies.com/unnamed.owl#Client disjointWith http://www.owl-ontologies.com/unnamed.owl#NoProblemsFinishedLoan
+http://www.owl-ontologies.com/unnamed.owl#Client disjointWith http://www.owl-ontologies.com/unnamed.owl#NorthBohemia
+http://www.owl-ontologies.com/unnamed.owl#Client disjointWith http://www.owl-ontologies.com/unnamed.owl#NorthMoravia
+http://www.owl-ontologies.com/unnamed.owl#Client disjointWith http://www.owl-ontologies.com/unnamed.owl#NotPaidFinishedLoan
+http://www.owl-ontologies.com/unnamed.owl#Client disjointWith http://www.owl-ontologies.com/unnamed.owl#OKRunningLoan
+http://www.owl-ontologies.com/unnamed.owl#Client disjointWith http://www.owl-ontologies.com/unnamed.owl#OKStatus
+http://www.owl-ontologies.com/unnamed.owl#Client disjointWith http://www.owl-ontologies.com/unnamed.owl#Payment
+http://www.owl-ontologies.com/unnamed.owl#Client disjointWith http://www.owl-ontologies.com/unnamed.owl#PermanentOrder
+http://www.owl-ontologies.com/unnamed.owl#Client disjointWith http://www.owl-ontologies.com/unnamed.owl#Prague
+http://www.owl-ontologies.com/unnamed.owl#Client disjointWith http://www.owl-ontologies.com/unnamed.owl#ProblemStatus
+http://www.owl-ontologies.com/unnamed.owl#Client disjointWith http://www.owl-ontologies.com/unnamed.owl#Region
+http://www.owl-ontologies.com/unnamed.owl#Client disjointWith http://www.owl-ontologies.com/unnamed.owl#Running
+http://www.owl-ontologies.com/unnamed.owl#Client disjointWith http://www.owl-ontologies.com/unnamed.owl#SexValue
+http://www.owl-ontologies.com/unnamed.owl#Client disjointWith http://www.owl-ontologies.com/unnamed.owl#SouthBohemia
+http://www.owl-ontologies.com/unnamed.owl#Client disjointWith http://www.owl-ontologies.com/unnamed.owl#SouthMoravia
+http://www.owl-ontologies.com/unnamed.owl#Client disjointWith http://www.owl-ontologies.com/unnamed.owl#StatementIssuanceFrequencyValue
+http://www.owl-ontologies.com/unnamed.owl#Client disjointWith http://www.owl-ontologies.com/unnamed.owl#Weekly
+http://www.owl-ontologies.com/unnamed.owl#Client disjointWith http://www.owl-ontologies.com/unnamed.owl#WestBohemia
+http://www.owl-ontologies.com/unnamed.owl#CreditCard disjointWith http://www.owl-ontologies.com/unnamed.owl#DebtRunningLoan
+http://www.owl-ontologies.com/unnamed.owl#CreditCard disjointWith http://www.owl-ontologies.com/unnamed.owl#EastBohemia
+http://www.owl-ontologies.com/unnamed.owl#CreditCard disjointWith http://www.owl-ontologies.com/unnamed.owl#FemaleSex
+http://www.owl-ontologies.com/unnamed.owl#CreditCard disjointWith http://www.owl-ontologies.com/unnamed.owl#Finished
+http://www.owl-ontologies.com/unnamed.owl#CreditCard disjointWith http://www.owl-ontologies.com/unnamed.owl#ForStatementPayment
+http://www.owl-ontologies.com/unnamed.owl#CreditCard disjointWith http://www.owl-ontologies.com/unnamed.owl#From18To25
+http://www.owl-ontologies.com/unnamed.owl#CreditCard disjointWith http://www.owl-ontologies.com/unnamed.owl#From25To35
+http://www.owl-ontologies.com/unnamed.owl#CreditCard disjointWith http://www.owl-ontologies.com/unnamed.owl#From35To50
+http://www.owl-ontologies.com/unnamed.owl#CreditCard disjointWith http://www.owl-ontologies.com/unnamed.owl#From50To65
+http://www.owl-ontologies.com/unnamed.owl#CreditCard disjointWith http://www.owl-ontologies.com/unnamed.owl#Gold
+Number of inconsistencies: 3
+http://www.owl-ontologies.com/unnamed.owl#CreditCard disjointWith http://www.owl-ontologies.com/unnamed.owl#HouseholdPayment
+http://www.owl-ontologies.com/unnamed.owl#CreditCard disjointWith http://www.owl-ontologies.com/unnamed.owl#InsurrancePayment
+http://www.owl-ontologies.com/unnamed.owl#CreditCard disjointWith http://www.owl-ontologies.com/unnamed.owl#Leasing
+http://www.owl-ontologies.com/unnamed.owl#CreditCard disjointWith http://www.owl-ontologies.com/unnamed.owl#Loan
+http://www.owl-ontologies.com/unnamed.owl#CreditCard disjointWith http://www.owl-ontologies.com/unnamed.owl#LoanPayment
+http://www.owl-ontologies.com/unnamed.owl#CreditCard disjointWith http://www.owl-ontologies.com/unnamed.owl#LoanStatusValue
+http://www.owl-ontologies.com/unnamed.owl#CreditCard disjointWith http://www.owl-ontologies.com/unnamed.owl#MaleSex
+http://www.owl-ontologies.com/unnamed.owl#CreditCard disjointWith http://www.owl-ontologies.com/unnamed.owl#Man
+http://www.owl-ontologies.com/unnamed.owl#CreditCard disjointWith http://www.owl-ontologies.com/unnamed.owl#Monthly
+http://www.owl-ontologies.com/unnamed.owl#CreditCard disjointWith http://www.owl-ontologies.com/unnamed.owl#NoProblemsFinishedLoan
+http://www.owl-ontologies.com/unnamed.owl#CreditCard disjointWith http://www.owl-ontologies.com/unnamed.owl#NorthBohemia
+http://www.owl-ontologies.com/unnamed.owl#CreditCard disjointWith http://www.owl-ontologies.com/unnamed.owl#NorthMoravia
+http://www.owl-ontologies.com/unnamed.owl#CreditCard disjointWith http://www.owl-ontologies.com/unnamed.owl#NotPaidFinishedLoan
+http://www.owl-ontologies.com/unnamed.owl#CreditCard disjointWith http://www.owl-ontologies.com/unnamed.owl#OKRunningLoan
+http://www.owl-ontologies.com/unnamed.owl#CreditCard disjointWith http://www.owl-ontologies.com/unnamed.owl#OKStatus
+http://www.owl-ontologies.com/unnamed.owl#CreditCard disjointWith http://www.owl-ontologies.com/unnamed.owl#Payment
+http://www.owl-ontologies.com/unnamed.owl#CreditCard disjointWith http://www.owl-ontologies.com/unnamed.owl#PermanentOrder
+http://www.owl-ontologies.com/unnamed.owl#CreditCard disjointWith http://www.owl-ontologies.com/unnamed.owl#Prague
+http://www.owl-ontologies.com/unnamed.owl#CreditCard disjointWith http://www.owl-ontologies.com/unnamed.owl#ProblemStatus
+http://www.owl-ontologies.com/unnamed.owl#CreditCard disjointWith http://www.owl-ontologies.com/unnamed.owl#Region
+http://www.owl-ontologies.com/unnamed.owl#CreditCard disjointWith http://www.owl-ontologies.com/unnamed.owl#Running
+http://www.owl-ontologies.com/unnamed.owl#CreditCard disjointWith http://www.owl-ontologies.com/unnamed.owl#SexValue
+http://www.owl-ontologies.com/unnamed.owl#CreditCard disjointWith http://www.owl-ontologies.com/unnamed.owl#SouthBohemia
+http://www.owl-ontologies.com/unnamed.owl#CreditCard disjointWith http://www.owl-ontologies.com/unnamed.owl#SouthMoravia
+http://www.owl-ontologies.com/unnamed.owl#CreditCard disjointWith http://www.owl-ontologies.com/unnamed.owl#StatementIssuanceFrequencyValue
+http://www.owl-ontologies.com/unnamed.owl#CreditCard disjointWith http://www.owl-ontologies.com/unnamed.owl#Weekly
+http://www.owl-ontologies.com/unnamed.owl#CreditCard disjointWith http://www.owl-ontologies.com/unnamed.owl#WestBohemia
+http://www.owl-ontologies.com/unnamed.owl#CreditCard disjointWith http://www.owl-ontologies.com/unnamed.owl#Woman
+http://www.owl-ontologies.com/unnamed.owl#DebtRunningLoan disjointWith http://www.owl-ontologies.com/unnamed.owl#EastBohemia
+http://www.owl-ontologies.com/unnamed.owl#DebtRunningLoan disjointWith http://www.owl-ontologies.com/unnamed.owl#FemaleSex
+http://www.owl-ontologies.com/unnamed.owl#DebtRunningLoan disjointWith http://www.owl-ontologies.com/unnamed.owl#Finished
+http://www.owl-ontologies.com/unnamed.owl#DebtRunningLoan disjointWith http://www.owl-ontologies.com/unnamed.owl#ForStatementPayment
+http://www.owl-ontologies.com/unnamed.owl#DebtRunningLoan disjointWith http://www.owl-ontologies.com/unnamed.owl#From18To25
+http://www.owl-ontologies.com/unnamed.owl#DebtRunningLoan disjointWith http://www.owl-ontologies.com/unnamed.owl#From25To35
+http://www.owl-ontologies.com/unnamed.owl#DebtRunningLoan disjointWith http://www.owl-ontologies.com/unnamed.owl#From35To50
+http://www.owl-ontologies.com/unnamed.owl#DebtRunningLoan disjointWith http://www.owl-ontologies.com/unnamed.owl#From50To65
+http://www.owl-ontologies.com/unnamed.owl#DebtRunningLoan disjointWith http://www.owl-ontologies.com/unnamed.owl#Gold
+http://www.owl-ontologies.com/unnamed.owl#DebtRunningLoan disjointWith http://www.owl-ontologies.com/unnamed.owl#HouseholdPayment
+http://www.owl-ontologies.com/unnamed.owl#DebtRunningLoan disjointWith http://www.owl-ontologies.com/unnamed.owl#InsurrancePayment
+http://www.owl-ontologies.com/unnamed.owl#DebtRunningLoan disjointWith http://www.owl-ontologies.com/unnamed.owl#Junior
+http://www.owl-ontologies.com/unnamed.owl#DebtRunningLoan disjointWith http://www.owl-ontologies.com/unnamed.owl#Leasing
+http://www.owl-ontologies.com/unnamed.owl#DebtRunningLoan disjointWith http://www.owl-ontologies.com/unnamed.owl#LoanPayment
+http://www.owl-ontologies.com/unnamed.owl#DebtRunningLoan disjointWith http://www.owl-ontologies.com/unnamed.owl#LoanStatusValue
+http://www.owl-ontologies.com/unnamed.owl#DebtRunningLoan disjointWith http://www.owl-ontologies.com/unnamed.owl#MaleSex
+http://www.owl-ontologies.com/unnamed.owl#DebtRunningLoan disjointWith http://www.owl-ontologies.com/unnamed.owl#Man
+http://www.owl-ontologies.com/unnamed.owl#DebtRunningLoan disjointWith http://www.owl-ontologies.com/unnamed.owl#Monthly
+http://www.owl-ontologies.com/unnamed.owl#DebtRunningLoan disjointWith http://www.owl-ontologies.com/unnamed.owl#NoProblemsFinishedLoan
+http://www.owl-ontologies.com/unnamed.owl#DebtRunningLoan disjointWith http://www.owl-ontologies.com/unnamed.owl#NorthBohemia
+http://www.owl-ontologies.com/unnamed.owl#DebtRunningLoan disjointWith http://www.owl-ontologies.com/unnamed.owl#NorthMoravia
+http://www.owl-ontologies.com/unnamed.owl#DebtRunningLoan disjointWith http://www.owl-ontologies.com/unnamed.owl#NotPaidFinishedLoan
+http://www.owl-ontologies.com/unnamed.owl#DebtRunningLoan disjointWith http://www.owl-ontologies.com/unnamed.owl#OKRunningLoan
+http://www.owl-ontologies.com/unnamed.owl#DebtRunningLoan disjointWith http://www.owl-ontologies.com/unnamed.owl#OKStatus
+http://www.owl-ontologies.com/unnamed.owl#DebtRunningLoan disjointWith http://www.owl-ontologies.com/unnamed.owl#Payment
+http://www.owl-ontologies.com/unnamed.owl#DebtRunningLoan disjointWith http://www.owl-ontologies.com/unnamed.owl#PermanentOrder
+http://www.owl-ontologies.com/unnamed.owl#DebtRunningLoan disjointWith http://www.owl-ontologies.com/unnamed.owl#Prague
+http://www.owl-ontologies.com/unnamed.owl#DebtRunningLoan disjointWith http://www.owl-ontologies.com/unnamed.owl#ProblemStatus
+http://www.owl-ontologies.com/unnamed.owl#DebtRunningLoan disjointWith http://www.owl-ontologies.com/unnamed.owl#Region
+http://www.owl-ontologies.com/unnamed.owl#DebtRunningLoan disjointWith http://www.owl-ontologies.com/unnamed.owl#SexValue
+http://www.owl-ontologies.com/unnamed.owl#DebtRunningLoan disjointWith http://www.owl-ontologies.com/unnamed.owl#SouthBohemia
+http://www.owl-ontologies.com/unnamed.owl#DebtRunningLoan disjointWith http://www.owl-ontologies.com/unnamed.owl#SouthMoravia
+http://www.owl-ontologies.com/unnamed.owl#DebtRunningLoan disjointWith http://www.owl-ontologies.com/unnamed.owl#StatementIssuanceFrequencyValue
+http://www.owl-ontologies.com/unnamed.owl#DebtRunningLoan disjointWith http://www.owl-ontologies.com/unnamed.owl#Weekly
+http://www.owl-ontologies.com/unnamed.owl#DebtRunningLoan disjointWith http://www.owl-ontologies.com/unnamed.owl#WestBohemia
+http://www.owl-ontologies.com/unnamed.owl#DebtRunningLoan disjointWith http://www.owl-ontologies.com/unnamed.owl#Woman
+http://www.owl-ontologies.com/unnamed.owl#EastBohemia disjointWith http://www.owl-ontologies.com/unnamed.owl#FemaleSex
+http://www.owl-ontologies.com/unnamed.owl#EastBohemia disjointWith http://www.owl-ontologies.com/unnamed.owl#Finished
+http://www.owl-ontologies.com/unnamed.owl#EastBohemia disjointWith http://www.owl-ontologies.com/unnamed.owl#ForStatementPayment
+http://www.owl-ontologies.com/unnamed.owl#EastBohemia disjointWith http://www.owl-ontologies.com/unnamed.owl#From18To25
+http://www.owl-ontologies.com/unnamed.owl#EastBohemia disjointWith http://www.owl-ontologies.com/unnamed.owl#From25To35
+http://www.owl-ontologies.com/unnamed.owl#EastBohemia disjointWith http://www.owl-ontologies.com/unnamed.owl#From35To50
+http://www.owl-ontologies.com/unnamed.owl#EastBohemia disjointWith http://www.owl-ontologies.com/unnamed.owl#From50To65
+http://www.owl-ontologies.com/unnamed.owl#EastBohemia disjointWith http://www.owl-ontologies.com/unnamed.owl#Gold
+http://www.owl-ontologies.com/unnamed.owl#EastBohemia disjointWith http://www.owl-ontologies.com/unnamed.owl#HouseholdPayment
+http://www.owl-ontologies.com/unnamed.owl#EastBohemia disjointWith http://www.owl-ontologies.com/unnamed.owl#InsurrancePayment
+http://www.owl-ontologies.com/unnamed.owl#EastBohemia disjointWith http://www.owl-ontologies.com/unnamed.owl#Junior
+http://www.owl-ontologies.com/unnamed.owl#EastBohemia disjointWith http://www.owl-ontologies.com/unnamed.owl#Leasing
+http://www.owl-ontologies.com/unnamed.owl#EastBohemia disjointWith http://www.owl-ontologies.com/unnamed.owl#Loan
+http://www.owl-ontologies.com/unnamed.owl#EastBohemia disjointWith http://www.owl-ontologies.com/unnamed.owl#LoanPayment
+http://www.owl-ontologies.com/unnamed.owl#EastBohemia disjointWith http://www.owl-ontologies.com/unnamed.owl#LoanStatusValue
+http://www.owl-ontologies.com/unnamed.owl#EastBohemia disjointWith http://www.owl-ontologies.com/unnamed.owl#MaleSex
+http://www.owl-ontologies.com/unnamed.owl#EastBohemia disjointWith http://www.owl-ontologies.com/unnamed.owl#Man
+http://www.owl-ontologies.com/unnamed.owl#EastBohemia disjointWith http://www.owl-ontologies.com/unnamed.owl#Monthly
+http://www.owl-ontologies.com/unnamed.owl#EastBohemia disjointWith http://www.owl-ontologies.com/unnamed.owl#NoProblemsFinishedLoan
+http://www.owl-ontologies.com/unnamed.owl#EastBohemia disjointWith http://www.owl-ontologies.com/unnamed.owl#NorthBohemia
+http://www.owl-ontologies.com/unnamed.owl#EastBohemia disjointWith http://www.owl-ontologies.com/unnamed.owl#NorthMoravia
+http://www.owl-ontologies.com/unnamed.owl#EastBohemia disjointWith http://www.owl-ontologies.com/unnamed.owl#NotPaidFinishedLoan
+http://www.owl-ontologies.com/unnamed.owl#EastBohemia disjointWith http://www.owl-ontologies.com/unnamed.owl#OKRunningLoan
+http://www.owl-ontologies.com/unnamed.owl#EastBohemia disjointWith http://www.owl-ontologies.com/unnamed.owl#OKStatus
+http://www.owl-ontologies.com/unnamed.owl#EastBohemia disjointWith http://www.owl-ontologies.com/unnamed.owl#Payment
+http://www.owl-ontologies.com/unnamed.owl#EastBohemia disjointWith http://www.owl-ontologies.com/unnamed.owl#PermanentOrder
+http://www.owl-ontologies.com/unnamed.owl#EastBohemia disjointWith http://www.owl-ontologies.com/unnamed.owl#Prague
+http://www.owl-ontologies.com/unnamed.owl#EastBohemia disjointWith http://www.owl-ontologies.com/unnamed.owl#ProblemStatus
+http://www.owl-ontologies.com/unnamed.owl#EastBohemia disjointWith http://www.owl-ontologies.com/unnamed.owl#Region
+http://www.owl-ontologies.com/unnamed.owl#EastBohemia disjointWith http://www.owl-ontologies.com/unnamed.owl#Running
+http://www.owl-ontologies.com/unnamed.owl#EastBohemia disjointWith http://www.owl-ontologies.com/unnamed.owl#SexValue
+http://www.owl-ontologies.com/unnamed.owl#EastBohemia disjointWith http://www.owl-ontologies.com/unnamed.owl#SouthBohemia
+http://www.owl-ontologies.com/unnamed.owl#EastBohemia disjointWith http://www.owl-ontologies.com/unnamed.owl#SouthMoravia
+http://www.owl-ontologies.com/unnamed.owl#EastBohemia disjointWith http://www.owl-ontologies.com/unnamed.owl#StatementIssuanceFrequencyValue
+http://www.owl-ontologies.com/unnamed.owl#EastBohemia disjointWith http://www.owl-ontologies.com/unnamed.owl#Weekly
+http://www.owl-ontologies.com/unnamed.owl#EastBohemia disjointWith http://www.owl-ontologies.com/unnamed.owl#WestBohemia
+http://www.owl-ontologies.com/unnamed.owl#EastBohemia disjointWith http://www.owl-ontologies.com/unnamed.owl#Woman
+http://www.owl-ontologies.com/unnamed.owl#FemaleSex disjointWith http://www.owl-ontologies.com/unnamed.owl#Finished
+http://www.owl-ontologies.com/unnamed.owl#FemaleSex disjointWith http://www.owl-ontologies.com/unnamed.owl#ForStatementPayment
+http://www.owl-ontologies.com/unnamed.owl#FemaleSex disjointWith http://www.owl-ontologies.com/unnamed.owl#From18To25
+http://www.owl-ontologies.com/unnamed.owl#FemaleSex disjointWith http://www.owl-ontologies.com/unnamed.owl#From25To35
+http://www.owl-ontologies.com/unnamed.owl#FemaleSex disjointWith http://www.owl-ontologies.com/unnamed.owl#From35To50
+http://www.owl-ontologies.com/unnamed.owl#FemaleSex disjointWith http://www.owl-ontologies.com/unnamed.owl#From50To65
+http://www.owl-ontologies.com/unnamed.owl#FemaleSex disjointWith http://www.owl-ontologies.com/unnamed.owl#Gold
+http://www.owl-ontologies.com/unnamed.owl#FemaleSex disjointWith http://www.owl-ontologies.com/unnamed.owl#HouseholdPayment
+http://www.owl-ontologies.com/unnamed.owl#FemaleSex disjointWith http://www.owl-ontologies.com/unnamed.owl#InsurrancePayment
+http://www.owl-ontologies.com/unnamed.owl#FemaleSex disjointWith http://www.owl-ontologies.com/unnamed.owl#Junior
+http://www.owl-ontologies.com/unnamed.owl#FemaleSex disjointWith http://www.owl-ontologies.com/unnamed.owl#Leasing
+http://www.owl-ontologies.com/unnamed.owl#FemaleSex disjointWith http://www.owl-ontologies.com/unnamed.owl#Loan
+http://www.owl-ontologies.com/unnamed.owl#FemaleSex disjointWith http://www.owl-ontologies.com/unnamed.owl#LoanPayment
+http://www.owl-ontologies.com/unnamed.owl#FemaleSex disjointWith http://www.owl-ontologies.com/unnamed.owl#LoanStatusValue
+http://www.owl-ontologies.com/unnamed.owl#FemaleSex disjointWith http://www.owl-ontologies.com/unnamed.owl#MaleSex
+http://www.owl-ontologies.com/unnamed.owl#FemaleSex disjointWith http://www.owl-ontologies.com/unnamed.owl#Man
+http://www.owl-ontologies.com/unnamed.owl#FemaleSex disjointWith http://www.owl-ontologies.com/unnamed.owl#Monthly
+http://www.owl-ontologies.com/unnamed.owl#FemaleSex disjointWith http://www.owl-ontologies.com/unnamed.owl#NoProblemsFinishedLoan
+http://www.owl-ontologies.com/unnamed.owl#FemaleSex disjointWith http://www.owl-ontologies.com/unnamed.owl#NorthBohemia
+http://www.owl-ontologies.com/unnamed.owl#FemaleSex disjointWith http://www.owl-ontologies.com/unnamed.owl#NorthMoravia
+http://www.owl-ontologies.com/unnamed.owl#FemaleSex disjointWith http://www.owl-ontologies.com/unnamed.owl#NotPaidFinishedLoan
+http://www.owl-ontologies.com/unnamed.owl#FemaleSex disjointWith http://www.owl-ontologies.com/unnamed.owl#OKRunningLoan
+http://www.owl-ontologies.com/unnamed.owl#FemaleSex disjointWith http://www.owl-ontologies.com/unnamed.owl#OKStatus
+http://www.owl-ontologies.com/unnamed.owl#FemaleSex disjointWith http://www.owl-ontologies.com/unnamed.owl#Payment
+http://www.owl-ontologies.com/unnamed.owl#FemaleSex disjointWith http://www.owl-ontologies.com/unnamed.owl#PermanentOrder
+http://www.owl-ontologies.com/unnamed.owl#FemaleSex disjointWith http://www.owl-ontologies.com/unnamed.owl#Prague
+http://www.owl-ontologies.com/unnamed.owl#FemaleSex disjointWith http://www.owl-ontologies.com/unnamed.owl#ProblemStatus
+http://www.owl-ontologies.com/unnamed.owl#FemaleSex disjointWith http://www.owl-ontologies.com/unnamed.owl#Region
+http://www.owl-ontologies.com/unnamed.owl#FemaleSex disjointWith http://www.owl-ontologies.com/unnamed.owl#Running
+http://www.owl-ontologies.com/unnamed.owl#FemaleSex disjointWith http://www.owl-ontologies.com/unnamed.owl#SouthBohemia
+http://www.owl-ontologies.com/unnamed.owl#FemaleSex disjointWith http://www.owl-ontologies.com/unnamed.owl#SouthMoravia
+http://www.owl-ontologies.com/unnamed.owl#FemaleSex disjointWith http://www.owl-ontologies.com/unnamed.owl#StatementIssuanceFrequencyValue
+http://www.owl-ontologies.com/unnamed.owl#FemaleSex disjointWith http://www.owl-ontologies.com/unnamed.owl#Weekly
+http://www.owl-ontologies.com/unnamed.owl#FemaleSex disjointWith http://www.owl-ontologies.com/unnamed.owl#WestBohemia
+http://www.owl-ontologies.com/unnamed.owl#FemaleSex disjointWith http://www.owl-ontologies.com/unnamed.owl#Woman
+http://www.owl-ontologies.com/unnamed.owl#Finished disjointWith http://www.owl-ontologies.com/unnamed.owl#ForStatementPayment
+http://www.owl-ontologies.com/unnamed.owl#Finished disjointWith http://www.owl-ontologies.com/unnamed.owl#From18To25
+http://www.owl-ontologies.com/unnamed.owl#Finished disjointWith http://www.owl-ontologies.com/unnamed.owl#From25To35
+http://www.owl-ontologies.com/unnamed.owl#Finished disjointWith http://www.owl-ontologies.com/unnamed.owl#From35To50
+http://www.owl-ontologies.com/unnamed.owl#Finished disjointWith http://www.owl-ontologies.com/unnamed.owl#From50To65
+http://www.owl-ontologies.com/unnamed.owl#Finished disjointWith http://www.owl-ontologies.com/unnamed.owl#Gold
+http://www.owl-ontologies.com/unnamed.owl#Finished disjointWith http://www.owl-ontologies.com/unnamed.owl#HouseholdPayment
+http://www.owl-ontologies.com/unnamed.owl#Finished disjointWith http://www.owl-ontologies.com/unnamed.owl#InsurrancePayment
+http://www.owl-ontologies.com/unnamed.owl#Finished disjointWith http://www.owl-ontologies.com/unnamed.owl#Junior
+http://www.owl-ontologies.com/unnamed.owl#Finished disjointWith http://www.owl-ontologies.com/unnamed.owl#Leasing
+http://www.owl-ontologies.com/unnamed.owl#Finished disjointWith http://www.owl-ontologies.com/unnamed.owl#LoanPayment
+http://www.owl-ontologies.com/unnamed.owl#Finished disjointWith http://www.owl-ontologies.com/unnamed.owl#LoanStatusValue
+http://www.owl-ontologies.com/unnamed.owl#Finished disjointWith http://www.owl-ontologies.com/unnamed.owl#MaleSex
+http://www.owl-ontologies.com/unnamed.owl#Finished disjointWith http://www.owl-ontologies.com/unnamed.owl#Man
+http://www.owl-ontologies.com/unnamed.owl#Finished disjointWith http://www.owl-ontologies.com/unnamed.owl#Monthly
+http://www.owl-ontologies.com/unnamed.owl#Finished disjointWith http://www.owl-ontologies.com/unnamed.owl#NorthBohemia
+http://www.owl-ontologies.com/unnamed.owl#Finished disjointWith http://www.owl-ontologies.com/unnamed.owl#NorthMoravia
+http://www.owl-ontologies.com/unnamed.owl#Finished disjointWith http://www.owl-ontologies.com/unnamed.owl#OKRunningLoan
+http://www.owl-ontologies.com/unnamed.owl#Finished disjointWith http://www.owl-ontologies.com/unnamed.owl#OKStatus
+http://www.owl-ontologies.com/unnamed.owl#Finished disjointWith http://www.owl-ontologies.com/unnamed.owl#Payment
+http://www.owl-ontologies.com/unnamed.owl#Finished disjointWith http://www.owl-ontologies.com/unnamed.owl#PermanentOrder
+http://www.owl-ontologies.com/unnamed.owl#Finished disjointWith http://www.owl-ontologies.com/unnamed.owl#Prague
+http://www.owl-ontologies.com/unnamed.owl#Finished disjointWith http://www.owl-ontologies.com/unnamed.owl#ProblemStatus
+http://www.owl-ontologies.com/unnamed.owl#Finished disjointWith http://www.owl-ontologies.com/unnamed.owl#Region
+http://www.owl-ontologies.com/unnamed.owl#Finished disjointWith http://www.owl-ontologies.com/unnamed.owl#Running
+http://www.owl-ontologies.com/unnamed.owl#Finished disjointWith http://www.owl-ontologies.com/unnamed.owl#SexValue
+http://www.owl-ontologies.com/unnamed.owl#Finished disjointWith http://www.owl-ontologies.com/unnamed.owl#SouthBohemia
+http://www.owl-ontologies.com/unnamed.owl#Finished disjointWith http://www.owl-ontologies.com/unnamed.owl#SouthMoravia
+http://www.owl-ontologies.com/unnamed.owl#Finished disjointWith http://www.owl-ontologies.com/unnamed.owl#StatementIssuanceFrequencyValue
+http://www.owl-ontologies.com/unnamed.owl#Finished disjointWith http://www.owl-ontologies.com/unnamed.owl#Weekly
+http://www.owl-ontologies.com/unnamed.owl#Finished disjointWith http://www.owl-ontologies.com/unnamed.owl#WestBohemia
+http://www.owl-ontologies.com/unnamed.owl#Finished disjointWith http://www.owl-ontologies.com/unnamed.owl#Woman
+http://www.owl-ontologies.com/unnamed.owl#ForStatementPayment disjointWith http://www.owl-ontologies.com/unnamed.owl#From18To25
+http://www.owl-ontologies.com/unnamed.owl#ForStatementPayment disjointWith http://www.owl-ontologies.com/unnamed.owl#From25To35
+http://www.owl-ontologies.com/unnamed.owl#ForStatementPayment disjointWith http://www.owl-ontologies.com/unnamed.owl#From35To50
+http://www.owl-ontologies.com/unnamed.owl#ForStatementPayment disjointWith http://www.owl-ontologies.com/unnamed.owl#From50To65
+http://www.owl-ontologies.com/unnamed.owl#ForStatementPayment disjointWith http://www.owl-ontologies.com/unnamed.owl#Gold
+http://www.owl-ontologies.com/unnamed.owl#ForStatementPayment disjointWith http://www.owl-ontologies.com/unnamed.owl#HouseholdPayment
+http://www.owl-ontologies.com/unnamed.owl#ForStatementPayment disjointWith http://www.owl-ontologies.com/unnamed.owl#InsurrancePayment
+http://www.owl-ontologies.com/unnamed.owl#ForStatementPayment disjointWith http://www.owl-ontologies.com/unnamed.owl#Junior
+http://www.owl-ontologies.com/unnamed.owl#ForStatementPayment disjointWith http://www.owl-ontologies.com/unnamed.owl#Leasing
+http://www.owl-ontologies.com/unnamed.owl#ForStatementPayment disjointWith http://www.owl-ontologies.com/unnamed.owl#Loan
+http://www.owl-ontologies.com/unnamed.owl#ForStatementPayment disjointWith http://www.owl-ontologies.com/unnamed.owl#LoanPayment
+http://www.owl-ontologies.com/unnamed.owl#ForStatementPayment disjointWith http://www.owl-ontologies.com/unnamed.owl#LoanStatusValue
+http://www.owl-ontologies.com/unnamed.owl#ForStatementPayment disjointWith http://www.owl-ontologies.com/unnamed.owl#MaleSex
+http://www.owl-ontologies.com/unnamed.owl#ForStatementPayment disjointWith http://www.owl-ontologies.com/unnamed.owl#Man
+http://www.owl-ontologies.com/unnamed.owl#ForStatementPayment disjointWith http://www.owl-ontologies.com/unnamed.owl#Monthly
+http://www.owl-ontologies.com/unnamed.owl#ForStatementPayment disjointWith http://www.owl-ontologies.com/unnamed.owl#NoProblemsFinishedLoan
+http://www.owl-ontologies.com/unnamed.owl#ForStatementPayment disjointWith http://www.owl-ontologies.com/unnamed.owl#NorthBohemia
+http://www.owl-ontologies.com/unnamed.owl#ForStatementPayment disjointWith http://www.owl-ontologies.com/unnamed.owl#NorthMoravia
+http://www.owl-ontologies.com/unnamed.owl#ForStatementPayment disjointWith http://www.owl-ontologies.com/unnamed.owl#NotPaidFinishedLoan
+http://www.owl-ontologies.com/unnamed.owl#ForStatementPayment disjointWith http://www.owl-ontologies.com/unnamed.owl#OKRunningLoan
+http://www.owl-ontologies.com/unnamed.owl#ForStatementPayment disjointWith http://www.owl-ontologies.com/unnamed.owl#OKStatus
+http://www.owl-ontologies.com/unnamed.owl#ForStatementPayment disjointWith http://www.owl-ontologies.com/unnamed.owl#Payment
+http://www.owl-ontologies.com/unnamed.owl#ForStatementPayment disjointWith http://www.owl-ontologies.com/unnamed.owl#PermanentOrder
+http://www.owl-ontologies.com/unnamed.owl#ForStatementPayment disjointWith http://www.owl-ontologies.com/unnamed.owl#Prague
+http://www.owl-ontologies.com/unnamed.owl#ForStatementPayment disjointWith http://www.owl-ontologies.com/unnamed.owl#ProblemStatus
+http://www.owl-ontologies.com/unnamed.owl#ForStatementPayment disjointWith http://www.owl-ontologies.com/unnamed.owl#Region
+http://www.owl-ontologies.com/unnamed.owl#ForStatementPayment disjointWith http://www.owl-ontologies.com/unnamed.owl#Running
+http://www.owl-ontologies.com/unnamed.owl#ForStatementPayment disjointWith http://www.owl-ontologies.com/unnamed.owl#SexValue
+http://www.owl-ontologies.com/unnamed.owl#ForStatementPayment disjointWith http://www.owl-ontologies.com/unnamed.owl#SouthBohemia
+http://www.owl-ontologies.com/unnamed.owl#ForStatementPayment disjointWith http://www.owl-ontologies.com/unnamed.owl#SouthMoravia
+http://www.owl-ontologies.com/unnamed.owl#ForStatementPayment disjointWith http://www.owl-ontologies.com/unnamed.owl#StatementIssuanceFrequencyValue
+http://www.owl-ontologies.com/unnamed.owl#ForStatementPayment disjointWith http://www.owl-ontologies.com/unnamed.owl#Weekly
+http://www.owl-ontologies.com/unnamed.owl#ForStatementPayment disjointWith http://www.owl-ontologies.com/unnamed.owl#WestBohemia
+http://www.owl-ontologies.com/unnamed.owl#ForStatementPayment disjointWith http://www.owl-ontologies.com/unnamed.owl#Woman
+http://www.owl-ontologies.com/unnamed.owl#From18To25 disjointWith http://www.owl-ontologies.com/unnamed.owl#From25To35
+http://www.owl-ontologies.com/unnamed.owl#From18To25 disjointWith http://www.owl-ontologies.com/unnamed.owl#From35To50
+http://www.owl-ontologies.com/unnamed.owl#From18To25 disjointWith http://www.owl-ontologies.com/unnamed.owl#From50To65
+http://www.owl-ontologies.com/unnamed.owl#From18To25 disjointWith http://www.owl-ontologies.com/unnamed.owl#Gold
+http://www.owl-ontologies.com/unnamed.owl#From18To25 disjointWith http://www.owl-ontologies.com/unnamed.owl#HouseholdPayment
+http://www.owl-ontologies.com/unnamed.owl#From18To25 disjointWith http://www.owl-ontologies.com/unnamed.owl#InsurrancePayment
+http://www.owl-ontologies.com/unnamed.owl#From18To25 disjointWith http://www.owl-ontologies.com/unnamed.owl#Junior
+http://www.owl-ontologies.com/unnamed.owl#From18To25 disjointWith http://www.owl-ontologies.com/unnamed.owl#Leasing
+http://www.owl-ontologies.com/unnamed.owl#From18To25 disjointWith http://www.owl-ontologies.com/unnamed.owl#Loan
+http://www.owl-ontologies.com/unnamed.owl#From18To25 disjointWith http://www.owl-ontologies.com/unnamed.owl#LoanPayment
+http://www.owl-ontologies.com/unnamed.owl#From18To25 disjointWith http://www.owl-ontologies.com/unnamed.owl#LoanStatusValue
+http://www.owl-ontologies.com/unnamed.owl#From18To25 disjointWith http://www.owl-ontologies.com/unnamed.owl#MaleSex
+http://www.owl-ontologies.com/unnamed.owl#From18To25 disjointWith http://www.owl-ontologies.com/unnamed.owl#Man
+http://www.owl-ontologies.com/unnamed.owl#From18To25 disjointWith http://www.owl-ontologies.com/unnamed.owl#Monthly
+http://www.owl-ontologies.com/unnamed.owl#From18To25 disjointWith http://www.owl-ontologies.com/unnamed.owl#NoProblemsFinishedLoan
+http://www.owl-ontologies.com/unnamed.owl#From18To25 disjointWith http://www.owl-ontologies.com/unnamed.owl#NorthBohemia
+http://www.owl-ontologies.com/unnamed.owl#From18To25 disjointWith http://www.owl-ontologies.com/unnamed.owl#NorthMoravia
+http://www.owl-ontologies.com/unnamed.owl#From18To25 disjointWith http://www.owl-ontologies.com/unnamed.owl#NotPaidFinishedLoan
+http://www.owl-ontologies.com/unnamed.owl#From18To25 disjointWith http://www.owl-ontologies.com/unnamed.owl#OKRunningLoan
+http://www.owl-ontologies.com/unnamed.owl#From18To25 disjointWith http://www.owl-ontologies.com/unnamed.owl#OKStatus
+http://www.owl-ontologies.com/unnamed.owl#From18To25 disjointWith http://www.owl-ontologies.com/unnamed.owl#Payment
+http://www.owl-ontologies.com/unnamed.owl#From18To25 disjointWith http://www.owl-ontologies.com/unnamed.owl#PermanentOrder
+http://www.owl-ontologies.com/unnamed.owl#From18To25 disjointWith http://www.owl-ontologies.com/unnamed.owl#Prague
+http://www.owl-ontologies.com/unnamed.owl#From18To25 disjointWith http://www.owl-ontologies.com/unnamed.owl#ProblemStatus
+http://www.owl-ontologies.com/unnamed.owl#From18To25 disjointWith http://www.owl-ontologies.com/unnamed.owl#Region
+http://www.owl-ontologies.com/unnamed.owl#From18To25 disjointWith http://www.owl-ontologies.com/unnamed.owl#Running
+http://www.owl-ontologies.com/unnamed.owl#From18To25 disjointWith http://www.owl-ontologies.com/unnamed.owl#SexValue
+http://www.owl-ontologies.com/unnamed.owl#From18To25 disjointWith http://www.owl-ontologies.com/unnamed.owl#SouthBohemia
+http://www.owl-ontologies.com/unnamed.owl#From18To25 disjointWith http://www.owl-ontologies.com/unnamed.owl#SouthMoravia
+http://www.owl-ontologies.com/unnamed.owl#From18To25 disjointWith http://www.owl-ontologies.com/unnamed.owl#StatementIssuanceFrequencyValue
+http://www.owl-ontologies.com/unnamed.owl#From18To25 disjointWith http://www.owl-ontologies.com/unnamed.owl#Weekly
+http://www.owl-ontologies.com/unnamed.owl#From18To25 disjointWith http://www.owl-ontologies.com/unnamed.owl#WestBohemia
+http://www.owl-ontologies.com/unnamed.owl#From18To25 disjointWith http://www.owl-ontologies.com/unnamed.owl#Woman
+http://www.owl-ontologies.com/unnamed.owl#From25To35 disjointWith http://www.owl-ontologies.com/unnamed.owl#From35To50
+http://www.owl-ontologies.com/unnamed.owl#From25To35 disjointWith http://www.owl-ontologies.com/unnamed.owl#From50To65
+http://www.owl-ontologies.com/unnamed.owl#From25To35 disjointWith http://www.owl-ontologies.com/unnamed.owl#Gold
+http://www.owl-ontologies.com/unnamed.owl#From25To35 disjointWith http://www.owl-ontologies.com/unnamed.owl#HouseholdPayment
+http://www.owl-ontologies.com/unnamed.owl#From25To35 disjointWith http://www.owl-ontologies.com/unnamed.owl#InsurrancePayment
+http://www.owl-ontologies.com/unnamed.owl#From25To35 disjointWith http://www.owl-ontologies.com/unnamed.owl#Junior
+http://www.owl-ontologies.com/unnamed.owl#From25To35 disjointWith http://www.owl-ontologies.com/unnamed.owl#Leasing
+http://www.owl-ontologies.com/unnamed.owl#From25To35 disjointWith http://www.owl-ontologies.com/unnamed.owl#Loan
+http://www.owl-ontologies.com/unnamed.owl#From25To35 disjointWith http://www.owl-ontologies.com/unnamed.owl#LoanPayment
+http://www.owl-ontologies.com/unnamed.owl#From25To35 disjointWith http://www.owl-ontologies.com/unnamed.owl#LoanStatusValue
+http://www.owl-ontologies.com/unnamed.owl#From25To35 disjointWith http://www.owl-ontologies.com/unnamed.owl#MaleSex
+http://www.owl-ontologies.com/unnamed.owl#From25To35 disjointWith http://www.owl-ontologies.com/unnamed.owl#Man
+http://www.owl-ontologies.com/unnamed.owl#From25To35 disjointWith http://www.owl-ontologies.com/unnamed.owl#Monthly
+http://www.owl-ontologies.com/unnamed.owl#From25To35 disjointWith http://www.owl-ontologies.com/unnamed.owl#NoProblemsFinishedLoan
+http://www.owl-ontologies.com/unnamed.owl#From25To35 disjointWith http://www.owl-ontologies.com/unnamed.owl#NorthBohemia
+http://www.owl-ontologies.com/unnamed.owl#From25To35 disjointWith http://www.owl-ontologies.com/unnamed.owl#NorthMoravia
+http://www.owl-ontologies.com/unnamed.owl#From25To35 disjointWith http://www.owl-ontologies.com/unnamed.owl#NotPaidFinishedLoan
+http://www.owl-ontologies.com/unnamed.owl#From25To35 disjointWith http://www.owl-ontologies.com/unnamed.owl#OKRunningLoan
+http://www.owl-ontologies.com/unnamed.owl#From25To35 disjointWith http://www.owl-ontologies.com/unnamed.owl#OKStatus
+http://www.owl-ontologies.com/unnamed.owl#From25To35 disjointWith http://www.owl-ontologies.com/unnamed.owl#Payment
+http://www.owl-ontologies.com/unnamed.owl#From25To35 disjointWith http://www.owl-ontologies.com/unnamed.owl#PermanentOrder
+http://www.owl-ontologies.com/unnamed.owl#From25To35 disjointWith http://www.owl-ontologies.com/unnamed.owl#Prague
+http://www.owl-ontologies.com/unnamed.owl#From25To35 disjointWith http://www.owl-ontologies.com/unnamed.owl#ProblemStatus
+http://www.owl-ontologies.com/unnamed.owl#From25To35 disjointWith http://www.owl-ontologies.com/unnamed.owl#Region
+http://www.owl-ontologies.com/unnamed.owl#From25To35 disjointWith http://www.owl-ontologies.com/unnamed.owl#Running
+http://www.owl-ontologies.com/unnamed.owl#From25To35 disjointWith http://www.owl-ontologies.com/unnamed.owl#SexValue
+http://www.owl-ontologies.com/unnamed.owl#From25To35 disjointWith http://www.owl-ontologies.com/unnamed.owl#SouthBohemia
+http://www.owl-ontologies.com/unnamed.owl#From25To35 disjointWith http://www.owl-ontologies.com/unnamed.owl#SouthMoravia
+http://www.owl-ontologies.com/unnamed.owl#From25To35 disjointWith http://www.owl-ontologies.com/unnamed.owl#StatementIssuanceFrequencyValue
+http://www.owl-ontologies.com/unnamed.owl#From25To35 disjointWith http://www.owl-ontologies.com/unnamed.owl#Weekly
+http://www.owl-ontologies.com/unnamed.owl#From25To35 disjointWith http://www.owl-ontologies.com/unnamed.owl#WestBohemia
+http://www.owl-ontologies.com/unnamed.owl#From25To35 disjointWith http://www.owl-ontologies.com/unnamed.owl#Woman
+http://www.owl-ontologies.com/unnamed.owl#From35To50 disjointWith http://www.owl-ontologies.com/unnamed.owl#From50To65
+http://www.owl-ontologies.com/unnamed.owl#From35To50 disjointWith http://www.owl-ontologies.com/unnamed.owl#Gold
+http://www.owl-ontologies.com/unnamed.owl#From35To50 disjointWith http://www.owl-ontologies.com/unnamed.owl#HouseholdPayment
+http://www.owl-ontologies.com/unnamed.owl#From35To50 disjointWith http://www.owl-ontologies.com/unnamed.owl#InsurrancePayment
+http://www.owl-ontologies.com/unnamed.owl#From35To50 disjointWith http://www.owl-ontologies.com/unnamed.owl#Junior
+http://www.owl-ontologies.com/unnamed.owl#From35To50 disjointWith http://www.owl-ontologies.com/unnamed.owl#Leasing
+http://www.owl-ontologies.com/unnamed.owl#From35To50 disjointWith http://www.owl-ontologies.com/unnamed.owl#Loan
+http://www.owl-ontologies.com/unnamed.owl#From35To50 disjointWith http://www.owl-ontologies.com/unnamed.owl#LoanPayment
+http://www.owl-ontologies.com/unnamed.owl#From35To50 disjointWith http://www.owl-ontologies.com/unnamed.owl#LoanStatusValue
+http://www.owl-ontologies.com/unnamed.owl#From35To50 disjointWith http://www.owl-ontologies.com/unnamed.owl#MaleSex
+http://www.owl-ontologies.com/unnamed.owl#From35To50 disjointWith http://www.owl-ontologies.com/unnamed.owl#Man
+http://www.owl-ontologies.com/unnamed.owl#From35To50 disjointWith http://www.owl-ontologies.com/unnamed.owl#Monthly
+http://www.owl-ontologies.com/unnamed.owl#From35To50 disjointWith http://www.owl-ontologies.com/unnamed.owl#NoProblemsFinishedLoan
+http://www.owl-ontologies.com/unnamed.owl#From35To50 disjointWith http://www.owl-ontologies.com/unnamed.owl#NorthBohemia
+http://www.owl-ontologies.com/unnamed.owl#From35To50 disjointWith http://www.owl-ontologies.com/unnamed.owl#NorthMoravia
+http://www.owl-ontologies.com/unnamed.owl#From35To50 disjointWith http://www.owl-ontologies.com/unnamed.owl#NotPaidFinishedLoan
+http://www.owl-ontologies.com/unnamed.owl#From35To50 disjointWith http://www.owl-ontologies.com/unnamed.owl#OKRunningLoan
+http://www.owl-ontologies.com/unnamed.owl#From35To50 disjointWith http://www.owl-ontologies.com/unnamed.owl#OKStatus
+http://www.owl-ontologies.com/unnamed.owl#From35To50 disjointWith http://www.owl-ontologies.com/unnamed.owl#Payment
+http://www.owl-ontologies.com/unnamed.owl#From35To50 disjointWith http://www.owl-ontologies.com/unnamed.owl#PermanentOrder
+http://www.owl-ontologies.com/unnamed.owl#From35To50 disjointWith http://www.owl-ontologies.com/unnamed.owl#Prague
+http://www.owl-ontologies.com/unnamed.owl#From35To50 disjointWith http://www.owl-ontologies.com/unnamed.owl#ProblemStatus
+http://www.owl-ontologies.com/unnamed.owl#From35To50 disjointWith http://www.owl-ontologies.com/unnamed.owl#Region
+http://www.owl-ontologies.com/unnamed.owl#From35To50 disjointWith http://www.owl-ontologies.com/unnamed.owl#Running
+http://www.owl-ontologies.com/unnamed.owl#From35To50 disjointWith http://www.owl-ontologies.com/unnamed.owl#SexValue
+http://www.owl-ontologies.com/unnamed.owl#From35To50 disjointWith http://www.owl-ontologies.com/unnamed.owl#SouthBohemia
+http://www.owl-ontologies.com/unnamed.owl#From35To50 disjointWith http://www.owl-ontologies.com/unnamed.owl#SouthMoravia
+http://www.owl-ontologies.com/unnamed.owl#From35To50 disjointWith http://www.owl-ontologies.com/unnamed.owl#StatementIssuanceFrequencyValue
+http://www.owl-ontologies.com/unnamed.owl#From35To50 disjointWith http://www.owl-ontologies.com/unnamed.owl#Weekly
+http://www.owl-ontologies.com/unnamed.owl#From35To50 disjointWith http://www.owl-ontologies.com/unnamed.owl#WestBohemia
+http://www.owl-ontologies.com/unnamed.owl#From35To50 disjointWith http://www.owl-ontologies.com/unnamed.owl#Woman
+http://www.owl-ontologies.com/unnamed.owl#From50To65 disjointWith http://www.owl-ontologies.com/unnamed.owl#Gold
+http://www.owl-ontologies.com/unnamed.owl#From50To65 disjointWith http://www.owl-ontologies.com/unnamed.owl#HouseholdPayment
+http://www.owl-ontologies.com/unnamed.owl#From50To65 disjointWith http://www.owl-ontologies.com/unnamed.owl#InsurrancePayment
+http://www.owl-ontologies.com/unnamed.owl#From50To65 disjointWith http://www.owl-ontologies.com/unnamed.owl#Junior
+http://www.owl-ontologies.com/unnamed.owl#From50To65 disjointWith http://www.owl-ontologies.com/unnamed.owl#Leasing
+http://www.owl-ontologies.com/unnamed.owl#From50To65 disjointWith http://www.owl-ontologies.com/unnamed.owl#Loan
+http://www.owl-ontologies.com/unnamed.owl#From50To65 disjointWith http://www.owl-ontologies.com/unnamed.owl#LoanPayment
+http://www.owl-ontologies.com/unnamed.owl#From50To65 disjointWith http://www.owl-ontologies.com/unnamed.owl#LoanStatusValue
+http://www.owl-ontologies.com/unnamed.owl#From50To65 disjointWith http://www.owl-ontologies.com/unnamed.owl#MaleSex
+http://www.owl-ontologies.com/unnamed.owl#From50To65 disjointWith http://www.owl-ontologies.com/unnamed.owl#Man
+http://www.owl-ontologies.com/unnamed.owl#From50To65 disjointWith http://www.owl-ontologies.com/unnamed.owl#Monthly
+http://www.owl-ontologies.com/unnamed.owl#From50To65 disjointWith http://www.owl-ontologies.com/unnamed.owl#NoProblemsFinishedLoan
+http://www.owl-ontologies.com/unnamed.owl#From50To65 disjointWith http://www.owl-ontologies.com/unnamed.owl#NorthBohemia
+http://www.owl-ontologies.com/unnamed.owl#From50To65 disjointWith http://www.owl-ontologies.com/unnamed.owl#NorthMoravia
+http://www.owl-ontologies.com/unnamed.owl#From50To65 disjointWith http://www.owl-ontologies.com/unnamed.owl#NotPaidFinishedLoan
+http://www.owl-ontologies.com/unnamed.owl#From50To65 disjointWith http://www.owl-ontologies.com/unnamed.owl#OKRunningLoan
+http://www.owl-ontologies.com/unnamed.owl#From50To65 disjointWith http://www.owl-ontologies.com/unnamed.owl#OKStatus
+http://www.owl-ontologies.com/unnamed.owl#From50To65 disjointWith http://www.owl-ontologies.com/unnamed.owl#Payment
+http://www.owl-ontologies.com/unnamed.owl#From50To65 disjointWith http://www.owl-ontologies.com/unnamed.owl#PermanentOrder
+http://www.owl-ontologies.com/unnamed.owl#From50To65 disjointWith http://www.owl-ontologies.com/unnamed.owl#Prague
+http://www.owl-ontologies.com/unnamed.owl#From50To65 disjointWith http://www.owl-ontologies.com/unnamed.owl#ProblemStatus
+http://www.owl-ontologies.com/unnamed.owl#From50To65 disjointWith http://www.owl-ontologies.com/unnamed.owl#Region
+http://www.owl-ontologies.com/unnamed.owl#From50To65 disjointWith http://www.owl-ontologies.com/unnamed.owl#Running
+http://www.owl-ontologies.com/unnamed.owl#From50To65 disjointWith http://www.owl-ontologies.com/unnamed.owl#SexValue
+http://www.owl-ontologies.com/unnamed.owl#From50To65 disjointWith http://www.owl-ontologies.com/unnamed.owl#SouthBohemia
+http://www.owl-ontologies.com/unnamed.owl#From50To65 disjointWith http://www.owl-ontologies.com/unnamed.owl#SouthMoravia
+http://www.owl-ontologies.com/unnamed.owl#From50To65 disjointWith http://www.owl-ontologies.com/unnamed.owl#StatementIssuanceFrequencyValue
+http://www.owl-ontologies.com/unnamed.owl#From50To65 disjointWith http://www.owl-ontologies.com/unnamed.owl#Weekly
+http://www.owl-ontologies.com/unnamed.owl#From50To65 disjointWith http://www.owl-ontologies.com/unnamed.owl#WestBohemia
+http://www.owl-ontologies.com/unnamed.owl#From50To65 disjointWith http://www.owl-ontologies.com/unnamed.owl#Woman
+http://www.owl-ontologies.com/unnamed.owl#Gold disjointWith http://www.owl-ontologies.com/unnamed.owl#HouseholdPayment
+http://www.owl-ontologies.com/unnamed.owl#Gold disjointWith http://www.owl-ontologies.com/unnamed.owl#InsurrancePayment
+http://www.owl-ontologies.com/unnamed.owl#Gold disjointWith http://www.owl-ontologies.com/unnamed.owl#Junior
+http://www.owl-ontologies.com/unnamed.owl#Gold disjointWith http://www.owl-ontologies.com/unnamed.owl#Leasing
+http://www.owl-ontologies.com/unnamed.owl#Gold disjointWith http://www.owl-ontologies.com/unnamed.owl#Loan
+http://www.owl-ontologies.com/unnamed.owl#Gold disjointWith http://www.owl-ontologies.com/unnamed.owl#LoanPayment
+http://www.owl-ontologies.com/unnamed.owl#Gold disjointWith http://www.owl-ontologies.com/unnamed.owl#LoanStatusValue
+http://www.owl-ontologies.com/unnamed.owl#Gold disjointWith http://www.owl-ontologies.com/unnamed.owl#MaleSex
+http://www.owl-ontologies.com/unnamed.owl#Gold disjointWith http://www.owl-ontologies.com/unnamed.owl#Man
+http://www.owl-ontologies.com/unnamed.owl#Gold disjointWith http://www.owl-ontologies.com/unnamed.owl#Monthly
+http://www.owl-ontologies.com/unnamed.owl#Gold disjointWith http://www.owl-ontologies.com/unnamed.owl#NoProblemsFinishedLoan
+http://www.owl-ontologies.com/unnamed.owl#Gold disjointWith http://www.owl-ontologies.com/unnamed.owl#NorthBohemia
+http://www.owl-ontologies.com/unnamed.owl#Gold disjointWith http://www.owl-ontologies.com/unnamed.owl#NorthMoravia
+http://www.owl-ontologies.com/unnamed.owl#Gold disjointWith http://www.owl-ontologies.com/unnamed.owl#NotPaidFinishedLoan
+http://www.owl-ontologies.com/unnamed.owl#Gold disjointWith http://www.owl-ontologies.com/unnamed.owl#OKRunningLoan
+http://www.owl-ontologies.com/unnamed.owl#Gold disjointWith http://www.owl-ontologies.com/unnamed.owl#OKStatus
+http://www.owl-ontologies.com/unnamed.owl#Gold disjointWith http://www.owl-ontologies.com/unnamed.owl#Payment
+http://www.owl-ontologies.com/unnamed.owl#Gold disjointWith http://www.owl-ontologies.com/unnamed.owl#PermanentOrder
+http://www.owl-ontologies.com/unnamed.owl#Gold disjointWith http://www.owl-ontologies.com/unnamed.owl#Prague
+http://www.owl-ontologies.com/unnamed.owl#Gold disjointWith http://www.owl-ontologies.com/unnamed.owl#ProblemStatus
+http://www.owl-ontologies.com/unnamed.owl#Gold disjointWith http://www.owl-ontologies.com/unnamed.owl#Region
+http://www.owl-ontologies.com/unnamed.owl#Gold disjointWith http://www.owl-ontologies.com/unnamed.owl#Running
+http://www.owl-ontologies.com/unnamed.owl#Gold disjointWith http://www.owl-ontologies.com/unnamed.owl#SexValue
+http://www.owl-ontologies.com/unnamed.owl#Gold disjointWith http://www.owl-ontologies.com/unnamed.owl#SouthBohemia
+http://www.owl-ontologies.com/unnamed.owl#Gold disjointWith http://www.owl-ontologies.com/unnamed.owl#SouthMoravia
+http://www.owl-ontologies.com/unnamed.owl#Gold disjointWith http://www.owl-ontologies.com/unnamed.owl#StatementIssuanceFrequencyValue
+http://www.owl-ontologies.com/unnamed.owl#Gold disjointWith http://www.owl-ontologies.com/unnamed.owl#Weekly
+http://www.owl-ontologies.com/unnamed.owl#Gold disjointWith http://www.owl-ontologies.com/unnamed.owl#WestBohemia
+http://www.owl-ontologies.com/unnamed.owl#Gold disjointWith http://www.owl-ontologies.com/unnamed.owl#Woman
+http://www.owl-ontologies.com/unnamed.owl#HouseholdPayment disjointWith http://www.owl-ontologies.com/unnamed.owl#InsurrancePayment
+http://www.owl-ontologies.com/unnamed.owl#HouseholdPayment disjointWith http://www.owl-ontologies.com/unnamed.owl#Junior
+http://www.owl-ontologies.com/unnamed.owl#HouseholdPayment disjointWith http://www.owl-ontologies.com/unnamed.owl#Leasing
+http://www.owl-ontologies.com/unnamed.owl#HouseholdPayment disjointWith http://www.owl-ontologies.com/unnamed.owl#Loan
+http://www.owl-ontologies.com/unnamed.owl#HouseholdPayment disjointWith http://www.owl-ontologies.com/unnamed.owl#LoanPayment
+http://www.owl-ontologies.com/unnamed.owl#HouseholdPayment disjointWith http://www.owl-ontologies.com/unnamed.owl#LoanStatusValue
+http://www.owl-ontologies.com/unnamed.owl#HouseholdPayment disjointWith http://www.owl-ontologies.com/unnamed.owl#MaleSex
+http://www.owl-ontologies.com/unnamed.owl#HouseholdPayment disjointWith http://www.owl-ontologies.com/unnamed.owl#Man
+http://www.owl-ontologies.com/unnamed.owl#HouseholdPayment disjointWith http://www.owl-ontologies.com/unnamed.owl#Monthly
+http://www.owl-ontologies.com/unnamed.owl#HouseholdPayment disjointWith http://www.owl-ontologies.com/unnamed.owl#NoProblemsFinishedLoan
+http://www.owl-ontologies.com/unnamed.owl#HouseholdPayment disjointWith http://www.owl-ontologies.com/unnamed.owl#NorthBohemia
+http://www.owl-ontologies.com/unnamed.owl#HouseholdPayment disjointWith http://www.owl-ontologies.com/unnamed.owl#NorthMoravia
+http://www.owl-ontologies.com/unnamed.owl#HouseholdPayment disjointWith http://www.owl-ontologies.com/unnamed.owl#NotPaidFinishedLoan
+http://www.owl-ontologies.com/unnamed.owl#HouseholdPayment disjointWith http://www.owl-ontologies.com/unnamed.owl#OKRunningLoan
+http://www.owl-ontologies.com/unnamed.owl#HouseholdPayment disjointWith http://www.owl-ontologies.com/unnamed.owl#OKStatus
+http://www.owl-ontologies.com/unnamed.owl#HouseholdPayment disjointWith http://www.owl-ontologies.com/unnamed.owl#Payment
+http://www.owl-ontologies.com/unnamed.owl#HouseholdPayment disjointWith http://www.owl-ontologies.com/unnamed.owl#PermanentOrder
+http://www.owl-ontologies.com/unnamed.owl#HouseholdPayment disjointWith http://www.owl-ontologies.com/unnamed.owl#Prague
+http://www.owl-ontologies.com/unnamed.owl#HouseholdPayment disjointWith http://www.owl-ontologies.com/unnamed.owl#ProblemStatus
+http://www.owl-ontologies.com/unnamed.owl#HouseholdPayment disjointWith http://www.owl-ontologies.com/unnamed.owl#Region
+http://www.owl-ontologies.com/unnamed.owl#HouseholdPayment disjointWith http://www.owl-ontologies.com/unnamed.owl#Running
+http://www.owl-ontologies.com/unnamed.owl#HouseholdPayment disjointWith http://www.owl-ontologies.com/unnamed.owl#SexValue
+http://www.owl-ontologies.com/unnamed.owl#HouseholdPayment disjointWith http://www.owl-ontologies.com/unnamed.owl#SouthBohemia
+http://www.owl-ontologies.com/unnamed.owl#HouseholdPayment disjointWith http://www.owl-ontologies.com/unnamed.owl#SouthMoravia
+http://www.owl-ontologies.com/unnamed.owl#HouseholdPayment disjointWith http://www.owl-ontologies.com/unnamed.owl#StatementIssuanceFrequencyValue
+http://www.owl-ontologies.com/unnamed.owl#HouseholdPayment disjointWith http://www.owl-ontologies.com/unnamed.owl#Weekly
+http://www.owl-ontologies.com/unnamed.owl#HouseholdPayment disjointWith http://www.owl-ontologies.com/unnamed.owl#WestBohemia
+http://www.owl-ontologies.com/unnamed.owl#HouseholdPayment disjointWith http://www.owl-ontologies.com/unnamed.owl#Woman
+http://www.owl-ontologies.com/unnamed.owl#InsurrancePayment disjointWith http://www.owl-ontologies.com/unnamed.owl#Junior
+http://www.owl-ontologies.com/unnamed.owl#InsurrancePayment disjointWith http://www.owl-ontologies.com/unnamed.owl#Leasing
+http://www.owl-ontologies.com/unnamed.owl#InsurrancePayment disjointWith http://www.owl-ontologies.com/unnamed.owl#Loan
+http://www.owl-ontologies.com/unnamed.owl#InsurrancePayment disjointWith http://www.owl-ontologies.com/unnamed.owl#LoanPayment
+http://www.owl-ontologies.com/unnamed.owl#InsurrancePayment disjointWith http://www.owl-ontologies.com/unnamed.owl#LoanStatusValue
+http://www.owl-ontologies.com/unnamed.owl#InsurrancePayment disjointWith http://www.owl-ontologies.com/unnamed.owl#MaleSex
+http://www.owl-ontologies.com/unnamed.owl#InsurrancePayment disjointWith http://www.owl-ontologies.com/unnamed.owl#Man
+http://www.owl-ontologies.com/unnamed.owl#InsurrancePayment disjointWith http://www.owl-ontologies.com/unnamed.owl#Monthly
+http://www.owl-ontologies.com/unnamed.owl#InsurrancePayment disjointWith http://www.owl-ontologies.com/unnamed.owl#NoProblemsFinishedLoan
+http://www.owl-ontologies.com/unnamed.owl#InsurrancePayment disjointWith http://www.owl-ontologies.com/unnamed.owl#NorthBohemia
+http://www.owl-ontologies.com/unnamed.owl#InsurrancePayment disjointWith http://www.owl-ontologies.com/unnamed.owl#NorthMoravia
+http://www.owl-ontologies.com/unnamed.owl#InsurrancePayment disjointWith http://www.owl-ontologies.com/unnamed.owl#NotPaidFinishedLoan
+http://www.owl-ontologies.com/unnamed.owl#InsurrancePayment disjointWith http://www.owl-ontologies.com/unnamed.owl#OKRunningLoan
+http://www.owl-ontologies.com/unnamed.owl#InsurrancePayment disjointWith http://www.owl-ontologies.com/unnamed.owl#OKStatus
+http://www.owl-ontologies.com/unnamed.owl#InsurrancePayment disjointWith http://www.owl-ontologies.com/unnamed.owl#Payment
+http://www.owl-ontologies.com/unnamed.owl#InsurrancePayment disjointWith http://www.owl-ontologies.com/unnamed.owl#PermanentOrder
+http://www.owl-ontologies.com/unnamed.owl#InsurrancePayment disjointWith http://www.owl-ontologies.com/unnamed.owl#Prague
+http://www.owl-ontologies.com/unnamed.owl#InsurrancePayment disjointWith http://www.owl-ontologies.com/unnamed.owl#ProblemStatus
+http://www.owl-ontologies.com/unnamed.owl#InsurrancePayment disjointWith http://www.owl-ontologies.com/unnamed.owl#Region
+http://www.owl-ontologies.com/unnamed.owl#InsurrancePayment disjointWith http://www.owl-ontologies.com/unnamed.owl#Running
+http://www.owl-ontologies.com/unnamed.owl#InsurrancePayment disjointWith http://www.owl-ontologies.com/unnamed.owl#SexValue
+http://www.owl-ontologies.com/unnamed.owl#InsurrancePayment disjointWith http://www.owl-ontologies.com/unnamed.owl#SouthBohemia
+http://www.owl-ontologies.com/unnamed.owl#InsurrancePayment disjointWith http://www.owl-ontologies.com/unnamed.owl#SouthMoravia
+http://www.owl-ontologies.com/unnamed.owl#InsurrancePayment disjointWith http://www.owl-ontologies.com/unnamed.owl#StatementIssuanceFrequencyValue
+http://www.owl-ontologies.com/unnamed.owl#InsurrancePayment disjointWith http://www.owl-ontologies.com/unnamed.owl#Weekly
+http://www.owl-ontologies.com/unnamed.owl#InsurrancePayment disjointWith http://www.owl-ontologies.com/unnamed.owl#WestBohemia
+http://www.owl-ontologies.com/unnamed.owl#InsurrancePayment disjointWith http://www.owl-ontologies.com/unnamed.owl#Woman
+http://www.owl-ontologies.com/unnamed.owl#Junior disjointWith http://www.owl-ontologies.com/unnamed.owl#Leasing
+http://www.owl-ontologies.com/unnamed.owl#Junior disjointWith http://www.owl-ontologies.com/unnamed.owl#Loan
+http://www.owl-ontologies.com/unnamed.owl#Junior disjointWith http://www.owl-ontologies.com/unnamed.owl#LoanPayment
+http://www.owl-ontologies.com/unnamed.owl#Junior disjointWith http://www.owl-ontologies.com/unnamed.owl#LoanStatusValue
+http://www.owl-ontologies.com/unnamed.owl#Junior disjointWith http://www.owl-ontologies.com/unnamed.owl#MaleSex
+http://www.owl-ontologies.com/unnamed.owl#Junior disjointWith http://www.owl-ontologies.com/unnamed.owl#Man
+http://www.owl-ontologies.com/unnamed.owl#Junior disjointWith http://www.owl-ontologies.com/unnamed.owl#Monthly
+http://www.owl-ontologies.com/unnamed.owl#Junior disjointWith http://www.owl-ontologies.com/unnamed.owl#NoProblemsFinishedLoan
+http://www.owl-ontologies.com/unnamed.owl#Junior disjointWith http://www.owl-ontologies.com/unnamed.owl#NorthBohemia
+http://www.owl-ontologies.com/unnamed.owl#Junior disjointWith http://www.owl-ontologies.com/unnamed.owl#NorthMoravia
+http://www.owl-ontologies.com/unnamed.owl#Junior disjointWith http://www.owl-ontologies.com/unnamed.owl#NotPaidFinishedLoan
+http://www.owl-ontologies.com/unnamed.owl#Junior disjointWith http://www.owl-ontologies.com/unnamed.owl#OKRunningLoan
+http://www.owl-ontologies.com/unnamed.owl#Junior disjointWith http://www.owl-ontologies.com/unnamed.owl#OKStatus
+http://www.owl-ontologies.com/unnamed.owl#Junior disjointWith http://www.owl-ontologies.com/unnamed.owl#Payment
+http://www.owl-ontologies.com/unnamed.owl#Junior disjointWith http://www.owl-ontologies.com/unnamed.owl#PermanentOrder
+http://www.owl-ontologies.com/unnamed.owl#Junior disjointWith http://www.owl-ontologies.com/unnamed.owl#Prague
+http://www.owl-ontologies.com/unnamed.owl#Junior disjointWith http://www.owl-ontologies.com/unnamed.owl#ProblemStatus
+http://www.owl-ontologies.com/unnamed.owl#Junior disjointWith http://www.owl-ontologies.com/unnamed.owl#Region
+http://www.owl-ontologies.com/unnamed.owl#Junior disjointWith http://www.owl-ontologies.com/unnamed.owl#Running
+http://www.owl-ontologies.com/unnamed.owl#Junior disjointWith http://www.owl-ontologies.com/unnamed.owl#SexValue
+http://www.owl-ontologies.com/unnamed.owl#Junior disjointWith http://www.owl-ontologies.com/unnamed.owl#SouthBohemia
+http://www.owl-ontologies.com/unnamed.owl#Junior disjointWith http://www.owl-ontologies.com/unnamed.owl#SouthMoravia
+http://www.owl-ontologies.com/unnamed.owl#Junior disjointWith http://www.owl-ontologies.com/unnamed.owl#StatementIssuanceFrequencyValue
+http://www.owl-ontologies.com/unnamed.owl#Junior disjointWith http://www.owl-ontologies.com/unnamed.owl#Weekly
+http://www.owl-ontologies.com/unnamed.owl#Junior disjointWith http://www.owl-ontologies.com/unnamed.owl#WestBohemia
+http://www.owl-ontologies.com/unnamed.owl#Junior disjointWith http://www.owl-ontologies.com/unnamed.owl#Woman
+http://www.owl-ontologies.com/unnamed.owl#Leasing disjointWith http://www.owl-ontologies.com/unnamed.owl#Loan
+http://www.owl-ontologies.com/unnamed.owl#Leasing disjointWith http://www.owl-ontologies.com/unnamed.owl#LoanPayment
+http://www.owl-ontologies.com/unnamed.owl#Leasing disjointWith http://www.owl-ontologies.com/unnamed.owl#LoanStatusValue
+http://www.owl-ontologies.com/unnamed.owl#Leasing disjointWith http://www.owl-ontologies.com/unnamed.owl#MaleSex
+http://www.owl-ontologies.com/unnamed.owl#Leasing disjointWith http://www.owl-ontologies.com/unnamed.owl#Man
+http://www.owl-ontologies.com/unnamed.owl#Leasing disjointWith http://www.owl-ontologies.com/unnamed.owl#Monthly
+http://www.owl-ontologies.com/unnamed.owl#Leasing disjointWith http://www.owl-ontologies.com/unnamed.owl#NoProblemsFinishedLoan
+http://www.owl-ontologies.com/unnamed.owl#Leasing disjointWith http://www.owl-ontologies.com/unnamed.owl#NorthBohemia
+http://www.owl-ontologies.com/unnamed.owl#Leasing disjointWith http://www.owl-ontologies.com/unnamed.owl#NorthMoravia
+http://www.owl-ontologies.com/unnamed.owl#Leasing disjointWith http://www.owl-ontologies.com/unnamed.owl#NotPaidFinishedLoan
+http://www.owl-ontologies.com/unnamed.owl#Leasing disjointWith http://www.owl-ontologies.com/unnamed.owl#OKRunningLoan
+http://www.owl-ontologies.com/unnamed.owl#Leasing disjointWith http://www.owl-ontologies.com/unnamed.owl#OKStatus
+http://www.owl-ontologies.com/unnamed.owl#Leasing disjointWith http://www.owl-ontologies.com/unnamed.owl#Payment
+http://www.owl-ontologies.com/unnamed.owl#Leasing disjointWith http://www.owl-ontologies.com/unnamed.owl#PermanentOrder
+http://www.owl-ontologies.com/unnamed.owl#Leasing disjointWith http://www.owl-ontologies.com/unnamed.owl#Prague
+http://www.owl-ontologies.com/unnamed.owl#Leasing disjointWith http://www.owl-ontologies.com/unnamed.owl#ProblemStatus
+http://www.owl-ontologies.com/unnamed.owl#Leasing disjointWith http://www.owl-ontologies.com/unnamed.owl#Region
+http://www.owl-ontologies.com/unnamed.owl#Leasing disjointWith http://www.owl-ontologies.com/unnamed.owl#Running
+http://www.owl-ontologies.com/unnamed.owl#Leasing disjointWith http://www.owl-ontologies.com/unnamed.owl#SexValue
+http://www.owl-ontologies.com/unnamed.owl#Leasing disjointWith http://www.owl-ontologies.com/unnamed.owl#SouthBohemia
+http://www.owl-ontologies.com/unnamed.owl#Leasing disjointWith http://www.owl-ontologies.com/unnamed.owl#SouthMoravia
+http://www.owl-ontologies.com/unnamed.owl#Leasing disjointWith http://www.owl-ontologies.com/unnamed.owl#StatementIssuanceFrequencyValue
+http://www.owl-ontologies.com/unnamed.owl#Leasing disjointWith http://www.owl-ontologies.com/unnamed.owl#Weekly
+http://www.owl-ontologies.com/unnamed.owl#Leasing disjointWith http://www.owl-ontologies.com/unnamed.owl#WestBohemia
+http://www.owl-ontologies.com/unnamed.owl#Leasing disjointWith http://www.owl-ontologies.com/unnamed.owl#Woman
+http://www.owl-ontologies.com/unnamed.owl#Loan disjointWith http://www.owl-ontologies.com/unnamed.owl#LoanPayment
+http://www.owl-ontologies.com/unnamed.owl#Loan disjointWith http://www.owl-ontologies.com/unnamed.owl#LoanStatusValue
+http://www.owl-ontologies.com/unnamed.owl#Loan disjointWith http://www.owl-ontologies.com/unnamed.owl#MaleSex
+http://www.owl-ontologies.com/unnamed.owl#Loan disjointWith http://www.owl-ontologies.com/unnamed.owl#Man
+http://www.owl-ontologies.com/unnamed.owl#Loan disjointWith http://www.owl-ontologies.com/unnamed.owl#Monthly
+http://www.owl-ontologies.com/unnamed.owl#Loan disjointWith http://www.owl-ontologies.com/unnamed.owl#NoProblemsFinishedLoan
+Number of inconsistencies: 4
+http://www.owl-ontologies.com/unnamed.owl#Loan disjointWith http://www.owl-ontologies.com/unnamed.owl#NorthBohemia
+http://www.owl-ontologies.com/unnamed.owl#Loan disjointWith http://www.owl-ontologies.com/unnamed.owl#NorthMoravia
+http://www.owl-ontologies.com/unnamed.owl#Loan disjointWith http://www.owl-ontologies.com/unnamed.owl#NotPaidFinishedLoan
+Number of inconsistencies: 5
+http://www.owl-ontologies.com/unnamed.owl#Loan disjointWith http://www.owl-ontologies.com/unnamed.owl#OKRunningLoan
+Number of inconsistencies: 6
+http://www.owl-ontologies.com/unnamed.owl#Loan disjointWith http://www.owl-ontologies.com/unnamed.owl#OKStatus
+http://www.owl-ontologies.com/unnamed.owl#Loan disjointWith http://www.owl-ontologies.com/unnamed.owl#Payment
+http://www.owl-ontologies.com/unnamed.owl#Loan disjointWith http://www.owl-ontologies.com/unnamed.owl#PermanentOrder
+http://www.owl-ontologies.com/unnamed.owl#Loan disjointWith http://www.owl-ontologies.com/unnamed.owl#Prague
+http://www.owl-ontologies.com/unnamed.owl#Loan disjointWith http://www.owl-ontologies.com/unnamed.owl#ProblemStatus
+http://www.owl-ontologies.com/unnamed.owl#Loan disjointWith http://www.owl-ontologies.com/unnamed.owl#Region
+http://www.owl-ontologies.com/unnamed.owl#Loan disjointWith http://www.owl-ontologies.com/unnamed.owl#SexValue
+http://www.owl-ontologies.com/unnamed.owl#Loan disjointWith http://www.owl-ontologies.com/unnamed.owl#SouthBohemia
+http://www.owl-ontologies.com/unnamed.owl#Loan disjointWith http://www.owl-ontologies.com/unnamed.owl#SouthMoravia
+http://www.owl-ontologies.com/unnamed.owl#Loan disjointWith http://www.owl-ontologies.com/unnamed.owl#StatementIssuanceFrequencyValue
+http://www.owl-ontologies.com/unnamed.owl#Loan disjointWith http://www.owl-ontologies.com/unnamed.owl#Weekly
+http://www.owl-ontologies.com/unnamed.owl#Loan disjointWith http://www.owl-ontologies.com/unnamed.owl#WestBohemia
+http://www.owl-ontologies.com/unnamed.owl#Loan disjointWith http://www.owl-ontologies.com/unnamed.owl#Woman
+http://www.owl-ontologies.com/unnamed.owl#LoanPayment disjointWith http://www.owl-ontologies.com/unnamed.owl#LoanStatusValue
+http://www.owl-ontologies.com/unnamed.owl#LoanPayment disjointWith http://www.owl-ontologies.com/unnamed.owl#MaleSex
+http://www.owl-ontologies.com/unnamed.owl#LoanPayment disjointWith http://www.owl-ontologies.com/unnamed.owl#Man
+http://www.owl-ontologies.com/unnamed.owl#LoanPayment disjointWith http://www.owl-ontologies.com/unnamed.owl#Monthly
+http://www.owl-ontologies.com/unnamed.owl#LoanPayment disjointWith http://www.owl-ontologies.com/unnamed.owl#NoProblemsFinishedLoan
+http://www.owl-ontologies.com/unnamed.owl#LoanPayment disjointWith http://www.owl-ontologies.com/unnamed.owl#NorthBohemia
+http://www.owl-ontologies.com/unnamed.owl#LoanPayment disjointWith http://www.owl-ontologies.com/unnamed.owl#NorthMoravia
+http://www.owl-ontologies.com/unnamed.owl#LoanPayment disjointWith http://www.owl-ontologies.com/unnamed.owl#NotPaidFinishedLoan
+http://www.owl-ontologies.com/unnamed.owl#LoanPayment disjointWith http://www.owl-ontologies.com/unnamed.owl#OKRunningLoan
+http://www.owl-ontologies.com/unnamed.owl#LoanPayment disjointWith http://www.owl-ontologies.com/unnamed.owl#OKStatus
+http://www.owl-ontologies.com/unnamed.owl#LoanPayment disjointWith http://www.owl-ontologies.com/unnamed.owl#Payment
+http://www.owl-ontologies.com/unnamed.owl#LoanPayment disjointWith http://www.owl-ontologies.com/unnamed.owl#PermanentOrder
+http://www.owl-ontologies.com/unnamed.owl#LoanPayment disjointWith http://www.owl-ontologies.com/unnamed.owl#Prague
+http://www.owl-ontologies.com/unnamed.owl#LoanPayment disjointWith http://www.owl-ontologies.com/unnamed.owl#ProblemStatus
+http://www.owl-ontologies.com/unnamed.owl#LoanPayment disjointWith http://www.owl-ontologies.com/unnamed.owl#Region
+http://www.owl-ontologies.com/unnamed.owl#LoanPayment disjointWith http://www.owl-ontologies.com/unnamed.owl#Running
+http://www.owl-ontologies.com/unnamed.owl#LoanPayment disjointWith http://www.owl-ontologies.com/unnamed.owl#SexValue
+http://www.owl-ontologies.com/unnamed.owl#LoanPayment disjointWith http://www.owl-ontologies.com/unnamed.owl#SouthBohemia
+http://www.owl-ontologies.com/unnamed.owl#LoanPayment disjointWith http://www.owl-ontologies.com/unnamed.owl#SouthMoravia
+http://www.owl-ontologies.com/unnamed.owl#LoanPayment disjointWith http://www.owl-ontologies.com/unnamed.owl#StatementIssuanceFrequencyValue
+http://www.owl-ontologies.com/unnamed.owl#LoanPayment disjointWith http://www.owl-ontologies.com/unnamed.owl#Weekly
+http://www.owl-ontologies.com/unnamed.owl#LoanPayment disjointWith http://www.owl-ontologies.com/unnamed.owl#WestBohemia
+http://www.owl-ontologies.com/unnamed.owl#LoanPayment disjointWith http://www.owl-ontologies.com/unnamed.owl#Woman
+http://www.owl-ontologies.com/unnamed.owl#LoanStatusValue disjointWith http://www.owl-ontologies.com/unnamed.owl#MaleSex
+http://www.owl-ontologies.com/unnamed.owl#LoanStatusValue disjointWith http://www.owl-ontologies.com/unnamed.owl#Man
+http://www.owl-ontologies.com/unnamed.owl#LoanStatusValue disjointWith http://www.owl-ontologies.com/unnamed.owl#Monthly
+http://www.owl-ontologies.com/unnamed.owl#LoanStatusValue disjointWith http://www.owl-ontologies.com/unnamed.owl#NoProblemsFinishedLoan
+http://www.owl-ontologies.com/unnamed.owl#LoanStatusValue disjointWith http://www.owl-ontologies.com/unnamed.owl#NorthBohemia
+http://www.owl-ontologies.com/unnamed.owl#LoanStatusValue disjointWith http://www.owl-ontologies.com/unnamed.owl#NorthMoravia
+http://www.owl-ontologies.com/unnamed.owl#LoanStatusValue disjointWith http://www.owl-ontologies.com/unnamed.owl#NotPaidFinishedLoan
+http://www.owl-ontologies.com/unnamed.owl#LoanStatusValue disjointWith http://www.owl-ontologies.com/unnamed.owl#OKRunningLoan
+http://www.owl-ontologies.com/unnamed.owl#LoanStatusValue disjointWith http://www.owl-ontologies.com/unnamed.owl#Payment
+http://www.owl-ontologies.com/unnamed.owl#LoanStatusValue disjointWith http://www.owl-ontologies.com/unnamed.owl#PermanentOrder
+http://www.owl-ontologies.com/unnamed.owl#LoanStatusValue disjointWith http://www.owl-ontologies.com/unnamed.owl#Prague
+http://www.owl-ontologies.com/unnamed.owl#LoanStatusValue disjointWith http://www.owl-ontologies.com/unnamed.owl#Region
+http://www.owl-ontologies.com/unnamed.owl#LoanStatusValue disjointWith http://www.owl-ontologies.com/unnamed.owl#Running
+http://www.owl-ontologies.com/unnamed.owl#LoanStatusValue disjointWith http://www.owl-ontologies.com/unnamed.owl#SexValue
+http://www.owl-ontologies.com/unnamed.owl#LoanStatusValue disjointWith http://www.owl-ontologies.com/unnamed.owl#SouthBohemia
+http://www.owl-ontologies.com/unnamed.owl#LoanStatusValue disjointWith http://www.owl-ontologies.com/unnamed.owl#SouthMoravia
+http://www.owl-ontologies.com/unnamed.owl#LoanStatusValue disjointWith http://www.owl-ontologies.com/unnamed.owl#StatementIssuanceFrequencyValue
+http://www.owl-ontologies.com/unnamed.owl#LoanStatusValue disjointWith http://www.owl-ontologies.com/unnamed.owl#Weekly
+http://www.owl-ontologies.com/unnamed.owl#LoanStatusValue disjointWith http://www.owl-ontologies.com/unnamed.owl#WestBohemia
+http://www.owl-ontologies.com/unnamed.owl#LoanStatusValue disjointWith http://www.owl-ontologies.com/unnamed.owl#Woman
+http://www.owl-ontologies.com/unnamed.owl#MaleSex disjointWith http://www.owl-ontologies.com/unnamed.owl#Man
+http://www.owl-ontologies.com/unnamed.owl#MaleSex disjointWith http://www.owl-ontologies.com/unnamed.owl#Monthly
+http://www.owl-ontologies.com/unnamed.owl#MaleSex disjointWith http://www.owl-ontologies.com/unnamed.owl#NoProblemsFinishedLoan
+http://www.owl-ontologies.com/unnamed.owl#MaleSex disjointWith http://www.owl-ontologies.com/unnamed.owl#NorthBohemia
+http://www.owl-ontologies.com/unnamed.owl#MaleSex disjointWith http://www.owl-ontologies.com/unnamed.owl#NorthMoravia
+http://www.owl-ontologies.com/unnamed.owl#MaleSex disjointWith http://www.owl-ontologies.com/unnamed.owl#NotPaidFinishedLoan
+http://www.owl-ontologies.com/unnamed.owl#MaleSex disjointWith http://www.owl-ontologies.com/unnamed.owl#OKRunningLoan
+http://www.owl-ontologies.com/unnamed.owl#MaleSex disjointWith http://www.owl-ontologies.com/unnamed.owl#OKStatus
+http://www.owl-ontologies.com/unnamed.owl#MaleSex disjointWith http://www.owl-ontologies.com/unnamed.owl#Payment
+http://www.owl-ontologies.com/unnamed.owl#MaleSex disjointWith http://www.owl-ontologies.com/unnamed.owl#PermanentOrder
+http://www.owl-ontologies.com/unnamed.owl#MaleSex disjointWith http://www.owl-ontologies.com/unnamed.owl#Prague
+http://www.owl-ontologies.com/unnamed.owl#MaleSex disjointWith http://www.owl-ontologies.com/unnamed.owl#ProblemStatus
+http://www.owl-ontologies.com/unnamed.owl#MaleSex disjointWith http://www.owl-ontologies.com/unnamed.owl#Region
+http://www.owl-ontologies.com/unnamed.owl#MaleSex disjointWith http://www.owl-ontologies.com/unnamed.owl#Running
+http://www.owl-ontologies.com/unnamed.owl#MaleSex disjointWith http://www.owl-ontologies.com/unnamed.owl#SouthBohemia
+http://www.owl-ontologies.com/unnamed.owl#MaleSex disjointWith http://www.owl-ontologies.com/unnamed.owl#SouthMoravia
+http://www.owl-ontologies.com/unnamed.owl#MaleSex disjointWith http://www.owl-ontologies.com/unnamed.owl#StatementIssuanceFrequencyValue
+http://www.owl-ontologies.com/unnamed.owl#MaleSex disjointWith http://www.owl-ontologies.com/unnamed.owl#Weekly
+http://www.owl-ontologies.com/unnamed.owl#MaleSex disjointWith http://www.owl-ontologies.com/unnamed.owl#WestBohemia
+http://www.owl-ontologies.com/unnamed.owl#MaleSex disjointWith http://www.owl-ontologies.com/unnamed.owl#Woman
+http://www.owl-ontologies.com/unnamed.owl#Man disjointWith http://www.owl-ontologies.com/unnamed.owl#Monthly
+http://www.owl-ontologies.com/unnamed.owl#Man disjointWith http://www.owl-ontologies.com/unnamed.owl#NoProblemsFinishedLoan
+http://www.owl-ontologies.com/unnamed.owl#Man disjointWith http://www.owl-ontologies.com/unnamed.owl#NorthBohemia
+http://www.owl-ontologies.com/unnamed.owl#Man disjointWith http://www.owl-ontologies.com/unnamed.owl#NorthMoravia
+http://www.owl-ontologies.com/unnamed.owl#Man disjointWith http://www.owl-ontologies.com/unnamed.owl#NotPaidFinishedLoan
+http://www.owl-ontologies.com/unnamed.owl#Man disjointWith http://www.owl-ontologies.com/unnamed.owl#OKRunningLoan
+http://www.owl-ontologies.com/unnamed.owl#Man disjointWith http://www.owl-ontologies.com/unnamed.owl#OKStatus
+http://www.owl-ontologies.com/unnamed.owl#Man disjointWith http://www.owl-ontologies.com/unnamed.owl#Payment
+http://www.owl-ontologies.com/unnamed.owl#Man disjointWith http://www.owl-ontologies.com/unnamed.owl#PermanentOrder
+http://www.owl-ontologies.com/unnamed.owl#Man disjointWith http://www.owl-ontologies.com/unnamed.owl#Prague
+http://www.owl-ontologies.com/unnamed.owl#Man disjointWith http://www.owl-ontologies.com/unnamed.owl#ProblemStatus
+http://www.owl-ontologies.com/unnamed.owl#Man disjointWith http://www.owl-ontologies.com/unnamed.owl#Region
+http://www.owl-ontologies.com/unnamed.owl#Man disjointWith http://www.owl-ontologies.com/unnamed.owl#Running
+http://www.owl-ontologies.com/unnamed.owl#Man disjointWith http://www.owl-ontologies.com/unnamed.owl#SexValue
+http://www.owl-ontologies.com/unnamed.owl#Man disjointWith http://www.owl-ontologies.com/unnamed.owl#SouthBohemia
+http://www.owl-ontologies.com/unnamed.owl#Man disjointWith http://www.owl-ontologies.com/unnamed.owl#SouthMoravia
+http://www.owl-ontologies.com/unnamed.owl#Man disjointWith http://www.owl-ontologies.com/unnamed.owl#StatementIssuanceFrequencyValue
+http://www.owl-ontologies.com/unnamed.owl#Man disjointWith http://www.owl-ontologies.com/unnamed.owl#Weekly
+http://www.owl-ontologies.com/unnamed.owl#Man disjointWith http://www.owl-ontologies.com/unnamed.owl#WestBohemia
+http://www.owl-ontologies.com/unnamed.owl#Man disjointWith http://www.owl-ontologies.com/unnamed.owl#Woman
+http://www.owl-ontologies.com/unnamed.owl#Monthly disjointWith http://www.owl-ontologies.com/unnamed.owl#NoProblemsFinishedLoan
+http://www.owl-ontologies.com/unnamed.owl#Monthly disjointWith http://www.owl-ontologies.com/unnamed.owl#NorthBohemia
+http://www.owl-ontologies.com/unnamed.owl#Monthly disjointWith http://www.owl-ontologies.com/unnamed.owl#NorthMoravia
+http://www.owl-ontologies.com/unnamed.owl#Monthly disjointWith http://www.owl-ontologies.com/unnamed.owl#NotPaidFinishedLoan
+http://www.owl-ontologies.com/unnamed.owl#Monthly disjointWith http://www.owl-ontologies.com/unnamed.owl#OKRunningLoan
+http://www.owl-ontologies.com/unnamed.owl#Monthly disjointWith http://www.owl-ontologies.com/unnamed.owl#OKStatus
+http://www.owl-ontologies.com/unnamed.owl#Monthly disjointWith http://www.owl-ontologies.com/unnamed.owl#Payment
+http://www.owl-ontologies.com/unnamed.owl#Monthly disjointWith http://www.owl-ontologies.com/unnamed.owl#PermanentOrder
+http://www.owl-ontologies.com/unnamed.owl#Monthly disjointWith http://www.owl-ontologies.com/unnamed.owl#Prague
+http://www.owl-ontologies.com/unnamed.owl#Monthly disjointWith http://www.owl-ontologies.com/unnamed.owl#ProblemStatus
+http://www.owl-ontologies.com/unnamed.owl#Monthly disjointWith http://www.owl-ontologies.com/unnamed.owl#Region
+http://www.owl-ontologies.com/unnamed.owl#Monthly disjointWith http://www.owl-ontologies.com/unnamed.owl#Running
+http://www.owl-ontologies.com/unnamed.owl#Monthly disjointWith http://www.owl-ontologies.com/unnamed.owl#SexValue
+http://www.owl-ontologies.com/unnamed.owl#Monthly disjointWith http://www.owl-ontologies.com/unnamed.owl#SouthBohemia
+http://www.owl-ontologies.com/unnamed.owl#Monthly disjointWith http://www.owl-ontologies.com/unnamed.owl#SouthMoravia
+http://www.owl-ontologies.com/unnamed.owl#Monthly disjointWith http://www.owl-ontologies.com/unnamed.owl#Weekly
+http://www.owl-ontologies.com/unnamed.owl#Monthly disjointWith http://www.owl-ontologies.com/unnamed.owl#WestBohemia
+http://www.owl-ontologies.com/unnamed.owl#Monthly disjointWith http://www.owl-ontologies.com/unnamed.owl#Woman
+http://www.owl-ontologies.com/unnamed.owl#NoProblemsFinishedLoan disjointWith http://www.owl-ontologies.com/unnamed.owl#NorthBohemia
+http://www.owl-ontologies.com/unnamed.owl#NoProblemsFinishedLoan disjointWith http://www.owl-ontologies.com/unnamed.owl#NorthMoravia
+http://www.owl-ontologies.com/unnamed.owl#NoProblemsFinishedLoan disjointWith http://www.owl-ontologies.com/unnamed.owl#NotPaidFinishedLoan
+http://www.owl-ontologies.com/unnamed.owl#NoProblemsFinishedLoan disjointWith http://www.owl-ontologies.com/unnamed.owl#OKRunningLoan
+http://www.owl-ontologies.com/unnamed.owl#NoProblemsFinishedLoan disjointWith http://www.owl-ontologies.com/unnamed.owl#OKStatus
+http://www.owl-ontologies.com/unnamed.owl#NoProblemsFinishedLoan disjointWith http://www.owl-ontologies.com/unnamed.owl#Payment
+http://www.owl-ontologies.com/unnamed.owl#NoProblemsFinishedLoan disjointWith http://www.owl-ontologies.com/unnamed.owl#PermanentOrder
+http://www.owl-ontologies.com/unnamed.owl#NoProblemsFinishedLoan disjointWith http://www.owl-ontologies.com/unnamed.owl#Prague
+http://www.owl-ontologies.com/unnamed.owl#NoProblemsFinishedLoan disjointWith http://www.owl-ontologies.com/unnamed.owl#ProblemStatus
+http://www.owl-ontologies.com/unnamed.owl#NoProblemsFinishedLoan disjointWith http://www.owl-ontologies.com/unnamed.owl#Region
+http://www.owl-ontologies.com/unnamed.owl#NoProblemsFinishedLoan disjointWith http://www.owl-ontologies.com/unnamed.owl#Running
+http://www.owl-ontologies.com/unnamed.owl#NoProblemsFinishedLoan disjointWith http://www.owl-ontologies.com/unnamed.owl#SexValue
+http://www.owl-ontologies.com/unnamed.owl#NoProblemsFinishedLoan disjointWith http://www.owl-ontologies.com/unnamed.owl#SouthBohemia
+http://www.owl-ontologies.com/unnamed.owl#NoProblemsFinishedLoan disjointWith http://www.owl-ontologies.com/unnamed.owl#SouthMoravia
+http://www.owl-ontologies.com/unnamed.owl#NoProblemsFinishedLoan disjointWith http://www.owl-ontologies.com/unnamed.owl#StatementIssuanceFrequencyValue
+http://www.owl-ontologies.com/unnamed.owl#NoProblemsFinishedLoan disjointWith http://www.owl-ontologies.com/unnamed.owl#Weekly
+http://www.owl-ontologies.com/unnamed.owl#NoProblemsFinishedLoan disjointWith http://www.owl-ontologies.com/unnamed.owl#WestBohemia
+http://www.owl-ontologies.com/unnamed.owl#NoProblemsFinishedLoan disjointWith http://www.owl-ontologies.com/unnamed.owl#Woman
+http://www.owl-ontologies.com/unnamed.owl#NorthBohemia disjointWith http://www.owl-ontologies.com/unnamed.owl#NorthMoravia
+http://www.owl-ontologies.com/unnamed.owl#NorthBohemia disjointWith http://www.owl-ontologies.com/unnamed.owl#NotPaidFinishedLoan
+http://www.owl-ontologies.com/unnamed.owl#NorthBohemia disjointWith http://www.owl-ontologies.com/unnamed.owl#OKRunningLoan
+http://www.owl-ontologies.com/unnamed.owl#NorthBohemia disjointWith http://www.owl-ontologies.com/unnamed.owl#OKStatus
+http://www.owl-ontologies.com/unnamed.owl#NorthBohemia disjointWith http://www.owl-ontologies.com/unnamed.owl#Payment
+http://www.owl-ontologies.com/unnamed.owl#NorthBohemia disjointWith http://www.owl-ontologies.com/unnamed.owl#PermanentOrder
+http://www.owl-ontologies.com/unnamed.owl#NorthBohemia disjointWith http://www.owl-ontologies.com/unnamed.owl#Prague
+http://www.owl-ontologies.com/unnamed.owl#NorthBohemia disjointWith http://www.owl-ontologies.com/unnamed.owl#ProblemStatus
+http://www.owl-ontologies.com/unnamed.owl#NorthBohemia disjointWith http://www.owl-ontologies.com/unnamed.owl#Region
+http://www.owl-ontologies.com/unnamed.owl#NorthBohemia disjointWith http://www.owl-ontologies.com/unnamed.owl#Running
+http://www.owl-ontologies.com/unnamed.owl#NorthBohemia disjointWith http://www.owl-ontologies.com/unnamed.owl#SexValue
+http://www.owl-ontologies.com/unnamed.owl#NorthBohemia disjointWith http://www.owl-ontologies.com/unnamed.owl#SouthBohemia
+http://www.owl-ontologies.com/unnamed.owl#NorthBohemia disjointWith http://www.owl-ontologies.com/unnamed.owl#SouthMoravia
+http://www.owl-ontologies.com/unnamed.owl#NorthBohemia disjointWith http://www.owl-ontologies.com/unnamed.owl#StatementIssuanceFrequencyValue
+http://www.owl-ontologies.com/unnamed.owl#NorthBohemia disjointWith http://www.owl-ontologies.com/unnamed.owl#Weekly
+http://www.owl-ontologies.com/unnamed.owl#NorthBohemia disjointWith http://www.owl-ontologies.com/unnamed.owl#WestBohemia
+http://www.owl-ontologies.com/unnamed.owl#NorthBohemia disjointWith http://www.owl-ontologies.com/unnamed.owl#Woman
+http://www.owl-ontologies.com/unnamed.owl#NorthMoravia disjointWith http://www.owl-ontologies.com/unnamed.owl#NotPaidFinishedLoan
+http://www.owl-ontologies.com/unnamed.owl#NorthMoravia disjointWith http://www.owl-ontologies.com/unnamed.owl#OKRunningLoan
+http://www.owl-ontologies.com/unnamed.owl#NorthMoravia disjointWith http://www.owl-ontologies.com/unnamed.owl#OKStatus
+http://www.owl-ontologies.com/unnamed.owl#NorthMoravia disjointWith http://www.owl-ontologies.com/unnamed.owl#Payment
+http://www.owl-ontologies.com/unnamed.owl#NorthMoravia disjointWith http://www.owl-ontologies.com/unnamed.owl#PermanentOrder
+http://www.owl-ontologies.com/unnamed.owl#NorthMoravia disjointWith http://www.owl-ontologies.com/unnamed.owl#Prague
+http://www.owl-ontologies.com/unnamed.owl#NorthMoravia disjointWith http://www.owl-ontologies.com/unnamed.owl#ProblemStatus
+http://www.owl-ontologies.com/unnamed.owl#NorthMoravia disjointWith http://www.owl-ontologies.com/unnamed.owl#Region
+http://www.owl-ontologies.com/unnamed.owl#NorthMoravia disjointWith http://www.owl-ontologies.com/unnamed.owl#Running
+http://www.owl-ontologies.com/unnamed.owl#NorthMoravia disjointWith http://www.owl-ontologies.com/unnamed.owl#SexValue
+http://www.owl-ontologies.com/unnamed.owl#NorthMoravia disjointWith http://www.owl-ontologies.com/unnamed.owl#SouthBohemia
+http://www.owl-ontologies.com/unnamed.owl#NorthMoravia disjointWith http://www.owl-ontologies.com/unnamed.owl#SouthMoravia
+http://www.owl-ontologies.com/unnamed.owl#NorthMoravia disjointWith http://www.owl-ontologies.com/unnamed.owl#StatementIssuanceFrequencyValue
+http://www.owl-ontologies.com/unnamed.owl#NorthMoravia disjointWith http://www.owl-ontologies.com/unnamed.owl#Weekly
+http://www.owl-ontologies.com/unnamed.owl#NorthMoravia disjointWith http://www.owl-ontologies.com/unnamed.owl#WestBohemia
+http://www.owl-ontologies.com/unnamed.owl#NorthMoravia disjointWith http://www.owl-ontologies.com/unnamed.owl#Woman
+http://www.owl-ontologies.com/unnamed.owl#NotPaidFinishedLoan disjointWith http://www.owl-ontologies.com/unnamed.owl#OKRunningLoan
+http://www.owl-ontologies.com/unnamed.owl#NotPaidFinishedLoan disjointWith http://www.owl-ontologies.com/unnamed.owl#OKStatus
+http://www.owl-ontologies.com/unnamed.owl#NotPaidFinishedLoan disjointWith http://www.owl-ontologies.com/unnamed.owl#Payment
+http://www.owl-ontologies.com/unnamed.owl#NotPaidFinishedLoan disjointWith http://www.owl-ontologies.com/unnamed.owl#PermanentOrder
+http://www.owl-ontologies.com/unnamed.owl#NotPaidFinishedLoan disjointWith http://www.owl-ontologies.com/unnamed.owl#Prague
+http://www.owl-ontologies.com/unnamed.owl#NotPaidFinishedLoan disjointWith http://www.owl-ontologies.com/unnamed.owl#ProblemStatus
+http://www.owl-ontologies.com/unnamed.owl#NotPaidFinishedLoan disjointWith http://www.owl-ontologies.com/unnamed.owl#Region
+http://www.owl-ontologies.com/unnamed.owl#NotPaidFinishedLoan disjointWith http://www.owl-ontologies.com/unnamed.owl#Running
+http://www.owl-ontologies.com/unnamed.owl#NotPaidFinishedLoan disjointWith http://www.owl-ontologies.com/unnamed.owl#SexValue
+http://www.owl-ontologies.com/unnamed.owl#NotPaidFinishedLoan disjointWith http://www.owl-ontologies.com/unnamed.owl#SouthBohemia
+http://www.owl-ontologies.com/unnamed.owl#NotPaidFinishedLoan disjointWith http://www.owl-ontologies.com/unnamed.owl#SouthMoravia
+http://www.owl-ontologies.com/unnamed.owl#NotPaidFinishedLoan disjointWith http://www.owl-ontologies.com/unnamed.owl#StatementIssuanceFrequencyValue
+http://www.owl-ontologies.com/unnamed.owl#NotPaidFinishedLoan disjointWith http://www.owl-ontologies.com/unnamed.owl#Weekly
+http://www.owl-ontologies.com/unnamed.owl#NotPaidFinishedLoan disjointWith http://www.owl-ontologies.com/unnamed.owl#WestBohemia
+http://www.owl-ontologies.com/unnamed.owl#NotPaidFinishedLoan disjointWith http://www.owl-ontologies.com/unnamed.owl#Woman
+http://www.owl-ontologies.com/unnamed.owl#OKRunningLoan disjointWith http://www.owl-ontologies.com/unnamed.owl#OKStatus
+http://www.owl-ontologies.com/unnamed.owl#OKRunningLoan disjointWith http://www.owl-ontologies.com/unnamed.owl#Payment
+http://www.owl-ontologies.com/unnamed.owl#OKRunningLoan disjointWith http://www.owl-ontologies.com/unnamed.owl#PermanentOrder
+http://www.owl-ontologies.com/unnamed.owl#OKRunningLoan disjointWith http://www.owl-ontologies.com/unnamed.owl#Prague
+http://www.owl-ontologies.com/unnamed.owl#OKRunningLoan disjointWith http://www.owl-ontologies.com/unnamed.owl#ProblemStatus
+http://www.owl-ontologies.com/unnamed.owl#OKRunningLoan disjointWith http://www.owl-ontologies.com/unnamed.owl#Region
+http://www.owl-ontologies.com/unnamed.owl#OKRunningLoan disjointWith http://www.owl-ontologies.com/unnamed.owl#SexValue
+http://www.owl-ontologies.com/unnamed.owl#OKRunningLoan disjointWith http://www.owl-ontologies.com/unnamed.owl#SouthBohemia
+http://www.owl-ontologies.com/unnamed.owl#OKRunningLoan disjointWith http://www.owl-ontologies.com/unnamed.owl#SouthMoravia
+http://www.owl-ontologies.com/unnamed.owl#OKRunningLoan disjointWith http://www.owl-ontologies.com/unnamed.owl#StatementIssuanceFrequencyValue
+http://www.owl-ontologies.com/unnamed.owl#OKRunningLoan disjointWith http://www.owl-ontologies.com/unnamed.owl#Weekly
+http://www.owl-ontologies.com/unnamed.owl#OKRunningLoan disjointWith http://www.owl-ontologies.com/unnamed.owl#WestBohemia
+http://www.owl-ontologies.com/unnamed.owl#OKRunningLoan disjointWith http://www.owl-ontologies.com/unnamed.owl#Woman
+http://www.owl-ontologies.com/unnamed.owl#OKStatus disjointWith http://www.owl-ontologies.com/unnamed.owl#Payment
+http://www.owl-ontologies.com/unnamed.owl#OKStatus disjointWith http://www.owl-ontologies.com/unnamed.owl#PermanentOrder
+http://www.owl-ontologies.com/unnamed.owl#OKStatus disjointWith http://www.owl-ontologies.com/unnamed.owl#Prague
+http://www.owl-ontologies.com/unnamed.owl#OKStatus disjointWith http://www.owl-ontologies.com/unnamed.owl#ProblemStatus
+http://www.owl-ontologies.com/unnamed.owl#OKStatus disjointWith http://www.owl-ontologies.com/unnamed.owl#Region
+http://www.owl-ontologies.com/unnamed.owl#OKStatus disjointWith http://www.owl-ontologies.com/unnamed.owl#Running
+http://www.owl-ontologies.com/unnamed.owl#OKStatus disjointWith http://www.owl-ontologies.com/unnamed.owl#SexValue
+http://www.owl-ontologies.com/unnamed.owl#OKStatus disjointWith http://www.owl-ontologies.com/unnamed.owl#SouthBohemia
+http://www.owl-ontologies.com/unnamed.owl#OKStatus disjointWith http://www.owl-ontologies.com/unnamed.owl#SouthMoravia
+http://www.owl-ontologies.com/unnamed.owl#OKStatus disjointWith http://www.owl-ontologies.com/unnamed.owl#StatementIssuanceFrequencyValue
+http://www.owl-ontologies.com/unnamed.owl#OKStatus disjointWith http://www.owl-ontologies.com/unnamed.owl#Weekly
+http://www.owl-ontologies.com/unnamed.owl#OKStatus disjointWith http://www.owl-ontologies.com/unnamed.owl#WestBohemia
+http://www.owl-ontologies.com/unnamed.owl#OKStatus disjointWith http://www.owl-ontologies.com/unnamed.owl#Woman
+http://www.owl-ontologies.com/unnamed.owl#Payment disjointWith http://www.owl-ontologies.com/unnamed.owl#PermanentOrder
+http://www.owl-ontologies.com/unnamed.owl#Payment disjointWith http://www.owl-ontologies.com/unnamed.owl#Prague
+http://www.owl-ontologies.com/unnamed.owl#Payment disjointWith http://www.owl-ontologies.com/unnamed.owl#ProblemStatus
+http://www.owl-ontologies.com/unnamed.owl#Payment disjointWith http://www.owl-ontologies.com/unnamed.owl#Region
+http://www.owl-ontologies.com/unnamed.owl#Payment disjointWith http://www.owl-ontologies.com/unnamed.owl#Running
+http://www.owl-ontologies.com/unnamed.owl#Payment disjointWith http://www.owl-ontologies.com/unnamed.owl#SexValue
+http://www.owl-ontologies.com/unnamed.owl#Payment disjointWith http://www.owl-ontologies.com/unnamed.owl#SouthBohemia
+http://www.owl-ontologies.com/unnamed.owl#Payment disjointWith http://www.owl-ontologies.com/unnamed.owl#SouthMoravia
+http://www.owl-ontologies.com/unnamed.owl#Payment disjointWith http://www.owl-ontologies.com/unnamed.owl#StatementIssuanceFrequencyValue
+http://www.owl-ontologies.com/unnamed.owl#Payment disjointWith http://www.owl-ontologies.com/unnamed.owl#Weekly
+http://www.owl-ontologies.com/unnamed.owl#Payment disjointWith http://www.owl-ontologies.com/unnamed.owl#WestBohemia
+http://www.owl-ontologies.com/unnamed.owl#Payment disjointWith http://www.owl-ontologies.com/unnamed.owl#Woman
+http://www.owl-ontologies.com/unnamed.owl#PermanentOrder disjointWith http://www.owl-ontologies.com/unnamed.owl#Prague
+http://www.owl-ontologies.com/unnamed.owl#PermanentOrder disjointWith http://www.owl-ontologies.com/unnamed.owl#ProblemStatus
+http://www.owl-ontologies.com/unnamed.owl#PermanentOrder disjointWith http://www.owl-ontologies.com/unnamed.owl#Region
+http://www.owl-ontologies.com/unnamed.owl#PermanentOrder disjointWith http://www.owl-ontologies.com/unnamed.owl#Running
+http://www.owl-ontologies.com/unnamed.owl#PermanentOrder disjointWith http://www.owl-ontologies.com/unnamed.owl#SexValue
+http://www.owl-ontologies.com/unnamed.owl#PermanentOrder disjointWith http://www.owl-ontologies.com/unnamed.owl#SouthBohemia
+http://www.owl-ontologies.com/unnamed.owl#PermanentOrder disjointWith http://www.owl-ontologies.com/unnamed.owl#SouthMoravia
+http://www.owl-ontologies.com/unnamed.owl#PermanentOrder disjointWith http://www.owl-ontologies.com/unnamed.owl#StatementIssuanceFrequencyValue
+http://www.owl-ontologies.com/unnamed.owl#PermanentOrder disjointWith http://www.owl-ontologies.com/unnamed.owl#Weekly
+http://www.owl-ontologies.com/unnamed.owl#PermanentOrder disjointWith http://www.owl-ontologies.com/unnamed.owl#WestBohemia
+http://www.owl-ontologies.com/unnamed.owl#PermanentOrder disjointWith http://www.owl-ontologies.com/unnamed.owl#Woman
+http://www.owl-ontologies.com/unnamed.owl#Prague disjointWith http://www.owl-ontologies.com/unnamed.owl#ProblemStatus
+http://www.owl-ontologies.com/unnamed.owl#Prague disjointWith http://www.owl-ontologies.com/unnamed.owl#Region
+http://www.owl-ontologies.com/unnamed.owl#Prague disjointWith http://www.owl-ontologies.com/unnamed.owl#Running
+http://www.owl-ontologies.com/unnamed.owl#Prague disjointWith http://www.owl-ontologies.com/unnamed.owl#SexValue
+http://www.owl-ontologies.com/unnamed.owl#Prague disjointWith http://www.owl-ontologies.com/unnamed.owl#SouthBohemia
+http://www.owl-ontologies.com/unnamed.owl#Prague disjointWith http://www.owl-ontologies.com/unnamed.owl#SouthMoravia
+http://www.owl-ontologies.com/unnamed.owl#Prague disjointWith http://www.owl-ontologies.com/unnamed.owl#StatementIssuanceFrequencyValue
+http://www.owl-ontologies.com/unnamed.owl#Prague disjointWith http://www.owl-ontologies.com/unnamed.owl#Weekly
+http://www.owl-ontologies.com/unnamed.owl#Prague disjointWith http://www.owl-ontologies.com/unnamed.owl#WestBohemia
+http://www.owl-ontologies.com/unnamed.owl#Prague disjointWith http://www.owl-ontologies.com/unnamed.owl#Woman
+http://www.owl-ontologies.com/unnamed.owl#ProblemStatus disjointWith http://www.owl-ontologies.com/unnamed.owl#Region
+http://www.owl-ontologies.com/unnamed.owl#ProblemStatus disjointWith http://www.owl-ontologies.com/unnamed.owl#Running
+http://www.owl-ontologies.com/unnamed.owl#ProblemStatus disjointWith http://www.owl-ontologies.com/unnamed.owl#SexValue
+http://www.owl-ontologies.com/unnamed.owl#ProblemStatus disjointWith http://www.owl-ontologies.com/unnamed.owl#SouthBohemia
+http://www.owl-ontologies.com/unnamed.owl#ProblemStatus disjointWith http://www.owl-ontologies.com/unnamed.owl#SouthMoravia
+http://www.owl-ontologies.com/unnamed.owl#ProblemStatus disjointWith http://www.owl-ontologies.com/unnamed.owl#StatementIssuanceFrequencyValue
+http://www.owl-ontologies.com/unnamed.owl#ProblemStatus disjointWith http://www.owl-ontologies.com/unnamed.owl#Weekly
+http://www.owl-ontologies.com/unnamed.owl#ProblemStatus disjointWith http://www.owl-ontologies.com/unnamed.owl#WestBohemia
+http://www.owl-ontologies.com/unnamed.owl#ProblemStatus disjointWith http://www.owl-ontologies.com/unnamed.owl#Woman
+http://www.owl-ontologies.com/unnamed.owl#Region disjointWith http://www.owl-ontologies.com/unnamed.owl#Running
+http://www.owl-ontologies.com/unnamed.owl#Region disjointWith http://www.owl-ontologies.com/unnamed.owl#SexValue
+http://www.owl-ontologies.com/unnamed.owl#Region disjointWith http://www.owl-ontologies.com/unnamed.owl#SouthBohemia
+http://www.owl-ontologies.com/unnamed.owl#Region disjointWith http://www.owl-ontologies.com/unnamed.owl#SouthMoravia
+http://www.owl-ontologies.com/unnamed.owl#Region disjointWith http://www.owl-ontologies.com/unnamed.owl#StatementIssuanceFrequencyValue
+http://www.owl-ontologies.com/unnamed.owl#Region disjointWith http://www.owl-ontologies.com/unnamed.owl#Weekly
+http://www.owl-ontologies.com/unnamed.owl#Region disjointWith http://www.owl-ontologies.com/unnamed.owl#WestBohemia
+http://www.owl-ontologies.com/unnamed.owl#Region disjointWith http://www.owl-ontologies.com/unnamed.owl#Woman
+http://www.owl-ontologies.com/unnamed.owl#Running disjointWith http://www.owl-ontologies.com/unnamed.owl#SexValue
+http://www.owl-ontologies.com/unnamed.owl#Running disjointWith http://www.owl-ontologies.com/unnamed.owl#SouthBohemia
+http://www.owl-ontologies.com/unnamed.owl#Running disjointWith http://www.owl-ontologies.com/unnamed.owl#SouthMoravia
+http://www.owl-ontologies.com/unnamed.owl#Running disjointWith http://www.owl-ontologies.com/unnamed.owl#StatementIssuanceFrequencyValue
+http://www.owl-ontologies.com/unnamed.owl#Running disjointWith http://www.owl-ontologies.com/unnamed.owl#Weekly
+http://www.owl-ontologies.com/unnamed.owl#Running disjointWith http://www.owl-ontologies.com/unnamed.owl#WestBohemia
+http://www.owl-ontologies.com/unnamed.owl#Running disjointWith http://www.owl-ontologies.com/unnamed.owl#Woman
+http://www.owl-ontologies.com/unnamed.owl#SexValue disjointWith http://www.owl-ontologies.com/unnamed.owl#SouthBohemia
+http://www.owl-ontologies.com/unnamed.owl#SexValue disjointWith http://www.owl-ontologies.com/unnamed.owl#SouthMoravia
+http://www.owl-ontologies.com/unnamed.owl#SexValue disjointWith http://www.owl-ontologies.com/unnamed.owl#StatementIssuanceFrequencyValue
+http://www.owl-ontologies.com/unnamed.owl#SexValue disjointWith http://www.owl-ontologies.com/unnamed.owl#Weekly
+http://www.owl-ontologies.com/unnamed.owl#SexValue disjointWith http://www.owl-ontologies.com/unnamed.owl#WestBohemia
+http://www.owl-ontologies.com/unnamed.owl#SexValue disjointWith http://www.owl-ontologies.com/unnamed.owl#Woman
+http://www.owl-ontologies.com/unnamed.owl#SouthBohemia disjointWith http://www.owl-ontologies.com/unnamed.owl#SouthMoravia
+http://www.owl-ontologies.com/unnamed.owl#SouthBohemia disjointWith http://www.owl-ontologies.com/unnamed.owl#StatementIssuanceFrequencyValue
+http://www.owl-ontologies.com/unnamed.owl#SouthBohemia disjointWith http://www.owl-ontologies.com/unnamed.owl#Weekly
+http://www.owl-ontologies.com/unnamed.owl#SouthBohemia disjointWith http://www.owl-ontologies.com/unnamed.owl#WestBohemia
+http://www.owl-ontologies.com/unnamed.owl#SouthBohemia disjointWith http://www.owl-ontologies.com/unnamed.owl#Woman
+http://www.owl-ontologies.com/unnamed.owl#SouthMoravia disjointWith http://www.owl-ontologies.com/unnamed.owl#StatementIssuanceFrequencyValue
+http://www.owl-ontologies.com/unnamed.owl#SouthMoravia disjointWith http://www.owl-ontologies.com/unnamed.owl#Weekly
+http://www.owl-ontologies.com/unnamed.owl#SouthMoravia disjointWith http://www.owl-ontologies.com/unnamed.owl#WestBohemia
+http://www.owl-ontologies.com/unnamed.owl#SouthMoravia disjointWith http://www.owl-ontologies.com/unnamed.owl#Woman
+http://www.owl-ontologies.com/unnamed.owl#StatementIssuanceFrequencyValue disjointWith http://www.owl-ontologies.com/unnamed.owl#WestBohemia
+http://www.owl-ontologies.com/unnamed.owl#StatementIssuanceFrequencyValue disjointWith http://www.owl-ontologies.com/unnamed.owl#Woman
+http://www.owl-ontologies.com/unnamed.owl#Weekly disjointWith http://www.owl-ontologies.com/unnamed.owl#WestBohemia
+http://www.owl-ontologies.com/unnamed.owl#Weekly disjointWith http://www.owl-ontologies.com/unnamed.owl#Woman
+http://www.owl-ontologies.com/unnamed.owl#WestBohemia disjointWith http://www.owl-ontologies.com/unnamed.owl#Woman
+Number of inconsistencies: 6
+***************************************************************
+ Overall Results
+Axioms: 1112.0 (0.0)
+Inconsistencies: 6.0 (0.0)
+
+
+Ending: C:/Users/Giuseppe/Documents/ontos/financial.owl
