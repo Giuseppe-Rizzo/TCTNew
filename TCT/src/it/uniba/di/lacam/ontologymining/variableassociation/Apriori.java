@@ -44,7 +44,7 @@ public class Apriori {
 		System.out.println("Candidates: "+ candidates);
 		if( itemsetSize==1){
 			for (Description  c : concept) {
-				System.out.println("Concept"+c);
+				//System.out.println("Concept"+c);
 				final int size = r.getIndividuals(c).size();
 				if (size >10){
 					 HashSet<Description> arrayList = new HashSet<Description>();
@@ -66,8 +66,9 @@ public class Apriori {
 						    newElem.addAll(d);
 						    //System.out.println("newElem: "+ newElem);
 						     int size= r.getIndividuals(new Intersection(new ArrayList<Description>(newElem))).size();
-						     if (size>10){
+						     if (size<10){
 						    	 newCandidates.add(newElem);
+						     //System.out.println("After join: "+ newElem);
 						     }			  
 					  }
 				}

@@ -2,8 +2,6 @@ package it.uniba.di.lacam.ontologymining.tct.refinementoperators;
 
 
 
-import it.uniba.di.lacam.ontologymining.tct.KnowledgeBaseHandler.*;
-
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Iterator;
@@ -11,6 +9,7 @@ import java.util.Queue;
 import java.util.Set;
 import java.util.Stack;
 
+ 
 import org.dllearner.core.owl.Description;
 import org.dllearner.core.owl.Individual;
 import org.dllearner.core.owl.Negation;
@@ -18,6 +17,8 @@ import org.dllearner.core.owl.ObjectAllRestriction;
 import org.dllearner.core.owl.ObjectProperty;
 import org.dllearner.core.owl.ObjectSomeRestriction;
 import org.semanticweb.owlapi.model.OWLException;
+
+import it.uniba.di.lacam.ontologymining.tct.KnowledgeBaseHandler.KnowledgeBase;
 
 
 

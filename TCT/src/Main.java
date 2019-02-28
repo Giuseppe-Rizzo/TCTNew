@@ -73,19 +73,27 @@ public class Main {
 				Apriori apriori= new Apriori(reasoner, classes, individuals);
 				ArrayList<HashSet<Description>> arrayList = new ArrayList<HashSet<Description>>();
 				ArrayList<HashSet<Description>> arrayList2 = new ArrayList<HashSet<Description>>();
+				int nInc=0;
 				apriori.generateCandidate(arrayList, 1, 2);
 				for (HashSet<Description> hashSet : arrayList) {
 					boolean disjoint= false;
-					for (Description description : hashSet) {
-						if (description instanceof Negation){
-							disjoint = true;
-						}
-					}
-					if (disjoint)
+					//for (Description description : hashSet) {
+//						if (description instanceof Negation){
+//							disjoint = true;
+//						}
+						SortedSet<Individual> individuals2 = reasoner.getIndividuals((new Intersection(hashSet.toArray(new Description[hashSet.size()]))));
+					//}
+					if (individuals2.size()>4) {
+						nInc++;
 						arrayList2.add(hashSet);
+					}
 
 				} 		
+				
+				System.out.println("Number of inconstistencies : "+ nInc);
+				resultsInc[j]= nInc;
 				System.out.println("Number of axioms : "+ arrayList2.size());
+				resultsAxs[j]=arrayList2.size();
 			}
 			else if (args[0].equalsIgnoreCase("tct")){	
 				//			//TODO da decommentare	
@@ -139,7 +147,7 @@ public class Main {
 				resultsAxs[j]= extractDisjointnessAxiom.size();
 				for (Couple<Description,Description> c:extractDisjointnessAxiom){
 					System.out.println(c.getFirstElement()+ " disjointWith " +c.getSecondElement());
-					if (reasoner.getIndividuals(new Intersection(c.getFirstElement(),c.getSecondElement())).size()>10){
+					if (reasoner.getIndividuals(new Intersection(c.getFirstElement(),c.getSecondElement())).size()>0){
 						nInc++;
 						System.out.println("Number of inconsistencies: "+ nInc);
 					}
