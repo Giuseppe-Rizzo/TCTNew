@@ -9,14 +9,13 @@ import java.util.Queue;
 import java.util.Set;
 import java.util.Stack;
 
- 
-import org.dllearner.core.owl.Description;
-import org.dllearner.core.owl.Individual;
-import org.dllearner.core.owl.Negation;
-import org.dllearner.core.owl.ObjectAllRestriction;
-import org.dllearner.core.owl.ObjectProperty;
-import org.dllearner.core.owl.ObjectSomeRestriction;
+
+import org.semanticweb.owlapi.model.OWLClass;
+import org.semanticweb.owlapi.model.OWLClassExpression;
 import org.semanticweb.owlapi.model.OWLException;
+import org.semanticweb.owlapi.model.OWLIndividual;
+import org.semanticweb.owlapi.model.OWLNamedIndividual;
+import org.semanticweb.owlapi.model.OWLObjectProperty;
 
 import it.uniba.di.lacam.ontologymining.tct.KnowledgeBaseHandler.KnowledgeBase;
 
@@ -41,8 +40,8 @@ public class NonRandomRefinementOperator extends RefinementOperator {
 
 	KnowledgeBase kb;
 	static final double d = 0.3;
-	private Description[] allConcepts;
-	private ObjectProperty[] allRoles;
+	private OWLClass[] allConcepts;
+	private OWLObjectProperty[] allRoles;
 	
 	public NonRandomRefinementOperator(KnowledgeBase kb) {
 
@@ -55,9 +54,7 @@ public class NonRandomRefinementOperator extends RefinementOperator {
 	}
 
 
-	public Description getRandomConcept() {
-
-		return null;
+	public OWLClassExpression getRandomConcept() {return null;
 	}
 
 
@@ -65,11 +62,11 @@ public class NonRandomRefinementOperator extends RefinementOperator {
 	 * Sceglie casualmente un concetto tra quelli generati
 	 * @return il concetto scelto
 	 */
-	public ArrayList<Description> getRandomConcept(int...parameter) {
+	public ArrayList<OWLClassExpression> getRandomConcept(int...parameter) {
 		// sceglie casualmente uno tra i concetti presenti 
-		Description newConcept = null;
+		OWLClassExpression newConcept = null;
 		boolean stop=false;
-		ArrayList<Description> toRefine;
+		ArrayList<OWLClassExpression> toRefine;
 
 		// case A:  ALC and more expressive ontology
 		do {
@@ -77,25 +74,25 @@ public class NonRandomRefinementOperator extends RefinementOperator {
 			newConcept = allConcepts[KnowledgeBase.generator.nextInt(allConcepts.length)]; // caso base della ricorsione 
 			int refinementLength=0;
 			final int MAXLENGTH=1;
-			toRefine= new ArrayList<Description>();
+			toRefine= new ArrayList<OWLClassExpression>();
 			//getRandomConcept();  // ricorsione
 			toRefine.add(newConcept);
 			while (refinementLength<MAXLENGTH){
-				ArrayList<Description> refinements= new ArrayList<Description>();
+				ArrayList<OWLClassExpression> refinements= new ArrayList<OWLClassExpression>();
 				while(!toRefine.isEmpty()){
-					Description newConceptBase =   toRefine.get(0); // first element
+					OWLClassExpression newConceptBase =   toRefine.get(0); // first element
 					toRefine.remove(0);
 					// new role restriction
-					ObjectProperty role = allRoles[KnowledgeBase.generator.nextInt(allRoles.length)];
-					newConcept = new ObjectAllRestriction(role, newConceptBase);
-					if (kb.getReasoner(). getIndividuals(newConcept).size()>0)
+					OWLObjectProperty role = allRoles[KnowledgeBase.generator.nextInt(allRoles.length)];
+					newConcept =kb.getDataFactory().getOWLObjectAllValuesFrom(role, newConceptBase);
+					if (kb.getReasoner().getInstances(newConcept, false).getFlattened().size()>0)
 						refinements.add(newConcept);
-					newConcept = new ObjectSomeRestriction(role, newConceptBase);
-					if (kb.getReasoner(). getIndividuals(newConcept).size()>0)
+					newConcept = kb.getDataFactory().getOWLObjectSomeValuesFrom(role, newConceptBase);
+					if (kb.getReasoner().getInstances(newConcept, false).getFlattened().size()>0)
 						refinements.add(newConcept);
 
-					newConcept = new Negation(newConceptBase);
-					if (kb.getReasoner(). getIndividuals(newConcept).size()>0)
+					newConcept = kb.getDataFactory().getOWLObjectComplementOf(newConceptBase);
+					if (kb.getReasoner().getInstances(newConcept, false).getFlattened().size()>0)
 						refinements.add(newConcept);
 				}
 				toRefine.addAll(refinements); // add all the refinements generated from the inner loop
@@ -116,26 +113,26 @@ public class NonRandomRefinementOperator extends RefinementOperator {
 		return toRefine;				
 	}
 
-	public ArrayList<Description> generateNewConcepts(int dim, ArrayList<Integer> posExs, ArrayList<Integer> negExs) {
+	public ArrayList<OWLClassExpression> generateNewConcepts(int dim, ArrayList<Integer> posExs, ArrayList<Integer> negExs) {
 
 		System.out.printf("Generating node concepts ");
-		ArrayList<Description> rConcepts = new ArrayList<Description>(dim);
-		ArrayList<Description> newConcepts;
+		ArrayList<OWLClassExpression> rConcepts = new ArrayList<OWLClassExpression>(dim);
+		ArrayList<OWLClassExpression> newConcepts;
 		boolean emptyIntersection;
 		for (int c=0; c<dim; c++) {
 			do {
 				emptyIntersection = false; // true
 				newConcepts = getRandomConcept(1);
 
-				for(Description newConcept: newConcepts){
+				for(OWLClassExpression newConcept: newConcepts){
 
 
-					Set<Individual> individuals = (kb.getReasoner()).getIndividuals(newConcept);
-					Iterator<Individual> instIterator = individuals.iterator();
+					Set<OWLNamedIndividual> individuals = (kb.getReasoner()).getInstances(newConcept,false).getFlattened();
+					Iterator<OWLNamedIndividual> instIterator = individuals.iterator();
 					
 					int numIntersections=0;
 					while (emptyIntersection && instIterator.hasNext()) {
-						Individual nextInd = (Individual) instIterator.next();
+						OWLIndividual nextInd = (OWLIndividual) instIterator.next();
 						int index = -1;
 						for (int i=0; index<0 && i<kb.getIndividuals().length; ++i)
 							if (nextInd.equals(kb.getIndividuals()[i])) index = i;

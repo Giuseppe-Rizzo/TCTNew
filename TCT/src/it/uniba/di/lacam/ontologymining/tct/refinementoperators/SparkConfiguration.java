@@ -5,13 +5,14 @@ import java.io.Serializable;
 import org.apache.spark.SparkConf;
 import org.apache.spark.api.java.JavaSparkContext;
 import org.apache.spark.broadcast.Broadcast;
-import org.dllearner.core.AbstractReasonerComponent;
-import org.dllearner.core.owl.Description;
-import org.dllearner.core.owl.Individual;
-import org.dllearner.core.owl.ObjectProperty;
+import org.semanticweb.owlapi.model.OWLClassExpression;
 import org.semanticweb.owlapi.model.OWLDataFactory;
+import org.semanticweb.owlapi.model.OWLIndividual;
+import org.semanticweb.owlapi.model.OWLNamedIndividual;
+import org.semanticweb.owlapi.model.OWLObjectProperty;
+import org.semanticweb.owlapi.reasoner.OWLReasoner;
 
-import com.clarkparsia.pellet.owlapiv3.PelletReasoner;
+
 
 import it.uniba.di.lacam.ontologymining.tct.KnowledgeBaseHandler.FISerializable;
 
@@ -22,7 +23,7 @@ public class SparkConfiguration implements Serializable{
 	
 	public static SparkConf conf;
 	public  static JavaSparkContext sc;
-	public Broadcast<AbstractReasonerComponent> r;
+	public Broadcast<OWLReasoner> r;
 	
 	
 	
@@ -44,7 +45,7 @@ public class SparkConfiguration implements Serializable{
 		conf.set("spark.driver.maxResultSize", "1g");
 		conf.set("spark.rdd.compress", "true");
 		conf.set( "spark.serializer", "org.apache.spark.serializer.KryoSerializer" );
-		Class[] x = {FISerializable.class,OWLDataFactory.class,org.dllearner.reasoning.FastInstanceChecker.class,AbstractReasonerComponent.class,Description.class,ObjectProperty.class,Individual.class};
+		Class[] x = {FISerializable.class,OWLDataFactory.class,OWLClassExpression.class,OWLObjectProperty.class,OWLIndividual.class,OWLNamedIndividual.class};
 		conf.registerKryoClasses(x);
 		conf.set( "spark.serializer.buffer", "1GB" );
 		sc = new JavaSparkContext(conf);

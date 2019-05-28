@@ -4,9 +4,7 @@ import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 
-import org.dllearner.core.owl.Description;
-import org.dllearner.core.owl.Intersection;
-import org.dllearner.core.owl.Negation;
+import org.semanticweb.owlapi.model.OWLClassExpression;
 
 import it.uniba.di.lacam.ontologymining.tct.KnowledgeBaseHandler.KnowledgeBase;
 import it.uniba.di.lacam.ontologymining.tct.parameters.Parameters;
@@ -18,9 +16,9 @@ public class TCT2DisAxsConverter {
 	public TCT2DisAxsConverter() {
 	}
 
-	public static ArrayList<Description> extractConcepts (Description  fatherDescription, ClusterTree  tree){
+	public static ArrayList<OWLClassExpression> extractConcepts (OWLClassExpression  fatherOWLClassExpression, ClusterTree  tree){
 
-		ArrayList<Description> concepts= new ArrayList<Description>();
+		ArrayList<OWLClassExpression> concepts= new ArrayList<OWLClassExpression>();
 
 		ArrayList<ClusterTree> queue = new ArrayList<ClusterTree>();
 
@@ -32,12 +30,12 @@ public class TCT2DisAxsConverter {
 
 
 			if ( tree1.getRoot() !=null && (tree1.getPos().root==null && tree1.getNeg().root==null)) 
-			{	 Description root = tree1.getRoot();
+			{	 OWLClassExpression root = tree1.getRoot();
 			System.out.println(root+" Added" );
 			concepts.add(root);
 
 			}else{ 
-				Description root = tree1.getRoot();
+				OWLClassExpression root = tree1.getRoot();
 				System.out.println("Added:    "+root );
 				concepts.add(root);
 				if (tree1.getPos().getRoot()!=null) {
@@ -63,23 +61,23 @@ public class TCT2DisAxsConverter {
 			System.out.println("number of leaves: "+ concepts.size());
 
 			/*	if (tree.getRoot() ==null){
-		System.out.println(fatherDescription==null);
-			concepts.add(fatherDescription);
+		System.out.println(fatherOWLClassExpression==null);
+			concepts.add(fatherOWLClassExpression);
 			return  concepts;
 		}
 		else {
 
-			Description root = tree.getRoot();
-			Description currentDescriptionLeft= root; //fatherDescription !=null? new Intersection(fatherDescription, root): root;
-			Description currentDescriptionRight= new Negation(root);
-			System.out.println("Current Descriptions: "+ currentDescriptionLeft +" and "+ currentDescriptionRight);
+			OWLClassExpression root = tree.getRoot();
+			OWLClassExpression currentOWLClassExpressionLeft= root; //fatherOWLClassExpression !=null? new Intersection(fatherOWLClassExpression, root): root;
+			OWLClassExpression currentOWLClassExpressionRight= new Negation(root);
+			System.out.println("Current OWLClassExpressions: "+ currentOWLClassExpressionLeft +" and "+ currentOWLClassExpressionRight);
 			//System.out.println("tree sx"+ tree.getPos()==null);
 			//System.out.println("tree dx"+ tree.get());
 
-			ArrayList<Description> toAdd= new ArrayList<Description>();
-			ArrayList<Description> toAdd2= new ArrayList<Description>();
-			toAdd.addAll(extractDisjointnessAxiom(currentDescriptionLeft, tree.getPos()));
-			toAdd2.addAll(extractDisjointnessAxiom(currentDescriptionRight, tree.getNeg()));
+			ArrayList<OWLClassExpression> toAdd= new ArrayList<OWLClassExpression>();
+			ArrayList<OWLClassExpression> toAdd2= new ArrayList<OWLClassExpression>();
+			toAdd.addAll(extractDisjointnessAxiom(currentOWLClassExpressionLeft, tree.getPos()));
+			toAdd2.addAll(extractDisjointnessAxiom(currentOWLClassExpressionRight, tree.getNeg()));
 			concepts.addAll(toAdd);
 			concepts.addAll(toAdd2);
 			return concepts;
@@ -92,27 +90,27 @@ public class TCT2DisAxsConverter {
 
 		}
 
-		public static ArrayList<Couple<Description,Description>>  extractDisjointnessAxiom(ClusterTree t){
-			Description fatherNode= null;
-			ArrayList<Description> concepts=  extractConcepts(fatherNode, t);
+		public static ArrayList<Couple<OWLClassExpression,OWLClassExpression>>  extractDisjointnessAxiom(ClusterTree t){
+			OWLClassExpression fatherNode= null;
+			ArrayList<OWLClassExpression> concepts=  extractConcepts(fatherNode, t);
 			int size = Parameters.nOfresults==0?concepts.size():Parameters.nOfresults;
-			List<Description> clist = concepts.subList(0, size-1);
-			HashSet<Description> conceptset= new HashSet<Description>(clist);
-			ArrayList<Couple<Description,Description>>result= new ArrayList<Couple<Description,Description>>();
+			List<OWLClassExpression> clist = concepts.subList(0, size-1);
+			HashSet<OWLClassExpression> conceptset= new HashSet<OWLClassExpression>(clist);
+			ArrayList<Couple<OWLClassExpression,OWLClassExpression>>result= new ArrayList<Couple<OWLClassExpression,OWLClassExpression>>();
 		
 
 			//System.out.println("starting disjointness extraction: "+ conceptset.size()*conceptset.size());
 			
 			
-			for  (Description c: conceptset){
-			//	Description  c= concepts.get(i);	
-				Couple<Description,Description> element= new Couple<Description, Description>();
+			for  (OWLClassExpression c: conceptset){
+			//	OWLClassExpression  c= concepts.get(i);	
+				Couple<OWLClassExpression,OWLClassExpression> element= new Couple<OWLClassExpression, OWLClassExpression>();
 
-				for (Description  d:conceptset) {
+				for (OWLClassExpression  d:conceptset) {
 					
-					if ((c.toKBSyntaxString().compareTo(d.toKBSyntaxString()))!=0){//)  && !(result.contains(new Couple(c,d)))){ //(!(result.contains(new Couple(d,c))
-						//SortedSet<Description> subClasses1 = kb.getReasoner().getSubClasses(c);
-						//SortedSet<Description> subClasses2 = kb.getReasoner().getSubClasses(d);
+					if ((c.toString().compareTo(d.toString()))!=0){//)  && !(result.contains(new Couple(c,d)))){ //(!(result.contains(new Couple(d,c))
+						//SortedSet<OWLClassExpression> subClasses1 = kb.getReasoner().getSubClasses(c);
+						//SortedSet<OWLClassExpression> subClasses2 = kb.getReasoner().getSubClasses(d);
 						if ((kb.getReasoner().getIndividuals(new Intersection(c,d)).size()<5)){
 							element.setFirstElement(c);
 							element.setSecondElement(d);

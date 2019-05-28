@@ -8,14 +8,12 @@ import java.util.Set;
 
 
 
-import org.dllearner.core.owl.Description;
-import org.dllearner.core.owl.Individual;
-import org.dllearner.core.owl.Intersection;
-import org.dllearner.core.owl.Negation;
-import org.dllearner.core.owl.ObjectAllRestriction;
-import org.dllearner.core.owl.ObjectProperty;
-import org.dllearner.core.owl.ObjectSomeRestriction;
-import org.dllearner.core.owl.Thing;
+
+import org.semanticweb.owlapi.model.OWLClass;
+import org.semanticweb.owlapi.model.OWLClassExpression;
+import org.semanticweb.owlapi.model.OWLIndividual;
+import org.semanticweb.owlapi.model.OWLNamedIndividual;
+import org.semanticweb.owlapi.model.OWLObjectProperty;
 
 import it.uniba.di.lacam.ontologymining.tct.KnowledgeBaseHandler.KnowledgeBase;
 
@@ -24,106 +22,107 @@ import it.uniba.di.lacam.ontologymining.tct.KnowledgeBaseHandler.KnowledgeBase;
 
 public class RefinementOperator {
 
-	
+
 	KnowledgeBase kb;
 	static final double d = 0.5;
-	private Description[] allConcepts;
-	private ObjectProperty[] allRoles;
-	
+	private OWLClass[] allConcepts;
+	private OWLObjectProperty[] allRoles;
+
 	public RefinementOperator(KnowledgeBase kb) {
 		// TODO Auto-generated constructor stub
-	this.kb=kb;
-	allConcepts=kb.getClasses();
-//	/System.out.println("All classes:"+ allConcepts);
-	
-	allRoles=kb.getRoles();
-	
-	
+		this.kb=kb;
+		allConcepts=kb.getClasses();
+		//	/System.out.println("All classes:"+ allConcepts);
+
+		allRoles=kb.getRoles();
+
+
 	}
-	
-	
-	
+
+
+
 	/**
 	 * Sceglie casualmente un concetto tra quelli generati
 	 * @return il concetto scelto
 	 */
-	public Description getRandomConcept() {
+	public OWLClassExpression getRandomConcept() {
 		// sceglie casualmente uno tra i concetti presenti 
-		Description newConcept = null;
-//			
- //System.out.println("All concepts: "+allConcepts);
-			// case A:  ALC and more expressive ontologies
-			do {
-				
-	//		System.out.println(allConcepts==null);
-				newConcept = allConcepts[KnowledgeBase.generator.nextInt(allConcepts.length)];
-				
-				if (KnowledgeBase.generator.nextDouble() > 0.5) {
-				   Description newConceptBase = getRandomConcept();
-					if (KnowledgeBase.generator.nextDouble() >0.5) {
-						if (KnowledgeBase.generator.nextDouble() >0.5) { // new role restriction
-							ObjectProperty role = allRoles[KnowledgeBase.generator.nextInt(allRoles.length)];
-							//					OWLDescription roleRange = (OWLDescription) role.getRange;
-							if (KnowledgeBase.generator.nextDouble() > 0.5)
-								newConcept = new ObjectAllRestriction(role, newConceptBase);
-							else
-								newConcept = new ObjectSomeRestriction(role, newConceptBase);
-						}
-						else					
-							newConcept = new Negation(newConceptBase);
-					}
-				} // else ext
-				
-			} while ((newConcept instanceof Thing) &&(!((kb.getReasoner().getIndividuals(newConcept).size())>0)));
-//						
-////		}
-		
-		
+		OWLClassExpression newConcept = null;
 
-		return kb.getRandomConcept();				
+
+		do {
+			newConcept = kb.getClasses()[KnowledgeBase.generator.nextInt(kb.getClasses().length)];
+			if (KnowledgeBase.generator.nextDouble() < d) {
+				OWLClassExpression newConceptBase = getRandomConcept();
+				if (KnowledgeBase.generator.nextDouble() < d) {
+
+					if (KnowledgeBase.generator.nextDouble() <d) { // new role restriction
+						OWLObjectProperty role = kb.getRoles()[KnowledgeBase.generator.nextInt(kb.getRoles().length)];
+						//					OWLDescription roleRange = (OWLDescription) role.getRange;
+
+						if (KnowledgeBase.generator.nextDouble() < d)
+							newConcept = kb.getDataFactory().getOWLObjectAllValuesFrom(role, newConceptBase);//(dataFactory.getOWLObjectAllRestriction(role, newConceptBase));
+						else
+							newConcept = kb.getDataFactory().getOWLObjectSomeValuesFrom(role, newConceptBase);
+					}
+					else					
+						newConcept =  kb.getDataFactory().getOWLObjectComplementOf(newConceptBase); //dataFactory.getOWLObjectComplementOf(newConceptBase);
+				}
+			} // else ext
+			//				System.out.printf("-->\t %s\n",newConcept);
+			//			} while (newConcept==null || !(reasoner.getIndividuals(newConcept,false).size() > 0));
+		} while ((kb.getReasoner().getInstances(newConcept,false).getFlattened().size()<=0));
+
+		return newConcept;		
+		//						
+		////		}
+				
 	}
-	
-	public ArrayList<Description> generateNewConcepts(Description father, int dim, ArrayList<Integer> posExs, ArrayList<Integer> negExs, List<Description> candidates) {
+
+	public ArrayList<OWLClassExpression> generateNewConcepts(OWLClassExpression father, int dim, ArrayList<Integer> posExs, ArrayList<Integer> negExs, List<OWLClassExpression> candidates) {
+
 
 		System.out.printf("Generating node concepts ");
-		ArrayList<Description> rConcepts = new ArrayList<Description>(dim);
-		Description newConcept;
+		ArrayList<OWLClassExpression> rConcepts = new ArrayList<OWLClassExpression>(dim);
+         OWLClassExpression newConcept;
 		boolean emptyIntersection;
 		for (int c=0; c<dim; c++) {
 			do {
-				emptyIntersection =  true;
-				
-				Description randomConcept =getRandomConcept();
-//				boolean contains = kb.getReasoner().getSuperClasses(randomConcept).contains(father);
-				if (!(father instanceof Thing))
-				newConcept =  randomConcept; //contains? randomConcept:
-				else {if ((kb.getReasoner().getSubClasses(father).contains(randomConcept))) 	
-				newConcept =  randomConcept;
-				else
-					newConcept=new Intersection(father,randomConcept);
-				}
-				Set<Individual> individuals = (kb.getReasoner()).getIndividuals(newConcept);
-				Iterator<Individual> instIterator = individuals.iterator();
-				while (emptyIntersection && instIterator.hasNext()) {
-					Individual nextInd = (Individual) instIterator.next();
-					int index = -1;
-					for (int i=0; index<0 && i<kb.getIndividuals().length; ++i)
-						if (nextInd.equals(kb.getIndividuals()[i])) index = i;
-					if (posExs.contains(index))
-						emptyIntersection = false;
-					else if (negExs.contains(index))
-						emptyIntersection = false;
-				}					
-			} while (emptyIntersection);// || candidates.contains(newConcept));
-			rConcepts.add(newConcept); 
+				emptyIntersection = false; // true
+				newConcept = getRandomConcept();
+
+				//for(OWLClassExpression newConcept: newConcepts){
+
+
+					Set<OWLNamedIndividual> individuals = (kb.getReasoner()).getInstances(newConcept,false).getFlattened();
+					Iterator<OWLNamedIndividual> instIterator = individuals.iterator();
+					
+					int numIntersections=0;
+					while (emptyIntersection && instIterator.hasNext()) {
+						OWLIndividual nextInd = (OWLIndividual) instIterator.next();
+						int index = -1;
+						for (int i=0; index<0 && i<kb.getIndividuals().length; ++i)
+							if (nextInd.equals(kb.getIndividuals()[i])) index = i;
+						
+						if (posExs.contains(index))
+							emptyIntersection = false;
+						else if (negExs.contains(index))
+							emptyIntersection = false;
+					}					
+
+				 rConcepts.add(newConcept);
+
+				//}
+			} while (emptyIntersection);
 			System.out.printf("%d ", c);
 		}
 		System.out.println();
 
 		return rConcepts;
+
 	}
 
-	
+
 	public RefinementOperator(){};
 
 }

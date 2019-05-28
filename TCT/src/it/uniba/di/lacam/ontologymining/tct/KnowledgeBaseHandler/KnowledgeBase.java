@@ -3,35 +3,35 @@ package it.uniba.di.lacam.ontologymining.tct.KnowledgeBaseHandler;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.Serializable;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.Random;
 import java.util.Set;
 
-import org.dllearner.core.AbstractReasonerComponent;
-import org.dllearner.core.ComponentInitException;
-import org.dllearner.core.owl.Constant;
-import org.dllearner.core.owl.DatatypeProperty;
-import org.dllearner.core.owl.Description;
-import org.dllearner.core.owl.Individual;
-import org.dllearner.core.owl.NamedClass;
-import org.dllearner.core.owl.Negation;
-import org.dllearner.core.owl.ObjectAllRestriction;
-import org.dllearner.core.owl.ObjectProperty;
-import org.dllearner.core.owl.ObjectSomeRestriction;
-import org.dllearner.kb.OWLAPIOntology;
-import org.dllearner.reasoning.FastInstanceChecker;
-import org.dllearner.reasoning.OWLAPIReasoner;
+
+import org.semanticweb.HermiT.ReasonerFactory;
+import org.semanticweb.HermiT.model.Individual;
 //import org.semanticweb.owl.model.OWLImportsDeclaration;
 //import org.semanticweb.owl.util.SimpleURIMapper;
 import org.semanticweb.owlapi.apibinding.OWLManager;
 import org.semanticweb.owlapi.model.IRI;
+import org.semanticweb.owlapi.model.OWLClass;
+import org.semanticweb.owlapi.model.OWLClassExpression;
 import org.semanticweb.owlapi.model.OWLDataFactory;
+import org.semanticweb.owlapi.model.OWLDataProperty;
+import org.semanticweb.owlapi.model.OWLDataPropertyExpression;
+import org.semanticweb.owlapi.model.OWLIndividual;
+import org.semanticweb.owlapi.model.OWLLiteral;
+import org.semanticweb.owlapi.model.OWLNamedIndividual;
+import org.semanticweb.owlapi.model.OWLObjectProperty;
 import org.semanticweb.owlapi.model.OWLOntology;
 import org.semanticweb.owlapi.model.OWLOntologyCreationException;
 import org.semanticweb.owlapi.model.OWLOntologyManager;
 import org.semanticweb.owlapi.reasoner.BufferingMode;
+import org.semanticweb.owlapi.reasoner.OWLReasoner;
 
-import com.clarkparsia.pellet.owlapiv3.PelletReasoner;
+
 
 //import evaluation.Parameters;
 import uk.ac.manchester.cs.owl.owlapi.OWLDataFactoryImpl;
@@ -44,10 +44,10 @@ public class KnowledgeBase implements Serializable {
 	static final double d = 0.3;
 	//private String urlOwlFile = "file:///C:/Users/Giuseppe/Desktop//mod-biopax-example-ecocyc-glycolysis.owl";
 	private String urlOwlFile = "file:///C:/Users/Giusepp/Desktop/Ontologie/GeoSkills.owl";
-	private  OWLAPIOntology ontology;
+	private  OWLOntology ontology;
 	private  OWLOntologyManager manager;
-	private  NamedClass[] allConcepts;
-	private  ObjectProperty[] allRoles;
+	private  OWLClass[] allConcepts;
+	private  OWLObjectProperty[] allRoles;
 	private  OWLDataFactory dataFactory;
 	public OWLOntologyManager getManager() {
 		return manager;
@@ -59,9 +59,9 @@ public class KnowledgeBase implements Serializable {
 		this.manager = manager;
 	}
 
-	private  Individual[] allExamples;
+	private  OWLIndividual[] allExamples;
 	/* Data property: proprietà, valori e domini*/
-	private AbstractReasonerComponent reasoner;
+	private OWLReasoner reasoner;
 	private FISerializable r;
 	
 	public FISerializable getR() {
@@ -74,12 +74,11 @@ public class KnowledgeBase implements Serializable {
 		this.r = r;
 	}
 
-	private  DatatypeProperty[] properties;
-	private  Individual[][] domini;
+	
 	private int[][] classifications;
 	public static  Random generator = new Random(1);
 
-	private Constant[][] dataPropertiesValue;
+	
 	public KnowledgeBase(String url) {
 		urlOwlFile=url;
 		ontology=initKB();
@@ -91,7 +90,7 @@ public class KnowledgeBase implements Serializable {
 	}
 
 	
-	public   OWLAPIOntology initKB() {
+	public   OWLOntology initKB() {
 
 		manager = OWLManager.createOWLOntologyManager();        
 		 OWLDataFactoryImpl owlDataFactoryImpl = new OWLDataFactoryImpl();
@@ -107,62 +106,55 @@ public class KnowledgeBase implements Serializable {
 			e.printStackTrace();
 		}
         IRI ontologyIRI = manager.getOntologyDocumentIRI(ontology);
-        OWLAPIOntology wrapper= new OWLAPIOntology(ontology);
-        
-        FISerializable fi= new FISerializable(wrapper);
+      
+        reasoner = new ReasonerFactory().createReasoner(ontology);
+ 
+        FISerializable fi= new FISerializable(reasoner);
         		//new OWLAPIReasonerSerializable(wrapper);
          //r = new OWLAPIReasoner(wrapper);
         
         //r= 
-        
-        reasoner =fi;
-        try {
-			reasoner.init();
-			//r.init();
-		} catch (ComponentInitException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-        
-
-//		reasoner.getKB().realize();
-		System.out.println("\nClasses\n-------");
-		List<NamedClass> classList = fi.getAtomicConceptsList();
-		allConcepts = new NamedClass[classList.size()];
+        System.out.println("\nClasses\n-------");
+		Set<OWLClass> classList = ontology.getClassesInSignature();
+		allConcepts = new OWLClass[classList.size()];
 		int c=0;
-		for(NamedClass cls : classList) {
-//			if (!fi. && !cls.isAnonymous()) {
+		for(OWLClass cls : classList) {
+			if (!cls.isOWLNothing() && !cls.isAnonymous()) {
 				allConcepts[c++] = cls;
-				System.out.println(c +":) "+cls);
-//			}	        		
+				System.out.println(c +" - "+cls);
+			}	        		
 		}
 		System.out.println("---------------------------- "+c);
 
 		System.out.println("\nProperties\n-------");
-		List<ObjectProperty> propList = fi.getAtomicRolesList();
-		allRoles = new ObjectProperty[propList.size()];
+		Set<OWLObjectProperty> propList = ontology.getObjectPropertiesInSignature();
+		allRoles = new OWLObjectProperty[propList.size()];
 		int op=0;
-		for(ObjectProperty prop : propList) {
-			
+		for(OWLObjectProperty prop : propList) {
+			if (!prop.isAnonymous()) {
 				allRoles[op++] = prop;
-				System.out.println(op+"-"+prop);     		
+				System.out.println(prop);
+			}	        		
 		}
 		System.out.println("---------------------------- "+op);
-
+		
+		
 		System.out.println("\nIndividuals\n-----------");
-		Set<Individual> indList = fi.getIndividuals();
-		allExamples = new Individual[indList.size()];
+		Set<OWLNamedIndividual> indList = ontology.getIndividualsInSignature();
+		allExamples = new OWLIndividual[indList.size()];
 		int i=0;
-		for(Individual ind : indList) {
+		Set<OWLDataProperty> pes = ontology.getDataPropertiesInSignature();
+		for(OWLNamedIndividual ind : indList) {
+			allExamples[i++] = ind;  
+			Map<OWLDataPropertyExpression, Set<OWLLiteral>> dataPropertyValues = new HashMap<>();
 			
-				allExamples[i++] = ind;
-				//				System.out.println(ind);
-			       		
-		}
-		System.out.println("---------------------------- "+i);
+			}
 
-		System.out.println("\nKB loaded. \n");	
-		return this.ontology;	
+      
+        
+
+//		reasoner.getKB().realize();
+				return this.ontology;	
 
 	}
 
@@ -173,7 +165,7 @@ public class KnowledgeBase implements Serializable {
 	 * @see it.uniba.di.lacam.fanizzi.IKnowledgeBase#getRuoli()
 	 */
 
-	public ObjectProperty[] getRoles(){
+	public OWLObjectProperty[] getRoles(){
 		return allRoles;
 	}
 
@@ -181,7 +173,7 @@ public class KnowledgeBase implements Serializable {
 	 * @see it.uniba.di.lacam.fanizzi.IKnowledgeBase#getClasses()
 	 */
 
-	public NamedClass[] getClasses(){
+	public OWLClass[] getClasses(){
 		return allConcepts;
 	}
 
@@ -189,34 +181,12 @@ public class KnowledgeBase implements Serializable {
 	 * @see it.uniba.di.lacam.fanizzi.IKnowledgeBase#getIndividui()
 	 */
 	
-	public Individual[] getIndividuals(){
+	public OWLIndividual[] getIndividuals(){
 
 		return allExamples;
 	}
 
-	/* (non-Javadoc)
-	 * @see it.uniba.di.lacam.fanizzi.IKnowledgeBase#getDataProperties()
-	 */
 	
-	public DatatypeProperty[] getDataProperties(){
-		return properties;
-	}
-
-	/* (non-Javadoc)
-	 * @see it.uniba.di.lacam.fanizzi.IKnowledgeBase#getDomini()
-	 */
-
-	public Individual[][] getDomains(){
-		return domini;
-	}
-	/* (non-Javadoc)
-	 * @see it.uniba.di.lacam.fanizzi.IKnowledgeBase#getDataPropertiesValue()
-	 */
-
-	public Constant[][] getDataPropertiesValue(){
-		return dataPropertiesValue;
-
-	}
 	/* (non-Javadoc)
 	 * @see it.uniba.di.lacam.fanizzi.IKnowledgeBase#getURL()
 	 */
@@ -265,10 +235,7 @@ public class KnowledgeBase implements Serializable {
 
 
 
-	public AbstractReasonerComponent getReasoner(){
-
-		return reasoner;
-	}
+	
 
 	public OWLDataFactory getDataFactory() {
 		// TODO Auto-generated method sstub
@@ -280,13 +247,13 @@ public class KnowledgeBase implements Serializable {
 	
 
 
-	public OWLAPIOntology getOntology(){
+	public OWLOntology getOntology(){
 		return ontology;
 		
 	}
 	
 	
-	public void updateExamples(Individual[] individuals){
+	public void updateExamples(OWLIndividual[] individuals){
 
 		allExamples=individuals;
 
@@ -297,9 +264,9 @@ public class KnowledgeBase implements Serializable {
 	 * Random generated concepts
 	 * @return il concetto scelto
 	 */
-	public Description getRandomConcept() {
+	public OWLClassExpression getRandomConcept() {
 		// sceglie casualmente uno tra i concetti presenti 
-		Description newConcept = null;
+		OWLClassExpression newConcept = null;
 
 		
 		//if (!Parameters.BINARYCLASSIFICATION){
@@ -308,28 +275,38 @@ public class KnowledgeBase implements Serializable {
 			do {
 				newConcept = allConcepts[KnowledgeBase.generator.nextInt(allConcepts.length)];
 				if (KnowledgeBase.generator.nextDouble() < d) {
-					Description newConceptBase = getRandomConcept();
+					OWLClassExpression newConceptBase = getRandomConcept();
 					if (KnowledgeBase.generator.nextDouble() < d) {
 						
 						if (KnowledgeBase.generator.nextDouble() <d) { // new role restriction
-							ObjectProperty role = allRoles[KnowledgeBase.generator.nextInt(allRoles.length)];
+							OWLObjectProperty role = allRoles[KnowledgeBase.generator.nextInt(allRoles.length)];
 							//					OWLDescription roleRange = (OWLDescription) role.getRange;
 
 							if (KnowledgeBase.generator.nextDouble() < d)
-								newConcept = new ObjectAllRestriction(role, newConceptBase);//(dataFactory.getOWLObjectAllRestriction(role, newConceptBase));
+								newConcept = dataFactory.getOWLObjectAllValuesFrom(role, newConceptBase);//(dataFactory.getOWLObjectAllRestriction(role, newConceptBase));
 							else
-								newConcept = new ObjectSomeRestriction(role, newConceptBase);
+								newConcept = dataFactory.getOWLObjectSomeValuesFrom(role, newConceptBase);
 						}
 						else					
-							newConcept =  new Negation(newConceptBase); //dataFactory.getOWLObjectComplementOf(newConceptBase);
+							newConcept =  dataFactory.getOWLObjectComplementOf(newConceptBase); //dataFactory.getOWLObjectComplementOf(newConceptBase);
 					}
 				} // else ext
 				//				System.out.printf("-->\t %s\n",newConcept);
 				//			} while (newConcept==null || !(reasoner.getIndividuals(newConcept,false).size() > 0));
-			} while ((reasoner.getIndividuals(newConcept).size()<=0));
+			} while ((reasoner.getInstances(newConcept,false).getFlattened().size()<=0));
 
 		return newConcept;				
 	}
 
+
+
+	public OWLReasoner getReasoner() {
+		// TODO Auto-generated method stub
+		return r;
+	}
+
+
+
+	
 
 }
