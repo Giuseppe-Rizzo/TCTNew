@@ -1,6 +1,6 @@
 package it.uniba.di.lacam.ontologymining.tct.utils;
 
-import org.dllearner.core.owl.Description;
+
 
 public class Couple<S,T> implements Comparable {
 	 private S firstElement;

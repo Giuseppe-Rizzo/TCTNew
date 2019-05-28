@@ -7,10 +7,12 @@ import java.util.HashSet;
 import java.util.Random;
 import java.util.Set;
 
-import org.dllearner.core.Reasoner;
-import org.dllearner.core.owl.Description;
-import org.dllearner.core.owl.Individual;
-import org.dllearner.core.owl.Negation;
+import org.semanticweb.owlapi.model.OWLClassExpression;
+import org.semanticweb.owlapi.model.OWLDataFactory;
+import org.semanticweb.owlapi.model.OWLIndividual;
+import org.semanticweb.owlapi.reasoner.OWLReasoner;
+
+
 
 //import org.mindswap.pellet.jena.OWLReasoner;
 //import org.mindswap.pellet.owlapi.Reasoner;
@@ -393,20 +395,21 @@ public class FeatureConstruction {
 
 	
 	
-	public static void setProjections(Description[] pool) {		
-		Reasoner reasoner= kb.getReasoner();
+	public static void setProjections(OWLClassExpression[] pool) {		
+		OWLReasoner reasoner= kb.getReasoner();
+		OWLDataFactory dataFactory = kb.getDataFactory();
 		for (int f=0; f < pool.length; ++f) {
-		Description negatedConcept = new  Negation(pool[f]);//OWLObjectComplementOfImpl(dataFactory, pool[f]);
-		Individual[] individuals= kb.getIndividuals();
+		OWLClassExpression negatedConcept = dataFactory.getOWLObjectComplementOf(pool[f]);//OWLObjectComplementOfImpl(dataFactory, pool[f]);
+		OWLIndividual[] individuals= kb.getIndividuals();
 		
 
 			for (int i=0; i < individuals.length; i++) {
 				// case: ind is not an instance of h
-					if 	(reasoner.hasType(pool[f],individuals[i])) 
+					if 	(reasoner.isEntailed(dataFactory.getOWLClassAssertionAxiom(pool[f],individuals[i]))) 
 						pi[f][i] = 0;
 					else {
 						// case: ind is not an instance of h
-						if (reasoner.hasType(negatedConcept,individuals[i]))	
+						if (reasoner.isEntailed(dataFactory.getOWLClassAssertionAxiom(negatedConcept,individuals[i])))	
 							pi[f][i] = 2;
 						else
 							// case unknown membership
