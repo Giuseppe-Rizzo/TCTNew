@@ -4,7 +4,8 @@ package it.uniba.di.lacam.ontologymining.tct;
 import java.util.ArrayList;
 import java.util.Stack;
 
-import org.dllearner.core.owl.Description;
+
+import org.semanticweb.owlapi.model.OWLClassExpression;
 
 public class ClusterTree {
 
@@ -18,7 +19,7 @@ public class ClusterTree {
 
 	private class DLNode {
 
-		Description concept;		// node concept
+		OWLClassExpression concept;		// node concept
 		ArrayList<Integer> cluster;
 		Integer posMedoid;
 		Integer  negMedoid;
@@ -26,7 +27,7 @@ public class ClusterTree {
 
 		ClusterTree neg; 			// negative decision subtree
 
-		public DLNode(Description c, ArrayList<Integer>cluster, Integer p, Integer n) {
+		public DLNode(OWLClassExpression c, ArrayList<Integer>cluster, Integer p, Integer n) {
 			concept = c;
 			this.cluster=cluster;
 			this.posMedoid= p;
@@ -52,14 +53,14 @@ public class ClusterTree {
 
 	}
 
-	public ClusterTree (Description c, ArrayList<Integer> inds, Integer p, Integer n) {		
+	public ClusterTree (OWLClassExpression c, ArrayList<Integer> inds, Integer p, Integer n) {		
 		this.root = new DLNode(c,inds, p, n);
 	}
 
 	/**
 	 * @param root the root to set
 	 */
-	public void setRoot(Description concept, ArrayList<Integer>cluster, Integer p, Integer  n) {
+	public void setRoot(OWLClassExpression concept, ArrayList<Integer>cluster, Integer p, Integer  n) {
 		this.root = new DLNode(concept, cluster, p, n);
 		//		this.root.concept = concept;
 	}
@@ -67,7 +68,7 @@ public class ClusterTree {
 	/**
 	 * @return the root
 	 */
-	public Description getRoot() {
+	public OWLClassExpression getRoot() {
 		return root.concept;
 	}
 

@@ -25,7 +25,7 @@ public class RefinementOperator {
 
 	KnowledgeBase kb;
 	static final double d = 0.5;
-	private OWLClass[] allConcepts;
+	private OWLClassExpression[] allConcepts;
 	private OWLObjectProperty[] allRoles;
 
 	public RefinementOperator(KnowledgeBase kb) {

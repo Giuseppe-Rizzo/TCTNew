@@ -7,8 +7,11 @@ import java.util.List;
 import org.semanticweb.owlapi.model.OWLClassExpression;
 
 import it.uniba.di.lacam.ontologymining.tct.KnowledgeBaseHandler.KnowledgeBase;
-import it.uniba.di.lacam.ontologymining.tct.parameters.Parameters;
-import it.uniba.di.lacam.ontologymining.tct.utils.Couple;
+import it.uniba.di.lacam.ontologymining.tct.parameters.*;
+import it.uniba.di.lacam.ontologymining.tct.utils.*;
+import it.uniba.di.lacam.ontologymining.tct.*;
+import it.uniba.di.lacam.ontologymining.tct.ClusterTree;
+
 
 public class TCT2DisAxsConverter {
 	public static KnowledgeBase kb;
@@ -111,7 +114,7 @@ public class TCT2DisAxsConverter {
 					if ((c.toString().compareTo(d.toString()))!=0){//)  && !(result.contains(new Couple(c,d)))){ //(!(result.contains(new Couple(d,c))
 						//SortedSet<OWLClassExpression> subClasses1 = kb.getReasoner().getSubClasses(c);
 						//SortedSet<OWLClassExpression> subClasses2 = kb.getReasoner().getSubClasses(d);
-						if ((kb.getReasoner().getIndividuals(new Intersection(c,d)).size()<5)){
+						if ((kb.getReasoner().getInstances(kb.getDataFactory().getOWLObjectIntersectionOf(c,d),false).getFlattened().size()<5)){
 							element.setFirstElement(c);
 							element.setSecondElement(d);
 							result.add(element);

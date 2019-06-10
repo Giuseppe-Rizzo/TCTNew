@@ -40,7 +40,7 @@ public class NonRandomRefinementOperator extends RefinementOperator {
 
 	KnowledgeBase kb;
 	static final double d = 0.3;
-	private OWLClass[] allConcepts;
+	private OWLClassExpression[] allConcepts;
 	private OWLObjectProperty[] allRoles;
 	
 	public NonRandomRefinementOperator(KnowledgeBase kb) {

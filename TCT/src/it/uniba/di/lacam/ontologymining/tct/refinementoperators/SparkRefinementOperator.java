@@ -23,8 +23,7 @@ import org.semanticweb.owlapi.reasoner.OWLReasoner;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-
-import it.uniba.di.lacam.ontologymining.tct.KnowledgeBaseHandler.FISerializable;
+ 
 import it.uniba.di.lacam.ontologymining.tct.KnowledgeBaseHandler.KnowledgeBase;
 //import it.uniba.di.lacam.ontologymining.tct.KnowledgeBaseHandler.KnowledgeBase;
 //import it.uniba.di.lacam.ontologymining.tct.KnowledgeBaseHandler.*;
@@ -156,7 +155,7 @@ public class SparkRefinementOperator  extends RefinementOperator implements Seri
 		double rate = (double)getBeam()/rddConcepts.count();
 		double l = rate>1?1:rate;
 		System.out.println("Current definition "+definition);
-		OWLReasoner reasoner = kb.getR();
+		OWLReasoner reasoner = (OWLReasoner)kb.getR();
 
 		JavaRDD<OWLClassExpression> filter = rddConcepts.filter(f->!f.isOWLThing()); //.map(f->{return OWLAPIConverter.getOWLAPIOWLClassExpression(f);});
 		JavaRDD<OWLClassExpression> baseCaserefinements = filter.sample (false,l);

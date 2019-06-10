@@ -21,11 +21,15 @@ import org.semanticweb.owlapi.reasoner.*;
 import org.semanticweb.owlapi.reasoner.impl.OWLReasonerBase;
 import org.semanticweb.owlapi.util.Version;
 
-
-public class FISerializable implements OWLReasoner{
+/**
+ * A serialized version of an OWLReasoner
+ * @author Giuseppe
+ *
+ */
+public class FISerializable extends Object implements OWLReasoner,Serializable{
     private OWLReasoner reasoner;
  
-	public FISerializable(OWLReasoner  r) {
+	public FISerializable(OWLReasoner r) {
 		reasoner=r;
 	}
 	

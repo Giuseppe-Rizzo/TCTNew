@@ -1,17 +1,11 @@
 package it.uniba.di.lacam.ontologymining.tct.KnowledgeBaseHandler;
 
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
+import java.io.File;
 import java.io.Serializable;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.net.URI;
 import java.util.Random;
 import java.util.Set;
-
-
 import org.semanticweb.HermiT.ReasonerFactory;
-import org.semanticweb.HermiT.model.Individual;
 //import org.semanticweb.owl.model.OWLImportsDeclaration;
 //import org.semanticweb.owl.util.SimpleURIMapper;
 import org.semanticweb.owlapi.apibinding.OWLManager;
@@ -19,34 +13,26 @@ import org.semanticweb.owlapi.model.IRI;
 import org.semanticweb.owlapi.model.OWLClass;
 import org.semanticweb.owlapi.model.OWLClassExpression;
 import org.semanticweb.owlapi.model.OWLDataFactory;
-import org.semanticweb.owlapi.model.OWLDataProperty;
-import org.semanticweb.owlapi.model.OWLDataPropertyExpression;
-import org.semanticweb.owlapi.model.OWLIndividual;
-import org.semanticweb.owlapi.model.OWLLiteral;
 import org.semanticweb.owlapi.model.OWLNamedIndividual;
 import org.semanticweb.owlapi.model.OWLObjectProperty;
 import org.semanticweb.owlapi.model.OWLOntology;
 import org.semanticweb.owlapi.model.OWLOntologyCreationException;
 import org.semanticweb.owlapi.model.OWLOntologyManager;
-import org.semanticweb.owlapi.reasoner.BufferingMode;
 import org.semanticweb.owlapi.reasoner.OWLReasoner;
-
-
-
-//import evaluation.Parameters;
-import uk.ac.manchester.cs.owl.owlapi.OWLDataFactoryImpl;
+import org.semanticweb.owlapi.util.SimpleIRIMapper;
 
 
 /**
  *  class for implementing the knowledge base
+ * @param <FISerializable>
  */
-public class KnowledgeBase implements Serializable {
+public class KnowledgeBase<FISerializable> implements Serializable {
 	static final double d = 0.3;
 	//private String urlOwlFile = "file:///C:/Users/Giuseppe/Desktop//mod-biopax-example-ecocyc-glycolysis.owl";
 	private String urlOwlFile = "file:///C:/Users/Giusepp/Desktop/Ontologie/GeoSkills.owl";
 	private  OWLOntology ontology;
 	private  OWLOntologyManager manager;
-	private  OWLClass[] allConcepts;
+	private  OWLClassExpression[] allConcepts;
 	private  OWLObjectProperty[] allRoles;
 	private  OWLDataFactory dataFactory;
 	public OWLOntologyManager getManager() {
@@ -59,10 +45,11 @@ public class KnowledgeBase implements Serializable {
 		this.manager = manager;
 	}
 
-	private  OWLIndividual[] allExamples;
+	private  OWLNamedIndividual[] allExamples;
 	/* Data property: proprietà, valori e domini*/
 	private OWLReasoner reasoner;
 	private FISerializable r;
+	
 	
 	public FISerializable getR() {
 		return r;
@@ -91,30 +78,108 @@ public class KnowledgeBase implements Serializable {
 
 	
 	public   OWLOntology initKB() {
+//
+////		manager = OWLManager.createOWLOntologyManager();        
+////		OWLDataFactoryImpl owlDataFactoryImpl = new OWLDataFactoryImpl();
+////		OWLOntologyManager manager = OWLManager.createOWLOntologyManager(owlDataFactoryImpl);
+////        OWLOntology ontology= null;
+////		try {
+////			ontology = manager.loadOntology(IRI.create(urlOwlFile));
+////		} catch (OWLOntologyCreationException e) {
+////			// TODO Auto-generated catch block
+////			e.printStackTrace();
+////		}
+////        //IRI ontologyIRI = manager.getOntologyDocumentIRI(ontology);
+////      
+//      
+//		
+//		manager = OWLManager.createOWLOntologyManager();        
+//
+//		// read the file
+//		URI fileURI = URI.create(urlOwlFile);
+//		dataFactory = manager.getOWLDataFactory();
+//		OWLOntology ontology = null;
+//		try {
+//			SimpleIRIMapper mapper = new SimpleIRIMapper(IRI.create("http://semantic-mediawiki.org/swivt/1.0"),IRI.create("file:///C:/Users/Utente/Documents/Dataset/Dottorato/10.owl"));
+//			//			manager.addURIMapper();
+//			manager.addIRIMapper(mapper);
+//			ontology = manager.loadOntologyFromOntologyDocument(new File(fileURI));
+//			//			OWLImportsDeclaration importDeclaraton = dataFactory.getOWLImportsDeclarationAxiom(ontology, URI.create("file:///C:/Users/Utente/Documents/Dataset/10.owl"));
+//			//		   manager.makeLoadImportRequest(importDeclaraton);
+//
+//
+//		} catch (OWLOntologyCreationException e) {
+//			e.printStackTrace();
+//		}
+//
+//		reasoner =  new ReasonerFactory().createReasoner(ontology);
+// 
+//        FISerializable fi= new FISerializable(reasoner);
+//        		//new OWLAPIReasonerSerializable(wrapper);
+//         //r = new OWLAPIReasoner(wrapper);
+//        
+//        //r= 
+//        System.out.println("\nClasses\n-------");
+//		Set<OWLClass> classList = ontology.getClassesInSignature();
+//		allConcepts = new OWLClass[classList.size()];
+//		int c=0;
+//		for(OWLClass cls : classList) {
+//			if (!cls.isOWLNothing() && !cls.isAnonymous()) {
+//				allConcepts[c++] = cls;
+//				System.out.println(c +" - "+cls);
+//			}	        		
+//		}
+//		System.out.println("---------------------------- "+c);
+//
+//		System.out.println("\nProperties\n-------");
+//		Set<OWLObjectProperty> propList = ontology.getObjectPropertiesInSignature();
+//		allRoles = new OWLObjectProperty[propList.size()];
+//		int op=0;
+//		for(OWLObjectProperty prop : propList) {
+//			if (!prop.isAnonymous()) {
+//				allRoles[op++] = prop;
+//				System.out.println(prop);
+//			}	        		
+//		}
+//		System.out.println("---------------------------- "+op);
+//		
+//		
+//		System.out.println("\nIndividuals\n-----------");
+//		Set<OWLNamedIndividual> indList = ontology.getIndividualsInSignature();
+//		allExamples = new OWLNamedIndividual[indList.size()];
+//		int i=0;
+//		Set<OWLDataProperty> pes = ontology.getDataPropertiesInSignature();
+//		for(OWLNamedIndividual ind : indList) {
+//			allExamples[i++] = ind;  
+//			Map<OWLDataPropertyExpression, Set<OWLLiteral>> dataPropertyValues = new HashMap<>();
+//			
+//			}
 
 		manager = OWLManager.createOWLOntologyManager();        
-		 OWLDataFactoryImpl owlDataFactoryImpl = new OWLDataFactoryImpl();
-		OWLOntologyManager manager = OWLManager.createOWLOntologyManager(owlDataFactoryImpl);
-        OWLOntology ontology= null;
+
+		// read the file
+		URI fileURI = URI.create(urlOwlFile);
+		dataFactory = manager.getOWLDataFactory();
+		OWLOntology ontology = null;
 		try {
-			ontology = manager.loadOntologyFromOntologyDocument(new FileInputStream(urlOwlFile));
+			SimpleIRIMapper mapper = new SimpleIRIMapper(IRI.create("http://semantic-mediawiki.org/swivt/1.0"),IRI.create("file:///C:/Users/Utente/Documents/Dataset/Dottorato/10.owl"));
+			//			manager.addURIMapper();
+			manager.addIRIMapper(mapper);
+			ontology = manager.loadOntologyFromOntologyDocument(new File(fileURI));
+			//			OWLImportsDeclaration importDeclaraton = dataFactory.getOWLImportsDeclarationAxiom(ontology, URI.create("file:///C:/Users/Utente/Documents/Dataset/10.owl"));
+			//		   manager.makeLoadImportRequest(importDeclaraton);
+
+
 		} catch (OWLOntologyCreationException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		catch ( FileNotFoundException e){
-			e.printStackTrace();
-		}
-        IRI ontologyIRI = manager.getOntologyDocumentIRI(ontology);
-      
-        reasoner = new ReasonerFactory().createReasoner(ontology);
- 
-        FISerializable fi= new FISerializable(reasoner);
-        		//new OWLAPIReasonerSerializable(wrapper);
-         //r = new OWLAPIReasoner(wrapper);
+
         
-        //r= 
-        System.out.println("\nClasses\n-------");
+		reasoner = new ReasonerFactory().createReasoner(ontology); //new  Reasoner(ontology);//PelletReasoner(ontology, BufferingMode.NON_BUFFERING);
+		
+		
+		//		reasoner.getKB().realize();
+		System.out.println("\nClasses\n-------");
 		Set<OWLClass> classList = ontology.getClassesInSignature();
 		allConcepts = new OWLClass[classList.size()];
 		int c=0;
@@ -137,24 +202,23 @@ public class KnowledgeBase implements Serializable {
 			}	        		
 		}
 		System.out.println("---------------------------- "+op);
-		
-		
+
 		System.out.println("\nIndividuals\n-----------");
 		Set<OWLNamedIndividual> indList = ontology.getIndividualsInSignature();
-		allExamples = new OWLIndividual[indList.size()];
+		allExamples = new OWLNamedIndividual[indList.size()];
 		int i=0;
-		Set<OWLDataProperty> pes = ontology.getDataPropertiesInSignature();
 		for(OWLNamedIndividual ind : indList) {
-			allExamples[i++] = ind;  
-			Map<OWLDataPropertyExpression, Set<OWLLiteral>> dataPropertyValues = new HashMap<>();
-			
-			}
+			allExamples[i++] = ind;        		
+		}
+		System.out.println("---------------------------- "+i);
 
-      
+		System.out.println("\nKB loaded. \n");	
+		return ontology;		
+
         
 
 //		reasoner.getKB().realize();
-				return this.ontology;	
+				//return this.ontology;	
 
 	}
 
@@ -173,7 +237,7 @@ public class KnowledgeBase implements Serializable {
 	 * @see it.uniba.di.lacam.fanizzi.IKnowledgeBase#getClasses()
 	 */
 
-	public OWLClass[] getClasses(){
+	public OWLClassExpression[] getClasses(){
 		return allConcepts;
 	}
 
@@ -181,7 +245,7 @@ public class KnowledgeBase implements Serializable {
 	 * @see it.uniba.di.lacam.fanizzi.IKnowledgeBase#getIndividui()
 	 */
 	
-	public OWLIndividual[] getIndividuals(){
+	public OWLNamedIndividual[] getIndividuals(){
 
 		return allExamples;
 	}
@@ -253,7 +317,7 @@ public class KnowledgeBase implements Serializable {
 	}
 	
 	
-	public void updateExamples(OWLIndividual[] individuals){
+	public void updateExamples(OWLNamedIndividual[] individuals){
 
 		allExamples=individuals;
 
@@ -302,7 +366,7 @@ public class KnowledgeBase implements Serializable {
 
 	public OWLReasoner getReasoner() {
 		// TODO Auto-generated method stub
-		return r;
+		return this.reasoner;
 	}
 
 

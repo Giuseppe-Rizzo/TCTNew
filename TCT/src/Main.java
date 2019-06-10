@@ -9,6 +9,7 @@ import it.uniba.di.lacam.ontologymining.tct.utils.Couple;
 import it.uniba.di.lacam.ontologymining.tct.utils.MathUtils;
 import it.uniba.di.lacam.ontologymining.variableassociation.Apriori;
 import it.uniba.di.lacam.ontologymining.variableassociation.Correlations;
+import uk.ac.manchester.cs.owl.owlapi.OWLDataFactoryImpl;
 
 import java.io.PrintStream;
 import java.util.ArrayList;
@@ -18,13 +19,13 @@ import java.util.Set;
 import java.util.SortedSet;
 import java.util.TreeSet;
 
-import org.dllearner.core.AbstractReasonerComponent;
-import org.dllearner.core.Reasoner;
-import org.dllearner.core.owl.Description;
-import org.dllearner.core.owl.Individual;
-import org.dllearner.core.owl.Intersection;
-import org.dllearner.core.owl.NamedClass;
-import org.dllearner.core.owl.Negation;
+import org.semanticweb.owlapi.model.OWLClass;
+import org.semanticweb.owlapi.model.OWLClassExpression;
+import org.semanticweb.owlapi.model.OWLDataFactory;
+import org.semanticweb.owlapi.model.OWLIndividual;
+import org.semanticweb.owlapi.model.OWLNamedIndividual;
+import org.semanticweb.owlapi.reasoner.OWLReasoner;
+
 
 
 
@@ -37,8 +38,9 @@ import org.dllearner.core.owl.Negation;
 
 
 public class Main {
+	
 
-	static it.uniba.di.lacam.ontologymining.tct.KnowledgeBaseHandler.KnowledgeBase kb;
+	
 	//	static int[][] classification;
 	public  PrintStream console = System.out;
 
@@ -49,6 +51,7 @@ public class Main {
 	public static void main(String[] args) throws Exception {
 		Parameters.loadParameters(); //loading from property file
 		System.out.println(Parameters.urlOwlFile);
+		it.uniba.di.lacam.ontologymining.tct.KnowledgeBaseHandler.KnowledgeBase kb;
 		kb = new it.uniba.di.lacam.ontologymining.tct.KnowledgeBaseHandler.KnowledgeBase(Parameters.urlOwlFile);
 
 		SparkConfiguration conf=null;
@@ -59,9 +62,9 @@ public class Main {
 		double [] resultsInc = new double[Parameters.NFOLDS];
 
 		for (int j=0; j<Parameters.NFOLDS;j++){
-			final Individual[] individuals = kb.getIndividuals();
-			final AbstractReasonerComponent reasoner = kb.getReasoner();
-			final NamedClass[] classes = kb.getClasses();
+			final OWLNamedIndividual[] individuals = kb.getIndividuals();
+			final OWLReasoner reasoner = kb.getReasoner();
+			final OWLClassExpression[] classes = kb.getClasses();
 
 			it.uniba.di.lacam.ontologymining.tct.distances.FeaturesDrivenDistance.preLoadPi(reasoner, classes, individuals);
 			FeaturesDrivenDistance.computeFeatureEntropies(reasoner, classes);
@@ -71,17 +74,17 @@ public class Main {
 			if (args[0].equalsIgnoreCase("apriori")){
 				System.out.println("Learning algorithm: A priori");
 				Apriori apriori= new Apriori(reasoner, classes, individuals);
-				ArrayList<HashSet<Description>> arrayList = new ArrayList<HashSet<Description>>();
-				ArrayList<HashSet<Description>> arrayList2 = new ArrayList<HashSet<Description>>();
+				ArrayList<HashSet<OWLClassExpression>> arrayList = new ArrayList<HashSet<OWLClassExpression>>();
+				ArrayList<HashSet<OWLClassExpression>> arrayList2 = new ArrayList<HashSet<OWLClassExpression>>();
 				int nInc=0;
 				apriori.generateCandidate(arrayList, 1, 2);
-				for (HashSet<Description> hashSet : arrayList) {
+				for (HashSet<OWLClassExpression> hashSet : arrayList) {
 					boolean disjoint= false;
-					//for (Description description : hashSet) {
-//						if (description instanceof Negation){
+					//for (OWLClassExpression OWLClassExpression : hashSet) {
+//						if (OWLClassExpression instanceof Negation){
 //							disjoint = true;
 //						}
-						SortedSet<Individual> individuals2 = reasoner.getIndividuals((new Intersection(hashSet.toArray(new Description[hashSet.size()]))));
+						Set<OWLNamedIndividual> individuals2 = reasoner.getInstances((kb.getDataFactory().getOWLObjectIntersectionOf(hashSet)),false).getFlattened();
 					//}
 					if (individuals2.size()>4) {
 						nInc++;
@@ -113,15 +116,15 @@ public class Main {
 				//System.out.println(induceDLTree);	 
 				
 				TCT2DisAxsConverter.kb=kb;
-				ArrayList<Couple<Description,Description>> extractDisjointnessAxiom = TCT2DisAxsConverter.extractDisjointnessAxiom(induceDLTree);
-				HashSet<Couple<Description,Description>>e = new HashSet<Couple<Description,Description>>(extractDisjointnessAxiom);
+				ArrayList<Couple<OWLClassExpression,OWLClassExpression>> extractDisjointnessAxiom = TCT2DisAxsConverter.extractDisjointnessAxiom(induceDLTree);
+				HashSet<Couple<OWLClassExpression,OWLClassExpression>>e = new HashSet<Couple<OWLClassExpression,OWLClassExpression>>(extractDisjointnessAxiom);
 				System.out.println("Number of axioms: "+ extractDisjointnessAxiom.size());
 				resultsAxs[j]= extractDisjointnessAxiom.size();
 				int nInc=0;
 				TreeSet<String> out= new TreeSet<String>();
-				for (Couple<Description,Description> c:e){
+				for (Couple<OWLClassExpression,OWLClassExpression> c:e){
 					System.out.println(c);
-					SortedSet<Individual> individuals2 = reasoner.getIndividuals((new Intersection(c.getFirstElement(),c.getSecondElement())));
+					Set<OWLNamedIndividual> individuals2 = reasoner.getInstances((kb.getDataFactory().getOWLObjectIntersectionOf(c.getFirstElement(),c.getSecondElement())),false).getFlattened();
 					
 					if (individuals2.size()>4){
 						nInc++;
@@ -141,13 +144,13 @@ public class Main {
 			else  if ( (args[0].equalsIgnoreCase("corr"))){
 				System.out.println("Learning algorithm: pearson's correlation coefficient");
 				Correlations corr= new Correlations(reasoner, classes, individuals);
-				final ArrayList<Couple<Description,Description>> extractDisjointnessAxiom = corr.computeCorrelation();
+				final ArrayList<Couple<OWLClassExpression,OWLClassExpression>> extractDisjointnessAxiom = corr.computeCorrelation();
 				System.out.println("Number of axioms: "+ extractDisjointnessAxiom.size());
 				int nInc=0;
 				resultsAxs[j]= extractDisjointnessAxiom.size();
-				for (Couple<Description,Description> c:extractDisjointnessAxiom){
-					System.out.println(c.getFirstElement()+ " disjointWith " +c.getSecondElement());
-					if (reasoner.getIndividuals(new Intersection(c.getFirstElement(),c.getSecondElement())).size()>0){
+				for (Couple<OWLClassExpression,OWLClassExpression> c:extractDisjointnessAxiom){
+					//System.out.println(c.getFirstElement()+ " disjointWith " +c.getSecondElement());
+					if (reasoner.getInstances(kb.getDataFactory().getOWLObjectIntersectionOf(c.getFirstElement(),c.getSecondElement()),false).getFlattened().size()>0){
 						nInc++;
 						System.out.println("Number of inconsistencies: "+ nInc);
 					}

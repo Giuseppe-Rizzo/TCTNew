@@ -1,9 +1,12 @@
 package it.uniba.di.lacam.ontologymining.variableassociation;
-import org.dllearner.core.AbstractReasonerComponent;
-import org.dllearner.core.owl.Description;
-import org.dllearner.core.owl.Individual;
-import org.dllearner.core.owl.Intersection;
-import org.dllearner.core.owl.Negation;
+
+import org.semanticweb.owlapi.model.OWLClassExpression;
+import org.semanticweb.owlapi.model.OWLDataFactory;
+import org.semanticweb.owlapi.model.OWLNamedIndividual;
+import org.semanticweb.owlapi.reasoner.OWLReasoner;
+
+import uk.ac.manchester.cs.owl.owlapi.OWLDataFactoryImpl;
+
 import java.util.*;
 
 
@@ -14,40 +17,40 @@ import java.util.*;
  */
 public class Apriori {
 
-	AbstractReasonerComponent r;
-	Description[] concept;
-	Description[] negConcept;
+	OWLReasoner r;
+	OWLClassExpression[] concept;
+	OWLClassExpression[] negConcept;
+	static OWLDataFactory df = new OWLDataFactoryImpl();
+	OWLNamedIndividual[] individual;
+	OWLClassExpression[][] axiom; 
 	
-	Individual[] individual;
-	Description[][] axiom;
-	
-	public Apriori(AbstractReasonerComponent r,  Description[] classes, Individual[] individuals){
+	public Apriori(OWLReasoner r,  OWLClassExpression[] classes, OWLNamedIndividual[] individuals){
 		 this.r= r;
-		 this.concept= new  Description[(classes.length*2)]; //classes;
-		 Description[] d= new Description[classes.length];
+		 this.concept= new  OWLClassExpression[(classes.length*2)]; //classes;
+		 OWLClassExpression[] d= new OWLClassExpression[classes.length];
 		 for (int i= 0; i< classes.length;i++){
 			 concept[i]=classes[i];
-		 d[i]= new Negation(concept[i]);
+		 d[i]=  df.getOWLObjectComplementOf(concept[i]);
 		 }
 		 for (int i= classes.length; i<(2*classes.length);i++)
 			 concept[i]= d[(i-classes.length)];
 		 
 		 
 		 this.individual= individuals;
-		 axiom=new Description[classes.length][2];
+		 axiom=new OWLClassExpression[classes.length][2];
 	}
 	
 	
 	
 	
-	public ArrayList<HashSet<Description>>  generateCandidate(ArrayList<HashSet<Description>> candidates, int itemsetSize, int length){
+	public ArrayList<HashSet<OWLClassExpression>>  generateCandidate(ArrayList<HashSet<OWLClassExpression>> candidates, int itemsetSize, int length){
 		System.out.println("Candidates: "+ candidates);
 		if( itemsetSize==1){
-			for (Description  c : concept) {
+			for (OWLClassExpression  c : concept) {
 				//System.out.println("Concept"+c);
-				final int size = r.getIndividuals(c).size();
+				final int size = r.getInstances(c,false).getFlattened().size();
 				if (size >10){
-					 HashSet<Description> arrayList = new HashSet<Description>();
+					 HashSet<OWLClassExpression> arrayList = new HashSet<OWLClassExpression>();
 					 arrayList.add(c);
 					candidates.add( arrayList);
 				}
@@ -57,15 +60,15 @@ public class Apriori {
 		}else{
 			//System.out.println("Sono qui: "+ itemsetSize);
 			if (itemsetSize<=length){
-			ArrayList<HashSet<Description>>  newCandidates= new ArrayList<HashSet<Description>>();
+			ArrayList<HashSet<OWLClassExpression>>  newCandidates= new ArrayList<HashSet<OWLClassExpression>>();
 			 // definire passo ricorsivo
-			for (HashSet<Description> c: candidates){
-				 for (HashSet<Description> d : candidates) { // make the join
+			for (HashSet<OWLClassExpression> c: candidates){
+				 for (HashSet<OWLClassExpression> d : candidates) { // make the join
 					  if (!c.equals(d)){
-						    HashSet<Description>  newElem=  new HashSet<Description>(c);
+						    HashSet<OWLClassExpression>  newElem=  new HashSet<OWLClassExpression>(c);
 						    newElem.addAll(d);
 						    //System.out.println("newElem: "+ newElem);
-						     int size= r.getIndividuals(new Intersection(new ArrayList<Description>(newElem))).size();
+						     int size= r.getInstances(df.getOWLObjectIntersectionOf(newElem),false).getFlattened().size();
 						     if (size<10){
 						    	 newCandidates.add(newElem);
 						     //System.out.println("After join: "+ newElem);

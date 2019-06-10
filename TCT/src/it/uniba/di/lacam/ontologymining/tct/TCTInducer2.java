@@ -4,7 +4,7 @@ import it.uniba.di.lacam.ontologymining.tct.KnowledgeBaseHandler.KnowledgeBase;
 import it.uniba.di.lacam.ontologymining.tct.distances.FeaturesDrivenDistance;
 import it.uniba.di.lacam.ontologymining.tct.parameters.Parameters;
 import it.uniba.di.lacam.ontologymining.tct.refinementoperators.RefinementOperator;
-import it.uniba.di.lacam.ontologymining.tct.refinementoperators.RhoRefinementOperator;
+//import it.uniba.di.lacam.ontologymining.tct.refinementoperators.RhoRefinementOperator;
 import it.uniba.di.lacam.ontologymining.tct.refinementoperators.SparkRefinementOperator;
 import it.uniba.di.lacam.ontologymining.tct.utils.*;
 
@@ -15,12 +15,10 @@ import java.util.SortedSet;
 import java.util.Stack;
 
 import org.apache.spark.api.java.JavaRDD;
-import org.dllearner.core.owl.Description;
-import org.dllearner.core.owl.Individual;
-import org.dllearner.core.owl.Intersection;
-import org.dllearner.core.owl.Negation;
-import org.dllearner.core.owl.Nothing;
-import org.dllearner.core.owl.Thing;
+
+import org.semanticweb.owlapi.model.OWLClassExpression;
+import org.semanticweb.owlapi.model.OWLDataFactory;
+import org.semanticweb.owlapi.model.OWLNamedIndividual;
 
 import com.fasterxml.jackson.core.JsonFactory.Feature;
 
@@ -65,8 +63,8 @@ public class TCTInducer2 {
 		long startingTime= System.currentTimeMillis();
 
 		Npla<ArrayList<Integer>,ArrayList<Integer>,ArrayList<Integer>, Integer, Double, Double> examples = new Npla<ArrayList<Integer>,ArrayList<Integer>,ArrayList<Integer>, Integer, Double, Double>(posExs, negExs, undExs, dim, 0.5, 0.5);
-		Description concept = new Thing();
-		ClusterTree tree = new ClusterTree((Description)concept,  posExs, 0,0); // new (sub)tree
+		OWLClassExpression concept = data.kb.getDataFactory().getOWLThing();
+		ClusterTree tree = new ClusterTree(concept,  posExs, 0,0); // new (sub)tree
 
 
 
@@ -76,7 +74,7 @@ public class TCTInducer2 {
 		toInduce.setSecondElement(examples);
 		stack.push(toInduce);
 
-		List<Description> candidates = new ArrayList<Description>();
+		List<OWLClassExpression> candidates = new ArrayList<OWLClassExpression>();
 		while(!stack.isEmpty()){
 
 			Couple<ClusterTree,Npla<ArrayList<Integer>,ArrayList<Integer>,ArrayList<Integer>, Integer, Double, Double>> current= stack.pop(); // extract the next element
@@ -103,24 +101,24 @@ public class TCTInducer2 {
 						//System.out.println(currentTree.getRoot() instanceof Negation);
 
 						//System.out.println("Concept to be refined:"+currentTree.getRoot());
-						ArrayList<Description> generateNewConcepts = new ArrayList<Description>();
+						ArrayList<OWLClassExpression> generateNewConcepts = new ArrayList<OWLClassExpression>();
 
-						ArrayList<Individual> posExs2= new ArrayList<Individual>(); // from indices to individuals
-						ArrayList<Individual> negExs2= new ArrayList<Individual>();
+						ArrayList<OWLNamedIndividual> posExs2= new ArrayList<OWLNamedIndividual>(); // from indices to individuals
+						ArrayList<OWLNamedIndividual> negExs2= new ArrayList<OWLNamedIndividual>();
 						for (Integer p: posExs)
 							posExs2.add(data.kb.getIndividuals()[p]);
 						for (Integer p: negExs)
 							negExs2.add(data.kb.getIndividuals()[p]);
 						//System.out.println(posExs2.size());
-						Description root = currentTree.getRoot();
+						OWLClassExpression root = currentTree.getRoot();
 						System.out.println("Current node: "+root+"    Cluster size: "+posExs2.size());
-						Description[] cConcepts =	new Description[Parameters.beam];
+						OWLClassExpression[] cConcepts =	new OWLClassExpression[Parameters.beam];
 						if (!Parameters.refinementOperator.equalsIgnoreCase("single")){
 
 
-							JavaRDD<Description> refine = ((SparkRefinementOperator)op).refine(root, posExs2, negExs2, true, true, true);
+							JavaRDD<OWLClassExpression> refine = ((SparkRefinementOperator)op).refine(root, posExs2, negExs2, true, true, true);
 							//System.out.println("# refinements: "+refine.count());
-							List<Description> collect = refine.collect();
+							List<OWLClassExpression> collect = refine.collect();
 							//generateNewConcepts.addAll(collect); //op instanceof SparkRefinementOperator?
 
 						}
@@ -134,7 +132,7 @@ public class TCTInducer2 {
 						//for (Description c:cConcepts) System.out.println(c);
 
 						// select node concept
-						Description newRootConcept =  selectConceptWithMinOverlap(cConcepts, posExs) ; //(Parameters.CCP?(selectBestConceptCCP(cConcepts, posExs, negExs, undExs, prPos, prNeg, truePos, trueNeg)):(selectBestConcept(cConcepts, posExs, negExs, undExs, prPos, prNeg));
+						OWLClassExpression newRootConcept =  selectConceptWithMinOverlap(cConcepts, posExs) ; //(Parameters.CCP?(selectBestConceptCCP(cConcepts, posExs, negExs, undExs, prPos, prNeg, truePos, trueNeg)):(selectBestConcept(cConcepts, posExs, negExs, undExs, prPos, prNeg));
 						candidates.add(newRootConcept);
 						System.out.println();
 						System.out.println("Best Concept:"+newRootConcept);
@@ -162,7 +160,7 @@ public class TCTInducer2 {
 						currentTree.setPosTree(posTree);
 						System.out.println("Instances routed to the left branch"+ posExsT.size());
 						posTree.setRoot(newRootConcept, posExsT, null, null);
-						Negation concept2 = new Negation(newRootConcept);
+						OWLClassExpression concept2 = data.kb.getDataFactory().getOWLObjectComplementOf(newRootConcept);
 						//System.out.println("Concept to be refined right branch:"+ concept2);
 						negTree.setRoot(concept2, negExsT, null, null);
 						System.out.println("Instances routed to the right branch: "+negExsT.size());
@@ -200,12 +198,12 @@ public class TCTInducer2 {
 		 * @param posExs
 		 * @return
 		 */
-		private Description selectConceptWithMinOverlap(Description[] cConcepts,
+		private OWLClassExpression selectConceptWithMinOverlap(OWLClassExpression[] cConcepts,
 				ArrayList<Integer> posExs) {
 			// TODO Auto-generated method stub
 
 			Double maxDiff= 0.0d;
-			Description bestConcept= cConcepts[0];
+			OWLClassExpression bestConcept= cConcepts[0];
 			//System.out.println(bestConcept);
 			int idx=0;
 
@@ -313,13 +311,14 @@ public class TCTInducer2 {
 		 * @param negExsT
 		 * @param undExsT
 		 */
-		private void splitInstanceCheck(Description concept, ArrayList<Integer> posExs, ArrayList<Integer> posExsT, ArrayList<Integer> negExsT, ArrayList<Integer> undExsT){
-			Description negConcept = new Negation(concept);
+		private void splitInstanceCheck(OWLClassExpression concept, ArrayList<Integer> posExs, ArrayList<Integer> posExsT, ArrayList<Integer> negExsT, ArrayList<Integer> undExsT){
+			OWLDataFactory dataFactory = data.kb.getDataFactory();
+			OWLClassExpression negConcept = dataFactory.getOWLObjectComplementOf(concept);
 			for (int e=0; e<posExs.size(); e++) {
 				int exIndex = posExs.get(e);
-				if (data.kb.getReasoner().hasType(concept,data.kb.getIndividuals()[exIndex]))
+				if (data.kb.getReasoner().isEntailed(dataFactory.getOWLClassAssertionAxiom(concept,data.kb.getIndividuals()[exIndex])))
 					posExsT.add(exIndex);
-				else if (data.kb.getReasoner().hasType(negConcept, data.kb.getIndividuals()[exIndex]))
+				else if (data.kb.getReasoner().isEntailed(dataFactory.getOWLClassAssertionAxiom(negConcept, data.kb.getIndividuals()[exIndex])))
 					negExsT.add(exIndex);
 				else
 					undExsT.add(exIndex);		
@@ -333,7 +332,7 @@ public class TCTInducer2 {
 		 * @param posExs
 		 * @param negExs
 		 */
-		private void split (Description concept, ArrayList<Integer> iExs, ArrayList<Integer> posExs, ArrayList<Integer> negExs) {
+		private void split (OWLClassExpression concept, ArrayList<Integer> iExs, ArrayList<Integer> posExs, ArrayList<Integer> negExs) {
 
 			
 			ArrayList<Integer> exs=(ArrayList<Integer>)iExs.clone();
