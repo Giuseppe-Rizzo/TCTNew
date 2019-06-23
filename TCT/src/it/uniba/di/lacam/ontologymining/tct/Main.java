@@ -1,3 +1,4 @@
+package it.uniba.di.lacam.ontologymining.tct;
 
 import it.uniba.di.lacam.ontologymining.tct.*;
 import it.uniba.di.lacam.ontologymining.tct.distances.*;

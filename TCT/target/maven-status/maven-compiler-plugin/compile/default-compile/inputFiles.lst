@@ -1,10 +1,9 @@
 C:\Users\Giuseppe\git\TCTNew\TCT\src\it\uniba\di\lacam\ontologymining\variableassociation\Apriori.java
 C:\Users\Giuseppe\git\TCTNew\TCT\src\it\uniba\di\lacam\ontologymining\tct\distances\FeaturesDrivenDistance.java
 C:\Users\Giuseppe\git\TCTNew\TCT\src\it\uniba\di\lacam\ontologymining\tct\utils\Couple.java
-C:\Users\Giuseppe\git\TCTNew\TCT\src\CV.java
+C:\Users\Giuseppe\git\TCTNew\TCT\src\it\uniba\di\lacam\ontologymining\tct\Main.java
 C:\Users\Giuseppe\git\TCTNew\TCT\src\it\uniba\di\lacam\ontologymining\tct\parameters\Parameters.java
 C:\Users\Giuseppe\git\TCTNew\TCT\src\it\uniba\di\lacam\ontologymining\tct\utils\Generator.java
-C:\Users\Giuseppe\git\TCTNew\TCT\src\Main.java
 C:\Users\Giuseppe\git\TCTNew\TCT\src\it\uniba\di\lacam\ontologymining\tct\refinementoperators\SparkConfiguration.java
 C:\Users\Giuseppe\git\TCTNew\TCT\src\it\uniba\di\lacam\ontologymining\tct\KnowledgeBaseHandler\KnowledgeBase.java
 C:\Users\Giuseppe\git\TCTNew\TCT\src\it\uniba\di\lacam\ontologymining\tct\KnowledgeBaseHandler\FISerializable.java
@@ -21,4 +20,3 @@ C:\Users\Giuseppe\git\TCTNew\TCT\src\it\uniba\di\lacam\ontologymining\tct\utils\
 C:\Users\Giuseppe\git\TCTNew\TCT\src\it\uniba\di\lacam\ontologymining\tct\refinementoperators\RefinementOperator.java
 C:\Users\Giuseppe\git\TCTNew\TCT\src\it\uniba\di\lacam\ontologymining\variableassociation\Correlations.java
 C:\Users\Giuseppe\git\TCTNew\TCT\src\it\uniba\di\lacam\ontologymining\tct\utils\SetUtils.java
-C:\Users\Giuseppe\git\TCTNew\TCT\src\it\uniba\di\lacam\ontologymining\tct\refinementoperators\RhoRefinementOperator.java
